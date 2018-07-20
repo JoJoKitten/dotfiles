@@ -1,0 +1,20 @@
+config:
+  backup: true
+  banner: true
+  create: true
+  dotpath: dotfiles
+  keepdot: false
+  link_by_default: false
+  longkey: false
+dotfiles:
+  f_config:
+    dst: ~/.i3/config
+    src: i3/config
+  f_spacemacs:
+    dst: ~/.spacemacs
+    src: spacemacs
+profiles:
+  manj-i3-jb:
+    dotfiles:
+    - f_config
+    - f_spacemacs
