@@ -7,14 +7,42 @@ config:
   link_by_default: false
   longkey: false
 dotfiles:
+  d_fonts:
+    dst: ~/.fonts
+    src: fonts
+  f_bash_aliases:
+    dst: ~/.bash_aliases
+    src: bash_aliases
+  f_bashrc:
+    dst: ~/.bashrc
+    src: bashrc
   f_config:
     dst: ~/.i3/config
     src: i3/config
+  f_rc.conf:
+    dst: ~/.config/ranger/rc.conf
+    src: config/ranger/rc.conf
   f_spacemacs:
     dst: ~/.spacemacs
     src: spacemacs
+  f_vimrc:
+    dst: ~/.vimrc
+    src: vimrc
+  f_xinitrc:
+    dst: ~/.xinitrc
+    src: xinitrc
+  f_xresources:
+    dst: ~/.Xresources
+    src: Xresources
 profiles:
   manj-i3-jb:
     dotfiles:
     - f_config
     - f_spacemacs
+    - f_rc.conf
+    - f_vimrc
+    - f_bash_aliases
+    - f_bashrc
+    - f_xinitrc
+    - f_xresources
+    - d_fonts
