@@ -38,9 +38,9 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
 
-# or use rofi as program launcher instead
-bindsym $mod+d exec rofi -show run -lines 10 -opacity "85" \
--font "System San Francisco Display 10"
+# use rofi as program launcher instead
+bindsym $mod+d exec rofi -show run -lines 10 -opacity "85" 
+bindsym $mod+Shift+d exec rofi -show window # -lines 10
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -274,6 +274,10 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
+bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% 
+bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5%
+bindsym Shift+XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle
+
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 
@@ -302,11 +306,11 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-#	i3bar_command i3bar
-#	status_command i3status
-#	position bottom
+i3bar_command i3bar
+status_command i3status
+position bottom
 
-        status_command i3blocks -c ~/.i3/i3blocks.conf
+#        status_command i3blocks -c ~/.i3/i3blocks.conf
 
 	colors {
 		background $bg-color
