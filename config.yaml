@@ -50,3 +50,4 @@ profiles:
     dotfiles:
     - f_config
     - f_xresources
+    - f_rc.conf
