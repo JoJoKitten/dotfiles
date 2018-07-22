@@ -35,7 +35,7 @@ dotfiles:
     dst: ~/.Xresources
     src: Xresources
 profiles:
-  manj-i3-jb:
+  desktop-i3:
     dotfiles:
     - f_config
     - f_spacemacs
@@ -46,3 +46,7 @@ profiles:
     - f_xinitrc
     - f_xresources
     - d_fonts
+  laptop-i3:
+    dotfiles:
+    - f_config
+    - f_xresources

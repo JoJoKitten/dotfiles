@@ -1,25 +1,3 @@
-Xft.dpi: 96
-Xft.antialias: true
-Xft.hinting: true
-Xft.rgba: rgb
-Xft.autohint: false
-Xft.hintstyle: hintslight
-Xft.lcdfilter: lcddefault
-
-XTerm*background: #2b2b2b
-XTerm*foreground: #e7e7e7
-XTerm*pointerColor: #160085
-XTerm*faceName: Fixed
-XTerm*faceSize: 11
-
-*background:                      #272827
-*foreground:                      #657b83
-*fading:                          15
-*fadeColor:                       black
-*cursorColor:                     #F68085
-*pointerColorBackground:          #2B2C2B
-*pointerColorForeground:          #16A085
-
 !! black dark/light
 *color0:                          #232423
 *color8:                          #282928
@@ -52,32 +30,26 @@ XTerm*faceSize: 11
 *color7:                          #E0E0E0
 *color15:                         #E8E8E8
 
-Xcursor.theme: xcursor-breeze-snow
-Xcursor.size:                     0
 
-XTerm*background:                 #272827
-XTerm*foreground:                 #fdf6e3
-XTerm*reverseVideo:               on
-XTerm*faceName:                   Terminus:size=11:antialias=true
-XTerm*selectToClipboard:          true
+# URxvt font
+{%@@ if profile == "laptop-i3" @@%}
+URxvt.font:     xft:Inconsolata:size=11:antialias=true
+URxvt.boldFont:     xft:Inconsolata:bold:size=11:antialias=true
+{%@@ elif profile == "desktop-i3" @@%}
+URxvt.font:     xft:Inconsolata:size=13:antialias=true
+URxvt.boldFont:     xft:Inconsolata:bold:size=13:antialias=true
+{%@@ endif @@%}
 
+! URxvt.font:     xft:SourceCodeProSemibold:size=10:antialias=true
+! URxvt.boldFont:     xft:SourceCodePro:bold:size=10:antialias=true
+! URxvt.letterSpace: -1
 
-! URxvt.font:     xft:Inconsolata:size=13:antialias=true
-! URxvt.boldFont:     xft:Inconsolata:bold:size=13:antialias=true
-
-! URxvt.font:     xft:DejaVuSansMono:size=11:antialias=true
-! URxvt.boldFont:     xft:DejaVuSansMono:bold:size=11:antialias=true
-
-URxvt.font:     xft:SourceCodeProSemibold:size=11:antialias=true
-URxvt.boldFont:     xft:SourceCodePro:bold:size=11:antialias=true
-
-! alternative font settings with 'terminus':
-! URxvt.font:      -xos4-terminus-medium-r-normal--16-160-72-72-c-80-iso10646-1
-! URxvt.bold.font: -xos4-terminus-bold-r-normal--16-160-72-72-c-80-iso10646-1
-!! terminus names see end of file!
+! URxvt.font: xft:DejaVuSansMono:size=9:antialias=true
+! URxvt.bold.font: xft:DejaVuSansMono-Bold:size=9:antialias=true
+! URxvt.letterSpace: -1
 
 URxvt.depth:                      32
-URxvt.background:                 [90]#303030
+URxvt.background:                 [90]#202020
 URxvt*scrollBar:                  false
 URxvt*mouseWheelScrollPage:       false
 URxvt*cursorBlink:                true
@@ -85,10 +57,22 @@ URxvt*background:                 black
 URxvt*foreground:                 #DDDDDD
 URxvt*saveLines:                  5000
 
-! for 'fake' transparency (without Compton) uncomment the following three lines
-! URxvt*inheritPixmap:            true
-! URxvt*transparent:              true
-! URxvt*shading:                  138
+!! Extensions
+URxvt.perl-ext-common:	default,matcher,resize-font,url-select,keyboard-select
+URxvt.colorUL:		#4681B4
+!! url-select
+URxvt.keysym.M-u:	perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/firefox
+URxvt.url-select.underline: true
+!! keyboard-select:
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+!! resize-font
+URxvt.resize-font.smaller:	C-Down
+URxvt.resize-font.bigger:	C-Up
+!! Matcher
+URxvt.url-launcher:	/usr/bin/firefox
+URxvt.matcher.button:	1
+
 
 ! other possible settings:
 ! Rxvt.perl-ext-common:            ...,clipboard
@@ -218,20 +202,3 @@ URxvt*saveLines:                  5000
 ! URxvt*tabbar-bg:                 colour
 ! URxvt*tabbar-fg:                 colour
 ! URxvt*url-launcher:              string
-
-! The Terminus font uses the following X-names:
-! -xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1
-! -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1
-! -xos4-terminus-medium-r-normal--16-160-72-72-c-80-iso10646-1
-! -xos4-terminus-medium-r-normal--20-200-72-72-c-100-iso10646-1
-! -xos4-terminus-medium-r-normal--22-220-72-72-c-110-iso10646-1
-! -xos4-terminus-medium-r-normal--24-240-72-72-c-120-iso10646-1
-! -xos4-terminus-medium-r-normal--28-280-72-72-c-140-iso10646-1
-! -xos4-terminus-medium-r-normal--32-320-72-72-c-160-iso10646-1
-! -xos4-terminus-bold-r-normal--12-120-72-72-c-60-iso10646-1
-! -xos4-terminus-bold-r-normal--14-140-72-72-c-80-iso10646-1
-! -xos4-terminus-bold-r-normal--16-160-72-72-c-80-iso10646-1
-! -xos4-terminus-bold-r-normal--20-200-72-72-c-100-iso10646-1
-! -xos4-terminus-bold-r-normal--24-240-72-72-c-120-iso10646-1
-! -xos4-terminus-bold-r-normal--28-280-72-72-c-140-iso10646-1
-! -xos4-terminus-bold-r-normal--32-320-72-72-c-160-iso10646-1
