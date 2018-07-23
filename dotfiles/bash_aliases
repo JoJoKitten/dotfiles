@@ -1,13 +1,16 @@
+alias ll='ls -al'
 alias ..='cd ..; ls -al'
 alias ...='cd ..;cd ..;ls -al'
 
 # move something to trash
 alias trash='function __trash() { mv $* /home/jbensmann/.local/share/Trash/files/; }; __trash'
 
+# repeat any command
 alias repeat='function __repeat() { while [ 1 ]; do  read; eval $*; echo "----------------------------------------------------------";  done; }; __repeat'
 
 alias openvpn='(cd /etc/openvpn && sudo openvpn jbensmann_home.conf)'
 
-alias cdsteam='cd ~/.local/share/Steam/steamapps/common/'
+alias pcSs='pacman -Ss'
+alias pcS='sudo pacman -S'
 
 alias ec='emacsclient -t '
