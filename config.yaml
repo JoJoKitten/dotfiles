@@ -28,6 +28,9 @@ dotfiles:
   f_vimrc:
     dst: ~/.vimrc
     src: vimrc
+  f_wallpaper.jpg:
+    dst: ~/.config/wallpaper.jpg
+    src: config/wallpaper.jpg
   f_xinitrc:
     dst: ~/.xinitrc
     src: xinitrc
@@ -46,6 +49,7 @@ profiles:
     - f_xinitrc
     - f_xresources
     - d_fonts
+    - f_wallpaper.jpg
   laptop-i3:
     dotfiles:
     - f_config
