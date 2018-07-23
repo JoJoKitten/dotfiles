@@ -7,7 +7,7 @@ set $mod2 Mod3
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# restart i3 inplace
 bindsym $mod+Shift+r restart
 # reload .Xresource
 bindsym $mod+Shift+x exec "xrdb ~/.Xresources; notify-send 'reloaded .Xresources'"
@@ -40,6 +40,7 @@ bindsym $mod+Shift+q kill
 
 # use rofi as program launcher instead
 bindsym $mod+d exec rofi -show run -lines 10 -opacity "85" 
+# window switcher
 bindsym $mod+Shift+d exec rofi -show window # -lines 10
 
 # launch categorized menu
@@ -295,7 +296,7 @@ set $bg-color 	         #303030
 set $inactive-bg-color   #303030
 set $text-color          #ffffff
 set $inactive-text-color #707070
-set $urgent-bg-color     #E03030
+set $urgent-bg-color     #903030
 set $indicator-color     #808000
 #                       border              background         text                 indicator
 client.focused          $active-border      $active-border     $text-color          $indicator-color
@@ -308,7 +309,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 bar {
 i3bar_command i3bar
 status_command i3status
-position bottom
+position top
 
 #        status_command i3blocks -c ~/.i3/i3blocks.conf
 
@@ -332,11 +333,8 @@ bindsym $mod+m bar mode toggle
 gaps inner 15
 gaps outer 0
 
-# Smart gaps (gaps used if only more than one container on the workspace)
- smart_gaps on
-
-# Smart borders (draw borders around container only if it is not the only container on this workspace)
-# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
+# No gaps and borders when there only is one container
+smart_gaps on
 smart_borders on
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying
