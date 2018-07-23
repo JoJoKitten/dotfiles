@@ -202,8 +202,8 @@ mode "$mode_system" {
 
 # Resize window
 bindsym $mod+Left resize shrink width 40 px or 5 ppt
-bindsym $mod+Down resize grow height 40 px or 5 ppt
-bindsym $mod+Up resize shrink height 40 px or 5 ppt
+bindsym $mod+Up resize grow height 40 px or 5 ppt
+bindsym $mod+Down resize shrink height 40 px or 5 ppt
 bindsym $mod+Right resize grow width 40 px or 5 ppt
 
 # launcher mode
