@@ -6,9 +6,8 @@ alias trash='function __trash() { mv $* /home/jbensmann/.local/share/Trash/files
 
 alias repeat='function __repeat() { while [ 1 ]; do  read; eval $*; echo "----------------------------------------------------------";  done; }; __repeat'
 
-alias tab8to4='sed -i "s/        /    /g"'
-alias tab4to8='sed -i "s/    /        /g"'
-
 alias openvpn='(cd /etc/openvpn && sudo openvpn jbensmann_home.conf)'
 
 alias cdsteam='cd ~/.local/share/Steam/steamapps/common/'
+
+alias ec='emacsclient -t '
