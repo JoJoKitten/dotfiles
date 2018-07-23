@@ -53,5 +53,9 @@ profiles:
   laptop-i3:
     dotfiles:
     - f_config
+    - f_spacemacs
     - f_xresources
     - f_rc.conf
+    - f_bash_aliases
+    - d_fonts
+    - f_wallpaper.jpg
