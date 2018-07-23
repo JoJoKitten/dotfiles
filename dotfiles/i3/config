@@ -14,7 +14,7 @@ bindsym $mod+Shift+x exec "xrdb ~/.Xresources; notify-send 'reloaded .Xresources
 
 
 # borders
-set $border_size 4
+set $border_size 2
 new_window pixel $border_size
 new_float normal
 
@@ -292,14 +292,14 @@ exec_always feh --bg-scale /home/jbensmann/.config/wallpaper.jpg
 # assign [class="vlc"] 10
 
 # window colors
-set $active-border       #50A080
-set $inactive-border     #304030
+set $active-border       #909090
+set $inactive-border     #303030
 set $bg-color 	         #303030
-set $inactive-bg-color   #303030
+set $inactive-bg-color   #002020
 set $text-color          #ffffff
 set $inactive-text-color #707070
 set $urgent-bg-color     #205040
-set $indicator-color     #002020
+set $indicator-color     #F0F0F0
 #                       border              background         text                 indicator
 client.focused          $active-border      $active-border     $text-color          $indicator-color
 client.unfocused        $inactive-border    $inactive-border   $inactive-text-color $inactive-border
