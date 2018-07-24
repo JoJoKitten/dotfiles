@@ -31,11 +31,11 @@
 *color15:                         #E8E8E8
 
 
-# URxvt font
+!! URxvt font
 {%@@ if profile == "laptop-i3" @@%}
 URxvt.font:     xft:Inconsolata:size=11:antialias=true
 URxvt.boldFont:     xft:Inconsolata:bold:size=11:antialias=true
-{%@@ elif profile == "desktop-i3" @@%}
+{%@@ else @@%}
 URxvt.font:     xft:Inconsolata:size=13:antialias=true
 URxvt.boldFont:     xft:Inconsolata:bold:size=13:antialias=true
 {%@@ endif @@%}
@@ -49,7 +49,7 @@ URxvt.boldFont:     xft:Inconsolata:bold:size=13:antialias=true
 ! URxvt.letterSpace: -1
 
 URxvt.depth:                      32
-URxvt.background:                 [90]#202020
+URxvt.background:                 [90]#303030
 URxvt*scrollBar:                  false
 URxvt*mouseWheelScrollPage:       false
 URxvt*cursorBlink:                true
