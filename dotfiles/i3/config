@@ -95,16 +95,16 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Define names for default workspaces
-set $ws1 "1    "
-set $ws2 "2    "
-set $ws3 "3    "
-set $ws4 "4    "
-set $ws5 "  5  "
-set $ws6 "  6  "
-set $ws7 "  7  "
-set $ws8 "  8  "
-set $ws9 "  9  "
-set $ws10 "10   "
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -208,7 +208,7 @@ bindsym $mod+Right resize grow width 40 px or 5 ppt
 
 # launcher mode
 set $mode_launcher (f) Firefox, (s) Spacemacs, (r) ranger, (n) pcmanfm, (t) Thunderbird,\
- (p) Pianoteq, (m) mocp, (b) bmenu, (c) i3 config
+ (p) Pianoteq, (m) mocp, (b) bmenu
 
 bindsym $mod+x mode "$mode_launcher"
 
@@ -221,7 +221,6 @@ mode "$mode_launcher" {
     bindsym p mode "default", exec ~/Applications/Pianoteq_6_STAGE/amd64/Pianoteq\ 6\ STAGE
     bindsym m mode "default", exec terminal -e 'mocp'
     bindsym b mode "default", exec terminal -e 'bmenu'
-    bindsym c mode "default", exec terminal -e 'vim /home/jbensmann/.i3/config'
     
     bindsym Escape mode "default"
 }
@@ -258,6 +257,7 @@ exec --no-startup-id xautolock -time 30 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 # ?
 exec_always --no-startup-id fix_xcursor
+exec --no-startup-id emacs --daemon
 # Execute some other tasks that may depend on the machine
 exec ~/.i3/start_jobs.sh
 
@@ -306,24 +306,13 @@ client.unfocused        $inactive-border    $inactive-border   $inactive-text-co
 client.focused_inactive $inactive-border    $inactive-bg-color $inactive-text-color $inactive-border
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $urgen-bg-color
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-i3bar_command i3bar
-status_command i3status
-position top
 
-#        status_command i3blocks -c ~/.i3/i3blocks.conf
+# start polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-	colors {
-		background $bg-color
-   	separator #757575
-		#                  border             background         text
-		focused_workspace  $bg-color          $bg-color          $text-color
-		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-	}
-}
+# bar {
+# i3bar_command i3bar
+# }
 
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
@@ -336,13 +325,8 @@ gaps inner 20
 gaps outer 0
 
 # No gaps and borders when there only is one container
-{%@@ if profile == "desktop-i3" @@%}
-# smart_gaps on
-# smart_borders on
-{%@@ else @@%}
 smart_gaps on
 smart_borders on
-{%@@ endif @@%}
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying
 # outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0

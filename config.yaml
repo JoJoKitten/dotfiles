@@ -19,6 +19,12 @@ dotfiles:
   f_config:
     dst: ~/.i3/config
     src: i3/config
+  f_launch.sh:
+    dst: ~/.config/polybar/launch.sh
+    src: config/polybar/launch.sh
+  f_polybar_config:
+    dst: ~/.config/polybar/config
+    src: config/polybar/config
   f_rc.conf:
     dst: ~/.config/ranger/rc.conf
     src: config/ranger/rc.conf
@@ -59,3 +65,5 @@ profiles:
     - f_bash_aliases
     - d_fonts
     - f_wallpaper.jpg
+    - f_polybar_config
+    - f_launch.sh
