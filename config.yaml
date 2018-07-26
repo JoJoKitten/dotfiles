@@ -56,6 +56,8 @@ profiles:
     - f_xresources
     - d_fonts
     - f_wallpaper.jpg
+    - f_polybar_config
+    - f_launch.sh
   laptop-i3:
     dotfiles:
     - f_config

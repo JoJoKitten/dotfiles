@@ -246,7 +246,13 @@ label-padding = 20
 
 [module/network]
 type = internal/network
+
+{%@@ if profile == "laptop-i3" @@%}
 interface = wlp2s0
+{%@@ else @@%}
+interface = wlp8s0
+{%@@ endif @@%}
+
 interval = 2.0
 
 ; Test connectivity every Nth update
