@@ -10,7 +10,7 @@ height = 25p
 offset-x = 0
 offset-y = 0
 
-background = #A0000000
+background = #C0000000
 foreground = #fff
 
 ; Background gradient (vertical steps)
@@ -43,7 +43,7 @@ modules-center =
 modules-right = network filesystem volume date
 
 ; The separator will be inserted between the output of each module
-separator = |
+separator = "    "
 
 ; Opacity value between 0.0 and 1.0 used on fade in/out
 dim-value = 1.0
@@ -78,7 +78,7 @@ tray-maxsize = 16
 ; Enable pseudo transparency
 ; Will automatically be enabled if a fully transparent
 ; background color is defined using `tray-background`
-tray-transparent = true
+tray-transparent = false
 
 ; Background color for the tray container
 ; By default the tray container will use the bar
@@ -187,7 +187,7 @@ format = <label-state> <label-mode>
 ; Default: %mode%
 label-mode = %mode%
 label-mode-padding = 2
-label-mode-background = #e60053
+label-mode-background = #005030
 
 ; Available tokens:
 ;   %name%
@@ -239,8 +239,8 @@ label-separator-foreground = #ffb52a
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:100:...%
-; format-background = #333
-; format-foreground = #fff
+format-background = #ff103020
+format-foreground = #fff
 label-padding = 20
 
 
@@ -274,10 +274,14 @@ unknown-as-up = true
 ;   <label-connected> (default)
 ;   <ramp-signal>
 format-connected = <label-connected>
+format-connected-background = #ff103020
+format-connected-padding = 3
 
 ; Available tags:
 ;   <label-disconnected> (default)
 format-disconnected = <label-disconnected>
+format-disconnected-background = #ff103020
+format-disconnected-padding = 3
 
 ; Available tokens:
 ;   %ifname%    [wireless+wired]
@@ -306,7 +310,9 @@ interval = 0.5
  ;   <bar-load>
  ;   <ramp-load>
  ;   <ramp-coreload>
- format = <label> <ramp-coreload>
+format = <label> <ramp-coreload>
+format-background = #303030
+format-padding = 3
 
 ; Available tokens:
 ;   %percentage% (default) - total cpu load
@@ -341,14 +347,14 @@ time-alt = %H:%M:%S
 ; Available tags:
 ;   <label> (default)
 format =  <label>
-; format-background = #55ff3399
-; format-foreground = #fff
+format-background = #ff103020
+format-padding = 3
 
 ; Available tokens:
 ;   %date%
 ;   %time%
 ; Default: %date%
-label = %date% %time% |
+label = %date% %time%
 ; label-font = 3
 ; label-foreground = #9A32DB
 
@@ -368,16 +374,21 @@ fixed-values = true
 ; Spacing between entries
 spacing = 4
 
+
 ; Available tags:
 ;   <label-mounted> (default)
 ;   <bar-free>
 ;   <bar-used>
 ;   <ramp-capacity>
 format-mounted = <label-mounted>
+format-mounted-background = #ff103020
+format-mounted-padding = 3
 
 ; Available tags:
 ;   <label-unmounted> (default)
 format-unmounted = <label-unmounted>
+format-unmounted-background = #ff103020
+format-unmounted-padding = 3
 
 ; Available tokens:
 ;   %mountpoint%
@@ -400,13 +411,17 @@ label-unmounted = %mountpoint%: not mounted
 [module/volume]
 type = internal/volume
 
-format-volume = <ramp-volume>  <label-volume>
+format-volume = <ramp-volume> <label-volume>
+format-volume-padding = 3
+format-volume-background = #ff103020
+
 format-muted = <label-muted>
+format-muted-padding = 3
+format-muted-background = #ff103020
+
 label-volume = %percentage%
 label-muted =   muted
 label-muted-foreground = #aaa
-format-volume-padding = 3
-format-muted-padding = 3
 
 ramp-volume-0 = 
 ramp-volume-1 = 
