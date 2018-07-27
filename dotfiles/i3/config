@@ -5,13 +5,14 @@ set $mod Mod4
 set $mod2 Mod3
 
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
 # restart i3 inplace
 bindsym $mod+Shift+r restart
-# reload .Xresource
-bindsym $mod+Shift+x exec "xrdb ~/.Xresources; notify-send 'reloaded .Xresources'"
 
+# install all config files from dotdrop and restart i3
+bindsym $mod+Shift+c exec "~/dotfiles/dotdrop.sh install -f && i3-msg restart"
+
+# reload .Xresources when i3 is restarts
+exec_always "xrdb ~/.Xresources"
 
 # borders
 set $border_size 2
