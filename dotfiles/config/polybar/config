@@ -40,7 +40,7 @@ font-3 = Font Awesome 5 Free:pixelsize=10;3
 ; Modules are added to one of the available blocks
 modules-left = i3 xwindow 
 modules-center = 
-modules-right = network filesystem volume date
+modules-right = network filesystem volume date time
 
 ; The separator will be inserted between the output of each module
 separator = "    "
@@ -336,13 +336,10 @@ interval = 1.0
 
 ; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
-date =
-time = %H:%M
+date= %d %B %Y
 
 ; if `date-alt` or `time-alt` is defined, clicking
 ; the module will toggle between formats
-date-alt = %A, %d %B %Y
-time-alt = %H:%M:%S
 
 ; Available tags:
 ;   <label> (default)
@@ -354,7 +351,34 @@ format-padding = 3
 ;   %date%
 ;   %time%
 ; Default: %date%
-label = %date% %time%
+label = %date%
+; label-font = 3
+; label-foreground = #9A32DB
+
+[module/time]
+type = internal/date
+
+; Seconds to sleep between updates
+interval = 1.0
+
+; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+time = %H:%M:%S
+
+; if `date-alt` or `time-alt` is defined, clicking
+; the module will toggle between formats
+
+; Available tags:
+;   <label> (default)
+format =  <label>
+format-background = #ff103020
+format-padding = 3
+
+; Available tokens:
+;   %date%
+;   %time%
+; Default: %date%
+label = %time%
 ; label-font = 3
 ; label-foreground = #9A32DB
 
