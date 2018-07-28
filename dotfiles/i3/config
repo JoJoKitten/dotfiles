@@ -11,9 +11,6 @@ bindsym $mod+Shift+r restart
 # install all config files from dotdrop and restart i3
 bindsym $mod+Shift+c exec "~/dotfiles/dotdrop.sh install -f && i3-msg restart"
 
-# reload .Xresources when i3 is restarts
-exec_always "xrdb ~/.Xresources"
-
 # borders
 set $border_size 2
 new_window pixel $border_size
@@ -236,17 +233,18 @@ bindsym $mod2+p [title="(?i)pianoteq"] focus
 bindsym $mod2+m [title="(?i)moc"] focus
 
 # Autostart applications
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec_always "xrdb ~/.Xresources"
 exec_always compton -b
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
 # pulseaudio 
 exec --no-startup-id bash -c "killall pulseaudio && sleep 1 && pulseaudio"
 # pulseaudio applet
 exec --no-startup-id pa-applet
-# ?
-exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
+# ?
+exec --no-startup-id xfce4-power-manager
 # Bluetooth manager
 # exec --no-startup-id blueman-applet
 # XKB indicator
@@ -259,16 +257,17 @@ exec_always --no-startup-id ff-theme-util
 # ?
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id emacs --daemon
+exec --no-startup-id megasync
 # Execute some other tasks that may depend on the machine
 exec ~/.i3/start_jobs.sh
 
 # type something
 bindsym --release $mod+Control+p exec --no-startup-id xdotool type --clearmodifiers "..."
 # simulate arrow keys (for convenience)
-bindsym --release $mod+Control+h exec --no-startup-id xdotool key --clearmodifiers Left
-bindsym --release $mod+Control+j exec --no-startup-id xdotool key --clearmodifiers Down
-bindsym --release $mod+Control+k exec --no-startup-id xdotool key --clearmodifiers Up
-bindsym --release $mod+Control+l exec --no-startup-id xdotool key --clearmodifiers Right
+bindsym --release $mod+Control+Shift+h exec --no-startup-id xdotool key --clearmodifiers Left
+bindsym --release $mod+Control+Shift+j exec --no-startup-id xdotool key --clearmodifiers Down
+bindsym --release $mod+Control+Shift+k exec --no-startup-id xdotool key --clearmodifiers Up
+bindsym --release $mod+Control+Shift+l exec --no-startup-id xdotool key --clearmodifiers Right
 
 # simulate right mouse down to enable grabbing with touchpad
 bindsym $mod+Ctrl+r --release exec xdotool mousedown 3
