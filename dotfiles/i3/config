@@ -29,6 +29,11 @@ font xft:URWGothic-Book 11
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
+# The middle button and modifer kills the window
+bindsym --whole-window $mod+button2 kill
+# The right button, modifier and Shift toggles floating
+bindsym --whole-window $mod+Shift+button3 floating toggle
+
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
