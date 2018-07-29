@@ -257,7 +257,7 @@ exec_always --no-startup-id ff-theme-util
 # ?
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id emacs --daemon
-exec --no-startup-id megasync
+exec --no-startup-id "sleep 5; megasync"
 # Execute some other tasks that may depend on the machine
 exec ~/.i3/start_jobs.sh
 
