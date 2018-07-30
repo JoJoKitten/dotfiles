@@ -293,12 +293,12 @@ format-disconnected-padding = 3
 ;   %downspeed% [wireless+wired]
 ;   %linkspeed% [wired]
 ; Default: %ifname% %local_ip%
-label-connected = %essid% %downspeed:9%
+label-connected =  %downspeed:9%
 label-connected-foreground = #eefafafa
 
 ; Available tokens:
 ;   %ifname%    [wireless+wired]
-label-disconnected = not connected
+label-disconnected =  not connected
 label-disconnected-foreground = #66ffffff
 
 
@@ -351,7 +351,7 @@ format-padding = 3
 ;   %date%
 ;   %time%
 ; Default: %date%
-label = %date%
+label =   %date%
 ; label-font = 3
 ; label-foreground = #9A32DB
 
@@ -378,7 +378,7 @@ format-padding = 3
 ;   %date%
 ;   %time%
 ; Default: %date%
-label = %time%
+label =   %time%
 ; label-font = 3
 ; label-foreground = #9A32DB
 
@@ -424,13 +424,13 @@ format-unmounted-padding = 3
 ;   %free%
 ;   %used%
 ; Default: %mountpoint% %percentage_free%%
-label-mounted = %mountpoint% %free% of %total%
+label-mounted =    %free% / %total%
 
 ; Available tokens:
 ;   %mountpoint%
 ; Default: %mountpoint% is not mounted
 ; label-unmounted-foreground = #55
-label-unmounted = %mountpoint%: not mounted
+label-unmounted =   not mounted
 
 [module/volume]
 type = internal/volume
