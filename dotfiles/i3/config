@@ -297,7 +297,7 @@ exec_always feh --bg-scale /home/jbensmann/.config/wallpaper.jpg
 # assign [class="vlc"] 10
 
 # window colors
-set $active-border       #909090
+set $active-border       #c0c0c0
 set $inactive-border     #303030
 set $bg-color 	         #303030
 set $inactive-bg-color   #002020
