@@ -151,7 +151,7 @@ values."
    dotspacemacs-emacs-leader-key "M-m"
    ;; Major mode leader key is a shortcut key which is the equivalent of
    ;; pressing `<leader> m`. Set it to `nil` to disable it. (default ",")
-   dotspacemacs-major-mode-leader-key ","
+   dotspacemacs-major-mode-leader-key "-"
    ;; Major mode leader key accessible in `emacs state' and `insert state'.
    ;; (default "C-M-m")
    dotspacemacs-major-mode-emacs-leader-key "C-M-m"
@@ -312,8 +312,9 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
-  ;; own key bindings
-  (global-set-key (kbd "M-j") 'evil-avy-goto-word-1)
+  ;; avy
+  (setq avy-keys (nconc (number-sequence ?a ?z)))
+  (global-set-key (kbd "ö") 'evil-avy-goto-word-1)
 
   ;; like scrolloff in vim
   (setq scroll-margin 10)
