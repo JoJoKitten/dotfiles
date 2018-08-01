@@ -13,7 +13,7 @@ bindsym $mod+Shift+c exec "~/dotfiles/dotdrop.sh install -f && i3-msg restart"
 
 # commit dotfile changes and push them
 # bindsym $mod+Shift+p exec terminal -e sh -c " ~/dotfiels/push.sh"
-bindsym $mod+Shift+p exec terminal -e ~/dotfiles/push.sh
+bindsym $mod+Shift+p exec terminal -e ~/dotfiles/push.sh && sleep 1
 
 # borders
 set $border_size 2
