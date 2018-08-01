@@ -143,7 +143,7 @@ pin-workspaces = true
 strip-wsnumbers = true
 
 ; Sort the workspaces by index instead of the default
-index-sort = true
+index-sort = false
 
 ; Create click handler used to focus workspace
 enable-click = true
@@ -161,7 +161,7 @@ reverse-scroll = false
 ; icons to workspaces
 ; Example: code;♚ will apply the icon to all workspaces
 ; containing 'code' in the label
-fuzzy-match = true
+fuzzy-match = false
 
 ; ws-icon-[0-9]+ = label;icon
 ; NOTE: The label needs to match the name of the i3 workspace
@@ -175,7 +175,7 @@ ws-icon-6 = 7;7
 ws-icon-7 = 8;8
 ws-icon-8 = 9;9
 ws-icon-9 = 10;
-ws-icon-default = 
+; ws-icon-default = 
 
 ; Available tags:
 ;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
