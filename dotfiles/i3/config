@@ -214,19 +214,19 @@ bindsym $mod+Down resize shrink height 40 px or 5 ppt
 bindsym $mod+Right resize grow width 40 px or 5 ppt
 
 # launcher mode
-set $mode_launcher (f) Firefox, (s) Spacemacs, (r) ranger, (n) pcmanfm, (t) Thunderbird,\
- (p) Pianoteq, (m) mocp, (b) bmenu
+set $mode_launcher (f) Firefox, (e) Spacemacs, (r) ranger, (n) pcmanfm, (t) Thunderbird,\
+ (p) Pianoteq, (s) Spotify, (b) bmenu,
 
 bindsym $mod+x mode "$mode_launcher"
 
 mode "$mode_launcher" {
     bindsym f mode "default", exec firefox
-    bindsym s mode "default", exec emacs
+    bindsym e mode "default", exec emacs
     bindsym r mode "default", exec urxvt -name ranger -e ranger
     bindsym n mode "default", exec pcmanfm
     bindsym t mode "default", exec thunderbird
     bindsym p mode "default", exec ~/Applications/Pianoteq_6_STAGE/amd64/Pianoteq\ 6\ STAGE
-    bindsym m mode "default", exec terminal -e 'mocp'
+    bindsym s mode "default", exec spotify
     bindsym b mode "default", exec terminal -e 'bmenu'
     
     bindsym Escape mode "default"
@@ -239,7 +239,7 @@ bindsym $mod2+r [title="(?i)ranger"] focus
 bindsym $mod2+n [class="(?i)pcmanfm"] focus
 bindsym $mod2+t [class="(?i)thunderbird"] focus
 bindsym $mod2+p [title="(?i)pianoteq"] focus
-bindsym $mod2+m [title="(?i)moc"] focus
+bindsym $mod2+s [title="(?i)spotify"] focus
 
 # Autostart applications
 exec_always "xrdb ~/.Xresources"
