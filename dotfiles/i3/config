@@ -222,7 +222,7 @@ bindsym $mod+x mode "$mode_launcher"
 mode "$mode_launcher" {
     bindsym f mode "default", exec firefox
     bindsym s mode "default", exec emacs
-    bindsym r mode "default", exec urxvt -e ranger
+    bindsym r mode "default", exec urxvt -name ranger -e ranger
     bindsym n mode "default", exec pcmanfm
     bindsym t mode "default", exec thunderbird
     bindsym p mode "default", exec ~/Applications/Pianoteq_6_STAGE/amd64/Pianoteq\ 6\ STAGE
@@ -280,6 +280,9 @@ for_window [instance="metask"] move scratchpad; \
 bindsym $mod+t [instance="metask"] scratchpad show
 # start a new dropdown terminal
 bindsym $mod+Shift+t exec --no-startup-id i3-sensible-terminal -name metask
+
+# show ranger from scratchpad
+bindsym $mod+r [instance="ranger"] scratchpad show
 
 
 # type something
