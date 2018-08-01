@@ -10,6 +10,9 @@ dotfiles:
   d_fonts:
     dst: ~/.fonts
     src: fonts
+  d_qpdfview:
+    dst: ~/.config/qpdfview
+    src: config/qpdfview
   f_bash_aliases:
     dst: ~/.bash_aliases
     src: bash_aliases
@@ -58,6 +61,7 @@ profiles:
     - f_wallpaper.jpg
     - f_polybar_config
     - f_launch.sh
+    - d_qpdfview
   laptop-i3:
     dotfiles:
     - f_config
