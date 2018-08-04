@@ -31,6 +31,9 @@ dotfiles:
   f_rc.conf:
     dst: ~/.config/ranger/rc.conf
     src: config/ranger/rc.conf
+  f_redshift.conf:
+    dst: ~/.config/redshift/redshift.conf
+    src: config/redshift/redshift.conf
   f_spacemacs:
     dst: ~/.spacemacs
     src: spacemacs
@@ -78,3 +81,4 @@ profiles:
     - f_launch.sh
     - d_qpdfview
     - f_xmodmap
+    - f_redshift.conf
