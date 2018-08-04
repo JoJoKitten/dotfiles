@@ -13,6 +13,6 @@ alias openvpn='(cd /etc/openvpn && sudo openvpn jbensmann_home.conf)'
 alias pcSs='pacman -Ss'
 alias pcS='sudo pacman -S'
 
-alias ec='emacsclient -t '
+alias em='emacsclient -t '
 
 alias cdm='cd ~/Dokumente/Studium/Masterarbeit'
