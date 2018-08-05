@@ -1,7 +1,7 @@
 
-# Set mod key to Super_L
+# Set mod key to Super
 set $mod Mod4
-# another mod key to change between apps
+# another mod key to change between apps (see .Xmodmap)
 set $mod2 Mod3
 
 
@@ -252,6 +252,7 @@ exec --no-startup-id bash -c "killall pulseaudio && sleep 1 && pulseaudio"
 exec --no-startup-id pa-applet
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
+exec --no-startup-id redshift
 # ?
 exec --no-startup-id xfce4-power-manager
 # Bluetooth manager

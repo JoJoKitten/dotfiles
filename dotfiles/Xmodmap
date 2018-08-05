@@ -1,0 +1,9 @@
+{%@@ if profile == "laptop-i3" @@%}
+!! set the right control to mod3 to use it for application switching in i3
+remove control = Control_R
+add mod3 = Control_R
+
+{%@@ elif profile == "desktop-i3" @@%}
+
+{%@@ endif @@%}
+
