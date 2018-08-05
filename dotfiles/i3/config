@@ -4,6 +4,9 @@ set $mod Mod4
 # another mod key to change between apps (see .Xmodmap)
 set $mod2 Mod3
 
+# Load .Xmodmap
+exec_always sleep 10 && xmodmap ~/.Xmodmap
+
 
 # restart i3 inplace
 bindsym $mod+Shift+r restart
@@ -225,7 +228,10 @@ mode "$mode_launcher" {
     bindsym r mode "default", exec urxvt -name ranger -e ranger
     bindsym n mode "default", exec pcmanfm
     bindsym t mode "default", exec thunderbird
-    bindsym p mode "default", exec ~/Applications/Pianoteq_6_STAGE/amd64/Pianoteq\ 6\ STAGE
+    bindsym p mode "default", exec \
+      pactl set-sink-volume 1 85% \
+      && ~/Applications/Pianoteq_6_STAGE/amd64/Pianoteq\ 6\ STAGE \
+      && pactl set-sink-volume 1 30%
     bindsym s mode "default", exec spotify
     bindsym b mode "default", exec terminal -e 'bmenu'
     

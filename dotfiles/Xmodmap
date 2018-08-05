@@ -4,6 +4,9 @@ remove control = Control_R
 add mod3 = Control_R
 
 {%@@ elif profile == "desktop-i3" @@%}
+!! set the right super key to mod3 to use it for application switching in i3
+remove mod4 = Super_R
+add mod3 = Super_R
 
 {%@@ endif @@%}
 
