@@ -68,6 +68,7 @@ profiles:
     - f_polybar_config
     - f_launch.sh
     - d_qpdfview
+    - f_redshift.conf
   laptop-i3:
     dotfiles:
     - f_config
