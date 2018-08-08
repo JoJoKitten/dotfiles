@@ -24,8 +24,7 @@ new_window pixel $border_size
 new_float normal
 
 # change borders
-bindsym $mod+u border none
-bindsym $mod+y border pixel $border_size
+bindsym $mod+u border pixel $border_size
 bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -58,6 +57,8 @@ bindsym $mod+Shift+d exec rofi -show window # -lines 10
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
 
+# launch clipmenu
+bindsym $mod+c exec clipmenu
 
 # change focus
 bindsym $mod+h focus left
@@ -72,7 +73,7 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # split orientation
-bindsym $mod+c split h
+bindsym $mod+y split h
 bindsym $mod+v split v
 bindsym $mod+q split toggle
 
@@ -255,7 +256,7 @@ exec --no-startup-id nm-applet
 # pulseaudio 
 exec --no-startup-id bash -c "killall pulseaudio && sleep 1 && pulseaudio"
 exec --no-startup-id pamac-tray
-exec --no-startup-id clipit
+exec --no-startup-id clipmenud
 exec --no-startup-id redshift
 # ?
 exec --no-startup-id xfce4-power-manager
