@@ -12,7 +12,7 @@ exec_always sleep 10 && xmodmap ~/.Xmodmap
 bindsym $mod+Shift+r restart
 
 # install all config files from dotdrop and restart i3
-bindsym $mod+Shift+c exec "~/dotfiles/dotdrop.sh install -f && i3-msg restart"
+bindsym $mod+Shift+Ctrl+r exec "~/dotfiles/dotdrop.sh install -f && i3-msg restart"
 
 # commit dotfile changes and push them
 # bindsym $mod+Shift+p exec terminal -e sh -c " ~/dotfiels/push.sh"
@@ -58,7 +58,9 @@ bindsym $mod+Shift+d exec rofi -show window # -lines 10
 bindsym $mod+z exec --no-startup-id morc_menu
 
 # launch clipmenu
-bindsym $mod+c exec clipmenu
+# bindsym $mod+c exec clipmenu
+bindsym $mod+c exec clipmenu -i -fn Terminus:size=12 -l 20 -i -b
+bindsym $mod+Shift+c exec ~/.scripts/clipdel_short.sh
 
 # change focus
 bindsym $mod+h focus left
