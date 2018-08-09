@@ -17,9 +17,8 @@ offset-y = 0
 foreground = #fff
 
 ; Background gradient (vertical steps)
-background-0 = #f0307030
+background-0 = #f0205010
 background-1 = #f0000000
-background-2 = #f0000000
 
 ; Under-/overline pixel size and argb color
 ; Individual values can be defined using:
