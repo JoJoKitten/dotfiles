@@ -304,6 +304,7 @@ format-muted = <label-muted>
 
 label-volume = %percentage%
 label-muted =   muted
+label-muted-foreground = #888
 
 ramp-volume-0 = 
 ramp-volume-1 = 
