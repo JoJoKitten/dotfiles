@@ -1,5 +1,5 @@
 [colors]
-background_0 = #f0107050
+background_0 = #b0107050
 background_1 = #f0000000
 i3_line_color = ${colors.background_0}
 tray_bg = #000
