@@ -1,6 +1,8 @@
 [colors]
-tray_bg = #303030
-i3_line_color = #209060
+background_0 = #f0107050
+background_1 = #f0000000
+i3_line_color = ${colors.background_0}
+tray_bg = #000
 
 [bar/top]
 ; Use the following command to list available outputs:
@@ -18,8 +20,8 @@ foreground = #fff
 ; background = #C0000000
 
 ; Background gradient (vertical steps)
-background-0 = #f0107050
-background-1 = #f0000000
+background-0 = ${colors.background_0}
+background-1 = ${colors.background_1}
 
 ; Under-/overline pixel size and argb color
 ; Individual values can be defined using:
