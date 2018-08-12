@@ -13,8 +13,8 @@ height = 25p
 offset-x = 0
 offset-y = 0
 
-; background = #C0000000
 foreground = #fff
+; background = #C0000000
 
 ; Background gradient (vertical steps)
 background-0 = #f0107050
@@ -39,7 +39,7 @@ font-3 = Font Awesome 5 Free:pixelsize=10;3
 
 ; Modules 
 modules-left = i3 xwindow 
-modules-center = test 
+modules-center = 
 modules-right = network filesystem pulseaudio date time 
 
 ; The separator will be inserted between the output of each module
@@ -122,6 +122,7 @@ ws-icon-9 = 10;
 ;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
 ;   <label-mode> (default)
 format = <label-state> <label-mode>
+; format-foreground = #fff
 
 ; Available tokens:
 ;   %mode%
@@ -180,7 +181,6 @@ label-separator-foreground = #ffb52a
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:50:...%
-format-foreground = #fff
 label-padding = 20
 
 
@@ -203,7 +203,6 @@ format-disconnected = <label-disconnected>
 format-disconnected-padding = 3
 
 label-connected =  %downspeed:9%
-label-connected-foreground = #eefafafa
 
 label-disconnected =  not connected
 label-disconnected-foreground = #66ffffff
