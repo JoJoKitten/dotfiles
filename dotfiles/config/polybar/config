@@ -1,5 +1,6 @@
 [colors]
 tray_bg = #303030
+i3_line_color = #209060
 
 [bar/top]
 ; Use the following command to list available outputs:
@@ -24,7 +25,7 @@ background-1 = #f0000000
 ; Individual values can be defined using:
 ;   {overline,underline}-size
 ;   {overline,underline}-color
-line-size = 3
+line-size = 2
 line-color = #f00
 
 ; Individual side values can be defined using:
@@ -137,9 +138,8 @@ label-mode-background = #005030
 ;   %index%
 ;   %output%
 label-focused = %icon%
-label-focused-foreground = #ffffff
-label-focused-background = #3f3f3f
-label-focused-underline = #fba922
+; label-focused-background = #3f3f3f
+label-focused-underline = ${colors.i3_line_color}
 label-focused-padding = 4
 
 ; Available tokens:
@@ -149,6 +149,7 @@ label-focused-padding = 4
 ;   %output%
 ; Default: %icon%  %name%
 label-unfocused = %icon%
+label-unfocused-foreground = #aaa
 label-unfocused-padding = 4
 
 ; Available tokens:
@@ -175,7 +176,8 @@ label-urgent-padding = 4
 ; Separator in between workspaces
 label-separator = |
 label-separator-padding = 2
-label-separator-foreground = #ffb52a
+label-separator-foreground = ${colors.i3_line_color}
+; label-separator-foreground = #ffffff
 
 
 [module/xwindow]
