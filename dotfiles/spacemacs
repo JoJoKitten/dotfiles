@@ -317,7 +317,7 @@ you should place your code here."
 
   ;; avy
   (setq avy-keys (nconc (number-sequence ?a ?z)))
-  (global-set-key (kbd "M-j") 'evil-avy-goto-word-1)
+  (global-set-key (kbd "M-j") 'evil-avy-goto-char)
 
   ;; like scrolloff in vim
   (setq scroll-margin 10)
