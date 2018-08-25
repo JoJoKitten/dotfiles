@@ -288,7 +288,7 @@ assign [class="(?i)chrome"] 1
 assign [class="(?i)virtualbox"] 9
 
 # window colors
-set $active-border       #19b080
+set $active-border       #c09040
 set $inactive-border     #303030
 set $bg-color 	         #303030
 set $inactive-bg-color   #002020
@@ -323,13 +323,13 @@ smart_gaps on
 smart_borders on
 
 # Change gaps on current workspace
-bindsym $mod+plus gaps inner current plus 5
-bindsym $mod+minus gaps inner current minus 5
-bindsym $mod+Shift+plus gaps outer current plus 5
-bindsym $mod+Shift+minus gaps outer current minus 5
+bindsym $mod+plus gaps inner current plus 10
+bindsym $mod+minus gaps inner current minus 10
+bindsym $mod+Shift+plus gaps outer current plus 10
+bindsym $mod+Shift+minus gaps outer current minus 10
 
 # Change gaps on all workspaces
-bindsym $mod+Ctrl+plus gaps inner all plus 5
-bindsym $mod+Ctrl+minus gaps inner all minus 5
-bindsym $mod+Ctrl+Shift+plus gaps outer all plus 5
-bindsym $mod+Ctrl+Shift+minus gaps outer all minus 5
+bindsym $mod+Ctrl+plus gaps inner all plus 10
+bindsym $mod+Ctrl+minus gaps inner all minus 10
+bindsym $mod+Ctrl+Shift+plus gaps outer all plus 10
+bindsym $mod+Ctrl+Shift+minus gaps outer all minus 10

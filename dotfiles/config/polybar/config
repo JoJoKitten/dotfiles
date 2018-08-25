@@ -1,7 +1,8 @@
 [colors]
-background_0 = #b0107050
-background_1 = #f0000000
-i3_line_color = ${colors.background_0}
+background_0 = #80101010
+background_1 = #80101010
+i3_line_color = #b08020
+module_bg = #c0101010
 tray_bg = #063020
 
 [bar/top]
@@ -12,7 +13,7 @@ monitor-fallback =
 
 bottom = false
 width = 100%
-height = 25p
+height = 30p
 offset-x = 0
 offset-y = 0
 
@@ -27,8 +28,8 @@ background-1 = ${colors.background_1}
 ; Individual values can be defined using:
 ;   {overline,underline}-size
 ;   {overline,underline}-color
-line-size = 2
-line-color = #f00
+underline-size = 2
+underline-color = #fff
 
 ; Individual side values can be defined using:
 ;   border-{left,top,right,bottom}-size
@@ -41,12 +42,12 @@ font-2 = Font Awesome 5 Free Solid:pixelsize=10;3
 font-3 = Font Awesome 5 Free:pixelsize=10;3
 
 ; Modules 
-modules-left = i3 xwindow 
-modules-center = 
+modules-left = i3 
+modules-center = xwindow 
 modules-right = network filesystem pulseaudio date time 
 
 ; The separator will be inserted between the output of each module
-separator = "  |  "
+separator = "   "
 
 ; Opacity value between 0.0 and 1.0 used on fade in/out
 dim-value = 1.0
@@ -61,7 +62,7 @@ tray-detached = false
 ; Tray icon max size
 tray-maxsize = 16
 
-tray-transparent = false
+tray-transparent = true
 tray-background = ${colors.tray_bg}
 
 ; Tray offset defined as pixel value (e.g. 35) or percentage (e.g. 50%)
@@ -132,7 +133,7 @@ format = <label-state> <label-mode>
 ; Default: %mode%
 label-mode = %mode%
 label-mode-padding = 5
-label-mode-background = #603030
+; label-mode-background = ${colors.module_bg}
 
 ; Available tokens:
 ;   %name%
@@ -140,9 +141,10 @@ label-mode-background = #603030
 ;   %index%
 ;   %output%
 label-focused = %icon%
-; label-focused-background = #3f3f3f
+label-focused-background = ${colors.module_bg}
 label-focused-underline = ${colors.i3_line_color}
-label-focused-padding = 4
+label-focused-padding = 6
+; label-focused-margin = 2
 
 ; Available tokens:
 ;   %name%
@@ -152,17 +154,19 @@ label-focused-padding = 4
 ; Default: %icon%  %name%
 label-unfocused = %icon%
 label-unfocused-foreground = #aaa
-label-unfocused-padding = 4
+; label-unfocused-background = ${colors.module_bg}
+label-unfocused-padding = 6
+; label-unfocused-margin = 2
 
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-;   %output%
-; Default: %icon%  %name%
-label-visible = %icon%
-label-visible-underline = #555555
-label-visible-padding = 4
+; ; Available tokens:
+; ;   %name%
+; ;   %icon%
+; ;   %index%
+; ;   %output%
+; ; Default: %icon%  %name%
+; label-visible = %icon%
+; label-visible-underline = #555555
+; label-visible-padding = 4
 
 ; Available tokens:
 ;   %name%
@@ -176,9 +180,9 @@ label-urgent-background = #bd2c40
 label-urgent-padding = 4
 
 ; Separator in between workspaces
-label-separator = |
-label-separator-padding = 2
-label-separator-foreground = ${colors.i3_line_color}
+; label-separator = |
+; label-separator-padding = 2
+; label-separator-foreground = ${colors.i3_line_color}
 ; label-separator-foreground = #ffffff
 
 
@@ -202,9 +206,11 @@ unknown-as-up = true
 
 format-connected = <label-connected>
 format-connected-padding = 3
+format-connected-background = ${colors.module_bg}
 
 format-disconnected = <label-disconnected>
 format-disconnected-padding = 3
+format-disconnected-background = ${colors.module_bg}
 
 label-connected =  %downspeed:9%
 
@@ -220,7 +226,7 @@ interval = 0.5
  ;   <ramp-load>
  ;   <ramp-coreload>
 format = <label> <ramp-coreload>
-format-background = #303030
+format-background = ${colors.module_bg}
 format-padding = 3
 
 ; Available tokens:
@@ -245,6 +251,7 @@ date= %d %B %Y
 
 format =  <label>
 format-padding = 3
+format-background = ${colors.module_bg}
 
 label =   %date%
 
@@ -256,6 +263,7 @@ time = %H:%M:%S
 
 format =  <label>
 format-padding = 3
+format-background = ${colors.module_bg}
 
 label = "  %time%  "
 
@@ -273,9 +281,11 @@ spacing = 4
 
 format-mounted = <label-mounted>
 format-mounted-padding = 3
+format-mounted-background = ${colors.module_bg}
 
 format-unmounted = <label-unmounted>
 format-unmounted-padding = 3
+format-unmounted-background = ${colors.module_bg}
 
 ; Available tokens:
 ;   %mountpoint%
@@ -303,7 +313,12 @@ use-ui-max = true
 ;   <ramp-volume>
 ;   <bar-volume>
 format-volume = <ramp-volume> <label-volume>
+format-volume-background = ${colors.module_bg}
+format-volume-padding = 3
+
 format-muted = <label-muted>
+format-muted-background = ${colors.module_bg}
+format-muted-padding = 3
 
 label-volume = %percentage%
 label-muted =   muted
