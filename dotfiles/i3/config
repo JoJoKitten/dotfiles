@@ -1,7 +1,7 @@
 
 # Set mod key to Super
 set $mod Mod4
-# another mod key to change between apps (see .Xmodmap)
+# another mod key to change between apps (it is set in .Xmodmap)
 set $mod2 Mod3
 
 set $terminal urxvt
@@ -22,19 +22,18 @@ bindsym $mod+u border pixel $border_size
 bindsym $mod+n border normal
 
 # Font for window titles.
-font xft:URWGothic-Book 11
-# font pango:DejaVu Sans Mono 12
+font pango:DejaVu Sans Mono 11
 
 # The middle button and modifer kills the window
 bindsym --whole-window $mod+button2 kill
 # The right button, modifier and Shift toggles floating
 bindsym --whole-window $mod+Shift+button3 floating toggle
 
-# start a terminal
-bindsym $mod+Return exec $terminal
-
 # kill focused window
 bindsym $mod+Shift+q kill
+
+# start a terminal
+bindsym $mod+Return exec $terminal
 
 # use rofi as program launcher 
 bindsym $mod+p exec rofi -show run -lines 10 -opacity "85" 
