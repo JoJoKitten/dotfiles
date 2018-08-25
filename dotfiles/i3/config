@@ -36,9 +36,9 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Return exec $terminal
 
 # use rofi as program launcher 
-bindsym $mod+p exec rofi -show run -lines 10 -opacity "85" 
+bindsym $mod+d exec rofi -show run -lines 10 -opacity "85" 
 # window switcher
-bindsym $mod+d exec rofi -show window # -lines 10
+bindsym $mod+Tab exec rofi -show window # -lines 10
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -143,7 +143,7 @@ bindsym $mod+Ctrl+l workspace next
 bindsym $mod+Ctrl+h workspace prev
 
 # switch to workspace with urgent window automatically
-for_window [urgent=latest] focus
+# for_window [urgent=latest] focus
 
 # screenshot of whole screen / current window / selection
 bindsym Print exec --no-startup-id i3-scrot
@@ -283,7 +283,9 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 
 # bind apps to workspaces
-assign [class="(?i)spotify"] 10
+assign [class="Firefox"] 1
+assign [class="(?i)chrome"] 1
+assign [class="(?i)virtualbox"] 9
 
 # window colors
 set $active-border       #19b080
