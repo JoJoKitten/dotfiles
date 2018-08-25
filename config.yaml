@@ -65,7 +65,6 @@ profiles:
     - f_xresources
     - f_xmodmap
     - d_fonts
-    - f_wallpaper.jpg
     - f_polybar_config
     - f_launch.sh
     - d_qpdfview
@@ -79,7 +78,6 @@ profiles:
     - f_rc.conf
     - f_bash_aliases
     - d_fonts
-    - f_wallpaper.jpg
     - f_polybar_config
     - f_launch.sh
     - d_qpdfview
