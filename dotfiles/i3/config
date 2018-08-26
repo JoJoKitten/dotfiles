@@ -243,7 +243,7 @@ exec ~/.i3/start_jobs.sh
 exec --no-startup-id $terminal -name metask
 for_window [instance="metask"] floating enable;
 for_window [instance="metask"] move scratchpad; \
-    [instance="metask"] scratchpad show; move position 0px 22px; \
+    [instance="metask"] scratchpad show; move position 0px 30px; \
     resize set 100ppt 40ppt; move scratchpad
 # show dropdown terminal
 bindsym $mod+t [instance="metask"] scratchpad show
