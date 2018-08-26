@@ -3,6 +3,8 @@ background_0 = #80101010
 background_1 = #80101010
 i3_line_color = #b08020
 module_bg = #c0101010
+mode_fg = #404040
+mode_bg = #f0e0b0
 tray_bg = #063020
 
 [bar/top]
@@ -133,7 +135,8 @@ format = <label-state> <label-mode>
 ; Default: %mode%
 label-mode = %mode%
 label-mode-padding = 5
-; label-mode-background = ${colors.module_bg}
+label-mode-foreground = ${colors.mode_fg}
+label-mode-background = ${colors.mode_bg}
 
 ; Available tokens:
 ;   %name%
