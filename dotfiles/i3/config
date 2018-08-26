@@ -165,7 +165,7 @@ for_window [class="Gpick"] floating enable
 
 # Set shut down, restart and locking features
 bindsym $mod+Shift+Delete mode "$mode_system"
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+set $mode_system (l)ock | (e)xit | switch_(u)ser | (s)uspend | (h)ibernate | (r)eboot | (Shift+s)hutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
     bindsym s exec --no-startup-id i3exit suspend, mode "default"
@@ -185,8 +185,8 @@ bindsym $mod+Ctrl+Shift+j resize shrink height 40 px or 5 ppt
 bindsym $mod+Ctrl+Shift+l resize grow width 40 px or 5 ppt
 
 # application launcher mode
-set $mode_launcher (f) Firefox, (e) Spacemacs, (r) ranger, (n) pcmanfm, (t) Thunderbird,\
- (p) Pianoteq, (s) Spotify, (b) bmenu,
+set $mode_launcher (f)irefox | Spac(e)macs | (r)anger | pcma(n)fm | (t)hunderbird |\
+ (p)ianoteq | (s)potify | (b)menu
 
 bindsym $mod+x mode "$mode_launcher"
 
