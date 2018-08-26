@@ -304,7 +304,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 
 # start polybar
-exec_always --no-startup-id $HOME/.scripts/polybar_launch
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # install all config files from dotdrop and restart i3
 bindsym $mod+Shift+Ctrl+r exec "~/dotfiles/dotdrop.sh install -f && i3-msg restart"
