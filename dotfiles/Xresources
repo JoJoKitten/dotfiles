@@ -60,7 +60,7 @@ URxvt*foreground:                 #DDDDDD
 URxvt*saveLines:                  5000
 
 !! Extensions
-URxvt.perl-ext-common:	default,matcher,resize-font,url-select,keyboard-select
+URxvt.perl-ext-common:	default,url-select,keyboard-select,resize-font
 URxvt.colorUL:		#4681B4
 !! url-select
 URxvt.keysym.M-u:	perl:url-select:select_next
@@ -71,9 +71,6 @@ URxvt.keysym.M-Escape: perl:keyboard-select:activate
 !! resize-font
 URxvt.resize-font.smaller:	C-Down
 URxvt.resize-font.bigger:	C-Up
-!! Matcher
-URxvt.url-launcher:	/usr/bin/firefox
-URxvt.matcher.button:	1
 
 
 ! other possible settings:
