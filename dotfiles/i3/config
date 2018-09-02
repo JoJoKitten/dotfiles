@@ -248,14 +248,9 @@ bindsym $mod+t [instance="dropdown"] scratchpad show
 bindsym $mod+Shift+t exec --no-startup-id $terminal -name dropdown
 
 
-# swap two windows
+# swap two containers
 bindsym $mod+Shift+s mark _swap
 bindsym $mod+s swap container with mark _swap
-
-
-# swap two containers
-bindsym $mod+Shift+s mark swap1
-bindsym $mod+s swap container with mark swap1
 
 
 # type something
