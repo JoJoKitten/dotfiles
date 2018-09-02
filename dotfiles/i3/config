@@ -51,10 +51,10 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # move focused container like in bspwm
-bindsym $mod+Shift+h mark _tmp; focus left;  swap container with mark _tmp; [con_mark="_tmp"] focus
-bindsym $mod+Shift+j mark _tmp; focus down;  swap container with mark _tmp; [con_mark="_tmp"] focus
-bindsym $mod+Shift+k mark _tmp; focus up;    swap container with mark _tmp; [con_mark="_tmp"] focus
-bindsym $mod+Shift+l mark _tmp; focus right; swap container with mark _tmp; [con_mark="_tmp"] focus
+bindsym $mod+Shift+h mark --add _tmp; focus left;  swap container with mark _tmp; [con_mark="_tmp"] focus
+bindsym $mod+Shift+j mark --add _tmp; focus down;  swap container with mark _tmp; [con_mark="_tmp"] focus
+bindsym $mod+Shift+k mark --add _tmp; focus up;    swap container with mark _tmp; [con_mark="_tmp"] focus
+bindsym $mod+Shift+l mark --add _tmp; focus right; swap container with mark _tmp; [con_mark="_tmp"] focus
 
 # move container with the default behaviour
 bindsym $mod+Ctrl+h move left
@@ -249,7 +249,7 @@ bindsym $mod+Shift+t exec --no-startup-id $terminal -name dropdown
 
 
 # swap two containers
-bindsym $mod+Shift+s mark _swap
+bindsym $mod+Shift+s mark --add _swap
 bindsym $mod+s swap container with mark _swap
 
 
