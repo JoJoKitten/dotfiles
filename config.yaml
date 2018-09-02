@@ -55,6 +55,9 @@ dotfiles:
   f_xresources:
     dst: ~/.Xresources
     src: Xresources
+  f_zshrc:
+    dst: ~/.zshrc
+    src: zshrc
 profiles:
   desktop-i3:
     dotfiles:
@@ -87,3 +90,4 @@ profiles:
     - d_qpdfview
     - f_redshift.conf
     - f_resize-font
+    - f_zshrc
