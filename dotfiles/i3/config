@@ -18,6 +18,8 @@ new_float normal
 bindsym $mod+u border normal
 bindsym $mod+Shift+u border pixel $border_size
 
+# window title
+for_window [class=".*"] title_format "%class | %title"
 # Font for window titles.
 font pango:DejaVu Sans Mono 11
 
