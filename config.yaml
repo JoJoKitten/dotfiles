@@ -22,6 +22,9 @@ dotfiles:
   f_config:
     dst: ~/.i3/config
     src: i3/config
+  f_jojo.zsh-theme:
+    dst: ~/.oh-my-zsh/themes/jojo.zsh-theme
+    src: oh-my-zsh/themes/jojo.zsh-theme
   f_launch.sh:
     dst: ~/.config/polybar/launch.sh
     src: config/polybar/launch.sh
@@ -76,6 +79,8 @@ profiles:
     - d_qpdfview
     - f_redshift.conf
     - f_resize-font
+    - f_zshrc
+    - f_jojo.zsh-theme
   laptop-i3:
     dotfiles:
     - f_config
@@ -91,3 +96,4 @@ profiles:
     - f_redshift.conf
     - f_resize-font
     - f_zshrc
+    - f_jojo.zsh-theme
