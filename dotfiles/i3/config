@@ -285,8 +285,6 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 
 # bind apps to workspaces
-assign [class="Firefox"] 1
-assign [class="(?i)chrome"] 1
 assign [class="(?i)virtualbox"] 9
 
 # window colors
