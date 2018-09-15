@@ -99,6 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 alias e="emacsclient -t"
+alias openvpn='(cd /etc/openvpn && sudo openvpn jbensmann_home.conf)'
 
 TRAPWINCH() {
   zle && { zle reset-prompt; zle -R }

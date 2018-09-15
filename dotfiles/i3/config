@@ -35,6 +35,8 @@ bindsym $mod+space focus mode_toggle
 
 # start a terminal
 bindsym $mod+Return exec $terminal
+# start a terminal with tmux
+bindsym $mod+Shift+Return exec $terminal -e tmux
 
 # use rofi as program launcher 
 bindsym $mod+d exec rofi -show run -lines 10 -opacity "85" 
@@ -161,6 +163,7 @@ for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="(?i)System-config-printer.py"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Gpick"] floating enable
+for_window [title="Terminator-Einstellungen"] floating enable
 
 # Set shut down, restart and locking features
 bindsym $mod+Shift+Delete mode "$mode_system"
@@ -185,7 +188,7 @@ bindsym $mod+Ctrl+Shift+l resize grow width 40 px or 5 ppt
 
 # application launcher mode
 set $mode_launcher (f)irefox | Spac(e)macs | (r)anger | pcma(n)fm | (t)hunderbird |\
- (p)ianoteq | (s)potify | (b)menu
+ (p)ianoteq | (b)menu
 
 bindsym $mod+x mode "$mode_launcher"
 
@@ -199,7 +202,6 @@ mode "$mode_launcher" {
       pactl set-sink-volume 1 85% \
       && ~/Applications/Pianoteq_6_STAGE/amd64/Pianoteq\ 6\ STAGE \
       && pactl set-sink-volume 1 30%
-    bindsym s mode "default", exec spotify
     bindsym b mode "default", exec $terminal -e 'bmenu'
     
     bindsym Escape mode "default"
@@ -212,7 +214,6 @@ bindsym $mod2+r [title="(?i)ranger"] focus
 bindsym $mod2+n [class="(?i)pcmanfm"] focus
 bindsym $mod2+t [class="(?i)thunderbird"] focus
 bindsym $mod2+p [title="(?i)pianoteq"] focus
-bindsym $mod2+s [title="(?i)spotify"] focus
 
 # Autostart applications
 exec_always "xrdb ~/.Xresources"
@@ -287,8 +288,6 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 
 # bind apps to workspaces
-assign [class="Firefox"] 1
-assign [class="(?i)chrome"] 1
 assign [class="(?i)virtualbox"] 9
 
 # window colors
