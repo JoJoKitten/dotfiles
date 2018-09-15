@@ -18,6 +18,8 @@ new_float normal
 bindsym $mod+u border normal
 bindsym $mod+Shift+u border pixel $border_size
 
+# window title
+for_window [class=".*"] title_format "%class | %title"
 # Font for window titles.
 font pango:DejaVu Sans Mono 11
 
@@ -31,8 +33,10 @@ bindsym --whole-window $mod+Shift+button3 floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
+# start a terminal with tmux
+bindsym $mod+Return exec $terminal -e tmux
 # start a terminal
-bindsym $mod+Return exec $terminal
+bindsym $mod+Shift+Return exec $terminal
 
 # use rofi as program launcher 
 bindsym $mod+d exec rofi -show run -lines 10 -opacity "85" 
@@ -51,10 +55,10 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # move focused container like in bspwm
-bindsym $mod+Shift+h mark _tmp; focus left;  swap container with mark _tmp; [con_mark="_tmp"] focus
-bindsym $mod+Shift+j mark _tmp; focus down;  swap container with mark _tmp; [con_mark="_tmp"] focus
-bindsym $mod+Shift+k mark _tmp; focus up;    swap container with mark _tmp; [con_mark="_tmp"] focus
-bindsym $mod+Shift+l mark _tmp; focus right; swap container with mark _tmp; [con_mark="_tmp"] focus
+bindsym $mod+Shift+h mark --add _tmp; focus left;  swap container with mark _tmp; [con_mark="_tmp"] focus
+bindsym $mod+Shift+j mark --add _tmp; focus down;  swap container with mark _tmp; [con_mark="_tmp"] focus
+bindsym $mod+Shift+k mark --add _tmp; focus up;    swap container with mark _tmp; [con_mark="_tmp"] focus
+bindsym $mod+Shift+l mark --add _tmp; focus right; swap container with mark _tmp; [con_mark="_tmp"] focus
 
 # move container with the default behaviour
 bindsym $mod+Ctrl+h move left
@@ -159,6 +163,7 @@ for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="(?i)System-config-printer.py"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Gpick"] floating enable
+for_window [title="Terminator-Einstellungen"] floating enable
 
 # Set shut down, restart and locking features
 bindsym $mod+Shift+Delete mode "$mode_system"
@@ -183,7 +188,7 @@ bindsym $mod+Ctrl+Shift+l resize grow width 40 px or 5 ppt
 
 # application launcher mode
 set $mode_launcher (f)irefox | Spac(e)macs | (r)anger | pcma(n)fm | (t)hunderbird |\
- (p)ianoteq | (s)potify | (b)menu
+ (p)ianoteq | (b)menu | (a)mazon music
 
 bindsym $mod+x mode "$mode_launcher"
 
@@ -197,8 +202,8 @@ mode "$mode_launcher" {
       pactl set-sink-volume 1 85% \
       && ~/Applications/Pianoteq_6_STAGE/amd64/Pianoteq\ 6\ STAGE \
       && pactl set-sink-volume 1 30%
-    bindsym s mode "default", exec spotify
     bindsym b mode "default", exec $terminal -e 'bmenu'
+    bindsym a mode "default", exec qutebrowser https://music.amazon.de/my/albums
     
     bindsym Escape mode "default"
 }
@@ -210,7 +215,7 @@ bindsym $mod2+r [title="(?i)ranger"] focus
 bindsym $mod2+n [class="(?i)pcmanfm"] focus
 bindsym $mod2+t [class="(?i)thunderbird"] focus
 bindsym $mod2+p [title="(?i)pianoteq"] focus
-bindsym $mod2+s [title="(?i)spotify"] focus
+bindsym $mod2+a [title="(?i)amazon musik"] focus
 
 # Autostart applications
 exec_always "xrdb ~/.Xresources"
@@ -249,7 +254,7 @@ bindsym $mod+Shift+t exec --no-startup-id $terminal -name dropdown
 
 
 # swap two containers
-bindsym $mod+Shift+s mark _swap
+bindsym $mod+Shift+s mark --add _swap
 bindsym $mod+s swap container with mark _swap
 
 

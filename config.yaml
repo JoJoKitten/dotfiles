@@ -43,6 +43,9 @@ dotfiles:
   f_spacemacs:
     dst: ~/.spacemacs
     src: spacemacs
+  f_tmux.conf:
+    dst: ~/.tmux.conf
+    src: tmux.conf
   f_vimrc:
     dst: ~/.vimrc
     src: vimrc
@@ -81,6 +84,7 @@ profiles:
     - f_resize-font
     - f_zshrc
     - f_jojo.zsh-theme
+    - f_tmux.conf
   laptop-i3:
     dotfiles:
     - f_config
@@ -97,3 +101,4 @@ profiles:
     - f_resize-font
     - f_zshrc
     - f_jojo.zsh-theme
+    - f_tmux.conf
