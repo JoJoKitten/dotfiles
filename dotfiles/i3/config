@@ -188,7 +188,7 @@ bindsym $mod+Ctrl+Shift+l resize grow width 40 px or 5 ppt
 
 # application launcher mode
 set $mode_launcher (f)irefox | Spac(e)macs | (r)anger | pcma(n)fm | (t)hunderbird |\
- (p)ianoteq | (b)menu
+ (p)ianoteq | (b)menu | (a)mazon music
 
 bindsym $mod+x mode "$mode_launcher"
 
@@ -203,6 +203,7 @@ mode "$mode_launcher" {
       && ~/Applications/Pianoteq_6_STAGE/amd64/Pianoteq\ 6\ STAGE \
       && pactl set-sink-volume 1 30%
     bindsym b mode "default", exec $terminal -e 'bmenu'
+    bindsym a mode "default", exec qutebrowser https://music.amazon.de/my/albums
     
     bindsym Escape mode "default"
 }
@@ -214,6 +215,7 @@ bindsym $mod2+r [title="(?i)ranger"] focus
 bindsym $mod2+n [class="(?i)pcmanfm"] focus
 bindsym $mod2+t [class="(?i)thunderbird"] focus
 bindsym $mod2+p [title="(?i)pianoteq"] focus
+bindsym $mod2+a [title="(?i)amazon musik"] focus
 
 # Autostart applications
 exec_always "xrdb ~/.Xresources"
