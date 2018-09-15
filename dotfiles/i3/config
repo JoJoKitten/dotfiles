@@ -33,10 +33,10 @@ bindsym --whole-window $mod+Shift+button3 floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# start a terminal
-bindsym $mod+Return exec $terminal
 # start a terminal with tmux
-bindsym $mod+Shift+Return exec $terminal -e tmux
+bindsym $mod+Return exec $terminal -e tmux
+# start a terminal
+bindsym $mod+Shift+Return exec $terminal
 
 # use rofi as program launcher 
 bindsym $mod+d exec rofi -show run -lines 10 -opacity "85" 
