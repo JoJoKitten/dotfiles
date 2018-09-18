@@ -63,7 +63,7 @@ ZSH_THEME="jojo"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git vi-mode archlinux sudo
+    git vi-mode archlinux sudo colored-man-pages dircycle 
 )
 
 source $ZSH/oh-my-zsh.sh
