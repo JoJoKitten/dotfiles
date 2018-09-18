@@ -140,6 +140,18 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 
+# kill all windows on a workspace
+bindsym $mod+Ctrl+Shift+1 [workspace=$ws1] kill
+bindsym $mod+Ctrl+Shift+2 [workspace=$ws2] kill
+bindsym $mod+Ctrl+Shift+3 [workspace=$ws3] kill
+bindsym $mod+Ctrl+Shift+4 [workspace=$ws4] kill
+bindsym $mod+Ctrl+Shift+5 [workspace=$ws5] kill
+bindsym $mod+Ctrl+Shift+6 [workspace=$ws6] kill
+bindsym $mod+Ctrl+Shift+7 [workspace=$ws7] kill
+bindsym $mod+Ctrl+Shift+8 [workspace=$ws8] kill
+bindsym $mod+Ctrl+Shift+9 [workspace=$ws9] kill
+bindsym $mod+Ctrl+Shift+0 [workspace=$ws10] kill
+
 # navigate workspaces next / previous
 bindsym $mod+p workspace prev
 bindsym $mod+n workspace next
