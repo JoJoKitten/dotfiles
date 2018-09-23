@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -313,6 +314,10 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  ;; like scrolloff in vim
+  (setq scroll-margin 10)
+  (setq smooth-scroll-margin 10)
+
   ;; evil
   (global-set-key (kbd "C-i") 'evil-jump-forward)
 
@@ -320,9 +325,12 @@ you should place your code here."
   ;; (setq avy-keys (nconc (number-sequence ?a ?z)))
   (global-set-key (kbd "M-j") 'evil-avy-goto-word-1)
 
-  ;; like scrolloff in vim
-  (setq scroll-margin 10)
-  (setq smooth-scroll-margin 10)
+  ;; an own menu entry
+  (spacemacs/declare-prefix "o" "own-menu")
+  ;; hide/show
+  (spacemacs/set-leader-keys "oh" 'hide-subtree)
+  (spacemacs/set-leader-keys "oc" 'show-children)
+  (spacemacs/set-leader-keys "os" 'show-subtree)
   )
 
 
@@ -345,7 +353,7 @@ you should place your code here."
      (output-html "xdg-open"))))
  '(package-selected-packages
    (quote
-    (auctex-latexmk auctex ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode bind-key auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (yaml-mode pyenv-mode orgit org-projectile org-pomodoro alert log4e markdown-toc magit-gitflow hy-mode helm-gitignore helm-company helm-c-yasnippet flycheck-pos-tip pos-tip evil-magit magit magit-popup git-commit ghub treepy graphql company-statistics company-auctex company-anaconda auto-yasnippet anaconda-mode ac-ispell yapfify xterm-color unfill smeargle shell-pop pyvenv pytest py-isort pip-requirements org-category-capture org-present gntp org-mime org-download mwim multi-term mmm-mode markdown-mode live-py-mode dash-functional htmlize helm-pydoc gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flycheck with-editor eshell-z eshell-prompt-extras esh-help cython-mode company yasnippet pythonic auto-complete auctex-latexmk auctex ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode bind-key auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

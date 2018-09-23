@@ -13,12 +13,6 @@ dotfiles:
   d_qpdfview:
     dst: ~/.config/qpdfview
     src: config/qpdfview
-  f_bash_aliases:
-    dst: ~/.bash_aliases
-    src: bash_aliases
-  f_bashrc:
-    dst: ~/.bashrc
-    src: bashrc
   f_config:
     dst: ~/.i3/config
     src: i3/config
@@ -71,8 +65,6 @@ profiles:
     - f_spacemacs
     - f_rc.conf
     - f_vimrc
-    - f_bash_aliases
-    - f_bashrc
     - f_xinitrc
     - f_xresources
     - f_xmodmap
@@ -92,7 +84,6 @@ profiles:
     - f_xresources
     - f_xmodmap
     - f_rc.conf
-    - f_bash_aliases
     - d_fonts
     - f_polybar_config
     - f_launch.sh
