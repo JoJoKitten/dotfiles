@@ -3,7 +3,7 @@ set $mod Mod4
 # another mod key to change between apps (it is set in .Xmodmap)
 set $mod2 Mod3
 
-set $terminal urxvt
+set $terminal termite
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -207,7 +207,7 @@ bindsym $mod+x mode "$mode_launcher"
 mode "$mode_launcher" {
     bindsym f mode "default", exec firefox
     bindsym e mode "default", exec emacs
-    bindsym r mode "default", exec $terminal -name ranger -e ranger
+    bindsym r mode "default", exec $terminal --name=ranger -e ranger
     bindsym n mode "default", exec pcmanfm
     bindsym t mode "default", exec thunderbird
     bindsym p mode "default", exec \
@@ -254,7 +254,7 @@ exec --no-startup-id "sleep 100; megasync"
 exec ~/.i3/start_jobs.sh
 
 # Start a dropdown terminal
-exec --no-startup-id $terminal -name dropdown
+exec --no-startup-id $terminal --name=dropdown
 for_window [instance="dropdown"] floating enable;
 for_window [instance="dropdown"] move scratchpad; \
     [instance="dropdown"] scratchpad show; move position 0px 30px; \
@@ -262,7 +262,7 @@ for_window [instance="dropdown"] move scratchpad; \
 # show dropdown terminal
 bindsym $mod+t [instance="dropdown"] scratchpad show
 # start a new dropdown terminal
-bindsym $mod+Shift+t exec --no-startup-id $terminal -name dropdown
+bindsym $mod+Shift+t exec --no-startup-id $terminal --name=dropdown
 
 
 # swap two containers
