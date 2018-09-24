@@ -13,18 +13,21 @@ dotfiles:
   d_qpdfview:
     dst: ~/.config/qpdfview
     src: config/qpdfview
+  f_termite_config:
+    dst: ~/.config/termite/config
+    src: config/termite/config
   f_i3_config:
     dst: ~/.i3/config
     src: i3/config
   f_jojo.zsh-theme:
     dst: ~/.oh-my-zsh/themes/jojo.zsh-theme
     src: oh-my-zsh/themes/jojo.zsh-theme
-  f_polybar_launch.sh:
-    dst: ~/.config/polybar/launch.sh
-    src: config/polybar/launch.sh
   f_polybar_config:
     dst: ~/.config/polybar/config
     src: config/polybar/config
+  f_polybar_launch.sh:
+    dst: ~/.config/polybar/launch.sh
+    src: config/polybar/launch.sh
   f_ranger_rc.conf:
     dst: ~/.config/ranger/rc.conf
     src: config/ranger/rc.conf
@@ -77,6 +80,7 @@ profiles:
     - f_zshrc
     - f_jojo.zsh-theme
     - f_tmux.conf
+    - f_termite_config
   laptop-i3:
     dotfiles:
     - f_i3_config
@@ -93,3 +97,4 @@ profiles:
     - f_zshrc
     - f_jojo.zsh-theme
     - f_tmux.conf
+    - f_termite_config
