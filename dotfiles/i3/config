@@ -336,8 +336,8 @@ gaps inner 20
 gaps outer 0
 
 # No gaps and borders when there only is one container
-# smart_gaps on
-# smart_borders on
+smart_gaps on
+smart_borders on
 
 # Change gaps on current workspace
 bindsym $mod+plus gaps inner current plus 10
