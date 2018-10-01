@@ -13,15 +13,15 @@ dotfiles:
   d_qpdfview:
     dst: ~/.config/qpdfview
     src: config/qpdfview
-  f_termite_config:
-    dst: ~/.config/termite/config
-    src: config/termite/config
   f_i3_config:
     dst: ~/.i3/config
     src: i3/config
   f_jojo.zsh-theme:
     dst: ~/.oh-my-zsh/themes/jojo.zsh-theme
     src: oh-my-zsh/themes/jojo.zsh-theme
+  f_morc_menu_v1.conf:
+    dst: ~/.config/morc_menu/morc_menu_v1.conf
+    src: config/morc_menu/morc_menu_v1.conf
   f_polybar_config:
     dst: ~/.config/polybar/config
     src: config/polybar/config
@@ -40,6 +40,9 @@ dotfiles:
   f_spacemacs:
     dst: ~/.spacemacs
     src: spacemacs
+  f_termite_config:
+    dst: ~/.config/termite/config
+    src: config/termite/config
   f_tmux.conf:
     dst: ~/.tmux.conf
     src: tmux.conf
@@ -81,6 +84,7 @@ profiles:
     - f_jojo.zsh-theme
     - f_tmux.conf
     - f_termite_config
+    - f_morc_menu_v1.conf
   laptop-i3:
     dotfiles:
     - f_i3_config
