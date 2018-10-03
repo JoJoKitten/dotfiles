@@ -215,7 +215,7 @@ mode "$mode_launcher" {
       && ~/Applications/Pianoteq_6_STAGE/amd64/Pianoteq\ 6\ STAGE \
       && pactl set-sink-volume 1 30%
     bindsym b mode "default", exec $terminal -e 'bmenu'
-    bindsym a mode "default", exec qutebrowser https://music.amazon.de/my/albums
+    bindsym a mode "default", exec firefox --new-window https://music.amazon.de/my/albums
     
     bindsym Escape mode "default"
 }
