@@ -102,3 +102,4 @@ profiles:
     - f_jojo.zsh-theme
     - f_tmux.conf
     - f_termite_config
+    - f_morc_menu_v1.conf
