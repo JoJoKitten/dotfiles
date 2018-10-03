@@ -192,7 +192,7 @@ label-urgent-padding = 4
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:50:...%
-label-padding = 20
+label-padding = 10
 
 
 [module/network]
