@@ -44,8 +44,8 @@ font-2 = Font Awesome 5 Free Solid:pixelsize=10;3
 font-3 = Font Awesome 5 Free:pixelsize=10;3
 
 ; Modules 
-modules-left = i3 
-modules-center = xwindow 
+modules-left = i3 xwindow  
+modules-center = 
 modules-right = network filesystem pulseaudio date time 
 
 ; The separator will be inserted between the output of each module
@@ -192,7 +192,7 @@ label-urgent-padding = 4
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:50:...%
-label-padding = 10
+label-padding = 50
 
 
 [module/network]
