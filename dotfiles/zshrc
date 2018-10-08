@@ -63,7 +63,7 @@ ZSH_THEME="jojo"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git vi-mode archlinux sudo colored-man-pages dircycle 
+    git vi-mode sudo colored-man-pages dircycle 
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -103,20 +103,17 @@ alias l='ls -al'
 alias ..='cd ..; ls -al'
 alias ...='cd ..;cd ..;ls -al'
 
+alias cdm='cd ~/Dokumente/Studium/Masterarbeit'
+
 # rm to move to trash, del to really delete it
 alias rm='function __trash() { mv $* ~/.local/share/Trash/files/; }; __trash'
 alias del=/usr/bin/rm
 
-
 # repeat any command
 alias repeat='function __repeat() { while [ 1 ]; do  read; eval $*; echo "----------------------------------------------------------";  done; }; __repeat'
 
-alias openvpn='(cd /etc/openvpn && sudo openvpn jbensmann_home.conf)'
-
-alias pcSs='pacman -Ss'
-alias pcS='sudo pacman -S'
-
+alias p='pacman'
+alias sp='sudo pacman'
 alias e='emacsclient -t '
 
-alias cdm='cd ~/Dokumente/Studium/Masterarbeit'
-
+alias openvpn='(cd /etc/openvpn && sudo openvpn jbensmann_home.conf)'
