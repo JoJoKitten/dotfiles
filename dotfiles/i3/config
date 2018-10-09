@@ -177,21 +177,6 @@ for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Gpick"] floating enable
 for_window [title="Terminator-Einstellungen"] floating enable
 
-# Set shut down, restart and locking features
-bindsym $mod+Shift+Delete mode "$mode_system"
-set $mode_system (l)ock | (e)xit | switch_(u)ser | (s)uspend | (h)ibernate | (r)eboot | (Shift+s)hutdown
-mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
-
-    bindsym Escape mode "default"
-}
-
 # Resize window
 bindsym $mod+Ctrl+Shift+h resize shrink width 40 px or 5 ppt
 bindsym $mod+Ctrl+Shift+k resize grow height 40 px or 5 ppt
@@ -361,15 +346,27 @@ bindsym $mod+Ctrl+Shift+plus gaps outer all plus 10
 bindsym $mod+Ctrl+Shift+minus gaps outer all minus 10
 
 
-############### A menu using modes ###############
-#- (k)eyboard layout
-  #- (d)e
-  #- (n)eo
+############### general purpose menu ###############
+# |--(k)eyboard layout
+# |  |--(d)e
+# |  |--(n)eo
+# | 
+# |--(Shift+e)xit 
+# |  |--(l)ock
+# |  |--(s)uspend
+# |  |--switch (u)ser
+# |  |--(h)ibernate
+# |  |--(r)eboot
+# |  |--shut(d)own
+# | 
+# | 
 
 bindsym $mod+o mode "$menu"
-set $menu (k)eyboard layout | ...
+
+set $menu (k)eyboard layout | (Shift+e)xit
 mode "$menu" {
     bindsym k mode "$menu_keyboard"
+    bindsym Shift+e mode "$menu_exit"
     bindsym Escape mode "default"
 }
 
@@ -377,5 +374,16 @@ set $menu_keyboard (d)e | (n)eo
 mode "$menu_keyboard" {
     bindsym d exec --no-startup-id setxkbmap de; mode "default"
     bindsym n exec --no-startup-id setxkbmap de neo; mode "default"
+    bindsym Escape mode "default"
+}
+
+set $menu_exit (l)ock | switch (u)ser | (s)uspend | (h)ibernate | (r)eboot | shut(d)own
+mode "$menu_exit" {
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym d exec --no-startup-id i3exit shutdown, mode "default"
     bindsym Escape mode "default"
 }
