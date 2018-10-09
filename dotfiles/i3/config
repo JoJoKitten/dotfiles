@@ -359,3 +359,23 @@ bindsym $mod+Ctrl+plus gaps inner all plus 10
 bindsym $mod+Ctrl+minus gaps inner all minus 10
 bindsym $mod+Ctrl+Shift+plus gaps outer all plus 10
 bindsym $mod+Ctrl+Shift+minus gaps outer all minus 10
+
+
+############### A menu using modes ###############
+#- (k)eyboard layout
+  #- (d)e
+  #- (n)eo
+
+bindsym $mod+o mode "$menu"
+set $menu (k)eyboard layout | ...
+mode "$menu" {
+    bindsym k mode "$menu_keyboard"
+    bindsym Escape mode "default"
+}
+
+set $menu_keyboard (d)e | (n)eo
+mode "$menu_keyboard" {
+    bindsym d exec --no-startup-id setxkbmap de; mode "default"
+    bindsym n exec --no-startup-id setxkbmap de neo; mode "default"
+    bindsym Escape mode "default"
+}
