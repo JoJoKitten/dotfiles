@@ -235,11 +235,6 @@ bindsym $mod+s swap container with mark _swap
 
 # type something
 # bindsym --release $mod+Control+p exec --no-startup-id xdotool type --clearmodifiers "..."
-# simulate arrow keys (for convenience)
-# bindsym --release $mod+Control+Shift+h exec --no-startup-id xdotool key --clearmodifiers Left
- bindsym --release $mod+Control+n exec --no-startup-id xdotool key --clearmodifiers Down
- bindsym --release $mod+Control+p exec --no-startup-id xdotool key --clearmodifiers Up
-# bindsym --release $mod+Control+Shift+l exec --no-startup-id xdotool key --clearmodifiers Right
 
 # simulate right mouse down to enable grabbing with touchpad
 bindsym $mod+Ctrl+r --release exec xdotool mousedown 3
