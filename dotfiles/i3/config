@@ -28,10 +28,10 @@ bindsym $mod+Shift+q kill
 bindsym --whole-window $mod+button2 kill
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+o floating toggle
 bindsym --whole-window $mod+Shift+button3 floating toggle
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+o focus mode_toggle
 
 # start a terminal with tmux
 bindsym $mod+Return exec $terminal -e tmux
@@ -183,28 +183,6 @@ bindsym $mod+Ctrl+Shift+k resize grow height 40 px or 5 ppt
 bindsym $mod+Ctrl+Shift+j resize shrink height 40 px or 5 ppt
 bindsym $mod+Ctrl+Shift+l resize grow width 40 px or 5 ppt
 
-# application launcher mode
-set $mode_launcher (f)irefox | Spac(e)macs | (r)anger | pcma(n)fm | (t)hunderbird |\
- (p)ianoteq | (b)menu | (a)mazon music
-
-bindsym $mod+x mode "$mode_launcher"
-
-mode "$mode_launcher" {
-    bindsym f mode "default", exec firefox
-    bindsym e mode "default", exec emacs
-    bindsym r mode "default", exec $terminal --name=ranger -e ranger
-    bindsym n mode "default", exec pcmanfm
-    bindsym t mode "default", exec thunderbird
-    bindsym p mode "default", exec \
-      pactl set-sink-volume 1 85% \
-      && ~/Applications/Pianoteq_6_STAGE/amd64/Pianoteq\ 6\ STAGE \
-      && pactl set-sink-volume 1 30%
-    bindsym b mode "default", exec $terminal -e 'bmenu'
-    bindsym a mode "default", exec firefox --new-window https://music.amazon.de/my/albums
-    
-    bindsym Escape mode "default"
-}
-
 # change to an application
 bindsym $mod2+f [class="(?i)firefox"] focus
 bindsym $mod2+e [class="(?i)emacs"] focus
@@ -323,7 +301,9 @@ bindsym $mod+Shift+Ctrl+r exec "~/dotfiles/dotdrop.sh install -f && i3-msg resta
 # commit dotfile changes and push them
 bindsym $mod+Shift+Ctrl+p exec $terminal -e ~/dotfiles/push.sh && sleep 1
 
-############### For i3-gaps #################
+##################################################
+############### For i3-gaps ######################
+##################################################
 
 # Set inner/outer gaps
 gaps inner 20
@@ -346,37 +326,51 @@ bindsym $mod+Ctrl+Shift+plus gaps outer all plus 10
 bindsym $mod+Ctrl+Shift+minus gaps outer all minus 10
 
 
-############### general purpose menu ###############
-# |--(k)eyboard layout
-# |  |--(d)e
-# |  |--(n)eo
-# | 
-# |--(Shift+e)xit 
-# |  |--(l)ock
-# |  |--(s)uspend
-# |  |--switch (u)ser
-# |  |--(h)ibernate
-# |  |--(r)eboot
-# |  |--shut(d)own
-# | 
-# | 
+##################################################
+############### general purpose menu #############
+##################################################
 
-bindsym $mod+o mode "$menu"
+bindsym $mod+space mode "$menu"
 
-set $menu (k)eyboard layout | (Shift+e)xit
+################# root menu ######################
+set $menu (l)auncher | (k)eyborrd layout | (Shift+e)xit
 mode "$menu" {
+    bindsym l mode "$menu_launcher"
     bindsym k mode "$menu_keyboard"
     bindsym Shift+e mode "$menu_exit"
+    bindsym q mode "default"
     bindsym Escape mode "default"
 }
 
+############# application launcher ###############
+set $menu_launcher (f)irefox | Spac(e)macs | (r)anger | pcma(n)fm | (t)hunderbird |\
+ (p)ianoteq | (b)menu | (a)mazon music | (q)uit
+mode "$menu_launcher" {
+    bindsym f exec firefox
+    bindsym e exec emacs
+    bindsym r exec $terminal --name=ranger -e ranger
+    bindsym n exec pcmanfm
+    bindsym t exec thunderbird
+    bindsym p exec \
+      pactl set-sink-volume 1 85% \
+      && ~/Applications/Pianoteq_6_STAGE/amd64/Pianoteq\ 6\ STAGE \
+      && pactl set-sink-volume 1 30%
+    bindsym b exec $terminal -e 'bmenu'
+    bindsym a exec firefox --new-window https://music.amazon.de/my/albums
+    bindsym q mode "default"
+    bindsym Escape mode "default"
+}
+
+############# keyboard layout ####################
 set $menu_keyboard (d)e | (n)eo
 mode "$menu_keyboard" {
     bindsym d exec --no-startup-id setxkbmap de; mode "default"
     bindsym n exec --no-startup-id setxkbmap de neo; mode "default"
+    bindsym q mode "default"
     bindsym Escape mode "default"
 }
 
+############## exit, shutdown etc. ###############
 set $menu_exit (l)ock | switch (u)ser | (s)uspend | (h)ibernate | (r)eboot | shut(d)own
 mode "$menu_exit" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
@@ -385,5 +379,6 @@ mode "$menu_exit" {
     bindsym h exec --no-startup-id i3exit hibernate, mode "default"
     bindsym r exec --no-startup-id i3exit reboot, mode "default"
     bindsym d exec --no-startup-id i3exit shutdown, mode "default"
+    bindsym q mode "default"
     bindsym Escape mode "default"
 }
