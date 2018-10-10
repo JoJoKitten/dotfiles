@@ -339,21 +339,21 @@ mode "$menu" {
 
 ############# application launcher ###############
 set $menu_launcher (f)irefox | Spac(e)macs | (r)anger | pcma(n)fm | (t)hunderbird |\
- (p)ianoteq | (b)menu | (a)mazon music | (q)uit
+ (p)ianoteq | (b)menu | (a)mazon music 
 mode "$menu_launcher" {
-    bindsym f exec firefox
-    bindsym e exec emacs
-    bindsym r exec $terminal --name=ranger -e ranger
-    bindsym n exec pcmanfm
-    bindsym t exec thunderbird
+    bindsym f exec firefox, mode "default"
+    bindsym e exec emacs, mode "default"
+    bindsym r exec $terminal --name=ranger -e ranger, mode "default"
+    bindsym n exec pcmanfm, mode "default"
+    bindsym t exec thunderbird, mode "default"
     bindsym p exec \
       pactl set-sink-volume 1 85% \
       && ~/Applications/Pianoteq_6_STAGE/amd64/Pianoteq\ 6\ STAGE \
       && pactl set-sink-volume 1 30%
-    bindsym b exec $terminal -e 'bmenu'
-    bindsym a exec firefox --new-window https://music.amazon.de/my/albums
-    bindsym q mode "default"
-    bindsym Escape mode "default"
+    bindsym b exec $terminal -e 'bmenu', mode "default"
+    bindsym a exec firefox --new-window https://music.amazon.de/my/albums, mode "default"
+    bindsym q mode "default", mode "default"
+    bindsym Escape mode "default", mode "default"
 }
 
 ############# keyboard layout ####################
