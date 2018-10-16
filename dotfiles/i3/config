@@ -346,7 +346,7 @@ mode "$menu_launcher" {
     bindsym r exec $terminal --name=ranger -e ranger, mode "default"
     bindsym n exec pcmanfm, mode "default"
     bindsym t exec thunderbird, mode "default"
-    bindsym p exec \
+    bindsym p mode "default", exec \
       pactl set-sink-volume 1 85% \
       && ~/Applications/Pianoteq_6_STAGE/amd64/Pianoteq\ 6\ STAGE \
       && pactl set-sink-volume 1 30%
