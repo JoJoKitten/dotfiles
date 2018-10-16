@@ -328,9 +328,10 @@ bindsym $mod+Ctrl+Shift+minus gaps outer all minus 10
 bindsym $mod+space mode "$menu"
 
 ################# root menu ######################
-set $menu (l)auncher | (k)eyborrd layout | (Shift+e)xit
+set $menu (l)auncher | (c)nee | (k)eyborrd layout | (Shift+e)xit
 mode "$menu" {
     bindsym l mode "$menu_launcher"
+    bindsym c mode "$menu_cnee"
     bindsym k mode "$menu_keyboard"
     bindsym Shift+e mode "$menu_exit"
     bindsym q mode "default"
@@ -352,15 +353,24 @@ mode "$menu_launcher" {
       && pactl set-sink-volume 1 30%
     bindsym b exec $terminal -e 'bmenu', mode "default"
     bindsym a exec firefox --new-window https://music.amazon.de/my/albums, mode "default"
-    bindsym q mode "default", mode "default"
-    bindsym Escape mode "default", mode "default"
+    bindsym q mode "default"
+    bindsym Escape mode "default"
+}
+
+################### cnee #########################
+set $menu_cnee (r)ecord | (p)lay
+mode "$menu_cnee" {
+    bindsym r exec ~/.scripts/cnee_record.sh, mode "default"
+    bindsym p exec ~/.scripts/cnee_replay.sh, mode "default"
+    bindsym q mode "default"
+    bindsym Escape mode "default"
 }
 
 ############# keyboard layout ####################
 set $menu_keyboard (d)e | (n)eo
 mode "$menu_keyboard" {
-    bindsym d exec --no-startup-id setxkbmap de; mode "default"
-    bindsym n exec --no-startup-id setxkbmap de neo; mode "default"
+    bindsym d exec --no-startup-id setxkbmap de, mode "default"
+    bindsym n exec --no-startup-id setxkbmap de neo, mode "default"
     bindsym q mode "default"
     bindsym Escape mode "default"
 }
