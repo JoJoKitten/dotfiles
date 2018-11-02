@@ -37,9 +37,11 @@ bindsym $mod+o focus mode_toggle
 bindsym $mod+Return exec $terminal -e tmux
 # start a terminal
 bindsym $mod+Shift+Return exec $terminal
+# start a terminal with tmux and emacs
+bindsym $mod+Ctrl+Return exec $terminal -e "tmux new-session 'emacsclient -t'"
 
-# use rofi as program launcher 
-bindsym $mod+d exec rofi -show run -lines 10 -opacity "85" 
+# use rofi as program launcher; start with super key 
+bindsym $mod+d exec rofi -show run -lines 10 -opacity "85"
 # window switcher
 bindsym $mod+Tab exec rofi -show window # -lines 10
 # launch categorized menu
