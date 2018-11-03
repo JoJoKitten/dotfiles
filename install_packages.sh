@@ -21,6 +21,7 @@ termite
 thunderbird
 tmux
 ttf-dejavu
+vim
 xorg-server
 xorg-xinit
 zsh"
@@ -65,6 +66,7 @@ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 # dotfiles
 echo "Installing dotfiles"
 git clone --recurse-submodules https://github.com/jojokitten/dotfiles.git ~/dotfiles
+cd ~/dotfiles
 ~/dotfiles/install_requirements.sh
 ~/dotfiles/dotdrop.sh install -p laptop-i3
 
