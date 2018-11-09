@@ -219,7 +219,7 @@ exec --no-startup-id "sleep 100; megasync"
 exec ~/.i3/start_jobs.sh
 
 # Start a dropdown terminal
-exec --no-startup-id $terminal --name=dropdown
+exec --no-startup-id $terminal --name=dropdown -e tmux
 for_window [instance="dropdown"] floating enable;
 for_window [instance="dropdown"] move scratchpad; \
     [instance="dropdown"] scratchpad show; move position 0px 30px; \
@@ -227,7 +227,7 @@ for_window [instance="dropdown"] move scratchpad; \
 # show dropdown terminal
 bindsym $mod+t [instance="dropdown"] scratchpad show
 # start a new dropdown terminal
-bindsym $mod+Shift+t exec --no-startup-id $terminal --name=dropdown
+bindsym $mod+Shift+t exec --no-startup-id $terminal --name=dropdown -e tmux
 
 
 # swap two containers
