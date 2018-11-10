@@ -105,9 +105,8 @@ alias ...='cd ..;cd ..;ls -al'
 
 alias cdm='cd ~/Dokumente/Studium/Masterarbeit'
 
-# rm to move to trash, del to really delete it
-alias rm='function __trash() { mv $* ~/.local/share/Trash/files/; }; __trash'
-alias del=/usr/bin/rm
+# del to move to trash
+alias del='function __trash() { mv $* ~/.local/share/Trash/files/; }; __trash'
 
 # repeat any command
 alias repeat='function __repeat() { while [ 1 ]; do  read; eval $*; echo "----------------------------------------------------------";  done; }; __repeat'
