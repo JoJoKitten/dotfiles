@@ -99,11 +99,9 @@ TRAPWINCH() {
 # For a full list of active aliases, run `alias`.
 #
 
-alias l='ls -al'
-alias ..='cd ..; ls -al'
-alias ...='cd ..;cd ..;ls -al'
-
-alias cdm='cd ~/Dokumente/Studium/Masterarbeit'
+alias l='ls -a'
+alias ..='cd ..; ls -a'
+alias ...='cd ..;cd ..;ls -a'
 
 # del to move to trash
 alias del='function __trash() { mv $* ~/.local/share/Trash/files/; }; __trash'
