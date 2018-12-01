@@ -274,14 +274,14 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 assign [class="(?i)virtualbox"] 9
 
 # window colors
-set $active-border       #958520
+set $active-border       #908020
 set $inactive-border     #303030
 set $bg-color 	         #303030
 set $inactive-bg-color   #002020
 set $text-color          #ffffff
 set $inactive-text-color #707070
 set $urgent-bg-color     #205040
-set $indicator-color     #958520
+set $indicator-color     #908020
 #                       border              background         text                 indicator
 client.focused          $active-border      $active-border     $text-color          $indicator-color
 client.unfocused        $inactive-border    $inactive-border   $inactive-text-color $inactive-border
