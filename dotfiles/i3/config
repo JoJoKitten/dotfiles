@@ -281,7 +281,7 @@ set $inactive-bg-color   #002020
 set $text-color          #ffffff
 set $inactive-text-color #707070
 set $urgent-bg-color     #205040
-set $indicator-color     #F0F0F0
+set $indicator-color     #958520
 #                       border              background         text                 indicator
 client.focused          $active-border      $active-border     $text-color          $indicator-color
 client.unfocused        $inactive-border    $inactive-border   $inactive-text-color $inactive-border
