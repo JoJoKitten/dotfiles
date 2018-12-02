@@ -61,6 +61,9 @@ dotfiles:
   f_xresources:
     dst: ~/.Xresources
     src: Xresources
+  f_zathurarc:
+    dst: ~/.config/zathura/zathurarc
+    src: config/zathura/zathurarc
   f_zshrc:
     dst: ~/.zshrc
     src: zshrc
@@ -85,6 +88,7 @@ profiles:
     - f_tmux.conf
     - f_termite_config
     - f_morc_menu_v1.conf
+    - f_zathurarc
   laptop-i3:
     dotfiles:
     - f_i3_config
@@ -103,3 +107,4 @@ profiles:
     - f_tmux.conf
     - f_termite_config
     - f_morc_menu_v1.conf
+    - f_zathurarc
