@@ -15,7 +15,7 @@ monitor-fallback =
 
 bottom = false
 width = 100%
-height = 30p
+height = 27p
 offset-x = 0
 offset-y = 0
 
@@ -46,10 +46,10 @@ font-3 = Font Awesome 5 Free:pixelsize=10;3
 ; Modules 
 modules-left = i3 xwindow  
 modules-center = 
-modules-right = network filesystem pulseaudio date time 
+modules-right = network cpu mem filesystem pulseaudio date time 
 
 ; The separator will be inserted between the output of each module
-separator = "   "
+separator = "|"
 
 ; Opacity value between 0.0 and 1.0 used on fade in/out
 dim-value = 1.0
@@ -191,8 +191,13 @@ label-urgent-padding = 4
 
 [module/xwindow]
 type = internal/xwindow
+{%@@ if profile == "laptop-i3" @@%}
+label = %title:0:50:...%
+label-padding = 5
+{%@@ else @@%}
 label = %title:0:50:...%
 label-padding = 50
+{%@@ endif @@%}
 
 
 [module/network]
@@ -220,37 +225,37 @@ label-connected =  %downspeed:9%
 label-disconnected =  not connected
 label-disconnected-foreground = #66ffffff
 
-[module/cpu]
-type = internal/cpu
-interval = 0.5
- ; Available tags:
- ;   <label> (default)
- ;   <bar-load>
- ;   <ramp-load>
- ;   <ramp-coreload>
-format = <label> <ramp-coreload>
-format-background = ${colors.module_bg}
-format-padding = 3
+; [module/cpu]
+; type = internal/cpu
+; interval = 1
+;  ; Available tags:
+;  ;   <label> (default)
+;  ;   <bar-load>
+;  ;   <ramp-load>
+;  ;   <ramp-coreload>
+; format = <label> <ramp-coreload>
+; format-background = ${colors.module_bg}
+; format-padding = 3
 
-; Available tokens:
-;   %percentage% (default) - total cpu load
-;   %percentage-cores% - load percentage for each core
-;   %percentage-core[1-9]% - load percentage for specific core
-label = CPU
-ramp-coreload-0 = ▁
-ramp-coreload-1 = ▂
-ramp-coreload-2 = ▃
-ramp-coreload-3 = ▄
-ramp-coreload-4 = ▅
-ramp-coreload-5 = ▆
-ramp-coreload-6 = ▇
-ramp-coreload-7 = █
+; ; Available tokens:
+; ;   %percentage% (default) - total cpu load
+; ;   %percentage-cores% - load percentage for each core
+; ;   %percentage-core[1-9]% - load percentage for specific core
+; label = CPU
+; ramp-coreload-0 = ▁
+; ramp-coreload-1 = ▂
+; ramp-coreload-2 = ▃
+; ramp-coreload-3 = ▄
+; ramp-coreload-4 = ▅
+; ramp-coreload-5 = ▆
+; ramp-coreload-6 = ▇
+; ramp-coreload-7 = █
 
 [module/date]
 type = internal/date
 
 interval = 1.0
-date= %d %B %Y
+date= %d.%m.%Y
 
 format =  <label>
 format-padding = 3
@@ -331,12 +336,25 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 
-[module/test]
+[module/mem]
 type = custom/script
-exec = echo test
-tail = true
-click-right = exec notify-send "Don't click me with the right!"
-click-left = exec notify-send "That's good!"
+format =   <label>
+format-padding = 3
+format-background = ${colors.module_bg}
+exec = free  | awk '/^Speicher/{print int(100*$3/$2)"%"}'
+tail = false
+interval = 10
+click-left = notify-send "$(ps axch -o cmd:15,%mem --sort=-%mem | head)"
+click-right = notify-send "$(echo -e 'Shows used and total memory.\nLeft click to show processes with most memory usage.')"
+scroll-up = notify-send "$(echo -e 'Shows used and total memory.\nLeft click to show processes with most memory usage.')"
 
-scroll-up = exec notify-send "Up!"
-scroll-down = exec notify-send "Down!"
+[module/cpu]
+type = custom/script
+format =  <label>
+format-padding = 3
+format-background = ${colors.module_bg}
+exec = top -1 -bn1 | awk '/^%CPU/{print $2"%"}'
+tail = false
+interval = 2
+click-left = notify-send "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)"
+click-right = notify-send "$(echo -e 'Shows CPU usage.\nLeft click to show processes with most usage.')"
