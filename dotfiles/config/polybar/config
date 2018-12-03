@@ -59,7 +59,7 @@ dim-value = 1.0
 tray-position = right
 
 ; If true, the bar will not shift its contents when the tray changes
-tray-detached = false
+tray-detached = true
 
 ; Tray icon max size
 tray-maxsize = 16
@@ -273,7 +273,7 @@ format =  <label>
 format-padding = 3
 format-background = ${colors.module_bg}
 
-label = "  %time%  "
+label = "  %time%                "
 
 [module/filesystem]
 type = internal/fs
@@ -329,7 +329,7 @@ format-muted-background = ${colors.module_bg}
 format-muted-padding = 3
 
 label-volume = %percentage%
-label-muted =   muted
+label-muted =  0
 label-muted-foreground = #888
 
 ramp-volume-0 = 
