@@ -380,7 +380,7 @@ mode "$menu_keyboard" {
 ############## exit, shutdown etc. ###############
 set $menu_exit (l)ock | log(o)ut | (s)hutdown | (h)ibernate | (r)eboot | sus(p)end
 mode "$menu_exit" {
-    bindsym l exec --no-startup-id burlock, mode "default"
+    bindsym l exec --no-startup-id blurlock, mode "default"
     bindsym p exec --no-startup-id systemctl suspend, mode "default"
     bindsym o exec --no-startup-id i3-msg exit, mode "default"
     bindsym h exec --no-startup-id systemctl hibernate, mode "default"
