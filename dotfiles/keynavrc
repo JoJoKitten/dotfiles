@@ -1,0 +1,91 @@
+# configuration for keynav, must live in
+# $HOME/.keynavrc
+
+# delete previous keybindings
+clear
+
+# run in background
+# daemonize
+
+
+Tab restart
+
+ctrl+n start, grid 30x30, grid-nav on
+
+Escape grid-nav off, grid 2x2
+
+### 3x3 grid
+ctrl+space start, grid 3x3
+y end
+
+i cell-select 2x1      # up
+l cell-select 3x2      # right
+j cell-select 1x2      # left
+semicolon cell-select 2x3      # down
+u cell-select 1x1      # up-left
+m cell-select 1x3      # down-left
+o cell-select 3x1      # up-right
+period  cell-select 3x3      # down-right
+k cell-select 2x2 # center
+
+shift+j move-left
+shift+semicolon move-down
+shift+i move-up
+shift+l move-right
+shift+u move-left,move-up
+shift+o move-right,move-up
+shift+m move-left,move-down
+shift+period move-right,move-down
+
+alt+j move-left 0.2
+alt+semicolon move-down 0.2
+alt+i move-up 0.2
+alt+l move-right 0.2
+alt+u move-left 0.2,move-up 0.2
+alt+o move-right 0.2,move-up 0.2
+alt+m move-left 0.2,move-down 0.2
+alt+period move-right 0.2,move-down 0.2
+
+ctrl+j cut-left
+ctrl+semicolon cut-down
+ctrl+i cut-up
+ctrl+l cut-right
+
+space warp,click 1,end
+g warp
+f warp,click 1
+d warp,click 2
+s warp,click 3
+shift+f warp,click 1 shift
+shift+d warp,click 2 shift
+shift+s warp,click 3 shift
+ctrl+f warp,click 1 ctrl
+ctrl+d warp,click 2 ctrl
+ctrl+s warp,click 3 ctrl
+
+w windowzoom
+c grid 2x2, cursorzoom 60 60
+
+
+e grid-nav toggle
+
+# Record keynav actions
+q record ~/.keynav_macros
+p playback
+
+### Example using the 'sh' command.
+# Make firefox the active window
+# f sh "xdotool windowactivate $(xdotool search -title -- '- Mozilla Firefox')", end
+# Make a new tab in google chrome:
+# t sh "xdotool windowactivate $(xdotool search --title -- '- Google Chrome' | head -1); xdotool key ctrl+t",end
+# Paste
+v sh "xdotool key shift+Insert"
+
+### Drag examples
+# Start drag holding the left mouse button
+q drag 1
+shift+q drag 1 shift
+ctrl+q drag 1 ctrl
+
+### History
+a history-back
