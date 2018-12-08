@@ -7,16 +7,27 @@ clear
 # run in background
 # daemonize
 
-
+# useful to reload config
 Tab restart
 
-ctrl+n start, grid 30x30, grid-nav on
+Escape end
 
-Escape grid-nav off, grid 2x2
+ctrl+numbersign start, grid 26x26, grid-nav on
+after-grid-nav grid-nav off, grid 2x2
+
+v grid 2x2, cursorzoom 60 60
+c warp, grid 2x2, cursorzoom 60 60
+w windowzoom
+s windowzoom
+
+a history-back
+
+# scrolling
+plus click 4
+minus click 5
 
 ### 3x3 grid
 ctrl+space start, grid 3x3
-y end
 
 i cell-select 2x1      # up
 l cell-select 3x2      # right
@@ -46,13 +57,21 @@ alt+o move-right 0.2,move-up 0.2
 alt+m move-left 0.2,move-down 0.2
 alt+period move-right 0.2,move-down 0.2
 
-ctrl+j cut-left
-ctrl+semicolon cut-down
-ctrl+i cut-up
-ctrl+l cut-right
+ctrl+alt+j move-left 2
+ctrl+alt+semicolon move-down 2
+ctrl+alt+i move-up 2
+ctrl+alt+l move-right 2
+ctrl+alt+u move-left 2,move-up 2
+ctrl+alt+o move-right 2,move-up 2
+ctrl+alt+m move-left 2,move-down 2
+ctrl+alt+period move-right 2,move-down 2
 
-space warp,click 1,end
-g warp
+# ctrl+j cut-left
+# ctrl+semicolon cut-down
+# ctrl+i cut-up
+# ctrl+l cut-right
+
+space grid-nav off,warp,click 1,end
 f warp,click 1
 d warp,click 2
 s warp,click 3
@@ -62,12 +81,6 @@ shift+s warp,click 3 shift
 ctrl+f warp,click 1 ctrl
 ctrl+d warp,click 2 ctrl
 ctrl+s warp,click 3 ctrl
-
-w windowzoom
-c grid 2x2, cursorzoom 60 60
-
-
-e grid-nav toggle
 
 # Record keynav actions
 q record ~/.keynav_macros
@@ -79,13 +92,10 @@ p playback
 # Make a new tab in google chrome:
 # t sh "xdotool windowactivate $(xdotool search --title -- '- Google Chrome' | head -1); xdotool key ctrl+t",end
 # Paste
-v sh "xdotool key shift+Insert"
+ctrl+v sh "xdotool key shift+Insert"
 
-### Drag examples
-# Start drag holding the left mouse button
-q drag 1
-shift+q drag 1 shift
-ctrl+q drag 1 ctrl
+### Drag with left button
+g drag 1
+shift+g drag 1 shift
+ctrl+g drag 1 ctrl
 
-### History
-a history-back

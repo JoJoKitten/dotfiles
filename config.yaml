@@ -13,6 +13,9 @@ dotfiles:
   d_qpdfview:
     dst: ~/.config/qpdfview
     src: config/qpdfview
+  f__de_m.xmodmap:
+    dst: ~/neo_de_m.xmodmap
+    src: neo_de_m.xmodmap
   f_i3_config:
     dst: ~/.i3/config
     src: i3/config
@@ -20,7 +23,7 @@ dotfiles:
     dst: ~/.oh-my-zsh/themes/jojo.zsh-theme
     src: oh-my-zsh/themes/jojo.zsh-theme
   f_keynavrc:
-    dst: ~/.keynavrc
+    dst: ~/.config/keynav/keynavrc
     src: keynavrc
   f_morc_menu_v1.conf:
     dst: ~/.config/morc_menu/morc_menu_v1.conf
@@ -113,3 +116,4 @@ profiles:
     - f_morc_menu_v1.conf
     - f_zathurarc
     - f_keynavrc
+    - f__de_m.xmodmap
