@@ -18,7 +18,6 @@ after-grid-nav grid-nav off, grid 2x2
 v grid 2x2, cursorzoom 60 60
 c warp, grid 2x2, cursorzoom 60 60
 w windowzoom
-s windowzoom
 
 a history-back
 
