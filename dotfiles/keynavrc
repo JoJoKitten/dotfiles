@@ -8,15 +8,17 @@ clear
 # daemonize
 
 # useful to reload config
-Tab restart
+ctrl+r restart
 
 Escape end
+Caps_Lock end
 
-ctrl+numbersign start, grid 26x26, grid-nav on
+alt+numbersign start, windowzoom, grid 26x26, grid-nav on
+numbersign windowzoom, grid 26x26, grid-nav on
 after-grid-nav grid-nav off, grid 2x2
 
-v grid 2x2, cursorzoom 60 60
-c warp, grid 2x2, cursorzoom 60 60
+v grid 2x2, cursorzoom 100 100
+c warp, grid 2x2, cursorzoom 100 100
 w windowzoom
 
 a history-back
@@ -26,7 +28,7 @@ plus click 4
 minus click 5
 
 ### 3x3 grid
-ctrl+space start, grid 3x3
+alt+space start, grid 3x3
 
 i cell-select 2x1      # up
 l cell-select 3x2      # right
@@ -45,6 +47,7 @@ shift+l move-right
 shift+u move-left,move-up
 shift+o move-right,move-up
 shift+m move-left,move-down
+shift+n move-left,move-down
 shift+period move-right,move-down
 
 alt+j move-left 0.2
@@ -54,16 +57,18 @@ alt+l move-right 0.2
 alt+u move-left 0.2,move-up 0.2
 alt+o move-right 0.2,move-up 0.2
 alt+m move-left 0.2,move-down 0.2
+alt+n move-left 0.2,move-down 0.2
 alt+period move-right 0.2,move-down 0.2
 
-ctrl+alt+j move-left 2
-ctrl+alt+semicolon move-down 2
-ctrl+alt+i move-up 2
-ctrl+alt+l move-right 2
-ctrl+alt+u move-left 2,move-up 2
-ctrl+alt+o move-right 2,move-up 2
-ctrl+alt+m move-left 2,move-down 2
-ctrl+alt+period move-right 2,move-down 2
+ctrl+alt+j move-left 3
+ctrl+alt+semicolon move-down 3
+ctrl+alt+i move-up 3
+ctrl+alt+l move-right 3
+ctrl+alt+u move-left 3,move-up 3
+ctrl+alt+o move-right 3,move-up 3
+ctrl+alt+m move-left 3,move-down 3
+ctrl+alt+n move-left 3,move-down 3
+ctrl+alt+period move-right 3,move-down 3
 
 # ctrl+j cut-left
 # ctrl+semicolon cut-down
@@ -71,6 +76,8 @@ ctrl+alt+period move-right 2,move-down 2
 # ctrl+l cut-right
 
 space grid-nav off,warp,click 1,end
+Tab grid-nav off, move-left 100, warp,click,end
+
 f warp,click 1
 d warp,click 2
 s warp,click 3
