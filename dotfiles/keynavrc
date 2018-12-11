@@ -18,8 +18,8 @@ alt+shift+numbersign start, grid 50x50, grid-nav on
 numbersign windowzoom, grid 26x26, grid-nav on
 after-grid-nav grid-nav off, grid 2x2, warp, click 1, end
 
-v grid 2x2, cursorzoom 100 100
-c warp, grid 2x2, cursorzoom 100 100
+v grid 2x2, cursorzoom 100 60
+c warp, grid 2x2, cursorzoom 100 60
 w windowzoom
 
 a history-back
@@ -30,7 +30,7 @@ minus click 5
 
 ### 3x3 grid
 shift+alt+space start, grid 3x3
-alt+space start, cursorzoom 100 100, grid 2x2
+alt+space start, cursorzoom 100 60, grid 2x2
 
 i cell-select 2x1      # up
 l cell-select 3x2      # right
