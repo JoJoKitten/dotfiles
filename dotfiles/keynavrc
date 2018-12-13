@@ -11,7 +11,7 @@ clear
 ctrl+r restart
 
 Escape end
-Tab end
+Tab grid-nav off, end
 
 alt+numbersign start, grid 25x25, grid-nav on
 alt+shift+numbersign start, grid 50x50, grid-nav on
