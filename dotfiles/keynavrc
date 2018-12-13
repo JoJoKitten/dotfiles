@@ -11,12 +11,12 @@ clear
 ctrl+r restart
 
 Escape end
-Caps_Lock end
+Tab end
 
 alt+numbersign start, grid 25x25, grid-nav on
 alt+shift+numbersign start, grid 50x50, grid-nav on
-numbersign windowzoom, grid 26x26, grid-nav on
-after-grid-nav grid-nav off, grid 2x2, warp, click 1, end
+numbersign cut-down 0.96, cut-right 0.96, move-up 0.02, move-left 0.02, grid 24x24
+after-grid-nav grid-nav off, grid 2x2, warp, cursorzoom 100 60
 
 v grid 2x2, cursorzoom 100 60
 c warp, grid 2x2, cursorzoom 100 60
