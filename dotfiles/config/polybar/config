@@ -167,9 +167,9 @@ label-unfocused-padding = 6
 ; ;   %index%
 ; ;   %output%
 ; ; Default: %icon%  %name%
-; label-visible = %icon%
-; label-visible-underline = #555555
-; label-visible-padding = 4
+label-visible = %icon%
+label-visible-underline = #555555
+label-visible-padding = 6
 
 ; Available tokens:
 ;   %name%
@@ -180,7 +180,7 @@ label-unfocused-padding = 6
 label-urgent = %icon%
 label-urgent-foreground = #000000
 label-urgent-background = #bd2c40
-label-urgent-padding = 4
+label-urgent-padding = 6
 
 ; Separator in between workspaces
 ; label-separator = |
