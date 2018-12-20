@@ -5,7 +5,7 @@
 clear
 
 # run in background
-# daemonize
+daemonize
 
 # useful to reload config
 ctrl+r restart
