@@ -363,8 +363,8 @@ mode "$menu_launcher" {
 ################### cnee #########################
 set $menu_cnee (r)ecord | (p)lay
 mode "$menu_cnee" {
-    bindsym r exec ~/.scripts/cnee_record.sh, mode "default"
-    bindsym p exec ~/.scripts/cnee_replay.sh, mode "default"
+    bindsym r exec ~/scripts/cnee_record.sh, mode "default"
+    bindsym p exec ~/scripts/cnee_replay.sh, mode "default"
     bindsym q mode "default"
     bindsym Escape mode "default"
 }
