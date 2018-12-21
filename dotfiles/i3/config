@@ -215,7 +215,7 @@ exec --no-startup-id xautolock -time 30 -locker blurlock
 # ?
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id emacs --daemon
-exec --no-startup-id "sleep 100; megasync"
+exec --no-startup-id "sleep 100; dropbox"
 # Execute some other tasks that depend on the machine
 exec ~/.i3/start_jobs.sh
 
