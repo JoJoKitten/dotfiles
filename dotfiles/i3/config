@@ -203,6 +203,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
 exec --no-startup-id bash -c "killall pulseaudio && sleep 1 && pulseaudio"
 exec --no-startup-id clipmenud
+exec --no-startup-id keynav
 exec --no-startup-id redshift
 # ?
 exec --no-startup-id xfce4-power-manager
@@ -214,7 +215,7 @@ exec --no-startup-id xautolock -time 30 -locker blurlock
 # ?
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id emacs --daemon
-exec --no-startup-id "sleep 100; megasync"
+exec --no-startup-id "sleep 100; dropbox"
 # Execute some other tasks that depend on the machine
 exec ~/.i3/start_jobs.sh
 
@@ -362,8 +363,8 @@ mode "$menu_launcher" {
 ################### cnee #########################
 set $menu_cnee (r)ecord | (p)lay
 mode "$menu_cnee" {
-    bindsym r exec ~/.scripts/cnee_record.sh, mode "default"
-    bindsym p exec ~/.scripts/cnee_replay.sh, mode "default"
+    bindsym r exec ~/scripts/cnee_record.sh, mode "default"
+    bindsym p exec ~/scripts/cnee_replay.sh, mode "default"
     bindsym q mode "default"
     bindsym Escape mode "default"
 }
