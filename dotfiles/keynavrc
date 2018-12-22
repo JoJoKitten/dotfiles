@@ -1,5 +1,9 @@
-# configuration for keynav, must live in
-# $HOME/.keynavrc
+#    __
+#   / /_____  __  ______  ____ __   ____________
+#  / //_/ _ \/ / / / __ \/ __ `/ | / / ___/ ___/
+# / ,< /  __/ /_/ / / / / /_/ /| |/ / /  / /__
+#/_/|_|\___/\__, /_/ /_/\__,_/ |___/_/   \___/
+#          /____/
 
 # delete previous keybindings
 clear
@@ -13,72 +17,56 @@ ctrl+r restart
 Escape end
 Tab grid-nav off, end
 
+alt+space start, cursorzoom 2 2, grid 1x1
 alt+numbersign start, grid 25x25, grid-nav on
-alt+shift+numbersign start, grid 50x50, grid-nav on
 numbersign cut-down 0.96, cut-right 0.96, move-up 0.02, move-left 0.02, grid 24x24
-after-grid-nav grid-nav off, grid 2x2, warp, cursorzoom 100 60
 
-v grid 2x2, cursorzoom 100 60
-c warp, grid 2x2, cursorzoom 100 60
+after-grid-nav grid-nav off, grid 1x1, warp, cursorzoom 2 2
+
+v cursorzoom 50 50, grid 2x2
 w windowzoom
 
-a history-back
+shift+alt+j move-left 300, warp
+shift+alt+semicolon move-down 180, warp
+shift+alt+i move-up 180, warp
+shift+alt+l move-right 300, warp
+shift+alt+u move-left 300, move-up 180, warp
+shift+alt+o move-right 300, move-up 180, warp
+shift+alt+m move-left 300, move-down 180, warp
+shift+alt+n move-left 300, move-down 180, warp
+shift+alt+period move-right 300, move-down 180, warp
 
-# scrolling
-plus click 4
-minus click 5
+alt+j move-left 100, warp
+alt+semicolon move-down 60, warp
+alt+i move-up 60, warp
+alt+l move-right 100, warp
+alt+u move-left 100, move-up 60, warp
+alt+o move-right 100, move-up 60, warp
+alt+m move-left 100, move-down 60, warp
+alt+n move-left 100, move-down 60, warp
+alt+period move-right 100, move-down 60, warp
 
-### 3x3 grid
-shift+alt+space start, grid 3x3
-alt+space start, cursorzoom 100 60, grid 2x2
+j move-left 20, warp
+semicolon move-down 12, warp
+i move-up 12, warp
+l move-right 20, warp
+u move-left 20, move-up 12, warp
+o move-right 20, move-up 12, warp
+m move-left 20, move-down 12, warp
+n move-left 20, move-down 12, warp
+period move-right 20, move-down 12, warp
 
-shift+i cell-select 2x1
-shift+l cell-select 3x2
-shift+j cell-select 1x2
-shift+semicolon cell-select 2x3
-shift+u cell-select 1x1
-shift+m cell-select 1x3
-shift+o cell-select 3x1
-shift+period  cell-select 3x3
-shift+k cell-select 2x2
-
-j move-left
-semicolon move-down
-i move-up
-l move-right
-u move-left, move-up
-o move-right, move-up
-m move-left, move-down
-n move-left, move-down
-period move-right, move-down
-
-alt+j move-left 0.2
-alt+semicolon move-down 0.2
-alt+i move-up 0.2
-alt+l move-right 0.2
-alt+u move-left 0.2, move-up 0.2
-alt+o move-right 0.2, move-up 0.2
-alt+m move-left 0.2, move-down 0.2
-alt+n move-left 0.2, move-down 0.2
-alt+period move-right 0.2, move-down 0.2
-
-ctrl+alt+j move-left 3
-ctrl+alt+semicolon move-down 3
-ctrl+alt+i move-up 3
-ctrl+alt+l move-right 3
-ctrl+alt+u move-left 3, move-up 3
-ctrl+alt+o move-right 3, move-up 3
-ctrl+alt+m move-left 3, move-down 3
-ctrl+alt+n move-left 3, move-down 3
-ctrl+alt+period move-right 3, move-down 3
-
-# ctrl+j cut-left
-# ctrl+semicolon cut-down
-# ctrl+i cut-up
-# ctrl+l cut-right
+ctrl+alt+j move-left 3, warp
+ctrl+alt+semicolon move-down 3, warp
+ctrl+alt+i move-up 3, warp
+ctrl+alt+l move-right 3, warp
+ctrl+alt+u move-left 3, move-up 3, warp
+ctrl+alt+o move-right 3, move-up 3, warp
+ctrl+alt+m move-left 3, move-down 3, warp
+ctrl+alt+n move-left 3, move-down 3, warp
+ctrl+alt+period move-right 3, move-down 3, warp
 
 space grid-nav off, warp, click 1, end
-r grid-nav off, cell-select 1, cell-select 1, warp, click, end
 
 f warp, click 1
 d warp, click 2
@@ -89,6 +77,15 @@ shift+s warp, click 3 shift
 ctrl+f warp, click 1 ctrl
 ctrl+d warp, click 2 ctrl
 ctrl+s warp, click 3 ctrl
+
+# scrolling
+plus click 2
+minus click 5
+
+### Drag with left button
+g drag 1
+shift+g drag 1 shift
+ctrl+g drag 1 ctrl
 
 # Record keynav actions
 q record ~/.keynav_macros
@@ -101,9 +98,3 @@ p playback
 # t sh "xdotool windowactivate $(xdotool search --title -- '- Google Chrome' | head -1); xdotool key ctrl+t", end
 # Paste
 ctrl+v sh "xdotool key shift+Insert"
-
-### Drag with left button
-g drag 1
-shift+g drag 1 shift
-ctrl+g drag 1 ctrl
-
