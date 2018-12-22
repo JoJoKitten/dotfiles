@@ -19,7 +19,11 @@ v grid 2x2, cursorzoom 60 60
 c warp, grid 2x2, cursorzoom 60 60
 w windowzoom
 
-a history-back
+# a history-back
+a add-savepoint
+shift+a delete-savepoints
+ctrl+a show-savepoints
+
 
 # scrolling
 plus click 4
