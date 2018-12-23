@@ -8,8 +8,12 @@
 # delete previous keybindings
 clear
 
+a add-savepoint
+y delete-savepoints
+z show-savepoints
+
 # run in background
-daemonize
+# daemonize
 
 # useful to reload config
 ctrl+r restart
@@ -87,9 +91,9 @@ g drag 1
 shift+g drag 1 shift
 ctrl+g drag 1 ctrl
 
-# Record keynav actions
-q record ~/.keynav_macros
-p playback
+# # Record keynav actions
+# q record ~/.keynav_macros
+# p playback
 
 ### Example using the 'sh' command.
 # Make firefox the active window
