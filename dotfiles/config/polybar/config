@@ -44,7 +44,7 @@ font-2 = Font Awesome 5 Free Solid:pixelsize=10;3
 font-3 = Font Awesome 5 Free:pixelsize=10;3
 
 ; Modules 
-modules-left = i3 xwindow  
+modules-left = i3
 modules-center = 
 modules-right = network cpu mem filesystem pulseaudio date time 
 
@@ -54,12 +54,11 @@ separator = "|"
 ; Opacity value between 0.0 and 1.0 used on fade in/out
 dim-value = 1.0
 
-
 ; Position of the system tray window
 tray-position = right
 
 ; If true, the bar will not shift its contents when the tray changes
-tray-detached = true
+tray-detached = false
 
 ; Tray icon max size
 tray-maxsize = 16
