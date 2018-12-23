@@ -293,12 +293,6 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 # start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-# install all config files from dotdrop and restart i3
-bindsym $mod+Shift+Ctrl+r exec "~/dotfiles/dotdrop.sh install -f && i3-msg restart"
-
-# commit dotfile changes and push them
-bindsym $mod+Shift+Ctrl+p exec $terminal -e ~/dotfiles/push.sh && sleep 1
-
 ##################################################
 ############### For i3-gaps ######################
 ##################################################
@@ -331,10 +325,11 @@ bindsym $mod+Ctrl+Shift+minus gaps outer all minus 10
 bindsym $mod+space mode "$menu"
 
 ################# root menu ######################
-set $menu (l)auncher | (c)nee | (k)eyborrd layout | (Shift+e)xit
+set $menu (l)auncher | (d)otfiles | (c)nee | (k)eyborrd layout | (Shift+e)xit
 mode "$menu" {
     bindsym l mode "$menu_launcher"
     bindsym c mode "$menu_cnee"
+    bindsym d mode "$menu_dotfiles"
     bindsym k mode "$menu_keyboard"
     bindsym Shift+e mode "$menu_exit"
     bindsym q mode "default"
@@ -366,6 +361,15 @@ mode "$menu_cnee" {
     bindsym r exec ~/scripts/cnee_record.sh, mode "default"
     bindsym p exec ~/scripts/cnee_replay.sh, mode "default"
     bindsym q mode "default"
+    bindsym Escape mode "default"
+}
+
+################### dotfiles #####################
+set $menu_dotfiles (p)ull | (i)nstall | (c)ommit and push
+mode "$menu_dotfiles" {
+    bindsym p exec $terminal -e ~/dotfiles/pull.sh, mode "default"
+    bindsym i exec "~/dotfiles/dotdrop.sh install -f && i3-msg restart", mode "default"
+    bindsym c exec $terminal -e ~/dotfiles/push.sh, mode "default"
     bindsym Escape mode "default"
 }
 
