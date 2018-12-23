@@ -11,6 +11,8 @@ clear
 a add-savepoint
 y delete-savepoints
 z show-savepoints
+z show-savepoints
+alt+odiaeresis start, show-savepoints
 
 # run in background
 # daemonize
@@ -21,69 +23,65 @@ ctrl+r restart
 Escape end
 Tab grid-nav off, end
 
-alt+space start, cursorzoom 2 2, grid 1x1
-alt+numbersign start, grid 25x25, grid-nav on
-numbersign cut-down 0.96, cut-right 0.96, move-up 0.02, move-left 0.02, grid 24x24
+alt+space start
+alt+numbersign start, grid-nav on
+# numbersign cut-down 0.96, cut-right 0.96, move-up 0.02, move-left 0.02, grid 24x24
 
-# a history-back
 a add-savepoint
 shift+a delete-savepoints
 ctrl+a show-savepoints
 
-v cursorzoom 50 50, grid 2x2
-w windowzoom
+shift+alt+j move-left 300
+shift+alt+semicolon move-down 180
+shift+alt+i move-up 180
+shift+alt+l move-right 300
+shift+alt+u move-left 300, move-up 180
+shift+alt+o move-right 300, move-up 180
+shift+alt+m move-left 300, move-down 180
+shift+alt+n move-left 300, move-down 180
+shift+alt+period move-right 300, move-down 180
 
-shift+alt+j move-left 300, warp
-shift+alt+semicolon move-down 180, warp
-shift+alt+i move-up 180, warp
-shift+alt+l move-right 300, warp
-shift+alt+u move-left 300, move-up 180, warp
-shift+alt+o move-right 300, move-up 180, warp
-shift+alt+m move-left 300, move-down 180, warp
-shift+alt+n move-left 300, move-down 180, warp
-shift+alt+period move-right 300, move-down 180, warp
+alt+j move-left 100
+alt+semicolon move-down 60
+alt+i move-up 60
+alt+l move-right 100
+alt+u move-left 100, move-up 60
+alt+o move-right 100, move-up 60
+alt+m move-left 100, move-down 60
+alt+n move-left 100, move-down 60
+alt+period move-right 100, move-down 60
 
-alt+j move-left 100, warp
-alt+semicolon move-down 60, warp
-alt+i move-up 60, warp
-alt+l move-right 100, warp
-alt+u move-left 100, move-up 60, warp
-alt+o move-right 100, move-up 60, warp
-alt+m move-left 100, move-down 60, warp
-alt+n move-left 100, move-down 60, warp
-alt+period move-right 100, move-down 60, warp
+j move-left 20
+semicolon move-down 12
+i move-up 12
+l move-right 20
+u move-left 20, move-up 12
+o move-right 20, move-up 12
+m move-left 20, move-down 12
+n move-left 20, move-down 12
+period move-right 20, move-down 12
 
-j move-left 20, warp
-semicolon move-down 12, warp
-i move-up 12, warp
-l move-right 20, warp
-u move-left 20, move-up 12, warp
-o move-right 20, move-up 12, warp
-m move-left 20, move-down 12, warp
-n move-left 20, move-down 12, warp
-period move-right 20, move-down 12, warp
+ctrl+alt+j move-left 3
+ctrl+alt+semicolon move-down 3
+ctrl+alt+i move-up 3
+ctrl+alt+l move-right 3
+ctrl+alt+u move-left 3, move-up 3
+ctrl+alt+o move-right 3, move-up 3
+ctrl+alt+m move-left 3, move-down 3
+ctrl+alt+n move-left 3, move-down 3
+ctrl+alt+period move-right 3, move-down 3
 
-ctrl+alt+j move-left 3, warp
-ctrl+alt+semicolon move-down 3, warp
-ctrl+alt+i move-up 3, warp
-ctrl+alt+l move-right 3, warp
-ctrl+alt+u move-left 3, move-up 3, warp
-ctrl+alt+o move-right 3, move-up 3, warp
-ctrl+alt+m move-left 3, move-down 3, warp
-ctrl+alt+n move-left 3, move-down 3, warp
-ctrl+alt+period move-right 3, move-down 3, warp
+space grid-nav off, click 1, end
 
-space grid-nav off, warp, click 1, end
-
-f warp, click 1
-d warp, click 2
-s warp, click 3
-shift+f warp, click 1 shift
-shift+d warp, click 2 shift
-shift+s warp, click 3 shift
-ctrl+f warp, click 1 ctrl
-ctrl+d warp, click 2 ctrl
-ctrl+s warp, click 3 ctrl
+f click 1
+d click 2
+s click 3
+shift+f click 1 shift
+shift+d click 2 shift
+shift+s click 3 shift
+ctrl+f click 1 ctrl
+ctrl+d click 2 ctrl
+ctrl+s click 3 ctrl
 
 # scrolling
 plus click 2
@@ -94,9 +92,6 @@ g drag 1
 shift+g drag 1 shift
 ctrl+g drag 1 ctrl
 
-# # Record keynav actions
-# q record ~/.keynav_macros
-# p playback
 
 ### Example using the 'sh' command.
 # Make firefox the active window
