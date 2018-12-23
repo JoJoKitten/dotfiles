@@ -25,7 +25,10 @@ alt+space start, cursorzoom 2 2, grid 1x1
 alt+numbersign start, grid 25x25, grid-nav on
 numbersign cut-down 0.96, cut-right 0.96, move-up 0.02, move-left 0.02, grid 24x24
 
-after-grid-nav grid-nav off, grid 1x1, warp, cursorzoom 2 2
+# a history-back
+a add-savepoint
+shift+a delete-savepoints
+ctrl+a show-savepoints
 
 v cursorzoom 50 50, grid 2x2
 w windowzoom
