@@ -8,11 +8,11 @@
 # delete previous keybindings
 clear
 
-a add-savepoint
-y delete-savepoints
-z show-savepoints
-z show-savepoints
-alt+odiaeresis start, show-savepoints
+a add-mark
+y delete-marks
+z mark-mode
+z mark-mode
+alt+odiaeresis start, mark-mode
 
 # run in background
 # daemonize
@@ -21,15 +21,10 @@ alt+odiaeresis start, show-savepoints
 ctrl+r restart
 
 Escape end
-Tab grid-nav off, end
+Tab end
 
 alt+space start
-alt+numbersign start, grid-nav on
-# numbersign cut-down 0.96, cut-right 0.96, move-up 0.02, move-left 0.02, grid 24x24
-
-a add-savepoint
-shift+a delete-savepoints
-ctrl+a show-savepoints
+alt+numbersign start, grid-mode 26x26
 
 shift+alt+j move-left 300
 shift+alt+semicolon move-down 180
@@ -71,7 +66,7 @@ ctrl+alt+m move-left 3, move-down 3
 ctrl+alt+n move-left 3, move-down 3
 ctrl+alt+period move-right 3, move-down 3
 
-space grid-nav off, click 1, end
+space click 1, end
 
 f click 1
 d click 2
@@ -84,7 +79,7 @@ ctrl+d click 2 ctrl
 ctrl+s click 3 ctrl
 
 # scrolling
-plus click 2
+plus click 4
 minus click 5
 
 ### Drag with left button
