@@ -26,15 +26,15 @@ Tab end
 alt+space start
 alt+numbersign start, grid-mode 26x26
 
-shift+alt+j move-left 300
-shift+alt+semicolon move-down 180
-shift+alt+i move-up 180
-shift+alt+l move-right 300
-shift+alt+u move-left 300, move-up 180
-shift+alt+o move-right 300, move-up 180
-shift+alt+m move-left 300, move-down 180
-shift+alt+n move-left 300, move-down 180
-shift+alt+period move-right 300, move-down 180
+alt+shift+j move-left 300
+alt+shift+semicolon move-down 180
+alt+shift+i move-up 180
+alt+shift+l move-right 300
+alt+shift+u move-left 300, move-up 180
+alt+shift+o move-right 300, move-up 180
+alt+shift+m move-left 300, move-down 180
+alt+shift+n move-left 300, move-down 180
+alt+shift+period move-right 300, move-down 180
 
 alt+j move-left 100
 alt+semicolon move-down 60
@@ -56,15 +56,15 @@ m move-left 20, move-down 12
 n move-left 20, move-down 12
 period move-right 20, move-down 12
 
-ctrl+alt+j move-left 3
-ctrl+alt+semicolon move-down 3
-ctrl+alt+i move-up 3
-ctrl+alt+l move-right 3
-ctrl+alt+u move-left 3, move-up 3
-ctrl+alt+o move-right 3, move-up 3
-ctrl+alt+m move-left 3, move-down 3
-ctrl+alt+n move-left 3, move-down 3
-ctrl+alt+period move-right 3, move-down 3
+ctrl+j move-left 3
+ctrl+semicolon move-down 3
+ctrl+i move-up 3
+ctrl+l move-right 3
+ctrl+u move-left 3, move-up 3
+ctrl+o move-right 3, move-up 3
+ctrl+m move-left 3, move-down 3
+ctrl+n move-left 3, move-down 3
+ctrl+period move-right 3, move-down 3
 
 space click 1, end
 
