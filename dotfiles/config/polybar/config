@@ -269,7 +269,7 @@ time = %H:%M:%S
 format =  <label>
 format-padding = 3
 format-background = ${colors.module_bg}
-label = "  %time%                "
+label = "  %time%"
 
 [module/filesystem]
 type = internal/fs
