@@ -104,7 +104,7 @@ alias ..='cd ..; ls -a'
 alias ...='cd ..;cd ..;ls -a'
 
 # del to move to trash
-alias del='function __trash() { mkdir ~/.trash && mv $* ~/.trash; }; __trash'
+alias del='function __trash() { mkdir -p ~/.trash && mv $* ~/.trash; }; __trash'
 
 # repeat any command
 alias repeat='function __repeat() { while [ 1 ]; do  read; eval $*; echo "----------------------------------------------------------";  done; }; __repeat'
