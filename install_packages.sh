@@ -64,8 +64,8 @@ fi
 # install spacemacs
 if [ ! -f ~/.emacs.d/spacemacs.mk ]; then
     echo "Installing spacemacs ..."
-    # rm -rf ~/.emacs.d
-    # git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+    rm -rf ~/.emacs.d
+    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 fi
 
 # dotfiles
@@ -76,6 +76,13 @@ if [ ! -d dotfiles ]; then
     cd dotfiles
     ./install_requirements.sh
     ./dotdrop.sh install -p laptop-i3
+fi
+
+# xmouseless
+if ! hash xmouseless; then
+    cd /tmp
+    git clone https://github.com/jojokitten/xmouseless.git
+    cd xmouseless && make && sudo make install
 fi
 
 # entr
