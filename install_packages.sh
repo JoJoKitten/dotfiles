@@ -15,6 +15,7 @@ network-manager-applet
 pcmanfm
 python
 python-pip
+xf86-input-synaptics
 ranger
 redshift
 rofi
