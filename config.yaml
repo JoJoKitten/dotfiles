@@ -22,9 +22,9 @@ dotfiles:
   f_jojo.zsh-theme:
     dst: ~/.oh-my-zsh/themes/jojo.zsh-theme
     src: oh-my-zsh/themes/jojo.zsh-theme
-  f_keynavrc:
-    dst: ~/.config/keynav/keynavrc
-    src: keynavrc
+  f_xmouselessrc:
+    dst: ~/.config/xmouseless/xmouselessrc
+    src: config/xmouseless/xmouselessrc
   f_morc_menu_v1.conf:
     dst: ~/.config/morc_menu/morc_menu_v1.conf
     src: config/morc_menu/morc_menu_v1.conf
@@ -95,7 +95,7 @@ profiles:
     - f_termite_config
     - f_morc_menu_v1.conf
     - f_zathurarc
-    - f_keynavrc
+    - f_xmouselessrc
   laptop-i3:
     dotfiles:
     - f_i3_config
@@ -115,5 +115,5 @@ profiles:
     - f_termite_config
     - f_morc_menu_v1.conf
     - f_zathurarc
-    - f_keynavrc
+    - f_xmouselessrc
     - f__de_m.xmodmap

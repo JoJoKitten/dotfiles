@@ -1,0 +1,97 @@
+#                                      _
+# __  ___ __ ___   ___  _   _ ___  ___| | ___  ___ ___ _ __ ___
+# \ \/ / '_ ` _ \ / _ \| | | / __|/ _ \ |/ _ \/ __/ __| '__/ __|
+#  >  <| | | | | | (_) | |_| \__ \  __/ |  __/\__ \__ \ | | (__
+# /_/\_\_| |_| |_|\___/ \__,_|___/\___|_|\___||___/___/_|  \___|
+
+
+# delete previous keybindings
+clear
+
+# run in background
+# daemonize
+
+# useful to reload config
+ctrl+r restart
+
+Escape end
+Tab end
+
+alt+space start
+alt+numbersign start, grid-mode 26x26
+
+a add-mark
+y delete-marks
+z mark-mode
+z mark-mode
+alt+odiaeresis start, mark-mode
+
+alt+shift+j move-left 300
+alt+shift+semicolon move-down 180
+alt+shift+i move-up 180
+alt+shift+l move-right 300
+alt+shift+u move-left 300, move-up 180
+alt+shift+o move-right 300, move-up 180
+alt+shift+m move-left 300, move-down 180
+alt+shift+n move-left 300, move-down 180
+alt+shift+period move-right 300, move-down 180
+
+alt+j move-left 100
+alt+semicolon move-down 60
+alt+i move-up 60
+alt+l move-right 100
+alt+u move-left 100, move-up 60
+alt+o move-right 100, move-up 60
+alt+m move-left 100, move-down 60
+alt+n move-left 100, move-down 60
+alt+period move-right 100, move-down 60
+
+j move-left 20
+semicolon move-down 12
+i move-up 12
+l move-right 20
+u move-left 20, move-up 12
+o move-right 20, move-up 12
+m move-left 20, move-down 12
+n move-left 20, move-down 12
+period move-right 20, move-down 12
+
+ctrl+j move-left 3
+ctrl+semicolon move-down 3
+ctrl+i move-up 3
+ctrl+l move-right 3
+ctrl+u move-left 3, move-up 3
+ctrl+o move-right 3, move-up 3
+ctrl+m move-left 3, move-down 3
+ctrl+n move-left 3, move-down 3
+ctrl+period move-right 3, move-down 3
+
+space click 1, end
+
+f click 1
+d click 2
+s click 3
+shift+f click 1 shift
+shift+d click 2 shift
+shift+s click 3 shift
+ctrl+f click 1 ctrl
+ctrl+d click 2 ctrl
+ctrl+s click 3 ctrl
+
+# scrolling
+plus click 4
+minus click 5
+
+# Drag with left button
+g drag 1
+shift+g drag 1 shift
+ctrl+g drag 1 ctrl
+
+
+### Example using the 'sh' command.
+# Make firefox the active window
+# f sh "xdotool windowactivate $(xdotool search -title -- '- Mozilla Firefox')", end
+# Make a new tab in google chrome:
+# t sh "xdotool windowactivate $(xdotool search --title -- '- Google Chrome' | head -1); xdotool key ctrl+t", end
+# Paste
+ctrl+v sh "xdotool key shift+Insert"
