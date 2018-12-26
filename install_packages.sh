@@ -16,12 +16,15 @@ pcmanfm
 python
 python-pip
 ranger
+redshift
 rofi
 termite
 thunderbird
 tmux
 ttf-dejavu
 vim
+wget
+xdotool
 xorg-server
 xorg-xinit
 zsh"
@@ -30,29 +33,26 @@ aur_packages="
 polybar
 dropbox"
 
-# install git (which is used to install trizen)
-echo "Installing git ..."
-sudo pacman --noconfirm -S git &> /dev/null
-
 # install packages from the main repos
 for p in $packages; do
     echo "Installing $p ..."
-    sudo pacman --noconfirm -S $p &> /dev/null
+    sudo pacman --noconfirm -S $p > /dev/null
 done
 
 # install trizen (AUR helper)
 if ! hash trizen; then
     echo "Installing trizen ..."
     cd /tmp
-    git clone https://aur.archlinux.org/trizen.git &> /dev/null
+    rm -rf trizen
+    git clone https://aur.archlinux.org/trizen.git > /dev/null
     cd trizen
-    sudo makepkg -si &> /dev/null
+    makepkg -si > /dev/null
 fi
 
 # install packages from AUR
 for p in $aur_packages; do
     echo "Installing $p from AUR ..."
-    trizen --noconfirm -S $p &> /dev/null
+    trizen --noconfirm -S $p > /dev/null
 done
 
 # install oh-my-zsh
