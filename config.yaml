@@ -100,6 +100,7 @@ profiles:
     dotfiles:
     - f_i3_config
     - f_spacemacs
+    - f_xinitrc
     - f_xresources
     - f_xmodmap
     - f_ranger_rc.conf
