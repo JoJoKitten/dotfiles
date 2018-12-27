@@ -377,7 +377,7 @@ mode "$menu_dotfiles" {
 ############# keyboard layout ####################
 set $menu_keyboard (d)e | (n)eo | (m)y neo
 mode "$menu_keyboard" {
-    bindsym d exec --no-startup-id setxkbmap de, mode "default"
+    bindsym d exec --no-startup-id "setxkbmap de && xset r 51", mode "default"
     bindsym n exec --no-startup-id setxkbmap de neo, mode "default"
     bindsym m exec --no-startup-id "setxkbmap lv && xmodmap ~/my_neo_de.xmodmap && xset -r 51", mode "default"
     bindsym q mode "default"
