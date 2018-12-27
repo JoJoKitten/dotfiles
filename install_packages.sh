@@ -2,6 +2,7 @@
 # This script installs all my packages.
 
 packages="
+clipmenu
 compton
 cronie
 cups
@@ -20,12 +21,14 @@ xf86-input-synaptics
 ranger
 redshift
 rofi
+pulseaudio
 termite
 thunderbird
 tmux
 ttf-dejavu
 vim
 wget
+xclip
 xdotool
 xorg-server
 xorg-xinit
