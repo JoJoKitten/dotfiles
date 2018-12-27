@@ -16,15 +16,15 @@ dotfiles:
   f__de_m.xmodmap:
     dst: ~/neo_de_m.xmodmap
     src: neo_de_m.xmodmap
+  f_dunstrc:
+    dst: ~/.config/dunst/dunstrc
+    src: config/dunst/dunstrc
   f_i3_config:
     dst: ~/.i3/config
     src: i3/config
   f_jojo.zsh-theme:
     dst: ~/.oh-my-zsh/themes/jojo.zsh-theme
     src: oh-my-zsh/themes/jojo.zsh-theme
-  f_xmouselessrc:
-    dst: ~/.config/xmouseless/xmouselessrc
-    src: config/xmouseless/xmouselessrc
   f_morc_menu_v1.conf:
     dst: ~/.config/morc_menu/morc_menu_v1.conf
     src: config/morc_menu/morc_menu_v1.conf
@@ -64,6 +64,9 @@ dotfiles:
   f_xmodmap:
     dst: ~/.Xmodmap
     src: Xmodmap
+  f_xmouselessrc:
+    dst: ~/.config/xmouseless/xmouselessrc
+    src: config/xmouseless/xmouselessrc
   f_xresources:
     dst: ~/.Xresources
     src: Xresources
@@ -96,6 +99,7 @@ profiles:
     - f_morc_menu_v1.conf
     - f_zathurarc
     - f_xmouselessrc
+    - f_dunstrc
   laptop-i3:
     dotfiles:
     - f_i3_config
@@ -117,3 +121,4 @@ profiles:
     - f_zathurarc
     - f_xmouselessrc
     - f__de_m.xmodmap
+    - f_dunstrc
