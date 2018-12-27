@@ -1,6 +1,6 @@
 # Set mod key to Super
 set $mod Mod4
-# another mod key to change between apps (it is set in .Xmodmap)
+# another mod key to change between apps
 set $mod2 Mod2
 
 set $terminal termite
@@ -370,14 +370,16 @@ mode "$menu_dotfiles" {
     bindsym p exec $terminal -e ~/dotfiles/pull.sh, mode "default"
     bindsym i exec "~/dotfiles/dotdrop.sh install -f && i3-msg restart", mode "default"
     bindsym c exec $terminal -e ~/dotfiles/push.sh, mode "default"
+    bindsym q mode "default"
     bindsym Escape mode "default"
 }
 
 ############# keyboard layout ####################
-set $menu_keyboard (d)e | (n)eo
+set $menu_keyboard (d)e | (n)eo | (m)y neo
 mode "$menu_keyboard" {
     bindsym d exec --no-startup-id setxkbmap de, mode "default"
     bindsym n exec --no-startup-id setxkbmap de neo, mode "default"
+    bindsym m exec --no-startup-id "setxkbmap lv && xmodmap ~/my_neo_de.xmodmap && xset -r 51", mode "default"
     bindsym q mode "default"
     bindsym Escape mode "default"
 }

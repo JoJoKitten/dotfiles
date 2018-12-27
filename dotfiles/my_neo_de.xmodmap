@@ -86,9 +86,6 @@ keysym ISO_Level3_Shift = ISO_Level3_Shift ISO_Level3_Shift ISO_Group_Shift ISO_
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! window keys
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-keysym Super_L = Super_L
-keycode 116 = Super_R
-keysym Super_R = Multi_key Multi_key
 add Mod4 = Super_L
 
 ! Mod2 is used to switch applications (see i3 config)
