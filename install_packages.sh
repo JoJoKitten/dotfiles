@@ -5,6 +5,7 @@ packages="
 compton
 cronie
 cups
+dunst
 emacs
 feh
 firefox
