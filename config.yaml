@@ -13,9 +13,9 @@ dotfiles:
   d_qpdfview:
     dst: ~/.config/qpdfview
     src: config/qpdfview
-  f__de_m.xmodmap:
-    dst: ~/neo_de_m.xmodmap
-    src: neo_de_m.xmodmap
+  f_my_neo_de.xmodmap:
+    dst: ~/my_neo_de.xmodmap
+    src: my_neo_de.xmodmap
   f_dunstrc:
     dst: ~/.config/dunst/dunstrc
     src: config/dunst/dunstrc
@@ -99,6 +99,7 @@ profiles:
     - f_morc_menu_v1.conf
     - f_zathurarc
     - f_xmouselessrc
+    - f_my_neo_de.xmodmap
     - f_dunstrc
   laptop-i3:
     dotfiles:
@@ -121,5 +122,5 @@ profiles:
     - f_morc_menu_v1.conf
     - f_zathurarc
     - f_xmouselessrc
-    - f__de_m.xmodmap
+    - f_my_neo_de.xmodmap
     - f_dunstrc

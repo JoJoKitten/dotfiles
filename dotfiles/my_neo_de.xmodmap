@@ -48,6 +48,7 @@ clear Lock
 clear Mod2
 ! Mod2 war NumLock !
 clear Mod3
+clear Mod4
 clear Mod5
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -316,6 +317,10 @@ keycode 91 = KP_Separator	period		comma		minutes		seconds		NoSymbol	KP_Delete	KP
 
 add Mod3 = ISO_First_Group
 add Mod5 = ISO_Level3_Shift
+
+
+remove Mod4 = Super_R
+add Mod2 = Super_R
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

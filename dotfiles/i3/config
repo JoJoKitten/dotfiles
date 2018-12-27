@@ -1,7 +1,7 @@
 # Set mod key to Super
 set $mod Mod4
 # another mod key to change between apps (it is set in .Xmodmap)
-set $mod2 Mod3
+set $mod2 Mod6
 
 set $terminal termite
 
@@ -197,6 +197,7 @@ bindsym $mod2+a [title="(?i)amazon musik"] focus
 # Autostart applications
 exec_always "xrdb ~/.Xresources"
 # exec_always "sleep 10 && xmodmap ~/.Xmodmap"
+exec_always "sleep 10 $$ setxkbmap lv && xmodmap ~/my_neo_de.xmodmap && xset -r 51"
 exec_always feh --bg-scale /home/jbensmann/.config/wallpaper.jpg
 exec_always compton -b
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
