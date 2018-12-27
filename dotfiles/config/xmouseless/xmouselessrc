@@ -18,16 +18,16 @@ Escape end
 Tab end
 
 alt+space start
-alt+numbersign start, grid-mode 26x26
+alt+odiaeresis start, grid-mode 26x26
+alt+adiaeresis start, mark-mode
+odiaeresis grid-mode 26x26
+adiaeresis mark-mode
 
 a add-mark
 y delete-marks
-z mark-mode
-z mark-mode
-alt+odiaeresis start, mark-mode
 
 alt+shift+j move-left 300
-alt+shift+semicolon move-down 180
+alt+shift+comma move-down 180
 alt+shift+i move-up 180
 alt+shift+l move-right 300
 alt+shift+u move-left 300, move-up 180
@@ -37,7 +37,7 @@ alt+shift+n move-left 300, move-down 180
 alt+shift+period move-right 300, move-down 180
 
 alt+j move-left 100
-alt+semicolon move-down 60
+alt+comma move-down 60
 alt+i move-up 60
 alt+l move-right 100
 alt+u move-left 100, move-up 60
@@ -47,7 +47,7 @@ alt+n move-left 100, move-down 60
 alt+period move-right 100, move-down 60
 
 j move-left 20
-semicolon move-down 12
+comma move-down 12
 i move-up 12
 l move-right 20
 u move-left 20, move-up 12
@@ -57,7 +57,7 @@ n move-left 20, move-down 12
 period move-right 20, move-down 12
 
 ctrl+j move-left 3
-ctrl+semicolon move-down 3
+ctrl+comma move-down 3
 ctrl+i move-up 3
 ctrl+l move-right 3
 ctrl+u move-left 3, move-up 3
