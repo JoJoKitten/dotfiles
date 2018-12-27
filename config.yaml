@@ -40,9 +40,6 @@ dotfiles:
   f_redshift.conf:
     dst: ~/.config/redshift/redshift.conf
     src: config/redshift/redshift.conf
-  f_resize-font:
-    dst: ~/.urxvt/ext/resize-font
-    src: urxvt/ext/resize-font
   f_spacemacs:
     dst: ~/.spacemacs
     src: spacemacs
@@ -91,7 +88,6 @@ profiles:
     - f_polybar_launch.sh
     - d_qpdfview
     - f_redshift.conf
-    - f_resize-font
     - f_zshrc
     - f_jojo.zsh-theme
     - f_tmux.conf
@@ -103,7 +99,7 @@ profiles:
     - f_dunstrc
   laptop-i3:
     dotfiles:
-    - f_i3_config
+    - f_i3_confie
     - f_spacemacs
     - f_xinitrc
     - f_xresources
@@ -114,7 +110,6 @@ profiles:
     - f_polybar_launch.sh
     - d_qpdfview
     - f_redshift.conf
-    - f_resize-font
     - f_zshrc
     - f_jojo.zsh-theme
     - f_tmux.conf
