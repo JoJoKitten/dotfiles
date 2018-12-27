@@ -99,7 +99,7 @@ profiles:
     - f_dunstrc
   laptop-i3:
     dotfiles:
-    - f_i3_confie
+    - f_i3_config
     - f_spacemacs
     - f_xinitrc
     - f_xresources
