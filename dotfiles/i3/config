@@ -196,7 +196,7 @@ bindsym $mod2+a [title="(?i)amazon musik"] focus
 
 # Autostart applications
 exec_always "xrdb ~/.Xresources"
-exec_always "sleep 15 && setxkbmap lv && xmodmap ~/my_neo_de.xmodmap && xset -r 51"
+exec_always "sleep 5 && setxkbmap lv && xmodmap ~/my_neo_de.xmodmap && xset -r 51"
 exec_always feh --bg-scale /home/jbensmann/.config/wallpaper.jpg
 exec_always compton -b
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -215,7 +215,7 @@ exec --no-startup-id xautolock -time 30 -locker blurlock
 # ?
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id emacs --daemon
-exec --no-startup-id "sleep 100; dropbox; dropbox start"
+exec --no-startup-id "sleep 100 && dropbox start"
 # Execute some other tasks that depend on the machine
 exec ~/.i3/start_jobs.sh
 

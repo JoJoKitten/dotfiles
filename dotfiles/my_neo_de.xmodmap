@@ -329,10 +329,6 @@ add Mod3 = ISO_First_Group
 add Mod5 = ISO_Level3_Shift
 
 
-remove Mod4 = Super_R
-add Mod2 = Super_R
-
-
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! Bemerkungen
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
