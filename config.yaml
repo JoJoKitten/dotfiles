@@ -13,9 +13,9 @@ dotfiles:
   d_qpdfview:
     dst: ~/.config/qpdfview
     src: config/qpdfview
-  f_my_neo_de.xmodmap:
-    dst: ~/my_neo_de.xmodmap
-    src: my_neo_de.xmodmap
+  f_conkyrc:
+    dst: ~/.config/conky/conkyrc
+    src: config/conky/conkyrc
   f_dunstrc:
     dst: ~/.config/dunst/dunstrc
     src: config/dunst/dunstrc
@@ -28,6 +28,9 @@ dotfiles:
   f_morc_menu_v1.conf:
     dst: ~/.config/morc_menu/morc_menu_v1.conf
     src: config/morc_menu/morc_menu_v1.conf
+  f_my_neo_de.xmodmap:
+    dst: ~/my_neo_de.xmodmap
+    src: my_neo_de.xmodmap
   f_polybar_config:
     dst: ~/.config/polybar/config
     src: config/polybar/config
@@ -97,6 +100,7 @@ profiles:
     - f_xmouselessrc
     - f_my_neo_de.xmodmap
     - f_dunstrc
+    - f_conkyrc
   laptop-i3:
     dotfiles:
     - f_i3_config
@@ -119,3 +123,4 @@ profiles:
     - f_xmouselessrc
     - f_my_neo_de.xmodmap
     - f_dunstrc
+    - f_conkyrc

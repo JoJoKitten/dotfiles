@@ -205,6 +205,7 @@ exec --no-startup-id bash -c "killall pulseaudio && sleep 1 && pulseaudio"
 exec --no-startup-id clipmenud
 exec --no-startup-id "sleep 20 && xmouseless"
 exec --no-startup-id redshift
+exec conky -c ~/.config/conky/conkyrc
 # ?
 exec --no-startup-id xfce4-power-manager
 # Bluetooth manager
