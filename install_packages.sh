@@ -41,7 +41,7 @@ dropbox"
 # install packages from the main repos
 for p in $packages; do
     echo "Installing $p ..."
-    sudo pacman --noconfirm -S $p > /dev/null
+    sudo pacman --needed --noconfirm -S $p > /dev/null
 done
 
 # install trizen (AUR helper)
@@ -57,7 +57,7 @@ fi
 # install packages from AUR
 for p in $aur_packages; do
     echo "Installing $p from AUR ..."
-    trizen --noconfirm -S $p > /dev/null
+    trizen --needed --noconfirm --sudo-autorepeat -S $p > /dev/null
 done
 
 # install oh-my-zsh
