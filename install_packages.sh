@@ -69,19 +69,20 @@ fi
 # install spacemacs
 if [ ! -f ~/.emacs.d/spacemacs.mk ]; then
     echo "Installing spacemacs ..."
-    rm -rf ~/.emacs.d
+    rm -rf ~/.emacs.d.bak
+    mv ~/.emacs.d ~/.emacs.d.bak
     git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 fi
 
 # dotfiles
 cd
 if [ ! -d dotfiles ]; then
-    echo "Installing dotfiles"
     git clone --recurse-submodules https://github.com/jojokitten/dotfiles.git dotfiles
-    cd dotfiles
-    ./install_requirements.sh
-    ./dotdrop.sh install -p laptop-i3
 fi
+echo "Installing dotfiles"
+cd dotfiles
+./install_requirements.sh
+./dotdrop.sh install -p laptop-i3
 
 # xmouseless
 if ! hash xmouseless; then
