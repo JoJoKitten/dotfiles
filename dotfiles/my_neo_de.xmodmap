@@ -130,10 +130,8 @@ keycode 36 = Return		Return		Return		Return		KP_Enter	KP_Enter	Return		Return
 
 keycode 49 = dead_circumflex	dead_caron	U21BB		U02DE		dead_abovedot Pointer_EnableKeys dead_belowdot	NoSymbol
 ! called T1	ˆ		ˇ		↻		˞		˙	     (keypad-mouse mode) .		
-keycode 21 = dead_grave		dead_cedilla	dead_abovering	dead_dasia	dead_diaeresis	NoSymbol	dead_macron	NoSymbol
-! called T2	`		¸		˚		῾ dasia (asper)	¨				¯		
-keycode 35 = dead_acute		dead_tilde	dead_stroke	dead_psili      dead_doubleacute	NoSymbol	dead_breve	NoSymbol
-! called T3	´		˜		/		᾿ psili (lenis)	˝				˘		
+keycode 21 = dead_acute		dead_grave	dead_abovering	dead_dasia	dead_diaeresis	NoSymbol	dead_macron	NoSymbol
+!           ´		`		°		῾ dasia (asper)	¨				¯		
 
 
 
@@ -165,6 +163,8 @@ keycode 19 = 	0   equal  rightsinglequotemark  zerosubscript	KP_Multiply	KP_Mult
 !			”			’		₀		*		*		∅
 keycode 20 = ssharp		question		NoSymbol	U2011		KP_Subtract	KP_Subtract	hyphen		NoSymbol
 !		-		—				‑ non-breaking	-		-		­ soft hyphen 
+keycode 35 = plus		asterisk	dead_stroke	dead_psili      dead_tilde	NoSymbol	dead_breve	NoSymbol
+! +    *     /     ~
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! The upper row
