@@ -229,7 +229,7 @@ keycode 48 = 	adiaeresis	Adiaeresis		at		Greek_upsilon	period		KP_Decimal	nabla	
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !            Ebene1		Ebene2		Ebene3		Ebene5		Ebene4		Ebene4+Sh	Ebene6		Ebene7
 
-keycode 52 = y	Y	NoSymbol	Escape		Escape		union		NoSymbol
+keycode 52 = y	Y	numbersign	Escape		Escape		union		NoSymbol
 !		ü		Ü		#								∪
 keycode 53 = x		X	dollar		U03F5		Tab		ISO_Left_Tab	intersection	NoSymbol
 !		ö		Ö		$		ϵ						∩
