@@ -2,7 +2,7 @@
 
 [ -n "$BASH_VERSION" ] && [ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
 
-[ -n "$ZSH_VERSION" ] && [ -f "$HOME/.zshrc" ] && . "$HOME/.zshrc"
+[ -n "$ZSH_VERSION" ] && [ -f "$HOME/.zshrc" ] && source "$HOME/.zshrc"
 
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
 export EDITOR="vim"
