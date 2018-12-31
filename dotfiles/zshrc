@@ -26,6 +26,10 @@ plugins=(
     git vi-mode sudo dircycle
 )
 
+# other bindings for dircycle
+bindkey '^[H' insert-cycledleft
+bindkey '^[L' insert-cycledright
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
