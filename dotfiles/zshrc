@@ -41,14 +41,17 @@ TRAPWINCH() {
 
 # For a full list of active aliases, run `alias`.
 alias l='ls -alh'
-alias ..='cd ..; ls -a'
-alias ...='cd ..;cd ..;ls -a'
+
+alias ..='cd ..; pwd'
+alias ...='cd ..; ..'
+alias ....='cd ..; ...'
+
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
 
 # del to move to trash
 alias del='function __trash() { mkdir -p ~/.trash && mv $* ~/.trash; }; __trash'
-
-# repeat any command
-alias repeat='function __repeat() { while [ 1 ]; do  read; eval $*; echo "----------------------------------------------------------";  done; }; __repeat'
 
 alias openvpn='(cd /etc/openvpn && sudo openvpn jbensmann_home.conf)'
 
