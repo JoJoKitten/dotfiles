@@ -1,6 +1,6 @@
 [options]
 {%@@ if profile == "laptop-i3" @@%}
-font = SauceCodeProNerdFontMono 11
+font = SourceCodePro 11
 {%@@ else @@%}
 font = SauceCodeProNerdFontMono 12
 {%@@ endif @@%}
