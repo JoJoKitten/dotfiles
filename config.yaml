@@ -13,6 +13,9 @@ dotfiles:
   d_qpdfview:
     dst: ~/.config/qpdfview
     src: config/qpdfview
+  d_ranger:
+    dst: ~/.config/ranger
+    src: config/ranger
   f_conkyrc:
     dst: ~/.config/conky/conkyrc
     src: config/conky/conkyrc
@@ -43,15 +46,9 @@ dotfiles:
   f_profile:
     dst: ~/.profile
     src: profile
-  f_ranger_rc.conf:
-    dst: ~/.config/ranger/rc.conf
-    src: config/ranger/rc.conf
   f_redshift.conf:
     dst: ~/.config/redshift/redshift.conf
     src: config/redshift/redshift.conf
-  f_scope.sh:
-    dst: ~/.config/ranger/scope.sh
-    src: config/ranger/scope.sh
   f_spacemacs:
     dst: ~/.spacemacs
     src: spacemacs
@@ -98,7 +95,6 @@ profiles:
     - f_zshrc
     - f_i3_config
     - f_spacemacs
-    - f_ranger_rc.conf
     - f_scope.sh
     - f_vimrc
     - f_xmodmap
@@ -117,6 +113,7 @@ profiles:
     - f_dunstrc
     - f_conkyrc
     - f_emoji
+    - d_ranger
   laptop-i3:
     dotfiles:
     - f_xinitrc
@@ -127,7 +124,6 @@ profiles:
     - f_i3_config
     - f_spacemacs
     - f_xmodmap
-    - f_ranger_rc.conf
     - f_scope.sh
     - d_fonts
     - f_polybar_config
@@ -144,3 +140,4 @@ profiles:
     - f_dunstrc
     - f_conkyrc
     - f_emoji
+    - d_ranger
