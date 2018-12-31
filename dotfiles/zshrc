@@ -23,7 +23,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # plugins can be found in ~/.oh-my-zsh/plugins/*
 plugins=(
-    git vi-mode sudo dircycle z
+    vi-mode sudo dircycle z last-working-dir
 )
 
 # other bindings for dircycle
