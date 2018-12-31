@@ -95,7 +95,6 @@ profiles:
     - f_zshrc
     - f_i3_config
     - f_spacemacs
-    - f_scope.sh
     - f_vimrc
     - f_xmodmap
     - d_fonts
@@ -124,7 +123,6 @@ profiles:
     - f_i3_config
     - f_spacemacs
     - f_xmodmap
-    - f_scope.sh
     - d_fonts
     - f_polybar_config
     - f_polybar_launch.sh
