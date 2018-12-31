@@ -76,25 +76,30 @@ dotfiles:
   f_zathurarc:
     dst: ~/.config/zathura/zathurarc
     src: config/zathura/zathurarc
+  f_zprofile:
+    dst: ~/.zprofile
+    src: zprofile
   f_zshrc:
     dst: ~/.zshrc
     src: zshrc
 profiles:
   desktop-i3:
     dotfiles:
+    - f_xinitrc
+    - f_xresources
+    - f_profile
+    - f_zprofile
+    - f_zshrc
     - f_i3_config
     - f_spacemacs
     - f_ranger_rc.conf
     - f_vimrc
-    - f_xinitrc
-    - f_xresources
     - f_xmodmap
     - d_fonts
     - f_polybar_config
     - f_polybar_launch.sh
     - d_qpdfview
     - f_redshift.conf
-    - f_zshrc
     - f_jojo.zsh-theme
     - f_tmux.conf
     - f_termite_config
@@ -104,13 +109,15 @@ profiles:
     - f_my_neo_de.xmodmap
     - f_dunstrc
     - f_conkyrc
-    - f_profile
   laptop-i3:
     dotfiles:
-    - f_i3_config
-    - f_spacemacs
     - f_xinitrc
     - f_xresources
+    - f_profile
+    - f_zprofile
+    - f_zshrc
+    - f_i3_config
+    - f_spacemacs
     - f_xmodmap
     - f_ranger_rc.conf
     - d_fonts
@@ -118,7 +125,6 @@ profiles:
     - f_polybar_launch.sh
     - d_qpdfview
     - f_redshift.conf
-    - f_zshrc
     - f_jojo.zsh-theme
     - f_tmux.conf
     - f_termite_config
@@ -128,4 +134,3 @@ profiles:
     - f_my_neo_de.xmodmap
     - f_dunstrc
     - f_conkyrc
-    - f_profile
