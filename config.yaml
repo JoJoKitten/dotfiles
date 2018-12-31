@@ -37,6 +37,9 @@ dotfiles:
   f_polybar_launch.sh:
     dst: ~/.config/polybar/launch.sh
     src: config/polybar/launch.sh
+  f_profile:
+    dst: ~/.profile
+    src: profile
   f_ranger_rc.conf:
     dst: ~/.config/ranger/rc.conf
     src: config/ranger/rc.conf
@@ -101,6 +104,7 @@ profiles:
     - f_my_neo_de.xmodmap
     - f_dunstrc
     - f_conkyrc
+    - f_profile
   laptop-i3:
     dotfiles:
     - f_i3_config
@@ -124,3 +128,4 @@ profiles:
     - f_my_neo_de.xmodmap
     - f_dunstrc
     - f_conkyrc
+    - f_profile
