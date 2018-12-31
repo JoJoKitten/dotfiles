@@ -19,6 +19,9 @@ dotfiles:
   f_dunstrc:
     dst: ~/.config/dunst/dunstrc
     src: config/dunst/dunstrc
+  f_emoji:
+    dst: ~/.emoji
+    src: emoji
   f_i3_config:
     dst: ~/.i3/config
     src: i3/config
@@ -113,6 +116,7 @@ profiles:
     - f_my_neo_de.xmodmap
     - f_dunstrc
     - f_conkyrc
+    - f_emoji
   laptop-i3:
     dotfiles:
     - f_xinitrc
@@ -139,3 +143,4 @@ profiles:
     - f_my_neo_de.xmodmap
     - f_dunstrc
     - f_conkyrc
+    - f_emoji
