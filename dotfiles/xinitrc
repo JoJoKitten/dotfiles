@@ -2,7 +2,7 @@
 #
 # ~/.xinitrc
 #
-# Executed by startx (run your window manager from here)
+# Executed by startx
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
