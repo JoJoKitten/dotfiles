@@ -33,6 +33,7 @@ xdotool
 xorg-server
 xorg-xinit
 zip
+unzip
 zsh"
 
 aur_packages="
