@@ -32,6 +32,7 @@ xclip
 xdotool
 xorg-server
 xorg-xinit
+zip
 zsh"
 
 aur_packages="
