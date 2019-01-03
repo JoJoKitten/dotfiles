@@ -49,6 +49,10 @@ alias ....='cd ..; ...'
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
+alias gd='git diff'
+alias gl='git log'
+alias gpl='git pull'
+alias gps='git push'
 
 # del to move to trash
 alias del='function __trash() { mkdir -p ~/.trash && mv $* ~/.trash; }; __trash'
