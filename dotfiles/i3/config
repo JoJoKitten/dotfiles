@@ -195,7 +195,8 @@ bindsym $mod2+a [title="(?i)amazon musik"] focus
 bindsym $mod2+c [class="(?i)chrom"] focus
 bindsym $mod2+w [class="(?i)remmina"] focus
 bindsym $mod2+x [class="(?i)termite"] focus
-bindsym $mod2+ö [class="(?i)postman"] focus
+bindsym $mod2+l [class="(?i)postman"] focus
+bindsym $mod2+b [class="(?i)brickv"] focus
 bindsym $mod2+z [class="(?i)filezilla"] focus
 
 # Autostart applications
