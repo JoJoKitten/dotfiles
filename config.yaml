@@ -139,3 +139,25 @@ profiles:
     - f_conkyrc
     - f_emoji
     - d_ranger
+  jb-work:
+    dotfiles:
+    - f_xinitrc
+    - f_profile
+    - f_zprofile
+    - f_zshrc
+    - f_i3_config
+    - f_spacemacs
+    - d_fonts
+    - f_polybar_config
+    - f_polybar_launch.sh
+    - d_qpdfview
+    - f_redshift.conf
+    - f_tmux.conf
+    - f_termite_config
+    - f_morc_menu_v1.conf
+    - f_zathurarc
+    - f_xmouselessrc
+    - f_my_neo_de.xmodmap
+    - f_dunstrc
+    - f_emoji
+    - d_ranger

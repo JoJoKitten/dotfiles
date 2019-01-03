@@ -190,9 +190,11 @@ bindsym $mod2+f [class="(?i)firefox"] focus
 bindsym $mod2+e [class="(?i)emacs"] focus
 bindsym $mod2+r [title="(?i)ranger"] focus
 bindsym $mod2+n [class="(?i)pcmanfm"] focus
-bindsym $mod2+t [class="(?i)thunderbird"] focus
 bindsym $mod2+p [title="(?i)pianoteq"] focus
 bindsym $mod2+a [title="(?i)amazon musik"] focus
+bindsym $mod2+c [class="(?i)chrom"] focus
+bindsym $mod2+w [class="(?i)remmina"] focus
+bindsym $mod2+x [class="(?i)termite"] focus
 
 # Autostart applications
 exec_always "xrdb ~/.Xresources"
