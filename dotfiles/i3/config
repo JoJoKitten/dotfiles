@@ -185,6 +185,12 @@ bindsym $mod+Ctrl+Shift+k resize grow height 40 px or 5 ppt
 bindsym $mod+Ctrl+Shift+j resize shrink height 40 px or 5 ppt
 bindsym $mod+Ctrl+Shift+l resize grow width 40 px or 5 ppt
 
+# Move window
+bindsym $mod+Mod1+h move left 50px
+bindsym $mod+Mod1+l move right 50px
+bindsym $mod+Mod1+k move up 50px
+bindsym $mod+Mod1+j move down 50px
+
 # change to an application
 bindsym $mod2+f [class="(?i)firefox"] focus
 bindsym $mod2+e [class="(?i)emacs"] focus
@@ -408,6 +414,97 @@ mode "$menu_exit" {
     bindsym h exec --no-startup-id systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym s exec --no-startup-id systemctl poweroff, mode "default"
+    bindsym q mode "default"
+    bindsym Escape mode "default"
+}
+
+
+##################################################
+############### mouse control ####################
+##################################################
+
+bindsym $mod+m mode "$mouse"
+
+set $mouse Mouse mode
+mode "$mouse" {
+    # mouse click left, middle, right
+    bindsym f exec xdotool click 1
+    bindsym d exec xdotool click 2
+    bindsym s exec xdotool click 3
+
+    # mouse click with control
+    bindsym control+f --release exec xdotool keydown control click 1 keyup control
+    bindsym control+d --release exec xdotool keydown control click 2 keyup control
+    bindsym control+s --release exec xdotool keydown control click 3 keyup control
+
+    # mouse click with shift
+    bindsym shift+f --release exec xdotool keydown shift click 1  keyup shift
+    bindsym shift+d --release exec xdotool keydown shift click 2  keyup shift
+    bindsym shift+s --release exec xdotool keydown shift click 3  keyup shift
+
+    # mouse click with control and shift
+    bindsym shift+control+f --release exec xdotool keydown shift keydown control click 1  keyup shift keyup control
+    bindsym shift+control+d --release exec xdotool keydown shift keydown control click 2  keyup shift keyup control
+    bindsym shift+control+s --release exec xdotool keydown shift keydown control click 3  keyup shift keyup control
+
+    #grab with left button
+    bindsym g exec xdotool mousedown 1
+    bindsym control+g exec xdotool keydown control mousedown 1
+    bindsym shift+g exec xdotool keydown shift mousedown 1
+    bindsym t exec xdotool mouseup 1 keyup control keyup shift
+
+    #grab with right button
+    bindsym r exec xdotool mousedown 3
+    bindsym control+r exec xdotool keydown control mousedown 3
+    bindsym shift+r exec xdotool keydown shift mousedown 3
+    bindsym e exec xdotool mouseup 3 keyup control keyup shift
+
+    # scroll
+    bindsym plus exec xdotool click 4
+    bindsym minus exec xdotool click 5
+
+    # movement
+    bindsym u      exec xdotool mousemove_relative -- -20 -12
+    bindsym i      exec xdotool mousemove_relative --   0 -12
+    bindsym o      exec xdotool mousemove_relative --  20 -12
+    bindsym j      exec xdotool mousemove_relative -- -20   0
+    bindsym l      exec xdotool mousemove_relative --  20   0
+    bindsym m      exec xdotool mousemove_relative -- -20  12
+    bindsym n      exec xdotool mousemove_relative -- -20  12
+    bindsym comma  exec xdotool mousemove_relative --   0  12
+    bindsym period exec xdotool mousemove_relative --  20  12
+
+    bindsym Mod1+u      exec xdotool mousemove_relative -- -100 -60
+    bindsym Mod1+i      exec xdotool mousemove_relative --    0 -60
+    bindsym Mod1+o      exec xdotool mousemove_relative --  100 -60
+    bindsym Mod1+j      exec xdotool mousemove_relative -- -100   0
+    bindsym Mod1+l      exec xdotool mousemove_relative --  100   0
+    bindsym Mod1+m      exec xdotool mousemove_relative -- -100  60
+    bindsym Mod1+n      exec xdotool mousemove_relative -- -100  60
+    bindsym Mod1+comma  exec xdotool mousemove_relative --    0  60
+    bindsym Mod1+period exec xdotool mousemove_relative --  100  60
+
+    bindsym Mod1+Shift+u      exec xdotool mousemove_relative -- -300 -180
+    bindsym Mod1+Shift+i      exec xdotool mousemove_relative --    0 -180
+    bindsym Mod1+Shift+o      exec xdotool mousemove_relative --  300 -180
+    bindsym Mod1+Shift+j      exec xdotool mousemove_relative -- -300   0
+    bindsym Mod1+Shift+l      exec xdotool mousemove_relative --  300   0
+    bindsym Mod1+Shift+m      exec xdotool mousemove_relative -- -300  180
+    bindsym Mod1+Shift+n      exec xdotool mousemove_relative -- -300  180
+    bindsym Mod1+Shift+comma  exec xdotool mousemove_relative --    0  180
+    bindsym Mod1+Shift+period exec xdotool mousemove_relative --  300  180
+
+    bindsym control+u      exec xdotool mousemove_relative -- -3 -3
+    bindsym control+i      exec xdotool mousemove_relative --   0 -3
+    bindsym control+o      exec xdotool mousemove_relative --  3 -3
+    bindsym control+j      exec xdotool mousemove_relative -- -3   2
+    bindsym control+l      exec xdotool mousemove_relative --  3   2
+    bindsym control+m      exec xdotool mousemove_relative -- -3  3
+    bindsym control+n      exec xdotool mousemove_relative -- -3  3
+    bindsym control+comma  exec xdotool mousemove_relative --   0  3
+    bindsym control+period exec xdotool mousemove_relative --  3  3
+
+    bindsym $mod+m mode "default"
     bindsym q mode "default"
     bindsym Escape mode "default"
 }
