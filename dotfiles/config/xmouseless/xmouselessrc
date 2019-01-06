@@ -14,12 +14,13 @@ clear
 # useful to reload config
 ctrl+r restart
 
-Escape end
-Tab end
+Escape end, sh "i3-msg mode default"
+Tab end, sh "i3-msg mode default"
+space click 1, end, sh "i3-msg mode default"
 
-alt+space start
-alt+odiaeresis start, grid-mode 26x26
-alt+adiaeresis start, mark-mode
+alt+space start, sh "i3-msg mode xmouseless"
+alt+odiaeresis start, grid-mode 26x26, sh "i3-msg mode xmouseless"
+alt+adiaeresis start, mark-mode, sh "i3-msg mode xmouseless"
 odiaeresis grid-mode 26x26
 adiaeresis mark-mode
 
@@ -65,8 +66,6 @@ ctrl+o move-right 3, move-up 3
 ctrl+m move-left 3, move-down 3
 ctrl+n move-left 3, move-down 3
 ctrl+period move-right 3, move-down 3
-
-space click 1, end
 
 f click 1, add-mark
 d click 2
