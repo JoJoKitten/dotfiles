@@ -482,15 +482,15 @@ mode "$mouse" {
     bindsym Mod1+comma  exec xdotool mousemove_relative --    0  60
     bindsym Mod1+period exec xdotool mousemove_relative --  100  60
 
-    bindsym Mod1+Shift+u      exec xdotool mousemove_relative -- -300 -180
-    bindsym Mod1+Shift+i      exec xdotool mousemove_relative --    0 -180
-    bindsym Mod1+Shift+o      exec xdotool mousemove_relative --  300 -180
-    bindsym Mod1+Shift+j      exec xdotool mousemove_relative -- -300   0
-    bindsym Mod1+Shift+l      exec xdotool mousemove_relative --  300   0
-    bindsym Mod1+Shift+m      exec xdotool mousemove_relative -- -300  180
-    bindsym Mod1+Shift+n      exec xdotool mousemove_relative -- -300  180
-    bindsym Mod1+Shift+comma  exec xdotool mousemove_relative --    0  180
-    bindsym Mod1+Shift+period exec xdotool mousemove_relative --  300  180
+    bindsym Mod1+Shift+u      exec xdotool mousemove_relative -- -500 -300
+    bindsym Mod1+Shift+i      exec xdotool mousemove_relative --    0 -300
+    bindsym Mod1+Shift+o      exec xdotool mousemove_relative --  500 -300
+    bindsym Mod1+Shift+j      exec xdotool mousemove_relative -- -500   0
+    bindsym Mod1+Shift+l      exec xdotool mousemove_relative --  500   0
+    bindsym Mod1+Shift+m      exec xdotool mousemove_relative -- -500  300
+    bindsym Mod1+Shift+n      exec xdotool mousemove_relative -- -500  300
+    bindsym Mod1+Shift+comma  exec xdotool mousemove_relative --    0  300
+    bindsym Mod1+Shift+period exec xdotool mousemove_relative --  500  300
 
     bindsym control+u      exec xdotool mousemove_relative -- -3 -3
     bindsym control+i      exec xdotool mousemove_relative --   0 -3
