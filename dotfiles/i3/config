@@ -178,6 +178,7 @@ for_window [class="(?i)System-config-printer.py"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Gpick"] floating enable
 for_window [title="Terminator-Einstellungen"] floating enable
+for_window [class="(?i)pqiv"] floating enable
 
 # Resize window
 bindsym $mod+Ctrl+Shift+h resize shrink width 40 px or 5 ppt
@@ -214,18 +215,14 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
 exec --no-startup-id bash -c "killall pulseaudio && sleep 1 && pulseaudio"
 exec --no-startup-id clipmenud
-exec --no-startup-id "sleep 20 && xmouseless"
 exec --no-startup-id redshift
 # exec conky -c ~/.config/conky/conkyrc
-# ?
 exec --no-startup-id xfce4-power-manager
 # Bluetooth manager
 # exec --no-startup-id blueman-applet
 # XKB indicator
 # exec_always --no-startup-id sbxkb
 exec --no-startup-id xautolock -time 30 -locker blurlock
-# ?
-exec_always --no-startup-id fix_xcursor
 exec --no-startup-id emacs --daemon
 exec --no-startup-id "sleep 100 && dropbox start"
 # Execute some other tasks that depend on the machine
@@ -428,6 +425,7 @@ bindsym $mod+m mode "$mouse"
 set $mouse Mouse mode
 mode "$mouse" {
     # mouse click left, middle, right
+    bindsym space exec xdotool click 1, mode "default"
     bindsym f exec xdotool click 1
     bindsym d exec xdotool click 2
     bindsym s exec xdotool click 3
@@ -504,7 +502,11 @@ mode "$mouse" {
     bindsym control+comma  exec xdotool mousemove_relative --   0  3
     bindsym control+period exec xdotool mousemove_relative --  3  3
 
+    bindsym $mod+comma exec ~/scripts/start_grid_nav.sh, mode "default"
+
     bindsym $mod+m mode "default"
     bindsym q mode "default"
     bindsym Escape mode "default"
 }
+# grid navigation
+bindsym $mod+comma exec ~/scripts/start_grid_nav.sh
