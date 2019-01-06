@@ -493,13 +493,13 @@ mode "$mouse" {
     bindsym Mod1+Shift+period exec xdotool mousemove_relative --  500  300
 
     bindsym control+u      exec xdotool mousemove_relative -- -3 -3
-    bindsym control+i      exec xdotool mousemove_relative --   0 -3
+    bindsym control+i      exec xdotool mousemove_relative --  0 -3
     bindsym control+o      exec xdotool mousemove_relative --  3 -3
-    bindsym control+j      exec xdotool mousemove_relative -- -3   2
-    bindsym control+l      exec xdotool mousemove_relative --  3   2
+    bindsym control+j      exec xdotool mousemove_relative -- -3  0
+    bindsym control+l      exec xdotool mousemove_relative --  3  0
     bindsym control+m      exec xdotool mousemove_relative -- -3  3
     bindsym control+n      exec xdotool mousemove_relative -- -3  3
-    bindsym control+comma  exec xdotool mousemove_relative --   0  3
+    bindsym control+comma  exec xdotool mousemove_relative --  0  3
     bindsym control+period exec xdotool mousemove_relative --  3  3
 
     bindsym $mod+comma exec ~/scripts/start_grid_nav.sh, mode "default"
