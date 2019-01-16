@@ -142,9 +142,6 @@ profiles:
   jb-work:
     dotfiles:
     - f_xinitrc
-    - f_profile
-    - f_zprofile
-    - f_zshrc
     - f_spacemacs
     - d_fonts
     - f_polybar_config
