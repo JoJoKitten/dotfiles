@@ -38,7 +38,7 @@ bindsym $mod+Return exec $terminal -e tmux
 # start a terminal
 bindsym $mod+Shift+Return exec $terminal
 # start a terminal with tmux and emacs
-bindsym $mod+Ctrl+Return exec $terminal -e "tmux new-session 'emacsclient -t'"
+bindsym $mod+Ctrl+Return exec emacsclient -c
 
 # use rofi as program launcher; start with super key 
 bindsym $mod+d exec rofi -show run -lines 10 -opacity "85"
@@ -352,10 +352,11 @@ mode "$menu" {
 }
 
 ############# application launcher ###############
-set $menu_launcher (f)irefox | (e)macs | (r)anger | neo(m)utt | pcma(n)fm | (t)hunderbird |\
- (p)ianoteq | (a)mazon music 
+set $menu_launcher (f)irefox | (v)im | (e)macs | (r)anger | neo(m)utt | pcma(n)fm \
+                   | (t)hunderbird |(p)ianoteq | (a)mazon music 
 mode "$menu_launcher" {
     bindsym f exec firefox, mode "default"
+    bindsym v exec $terminal -e vim, mode "default"
     bindsym e exec emacs, mode "default"
     bindsym r exec $terminal --name=ranger -e ranger, mode "default"
     bindsym m exec $terminal --name=neomutt -e neomutt, mode "default"

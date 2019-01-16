@@ -44,12 +44,11 @@ values."
      git
      markdown
      org
+     shell-scripts
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
-     ;; spell-checking
      syntax-checking
-     ;; version-control
      latex
      python
      c-c++
@@ -337,11 +336,11 @@ you should place your code here."
   )
 
   ;; disable background in terminal
-  (defun on-frame-open (frame)
-    (if (not (display-graphic-p frame))
-        (set-face-background 'default "unspecified-bg" frame)))
-  (on-frame-open (selected-frame))
-  (add-hook 'after-make-frame-functions 'on-frame-open)
+  ;; (defun on-frame-open (frame)
+  ;;   (if (not (display-graphic-p frame))
+  ;;       (set-face-background 'default "unspecified-bg" frame)))
+  ;; (on-frame-open (selected-frame))
+  ;; (add-hook 'after-make-frame-functions 'on-frame-open)
 
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -362,7 +361,7 @@ you should place your code here."
      (output-html "xdg-open"))))
  '(package-selected-packages
    (quote
-    (yaml-mode pyenv-mode orgit org-projectile org-pomodoro alert log4e markdown-toc magit-gitflow hy-mode helm-gitignore helm-company helm-c-yasnippet flycheck-pos-tip pos-tip evil-magit magit magit-popup git-commit ghub treepy graphql company-statistics company-auctex company-anaconda auto-yasnippet anaconda-mode ac-ispell yapfify xterm-color unfill smeargle shell-pop pyvenv pytest py-isort pip-requirements org-category-capture org-present gntp org-mime org-download mwim multi-term mmm-mode markdown-mode live-py-mode dash-functional htmlize helm-pydoc gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flycheck with-editor eshell-z eshell-prompt-extras esh-help cython-mode company yasnippet pythonic auto-complete auctex-latexmk auctex ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode bind-key auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (insert-shebang fish-mode company-shell yaml-mode pyenv-mode orgit org-projectile org-pomodoro alert log4e markdown-toc magit-gitflow hy-mode helm-gitignore helm-company helm-c-yasnippet flycheck-pos-tip pos-tip evil-magit magit magit-popup git-commit ghub treepy graphql company-statistics company-auctex company-anaconda auto-yasnippet anaconda-mode ac-ispell yapfify xterm-color unfill smeargle shell-pop pyvenv pytest py-isort pip-requirements org-category-capture org-present gntp org-mime org-download mwim multi-term mmm-mode markdown-mode live-py-mode dash-functional htmlize helm-pydoc gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flycheck with-editor eshell-z eshell-prompt-extras esh-help cython-mode company yasnippet pythonic auto-complete auctex-latexmk auctex ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode bind-key auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
