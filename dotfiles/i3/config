@@ -353,7 +353,7 @@ mode "$menu" {
 
 ############# application launcher ###############
 set $menu_launcher (f)irefox | (v)im | (e)macs | (r)anger | neo(m)utt | pcma(n)fm \
-                   | (t)hunderbird |(p)ianoteq | (a)mazon music 
+| (t)mux |(p)ianoteq | (a)mazon music 
 mode "$menu_launcher" {
     bindsym f exec firefox, mode "default"
     bindsym v exec $terminal -e vim, mode "default"
@@ -361,7 +361,7 @@ mode "$menu_launcher" {
     bindsym r exec $terminal --name=ranger -e ranger, mode "default"
     bindsym m exec $terminal --name=neomutt -e neomutt, mode "default"
     bindsym n exec pcmanfm, mode "default"
-    bindsym t exec thunderbird, mode "default"
+    bindsym t exec ~/scripts/open_tmux_session.sh , mode "default"
     bindsym p mode "default", exec \
       pactl set-sink-volume 1 85% \
       && ~/Applications/Pianoteq_6_STAGE/amd64/Pianoteq\ 6\ STAGE \
@@ -401,9 +401,11 @@ mode "$menu_keyboard" {
 }
 
 ##################### tools ######################
-set $menu_tools (e)mojis
+set $menu_tools (e)mojis | (d)e translate | (t) en translate
 mode "$menu_tools" {
     bindsym e exec --no-startup-id ~/scripts/dmenu_emojis.sh, mode "default"
+    bindsym d exec $terminal -e 'bash -c "rofi -dmenu -lines 0 | trans :de -v -theme random"', mode "default"
+    bindsym t exec $terminal -e 'bash -c "rofi -dmenu -lines 0 | trans :en -v -theme random"', mode "default"
     bindsym q mode "default"
     bindsym Escape mode "default"
 }
