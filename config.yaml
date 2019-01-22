@@ -144,6 +144,7 @@ profiles:
     - f_xinitrc
     - f_spacemacs
     - d_fonts
+    - f_i3_config
     - f_polybar_config
     - f_polybar_launch.sh
     - d_qpdfview

@@ -205,6 +205,7 @@ bindsym $mod2+x [class="(?i)termite"] focus
 bindsym $mod2+l [class="(?i)postman"] focus
 bindsym $mod2+b [class="(?i)brickv"] focus
 bindsym $mod2+z [class="(?i)filezilla"] focus
+bindsym $mod2+i [class="(?i)idea"] focus
 
 # Autostart applications
 exec_always "xrdb ~/.Xresources"
@@ -316,8 +317,13 @@ gaps inner 20
 gaps outer 0
 
 # No gaps and borders when there only is one container
+{%@@ if profile == "laptop-i3" @@%}
 smart_gaps on
 smart_borders on
+{%@@ else @@%}
+# smart_gaps on
+# smart_borders on
+{%@@ endif @@%}
 
 # Change gaps on current workspace
 bindsym $mod+plus gaps inner current plus 10
