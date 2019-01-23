@@ -216,7 +216,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
 exec --no-startup-id bash -c "killall pulseaudio && sleep 1 && pulseaudio"
 exec --no-startup-id clipmenud
-exec --no-startup-id xmouseless
+exec_always --no-startup-id sleep 8 && xmouseless
 exec --no-startup-id redshift
 # exec conky -c ~/.config/conky/conkyrc
 exec --no-startup-id xfce4-power-manager
