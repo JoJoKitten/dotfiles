@@ -12,7 +12,7 @@ floating_modifier $mod
 bindsym $mod+Shift+r restart
 
 # borders
-set $border_size 2
+set $border_size 1
 new_window pixel $border_size
 new_float normal
 bindsym $mod+u border normal
