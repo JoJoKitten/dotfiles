@@ -121,7 +121,7 @@ you should place your code here."
 
   ;; avy
   ;; (setq avy-keys (nconc (number-sequence ?a ?z)))
-  (global-set-key (kbd "M-j") 'evil-avy-goto-char)
+  (global-set-key (kbd "M-j") 'evil-avy-goto-char-2)
 
   ;; an own menu entry
   (spacemacs/declare-prefix "o" "own-menu")
