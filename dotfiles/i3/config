@@ -40,7 +40,7 @@ bindsym $mod+Shift+Return exec $terminal
 # start a terminal with tmux and emacs
 bindsym $mod+Ctrl+Return exec emacsclient -c
 
-# use rofi as program launcher; start with super key 
+# use rofi as program launcher; start with super key
 bindsym $mod+d exec rofi -show run -lines 10 -opacity "85"
 # window switcher
 bindsym $mod+Tab exec rofi -show window # -lines 10
@@ -85,7 +85,7 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+Shift+a focus child
 
-# workspace back and forth 
+# workspace back and forth
 bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
@@ -254,11 +254,11 @@ bindsym $mod+s swap container with mark _swap
 bindsym $mod+Ctrl+r --release exec xdotool mousedown 3
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% 
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
-bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% 
+bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5%
 bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5%
 bindsym Shift+XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle
 
@@ -279,7 +279,7 @@ bindsym Shift+XF86AudioPlay  exec xdotool search --name "Amazon.*Firefox" getwin
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10 
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 
 # bind apps to workspaces
@@ -359,7 +359,7 @@ mode "$menu" {
 
 ############# application launcher ###############
 set $menu_launcher (f)irefox | (v)im | (e)macs | (r)anger | neo(m)utt | pcma(n)fm \
-| (t)mux |(p)ianoteq | (a)mazon music 
+| (t)mux |(p)ianoteq | (a)mazon music
 mode "$menu_launcher" {
     bindsym f exec firefox, mode "default"
     bindsym v exec $terminal -e vim, mode "default"
@@ -428,4 +428,3 @@ mode "$menu_exit" {
     bindsym q mode "default"
     bindsym Escape mode "default"
 }
-
