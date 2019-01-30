@@ -31,9 +31,9 @@ dotfiles:
   f_i3_config:
     dst: ~/.i3/config
     src: i3/config
-  f_jojo.zsh-theme:
-    dst: ~/.oh-my-zsh/themes/jojo.zsh-theme
-    src: oh-my-zsh/themes/jojo.zsh-theme
+  f_lfrc:
+    dst: ~/.config/lf/lfrc
+    src: config/lf/lfrc
   f_morc_menu_v1.conf:
     dst: ~/.config/morc_menu/morc_menu_v1.conf
     src: config/morc_menu/morc_menu_v1.conf
@@ -82,20 +82,12 @@ dotfiles:
   f_zathurarc:
     dst: ~/.config/zathura/zathurarc
     src: config/zathura/zathurarc
-  f_zprofile:
-    dst: ~/.zprofile
-    src: zprofile
-  f_zshrc:
-    dst: ~/.zshrc
-    src: zshrc
 profiles:
   desktop-i3:
     dotfiles:
     - f_xinitrc
     - f_xresources
     - f_profile
-    - f_zprofile
-    - f_zshrc
     - f_i3_config
     - f_spacemacs
     - f_vimrc
@@ -105,7 +97,6 @@ profiles:
     - f_polybar_launch.sh
     - d_qpdfview
     - f_redshift.conf
-    - f_jojo.zsh-theme
     - f_tmux.conf
     - f_termite_config
     - f_morc_menu_v1.conf
@@ -117,6 +108,7 @@ profiles:
     - f_emoji
     - d_ranger
     - f_config.fish
+    - f_lfrc
   jb-work:
     dotfiles:
     - f_xinitrc
@@ -137,13 +129,12 @@ profiles:
     - f_emoji
     - d_ranger
     - f_config.fish
+    - f_lfrc
   laptop-i3:
     dotfiles:
     - f_xinitrc
     - f_xresources
     - f_profile
-    - f_zprofile
-    - f_zshrc
     - f_i3_config
     - f_spacemacs
     - f_xmodmap
@@ -152,7 +143,6 @@ profiles:
     - f_polybar_launch.sh
     - d_qpdfview
     - f_redshift.conf
-    - f_jojo.zsh-theme
     - f_tmux.conf
     - f_termite_config
     - f_morc_menu_v1.conf
@@ -164,3 +154,4 @@ profiles:
     - f_emoji
     - d_ranger
     - f_config.fish
+    - f_lfrc
