@@ -71,7 +71,7 @@ abbr gps 'git push'
 
 abbr e 'emacsclient -t '
 
-export EDITOR="vim"
+export EDITOR="emacsclient_t"
 export TERMINAL="termite"
 export BROWSER="firefox"
 export READER="zathura"

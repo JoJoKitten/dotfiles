@@ -131,11 +131,11 @@ you should place your code here."
   (spacemacs/set-leader-keys "os" 'show-subtree)
 
   ;; disable background in terminal
-  ;; (defun on-frame-open (frame)
-  ;;   (if (not (display-graphic-p frame))
-  ;;       (set-face-background 'default "unspecified-bg" frame)))
-  ;; (on-frame-open (selected-frame))
-  ;; (add-hook 'after-make-frame-functions 'on-frame-open)
+  (defun on-frame-open (frame)
+    (if (not (display-graphic-p frame))
+        (set-face-background 'default "unspecified-bg" frame)))
+  (on-frame-open (selected-frame))
+  (add-hook 'after-make-frame-functions 'on-frame-open)
 
 
   )
