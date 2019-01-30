@@ -16,6 +16,9 @@ dotfiles:
   d_ranger:
     dst: ~/.config/ranger
     src: config/ranger
+  f_config.fish:
+    dst: ~/.config/fish/config.fish
+    src: config/fish/config.fish
   f_conkyrc:
     dst: ~/.config/conky/conkyrc
     src: config/conky/conkyrc
@@ -113,6 +116,27 @@ profiles:
     - f_conkyrc
     - f_emoji
     - d_ranger
+    - f_config.fish
+  jb-work:
+    dotfiles:
+    - f_xinitrc
+    - f_spacemacs
+    - d_fonts
+    - f_i3_config
+    - f_polybar_config
+    - f_polybar_launch.sh
+    - d_qpdfview
+    - f_redshift.conf
+    - f_tmux.conf
+    - f_termite_config
+    - f_morc_menu_v1.conf
+    - f_zathurarc
+    - f_xmouselessrc
+    - f_my_neo_de.xmodmap
+    - f_dunstrc
+    - f_emoji
+    - d_ranger
+    - f_config.fish
   laptop-i3:
     dotfiles:
     - f_xinitrc
@@ -139,22 +163,4 @@ profiles:
     - f_conkyrc
     - f_emoji
     - d_ranger
-  jb-work:
-    dotfiles:
-    - f_xinitrc
-    - f_spacemacs
-    - d_fonts
-    - f_i3_config
-    - f_polybar_config
-    - f_polybar_launch.sh
-    - d_qpdfview
-    - f_redshift.conf
-    - f_tmux.conf
-    - f_termite_config
-    - f_morc_menu_v1.conf
-    - f_zathurarc
-    - f_xmouselessrc
-    - f_my_neo_de.xmodmap
-    - f_dunstrc
-    - f_emoji
-    - d_ranger
+    - f_config.fish
