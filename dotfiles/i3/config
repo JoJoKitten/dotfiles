@@ -407,18 +407,19 @@ mode "$menu_keyboard" {
 }
 
 ##################### tools ######################
-set $menu_tools (e)mojis | (d)e translate | (t) en translate | (k)ontakte | (a)ctivedb
+set $menu_tools (e)mojis | (d)e translate | (t) en translate | (k)ontakte | (u)pdate time | (a)ctivedb
 mode "$menu_tools" {
     bindsym e exec --no-startup-id ~/scripts/dmenu_emojis.sh, mode "default"
     bindsym d exec $terminal -e 'bash -c "rofi -dmenu -lines 0 | trans :de -v -theme random"', mode "default"
     bindsym t exec $terminal -e 'bash -c "rofi -dmenu -lines 0 | trans :en -v -theme random"', mode "default"
     bindsym k exec cat ~/org/kontakte.org | rofi -dmenu, mode "default"
+    bindsym u exec $terminal -e 'bash -c "~/scripts/update_time.sh && read"', mode "default"
     bindsym a mode "$menu_activedb"
     bindsym q mode "default"
     bindsym Escape mode "default"
 }
 
-##################### tools ######################
+################# activedb #######################
 set $menu_activedb (u) get-url
 mode "$menu_activedb" {
     bindsym u exec ~/scripts/activedb_help.sh search-name $(rofi -dmenu), mode "default"
