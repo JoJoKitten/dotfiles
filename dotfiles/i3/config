@@ -421,7 +421,7 @@ mode "$menu_tools" {
 ##################### tools ######################
 set $menu_activedb (u) get-url
 mode "$menu_activedb" {
-    bindsym u exec ~/scripts/activedb_help.sh get-url $(rofi -dmenu), mode "default"
+    bindsym u exec ~/scripts/activedb_help.sh search-name $(rofi -dmenu), mode "default"
     bindsym q mode "default"
     bindsym Escape mode "default"
 }
