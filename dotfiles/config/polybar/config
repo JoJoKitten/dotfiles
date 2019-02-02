@@ -43,10 +43,10 @@ font-1 = Font Awesome 5 Brands:pixelsize=10;3
 font-2 = Font Awesome 5 Free Solid:pixelsize=10;3
 font-3 = Font Awesome 5 Free:pixelsize=10;3
 
-; Modules 
+; Modules
 modules-left = i3
-modules-center = 
-modules-right = network cpu mem filesystem pulseaudio date time 
+modules-center =
+modules-right = network cpu mem filesystem pulseaudio date time
 
 ; The separator will be inserted between the output of each module
 separator = "|"
@@ -78,12 +78,12 @@ tray-scale = 1.0
 
 ; Enable support for inter-process messaging
 ; See the Messaging wiki page for more details.
-enable-ipc = false
+enable-ipc = true
 
 ; Fallback click handlers that will be called if
 ; there's no matching module handler found.
-click-left = 
-click-middle = 
+click-left =
+click-middle =
 click-right =
 scroll-up =
 scroll-down =
