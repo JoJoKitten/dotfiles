@@ -20,6 +20,9 @@ function fish_prompt
     else
         set_color --bold green
     end
+    if [ -n "$RANGER_LEVEL" ]
+        echo -n "(ranger) "
+    end
     echo -n (prompt_pwd)
     echo -n ' > '
 end
@@ -42,14 +45,16 @@ function del
     ~/scripts/trash.sh $argv
 end
 
-# start lf and change working directory on exit
-function lfcd
+# start ranger and change working directory on exit
+function rangercd
     set tmp (mktemp)
-    lf -last-dir-path=$tmp $argv
+    ranger "--cmd=set column_ratios 1,1" --choosedir="$tmp" "$argv"
     cd (cat $tmp)
     rm -f $tmp
 end
-abbr c lfcd
+
+abbr c rangercd
+
 
 abbr ll "ls -lh $argv"
 abbr la "ls -alh $argv"
