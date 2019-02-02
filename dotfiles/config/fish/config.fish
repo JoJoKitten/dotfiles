@@ -53,7 +53,7 @@ function rangercd
     rm -f $tmp
 end
 
-abbr c rangercd
+abbr r rangercd
 
 
 abbr ll "ls -lh $argv"
