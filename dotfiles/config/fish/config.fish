@@ -48,7 +48,7 @@ end
 # start ranger and change working directory on exit
 function rangercd
     set tmp (mktemp)
-    ranger "--cmd=set column_ratios 1,1" --choosedir="$tmp" "$argv"
+    ranger "--cmd=set column_ratios 1,1" --choosedir="$tmp"
     cd (cat $tmp)
     rm -f $tmp
 end
