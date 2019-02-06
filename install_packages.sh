@@ -30,6 +30,7 @@ vim
 wget
 xclip
 xdotool
+xorg-xbacklight
 xorg-server
 xorg-xinit
 zip
@@ -102,4 +103,3 @@ if ! hash entr; then
 fi
 
 echo "Done!"
-
