@@ -3,4 +3,3 @@
 cd ~/dotfiles
 git pull
 sleep 1
-
