@@ -1,6 +1,6 @@
 [colors]
-background_0 = #80101010
-background_1 = #80101010
+background_0 = #f0101010
+background_1 = #20101010
 i3_line_color = #b08020
 module_bg = #c0101010
 mode_fg = #404040
@@ -15,7 +15,7 @@ monitor-fallback =
 
 bottom = false
 width = 100%
-height = 27p
+height = 22p
 offset-x = 0
 offset-y = 0
 
@@ -38,10 +38,10 @@ underline-color = #fff
 ;   border-{left,top,right,bottom}-color
 border-bottom-size = 0
 
-font-0 = NotoSans-Regular:size=10;2
-font-1 = Font Awesome 5 Brands:pixelsize=10;3
-font-2 = Font Awesome 5 Free Solid:pixelsize=10;3
-font-3 = Font Awesome 5 Free:pixelsize=10;3
+font-0 = NotoSans-Regular:size=10;0
+font-1 = Font Awesome 5 Brands:pixelsize=10;1
+font-2 = Font Awesome 5 Free Solid:pixelsize=10;1
+font-3 = Font Awesome 5 Free:pixelsize=10;1
 
 ; Modules
 modules-left = i3
@@ -112,10 +112,14 @@ reverse-scroll = true
 
 ; ws-icon-[0-9]+ = label;icon
 ; NOTE: The label needs to match the name of the i3 workspace
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
+; ws-icon-0 = 1;
+; ws-icon-1 = 2;
+; ws-icon-2 = 3;
+; ws-icon-3 = 4;
+ws-icon-0 = 1;1
+ws-icon-1 = 2;2
+ws-icon-2 = 3;3
+ws-icon-3 = 4;4
 ws-icon-4 = 5;5
 ws-icon-5 = 6;6
 ws-icon-6 = 7;7
@@ -213,11 +217,11 @@ unknown-as-up = true
 
 format-connected = <label-connected>
 format-connected-padding = 3
-format-connected-background = ${colors.module_bg}
+; format-connected-background = ${colors.module_bg}
 
 format-disconnected = <label-disconnected>
 format-disconnected-padding = 3
-format-disconnected-background = ${colors.module_bg}
+; format-disconnected-background = ${colors.module_bg}
 
 label-connected =  %downspeed:9%
 
@@ -254,7 +258,7 @@ label-disconnected-foreground = #66ffffff
 type = custom/script
 format =  <label>
 format-padding = 3
-format-background = ${colors.module_bg}
+; format-background = ${colors.module_bg}
 exec = date "+%d.%m.%y"
 tail = false
 interval = 1
@@ -268,7 +272,7 @@ interval = 1.0
 time = %H:%M:%S
 format =  <label>
 format-padding = 3
-format-background = ${colors.module_bg}
+; format-background = ${colors.module_bg}
 label = "  %time%"
 
 [module/filesystem]
@@ -285,11 +289,11 @@ spacing = 4
 
 format-mounted = <label-mounted>
 format-mounted-padding = 3
-format-mounted-background = ${colors.module_bg}
+; format-mounted-background = ${colors.module_bg}
 
 format-unmounted = <label-unmounted>
 format-unmounted-padding = 3
-format-unmounted-background = ${colors.module_bg}
+; format-unmounted-background = ${colors.module_bg}
 
 ; Available tokens:
 ;   %mountpoint%
@@ -317,11 +321,11 @@ use-ui-max = true
 ;   <ramp-volume>
 ;   <bar-volume>
 format-volume = <ramp-volume> <label-volume>
-format-volume-background = ${colors.module_bg}
+; format-volume-background = ${colors.module_bg}
 format-volume-padding = 3
 
 format-muted = <label-muted>
-format-muted-background = ${colors.module_bg}
+; format-muted-background = ${colors.module_bg}
 format-muted-padding = 3
 
 label-volume = %percentage%
@@ -336,7 +340,7 @@ ramp-volume-2 = 
 type = custom/script
 format =   <label>
 format-padding = 3
-format-background = ${colors.module_bg}
+; format-background = ${colors.module_bg}
 exec = free  | awk '/^Speicher/{print int(100*$3/$2)"%"}'
 tail = false
 interval = 10
@@ -348,7 +352,7 @@ scroll-up = notify-send "$(echo -e 'Shows used and total memory.\nLeft click to 
 type = custom/script
 format =  <label>
 format-padding = 3
-format-background = ${colors.module_bg}
+; format-background = ${colors.module_bg}
 
 {%@@ if profile == "laptop-i3" @@%}
 exec = top -1 -bn1 | awk '/^%CPU/{print $2"%"}'
