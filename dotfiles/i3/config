@@ -408,15 +408,6 @@ mode "$menu_tools" {
     bindsym t exec $terminal -e 'bash -c "rofi -dmenu -lines 0 | trans :en -v -theme random"', mode "default"
     bindsym k exec cat ~/org/kontakte.org | rofi -dmenu, mode "default"
     bindsym u exec $terminal -e 'bash -c "~/scripts/update_time.sh && read"', mode "default"
-    bindsym a mode "$menu_activedb"
-    bindsym q mode "default"
-    bindsym Escape mode "default"
-}
-
-################# activedb #######################
-set $menu_activedb (u) get-url
-mode "$menu_activedb" {
-    bindsym u exec ~/scripts/activedb_help.sh search-name $(rofi -dmenu), mode "default"
     bindsym q mode "default"
     bindsym Escape mode "default"
 }
