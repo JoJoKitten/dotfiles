@@ -188,6 +188,7 @@ bindsym $mod+Mod1+j move down 50px
 
 # change to an application
 bindsym $mod2+f [class="(?i)firefox"] focus
+bindsym $mod2+t [class="(?i)thunderbird"] focus
 bindsym $mod2+e [class="(?i)emacs"] focus
 bindsym $mod2+r [title="(?i)ranger"] focus
 bindsym $mod2+n [class="(?i)pcmanfm"] focus
