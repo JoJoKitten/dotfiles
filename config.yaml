@@ -7,9 +7,6 @@ config:
   link_by_default: false
   longkey: false
 dotfiles:
-  d_fonts:
-    dst: ~/.fonts
-    src: fonts
   d_qpdfview:
     dst: ~/.config/qpdfview
     src: config/qpdfview
@@ -70,9 +67,6 @@ dotfiles:
   f_xinitrc:
     dst: ~/.xinitrc
     src: xinitrc
-  f_xmodmap:
-    dst: ~/.Xmodmap
-    src: Xmodmap
   f_xmouselessrc:
     dst: ~/.config/xmouseless/xmouselessrc
     src: config/xmouseless/xmouselessrc
@@ -91,8 +85,6 @@ profiles:
     - f_i3_config
     - f_spacemacs
     - f_vimrc
-    - f_xmodmap
-    - d_fonts
     - f_polybar_config
     - f_polybar_launch.sh
     - d_qpdfview
@@ -104,16 +96,13 @@ profiles:
     - f_xmouselessrc
     - f_my_neo_de.xmodmap
     - f_dunstrc
-    - f_conkyrc
     - f_emoji
     - d_ranger
     - f_config.fish
-    - f_lfrc
   jb-work:
     dotfiles:
     - f_xinitrc
     - f_spacemacs
-    - d_fonts
     - f_i3_config
     - f_polybar_config
     - f_polybar_launch.sh
@@ -129,7 +118,6 @@ profiles:
     - f_emoji
     - d_ranger
     - f_config.fish
-    - f_lfrc
   laptop-i3:
     dotfiles:
     - f_xinitrc
@@ -138,7 +126,6 @@ profiles:
     - f_i3_config
     - f_spacemacs
     - f_xmodmap
-    - d_fonts
     - f_polybar_config
     - f_polybar_launch.sh
     - d_qpdfview
@@ -150,8 +137,6 @@ profiles:
     - f_xmouselessrc
     - f_my_neo_de.xmodmap
     - f_dunstrc
-    - f_conkyrc
     - f_emoji
     - d_ranger
     - f_config.fish
-    - f_lfrc

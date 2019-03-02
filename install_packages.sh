@@ -2,40 +2,58 @@
 # This script installs all my packages.
 
 packages="
+breath-dark-icon-theme
 clipmenu
 compton
 cronie
 cups
 dunst
 emacs
-feh
+figlet
 firefox
+fish
 git
 i3-gaps
+lxappearance
+menda-themes-dark
+morc_menu
+mpv
 networkmanager
 network-manager-applet
+openssh
+openvpn
 pcmanfm
+pulseaudio
 python
 python-pip
 xf86-input-synaptics
 ranger
 redshift
 rofi
-pulseaudio
+sxiv
+system-config-printer
 termite
 thunderbird
 tmux
+translate-shell
+trizen
 ttf-dejavu
+ttf-font-awesome
+adobe-source-code-pro-fonts
 vim
 wget
+xarchiver
 xclip
 xdotool
 xorg-xbacklight
 xorg-server
+xorg-xprop
 xorg-xinit
+xorg-xinput
+xorg-xev
 zip
 unzip
-zsh"
+"
 
 aur_packages="
 polybar
@@ -47,27 +65,11 @@ for p in $packages; do
     sudo pacman --needed --noconfirm -S $p > /dev/null
 done
 
-# install trizen (AUR helper)
-if ! hash trizen; then
-    echo "Installing trizen ..."
-    cd /tmp
-    rm -rf trizen
-    git clone https://aur.archlinux.org/trizen.git > /dev/null
-    cd trizen
-    makepkg -si > /dev/null
-fi
-
 # install packages from AUR
 for p in $aur_packages; do
     echo "Installing $p from AUR ..."
     trizen --needed --noconfirm --sudo-autorepeat -S $p > /dev/null
 done
-
-# install oh-my-zsh
-if [ ! -d ~/.oh-my-zsh ]; then
-    echo "Installing oh-my-zsh ..."
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-fi
 
 # install spacemacs
 if [ ! -f ~/.emacs.d/spacemacs.mk ]; then
