@@ -13,6 +13,9 @@ dotfiles:
   d_ranger:
     dst: ~/.config/ranger
     src: config/ranger
+  f_bashrc:
+    dst: ~/.bashrc
+    src: bashrc
   f_config.fish:
     dst: ~/.config/fish/config.fish
     src: config/fish/config.fish
@@ -99,6 +102,7 @@ profiles:
     - f_emoji
     - d_ranger
     - f_config.fish
+    - f_bashrc
   jb-work:
     dotfiles:
     - f_xinitrc
@@ -118,6 +122,7 @@ profiles:
     - f_emoji
     - d_ranger
     - f_config.fish
+    - f_bashrc
   laptop-i3:
     dotfiles:
     - f_xinitrc
@@ -125,7 +130,6 @@ profiles:
     - f_profile
     - f_i3_config
     - f_spacemacs
-    - f_xmodmap
     - f_polybar_config
     - f_polybar_launch.sh
     - d_qpdfview
@@ -140,3 +144,4 @@ profiles:
     - f_emoji
     - d_ranger
     - f_config.fish
+    - f_bashrc

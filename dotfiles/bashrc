@@ -1,0 +1,41 @@
+#!/bin/bash
+shopt -s autocd # cd without 'cd'
+HISTSIZE= HISTFILESIZE= # Infinite history.
+export PS1="\[$(tput setaf 1)\]\$(RET=\$?; [[ \$RET != 0 ]] && echo -n \$RET\ )\[$(tput setaf 3)\]\W \[$(tput sgr0)\]\[$(tput bold)\]\[$(tput setaf 2)\]> "
+
+# vi-mode
+set -o vi
+
+# color
+alias ls='ls -hN --color=auto --group-directories-first'
+alias grep="grep --color=auto"
+alias diff="diff --color=auto"
+
+# start ranger and change working directory on exit
+rangercd() {
+    tmp=$(mktemp)
+    ranger "--cmd=set column_ratios 1,1" --choosedir="$tmp"
+    cd $(cat $tmp)
+    rm -f $tmp
+}
+
+# aliases
+alias del="~/scripts/trash.sh $*"
+alias p="sudo pacman"
+alias pss="pacman -Ss"
+alias ss="sudo systemctl"
+alias e="emacsclient -t"
+alias v="vim"
+alias r="ranger"
+alias c="rangercd"
+alias sr="sudo ranger"
+alias ka="killall"
+
+alias g="git"
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
+alias gd="git diff"
+alias gl="git log"
+alias gpl="git pull"
+alias gps="git push"
