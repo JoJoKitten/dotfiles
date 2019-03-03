@@ -20,22 +20,24 @@ rangercd() {
 }
 
 # aliases
-alias del="~/scripts/trash.sh $*"
-alias p="sudo pacman"
-alias pss="pacman -Ss"
-alias ss="sudo systemctl"
-alias e="emacsclient -t"
-alias v="vim"
-alias r="ranger"
-alias c="rangercd"
-alias sr="sudo ranger"
-alias ka="killall"
+alias del='~/scripts/trash.sh'
+alias ss='sudo systemctl'
+alias e='emacsclient -t'
+alias v='nvim'
+alias vf='fzf | xargs -r nvim'
+alias r='rangercd'
+alias sr='sudo ranger'
+alias ka='killall'
 
-alias g="git"
-alias gs="git status"
-alias ga="git add"
-alias gc="git commit"
-alias gd="git diff"
-alias gl="git log"
-alias gpl="git pull"
-alias gps="git push"
+alias p='pacman'
+alias sp='sudo pacman'
+alias pss='pacman -Ss'
+
+alias g='git'
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gd='git diff'
+alias gl='git log'
+alias gpl='git pull'
+alias gps='git push'
