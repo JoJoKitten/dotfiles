@@ -66,7 +66,7 @@ bindsym $mod+Shift+l mark --add _tmp; focus right; swap container with mark _tmp
 bindsym $mod+Ctrl+h move left
 bindsym $mod+Ctrl+j move down
 bindsym $mod+Ctrl+k move up
-bindsym $mod+Ctrl+l move right    
+bindsym $mod+Ctrl+l move right
 
 # split orientation
 bindsym $mod+y split h
@@ -382,11 +382,13 @@ mode "$menu_cnee" {
 }
 
 ################### dotfiles #####################
-set $menu_dotfiles (p)ull | (i)nstall | (c)ommit and push
+set $menu_dotfiles (p)ull | (i)nstall | (c)ommit and push | i(3) | (n)eovim
 mode "$menu_dotfiles" {
     bindsym p exec $terminal -e ~/dotfiles/pull.sh, mode "default"
     bindsym i exec "~/dotfiles/dotdrop.sh install -f && i3-msg restart", mode "default"
     bindsym c exec $terminal -e ~/dotfiles/push.sh, mode "default"
+    bindsym 3 exec $terminal -e "nvim $HOME/dotfiles/dotfiles/i3/config", mode "default"
+    bindsym n exec $terminal -e "nvim $HOME/dotfiles/dotfiles/config/nvim/init.vim", mode "default"
     bindsym q mode "default"
     bindsym Escape mode "default"
 }
