@@ -37,8 +37,8 @@ bindsym $mod+o focus mode_toggle
 bindsym $mod+Return exec $terminal -e tmux
 # start a terminal
 bindsym $mod+Shift+Return exec $terminal
-# start a terminal with tmux and emacs
-bindsym $mod+Ctrl+Return exec emacsclient -c
+# start a terminal with tmux and neovim
+bindsym $mod+Ctrl+Return exec $terminal -e "tmux -c nvim"
 
 # use rofi as program launcher; start with super key
 bindsym $mod+d exec rofi -show run -lines 10 -opacity "85"

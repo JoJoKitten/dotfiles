@@ -13,10 +13,6 @@ set wildmenu
 " Show partial commands in the last line of the screen
 set showcmd
 
-filetype plugin indent on
-
-syntax enable
- 
 set hlsearch
  
 " Use case insensitive search, except when using capital letters
@@ -120,3 +116,5 @@ if dein#load_state('~/.cache/dein')
   call dein#save_state()
 endif
 
+syntax enable
+filetype plugin indent on
