@@ -21,6 +21,9 @@ rangercd() {
     rm -f $tmp
 }
 
+# fuzzy keybindings
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # aliases
 alias del='~/scripts/trash.sh'
 alias ss='sudo systemctl'
@@ -43,3 +46,4 @@ alias gd='git diff'
 alias gl='git log'
 alias gpl='git pull'
 alias gps='git push'
+
