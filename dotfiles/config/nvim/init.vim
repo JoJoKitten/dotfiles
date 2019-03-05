@@ -19,13 +19,17 @@ if dein#load_state('~/.cache/dein')
     call dein#add('roxma/vim-hug-neovim-rpc')
   endif
 
-  call dein#add('junegunn/fzf.vim')
   call dein#add('easymotion/vim-easymotion')
+  call dein#add('vim-scripts/YankRing.vim')
   call dein#add('vimwiki/vimwiki')
+  call dein#add('junegunn/fzf.vim')
   call dein#add('tpope/vim-surround')
-  call dein#add('mboughaba/i3config.vim')
   call dein#add('scrooloose/nerdtree')
   call dein#add('morhetz/gruvbox')
+  call dein#add('jnurmine/Zenburn')
+  call dein#add('mboughaba/i3config.vim')
+" Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+  "call dein#add('Valloric/YouCompleteMe')
 
   call dein#end()
   call dein#save_state()
@@ -36,6 +40,7 @@ endif
 let mapleader = " "
 
 set rtp+=~/.fzf
+set encoding=utf-8
 
 set background=dark
 
@@ -44,6 +49,7 @@ filetype plugin indent on
 
 set termguicolors
 colorscheme gruvbox
+" colorscheme zenburn
 
 " nice without termguicolors
 " colorscheme pablo
@@ -80,7 +86,7 @@ set nostartofline
 set ruler
 
 " 2 to display the status line
-set laststatus=1
+set laststatus=2
 
 " unsaved changes: ask instead of fail
 set confirm
@@ -95,12 +101,16 @@ set softtabstop=4
 set expandtab
 set autoindent
 
+
+" python
+autocmd BufNewFile,BufRead *.py set textwidth=79 colorcolumn=80
+
+
 "-------------------- Mappings -----------------------------
 map Y y$
 
-" Map <C-L> (redraw screen) to also turn off search highlighting until the
-" next search
-nnoremap <C-L> :nohl<CR><C-L>
+" redraw
+nnoremap <M-l> :nohl<CR><C-L>
 
 :nnoremap <leader>fs :wa<cr>
 
@@ -116,6 +126,7 @@ nnoremap <leader>f :Files<cr>
 nnoremap <leader>b :Buffers<cr>
 
 nnoremap <leader>hc :Commands<cr>
+nnoremap <leader>hk :Maps<cr>
 
 nnoremap <leader>zc :Colors<cr>
 
@@ -123,7 +134,15 @@ nnoremap <leader>nr :set relativenumber<cr>
 nnoremap <leader>na :set number<cr>
 nnoremap <leader>nn :set nonumber<cr>:set norelativenumber<cr>
 
-imap jj <Esc>
+nnoremap <leader>sv :vs<cr>
+nnoremap <leader>sh :sp<cr>
+
+nnoremap <C-h> <C-w><C-h>
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
+
+imap jk <Esc>
 
 map gn :bn<cr>
 map gp :bp<cr>
@@ -135,22 +154,37 @@ map <M-d> <C-d>
 map <M-o> <C-o>
 map <M-i> <C-i>
 
+nnoremap <M-a> za
+nnoremap <M-+> zo
+nnoremap <M--> zc
+nnoremap <M-S-+> zR
+nnoremap <M-S--> zM
+
+" cycle through buffers
+nnoremap <M-f> :bnext<CR>
+nnoremap <M-S-f> :bprevious<CR>
+
 
 "--------------------- i3config.vim ------------------------
 autocmd BufRead,BufNewFile ~/dotfiles/dotfiles/i3/config set filetype=i3config
 
+"--------------------- YouCompleteMe -----------------------
+let g:ycm_autoclose_preview_window_after_completion=1
+map <C-b>  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 "--------------------- Nerd tree ---------------------------
-map <C-n> :NERDTreeToggle<CR>
+map <M-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 "--------------------- vimwiki -----------------------------
 let g:vimwiki_folding='expr'
 
 "--------------------- easymotion --------------------------
-" <leader>s{char} to move to {char}
-map  <M-j> <Plug>(easymotion-bd-f)
-nmap <M-j> <Plug>(easymotion-overwin-f)
-
-" JK motions: Line motions
-map <leader>j <Plug>(easymotion-j)
-map <leader>k <Plug>(easymotion-k)
+:let g:EasyMotion_keys="asdghklqwertyuiopzxcvbnmfj"
+" move to char
+map  ö <Plug>(easymotion-bd-f)
+nmap ö <Plug>(easymotion-overwin-f)
+" move up/down
+map <M-j> <Plug>(easymotion-j)
+map <M-k> <Plug>(easymotion-k)
 
