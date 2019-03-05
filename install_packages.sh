@@ -12,6 +12,7 @@ emacs
 figlet
 firefox
 fish
+fzf
 git
 i3-gaps
 lxappearance
