@@ -35,6 +35,10 @@ endif
 
 let mapleader = " "
 
+set rtp+=~/.fzf
+
+set background=dark
+
 syntax enable
 filetype plugin indent on
 

@@ -106,6 +106,7 @@ profiles:
     - d_ranger
     - f_config.fish
     - f_bashrc
+    - f_init.vim
   jb-work:
     dotfiles:
     - f_xinitrc
@@ -126,6 +127,7 @@ profiles:
     - d_ranger
     - f_config.fish
     - f_bashrc
+    - f_init.vim
   laptop-i3:
     dotfiles:
     - f_xinitrc
