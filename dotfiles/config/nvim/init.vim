@@ -134,6 +134,7 @@ nnoremap <M-S--> zM
 " buffers
 nnoremap <M-f> :bnext<CR>
 nnoremap <M-S-f> :bprevious<CR>
+map <leader>bn :enew<cr>
 map <leader>bd :bd<cr>
 
 
@@ -150,9 +151,6 @@ map gl :Lines<cr>
 "--------------------- i3config.vim ------------------------
 autocmd BufRead,BufNewFile ~/dotfiles/dotfiles/i3/config set filetype=i3config
 
-"--------------------- YouCompleteMe -----------------------
-let g:ycm_autoclose_preview_window_after_completion=1
-map <C-b>  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "--------------------- Nerd tree ---------------------------
 map <M-n> :NERDTreeToggle<CR>
