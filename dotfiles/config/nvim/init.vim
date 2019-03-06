@@ -96,7 +96,8 @@ map Y y$
 nnoremap <M-l> :nohl<CR><C-L>
 
 " Files
-:nnoremap <leader>fs :wa<cr>
+:nnoremap <leader>fs :w<cr>
+:nnoremap <leader>fq :wq<cr>
 :nnoremap <leader>qz :qa<cr>
 
 " Replace all ocurrences of the word under the cursor.
