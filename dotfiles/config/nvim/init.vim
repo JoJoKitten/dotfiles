@@ -37,6 +37,8 @@ set splitbelow splitright
 set ruler
 set relativenumber
 set scrolloff=10
+" highlight cursor line
+set cursorline
 " always show status bar
 set laststatus=2
 
@@ -119,6 +121,10 @@ nnoremap <M-+> zo
 nnoremap <M--> zc
 nnoremap <M-S-+> zR
 nnoremap <M-S--> zM
+
+" windows
+map <leader>wd :q<cr>
+map <leader>wm <C-w>o
 
 " buffers
 nnoremap <M-f> :bnext<CR>
