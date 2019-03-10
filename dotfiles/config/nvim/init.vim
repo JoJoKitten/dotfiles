@@ -31,7 +31,8 @@ set encoding=utf-8
 syntax enable
 filetype plugin indent on
 set showcmd
-set clipboard=unnamedplus
+" we don't need the following because of the + register
+" set clipboard=unnamedplus
 set nostartofline
 set splitbelow splitright
 set ruler
