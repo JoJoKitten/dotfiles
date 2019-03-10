@@ -4,37 +4,24 @@
 " | | | |  __/ (_) \ V /| | | | | | |
 " |_| |_|\___|\___/ \_/ |_|_| |_| |_|
 
-"----------------- dein plugin manager ---------------------
-if &compatible
-  set nocompatible
-endif
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-if dein#load_state('~/.cache/dein')
-  call dein#begin('~/.cache/dein')
+"--------------- Vundle plugin manager ---------------------
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
 
-  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
-  call dein#add('Shougo/deoplete.nvim')
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
-  endif
-
-  call dein#add('junegunn/fzf.vim')
-  call dein#add('vimwiki/vimwiki')
-  call dein#add('vim-scripts/YankRing.vim')
-  call dein#add('easymotion/vim-easymotion')
-  call dein#add('tpope/vim-surround')
-  call dein#add('scrooloose/nerdtree')
-  call dein#add('morhetz/gruvbox')
-  call dein#add('jnurmine/Zenburn')
-  call dein#add('mboughaba/i3config.vim')
-" Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-  "call dein#add('Valloric/YouCompleteMe')
-
-  call dein#end()
-  call dein#save_state()
-endif
-
+Plugin 'junegunn/fzf.vim'
+Plugin 'vimwiki/vimwiki'
+Plugin 'vim-scripts/YankRing.vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+Plugin 'morhetz/gruvbox'
+Plugin 'jnurmine/Zenburn'
+Plugin 'mboughaba/i3config.vim'
+Plugin 'Valloric/YouCompleteMe'
+call vundle#end()
 "----------------------------------------------------------
 
 let mapleader = " "
@@ -48,11 +35,12 @@ set clipboard=unnamedplus
 set nostartofline
 set splitbelow splitright
 set ruler
-set laststatus=2
 set relativenumber
 set scrolloff=10
+" always show status bar
+set laststatus=2
 
-" Completion
+" completion
 set wildmenu
 set wildmode=longest,list,full
 set mouse=a
@@ -76,7 +64,7 @@ autocmd BufWritePre * %s/\s\+$//e
 " unsaved changes: ask instead of fail
 set confirm
 
-" timeouts
+" shortcut timeouts
 set timeout timeoutlen=1000 ttimeout ttimeoutlen=200
 
 " tabs
@@ -155,7 +143,8 @@ autocmd BufRead,BufNewFile ~/dotfiles/dotfiles/i3/config set filetype=i3config
 
 "--------------------- Nerd tree ---------------------------
 map <M-n> :NERDTreeToggle<CR>
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+"ignore files in NERDTree
+let NERDTreeIgnore=['\.pyc$', '\~$']
 
 "--------------------- vimwiki -----------------------------
 let g:vimwiki_folding='expr'
