@@ -68,7 +68,7 @@ autocmd BufWritePre * %s/\s\+$//e
 set confirm
 
 " shortcut timeouts
-set timeout timeoutlen=1000 ttimeout ttimeoutlen=200
+set timeout timeoutlen=300 ttimeout ttimeoutlen=200
 
 " tabs
 set shiftwidth=4
@@ -79,6 +79,19 @@ set autoindent
 " python
 autocmd BufNewFile,BufRead *.py set textwidth=79 colorcolumn=80
 
+"-------------------- snippets -----------------------------
+inoremap jj <esc>o
+inoremap jh <esc>o<backspace>
+inoremap hh <backspace>
+inoremap öe <space>==<space>
+inoremap ön <space>!=<space>
+" python
+autocmd FileType python inoremap öw while :<left>
+autocmd FileType python inoremap öi if :<left>
+autocmd FileType python inoremap öf def (self):<Esc>F(i
+autocmd FileType python inoremap öa <Esc>0f)i,<space>
+autocmd FileType python inoremap ön None
+autocmd FileType python inoremap ös self.
 
 "-------------------- Mappings -----------------------------
 " general bindings
