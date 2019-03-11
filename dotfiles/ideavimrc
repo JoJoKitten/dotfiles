@@ -1,0 +1,53 @@
+set surround
+set multiple-cursors
+
+" nnoremap yy "+yy
+" vnoremap y "+y
+" nnoremap p "+p
+" nnoremap P "+P
+" set clipboard=unnamedplus
+
+let mapleader = " "
+
+set relativenumber
+set scrolloff=10
+
+" Completion
+set wildmenu
+set wildmode=longest,list,full
+
+" case insensitive search except when using capital letters
+set ignorecase
+set smartcase
+set hlsearch
+
+" timeouts
+set timeout timeoutlen=300 ttimeout ttimeoutlen=200
+
+
+
+"-------------------- Mappings -----------------------------
+imap jk <Esc>
+map Y y$
+inoremap jj <esc>o
+inoremap hh <backspace>
+
+inoremap öw while () {<cr><esc>kk0f(a
+inoremap öi if () {<cr><esc>kk0f(a
+inoremap öf public () {<cr><cr>}<esc>kk0f(i
+inoremap öa <Esc>0f)i,<space>
+inoremap ön null
+
+nnoremap <leader>fs :w<cr>
+nnoremap <leader>fq :wq<cr>
+
+" split
+nnoremap <leader>sv :vs<cr>
+nnoremap <leader>sh :sp<cr>
+
+" too lazy to press Ctrl :)
+map <M-u> <C-u>
+map <M-d> <C-d>
+map <M-o> <C-o>
+map <M-i> <C-i>
+

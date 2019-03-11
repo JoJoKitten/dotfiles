@@ -31,6 +31,9 @@ dotfiles:
   f_i3_config:
     dst: ~/.i3/config
     src: i3/config
+  f_ideavimrc:
+    dst: ~/.ideavimrc
+    src: ideavimrc
   f_init.vim:
     dst: ~/.config/nvim/init.vim
     src: config/nvim/init.vim
@@ -128,6 +131,7 @@ profiles:
     - f_config.fish
     - f_bashrc
     - f_init.vim
+    - f_ideavimrc
   laptop-i3:
     dotfiles:
     - f_xinitrc
