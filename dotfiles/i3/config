@@ -285,8 +285,8 @@ set $active-border       #a0b0b0
 set $inactive-border     #303030
 set $bg-color 	         #303030
 set $inactive-bg-color   #002020
-set $text-color          #ffffff
-set $inactive-text-color #707070
+set $text-color          #000000
+set $inactive-text-color #f0f0f0
 set $urgent-bg-color     #205040
 set $indicator-color     #908020
 #                       border              background         text                 indicator
