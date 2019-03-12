@@ -32,11 +32,20 @@ map Y y$
 inoremap jj <esc>o
 inoremap hh <backspace>
 
-inoremap öw while () {<cr><esc>kk0f(a
-inoremap öi if () {<cr><esc>kk0f(a
-inoremap öf public () {<cr><cr>}<esc>kk0f(i
+inoremap öw while (
+inoremap öi if (
 inoremap öa <Esc>0f)i,<space>
-inoremap ön null
+
+inoremap äu public<space>
+inoremap är private<space>
+inoremap ääu public static<space>
+inoremap äär private static<space>
+inoremap äv void<space>
+inoremap äi int<space>
+inoremap äd double<space>
+inoremap äs String<space>
+inoremap äl long<space>
+inoremap än null
 
 nnoremap <leader>fs :w<cr>
 nnoremap <leader>fq :wq<cr>
