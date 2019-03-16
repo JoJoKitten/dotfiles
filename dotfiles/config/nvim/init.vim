@@ -97,6 +97,10 @@ map Y y$
 nnoremap <M-l> :nohl<cr><C-L>
 nnoremap <leader>ho <C-]>
 
+inoremap xn <C-x><C-n>
+inoremap xp <C-x><C-p>
+inoremap xl <C-x><C-l>
+
 " copy/paste
 nnoremap <M-p> "+p
 nnoremap <M-c> "+y
