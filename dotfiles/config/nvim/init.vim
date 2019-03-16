@@ -96,6 +96,12 @@ imap jk <esc>
 map Y y$
 nnoremap <M-l> :nohl<cr><C-L>
 nnoremap <leader>ho <C-]>
+
+" copy/paste
+nnoremap <M-p> "+p
+nnoremap <M-c> "+y
+
+" cd
 nnoremap <leader>cd :lcd %:p:h<cr>
 nnoremap <leader>ca :cd %:p:h<cr>
 
