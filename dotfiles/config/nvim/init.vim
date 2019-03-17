@@ -80,15 +80,16 @@ set autoindent
 "-------------------- python -------------------------------
 autocmd BufNewFile,BufRead *.py set textwidth=79 colorcolumn=80
 
-autocmd FileType python inoremap öw while :<left>
-autocmd FileType python inoremap öi if :<left>
-autocmd FileType python inoremap öf def (self):<esc>F(i
+autocmd FileType python inoremap öw while<space>:<left>
+autocmd FileType python inoremap öi if<space>:<left>
+autocmd FileType python inoremap öf def<space>(self):<esc>F(i
 autocmd FileType python inoremap öp <esc>0f)i,<space>
 autocmd FileType python inoremap ön None
+autocmd FileType python inoremap ör return<space>
 autocmd FileType python inoremap ös self.
 " getter and setter
-autocmd FileType python inoremap öag <esc>bywodef get_<esc>pa(self):<cr>return self.<esc>pkkdd
-autocmd FileType python inoremap öas <esc>bywodef set_<esc>pa(self, <esc>pa):<cr>self.<esc>pa = <esc>pkkdd
+autocmd FileType python inoremap öag <esc>bywodef<space>get_<esc>pa(self):<cr>return<space>self.<esc>pkkdd
+autocmd FileType python inoremap öas <esc>bywodef<space>set_<esc>pa(self,<space><esc>pa):<cr>self.<esc>pa<space>=<space><esc>pkkdd
 
 "-------------------- Mappings -----------------------------
 " general bindings
