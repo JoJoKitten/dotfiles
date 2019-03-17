@@ -109,8 +109,8 @@ nnoremap <M-c> "+y
 nnoremap <leader>cd :lcd %:p:h<cr>
 nnoremap <leader>ca :cd %:p:h<cr>
 
-inoremap jj <esc>o
-inoremap jh <esc>o<backspace>
+inoremap jj <C-o>o
+inoremap jh <C-o>o<backspace>
 inoremap hh <backspace>
 
 " Files
