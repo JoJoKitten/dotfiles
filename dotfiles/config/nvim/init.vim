@@ -102,8 +102,9 @@ inoremap xp <C-x><C-p>
 inoremap xl <C-x><C-l>
 
 " copy/paste
+noremap <M-c> "+y
 nnoremap <M-p> "+p
-nnoremap <M-c> "+y
+noremap! <M-p> <C-r>+
 
 " cd
 nnoremap <leader>cd :lcd %:p:h<cr>
