@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script installs all my packages.
+# This script installs all my packages on arch.
 
 packages="
 breath-dark-icon-theme
@@ -41,7 +41,7 @@ trizen
 ttf-dejavu
 ttf-font-awesome
 adobe-source-code-pro-fonts
-vim
+neovim
 wget
 xarchiver
 xclip
@@ -72,14 +72,6 @@ for p in $aur_packages; do
     trizen --needed --noconfirm --sudo-autorepeat -S $p > /dev/null
 done
 
-# install spacemacs
-if [ ! -f ~/.emacs.d/spacemacs.mk ]; then
-    echo "Installing spacemacs ..."
-    rm -rf ~/.emacs.d.bak
-    mv ~/.emacs.d ~/.emacs.d.bak
-    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-fi
-
 # dotfiles
 cd
 if [ ! -d dotfiles ]; then
@@ -89,6 +81,11 @@ echo "Installing dotfiles"
 cd dotfiles
 ./install_requirements.sh
 ./dotdrop.sh install -f -p laptop-i3
+
+# Vundle (vim plugin manager)
+if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
 
 # xmouseless
 if ! hash xmouseless; then
