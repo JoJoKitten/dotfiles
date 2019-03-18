@@ -17,11 +17,15 @@ Plugin 'vim-scripts/YankRing.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
+Plugin 'mildred/vim-bufmru'
 Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
 Plugin 'jnurmine/Zenburn'
+Plugin 'tmhedberg/SimpylFold'
 Plugin 'mboughaba/i3config.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'klen/python-mode'
+Plugin 'scrooloose/syntastic'
 call vundle#end()
 "----------------------------------------------------------
 
@@ -41,7 +45,7 @@ set relativenumber
 set scrolloff=10
 " highlight cursor line
 set cursorline
-" always show status bar
+" 2 to always show status bar
 set laststatus=2
 
 " completion
@@ -78,8 +82,16 @@ set expandtab
 set autoindent
 
 "-------------------- python -------------------------------
-autocmd BufNewFile,BufRead *.py set textwidth=79 colorcolumn=80
+" code running
+let g:pymode_run=1
+let g:pymode_run_bind='<F5>'
 
+autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
+autocmd FileType python match Excess /\%81v.*/
+autocmd FileType python set textwidth=79 colorcolumn=80
+autocmd FileType python set foldmethod=indent
+
+" snipptes
 autocmd FileType python inoremap öw while<space>:<left>
 autocmd FileType python inoremap öi if<space>:<left>
 autocmd FileType python inoremap öf def<space>(self):<esc>F(i
@@ -108,8 +120,8 @@ nnoremap <M-p> "+p
 noremap! <M-p> <C-r>+
 
 " cd
-nnoremap <leader>cd :lcd %:p:h<cr>
-nnoremap <leader>ca :cd %:p:h<cr>
+nnoremap <leader>cd :cd %:p:h<cr>
+nnoremap <leader>cdw :lcd %:p:h<cr>
 
 inoremap jj <C-o>o
 inoremap jh <C-o>o<backspace>
@@ -157,8 +169,8 @@ map <leader>wd :q<cr>
 map <leader>wm <C-w>o
 
 " buffers
-nnoremap <M-f> :bnext<cr>
-nnoremap <M-S-f> :bprevious<cr>
+nnoremap <M-f> :BufMRUNext<cr>
+nnoremap <M-S-f> :BufMRUPrev<cr>
 map <leader>bn :enew<cr>
 map <leader>bd :bd<cr>
 
@@ -181,8 +193,7 @@ autocmd BufRead,BufNewFile ~/dotfiles/dotfiles/i3/config set filetype=i3config
 
 "--------------------- Nerd tree ---------------------------
 map <M-n> :NERDTreeToggle<cr>
-let NERDTreeWinPos="right"
-"ignore files in NERDTree
+let NERDTreeWinPos="left"
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
 "--------------------- vimwiki -----------------------------
@@ -196,4 +207,23 @@ nmap ö <Plug>(easymotion-overwin-f)
 " move up/down
 map <M-j> <Plug>(easymotion-j)
 map <M-k> <Plug>(easymotion-k)
+
+"--------------------- syntastic ---------------------------
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_enable_signs=1
+let g:syntastic_check_on_wq=0
+let g:syntastic_aggregate_errors=1
+let g:syntastic_loc_list_height=5
+let g:syntastic_error_symbol='X'
+let g:syntastic_style_error_symbol='X'
+let g:syntastic_warning_symbol='x'
+let g:syntastic_style_warning_symbol='x'
+let g:syntastic_python_checkers=['flake8', 'pydocstyle', 'python']
+
+"--------------------- YouCompleteMe -----------------------
+set completeopt-=preview
+nmap <C-b> :YcmCompleter GoTo<CR>
+nmap <C-M-b> :YcmCompleter GoToDefinition<CR>
+
 
