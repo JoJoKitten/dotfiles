@@ -19,11 +19,13 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'mildred/vim-bufmru'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tmhedberg/SimpylFold'
 Plugin 'morhetz/gruvbox'
 Plugin 'jnurmine/Zenburn'
+Plugin 'Lokaltog/powerline'
 Plugin 'mboughaba/i3config.vim'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'klen/python-mode'
+Plugin 'python-mode/python-mode'
 Plugin 'scrooloose/syntastic'
 call vundle#end()
 "----------------------------------------------------------
@@ -243,6 +245,7 @@ let g:syntastic_style_warning_symbol='x'
 let g:syntastic_python_checkers=['flake8', 'pydocstyle', 'python']
 
 "--------------------- YouCompleteMe -----------------------
+let g:ycm_autoclose_preview_window_after_completion=1
 set completeopt-=preview
 nmap <C-b> :YcmCompleter GoTo<CR>
 nmap <C-M-b> :YcmCompleter GoToDefinition<CR>
