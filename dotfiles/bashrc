@@ -21,6 +21,10 @@ rangercd() {
     rm -f $tmp
 }
 
+# clear and ls
+bind -x '"\C-l": clear'
+bind -x '"\el": ls'
+
 # fuzzy keybindings
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -46,4 +50,3 @@ alias gd='git diff'
 alias gl='git log'
 alias gpl='git pull'
 alias gps='git push'
-
