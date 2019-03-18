@@ -19,7 +19,6 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'mildred/vim-bufmru'
 Plugin 'scrooloose/nerdtree'
-Plugin 'tmhedberg/SimpylFold'
 Plugin 'morhetz/gruvbox'
 Plugin 'jnurmine/Zenburn'
 Plugin 'Lokaltog/powerline'
@@ -90,7 +89,7 @@ set foldlevel=2
 set foldminlines=0
 :highlight Folded guibg=none guifg=LightGrey
 :highlight FoldColumn guibg=none guifg=white
-set fillchars="vert:|,fold:-"
+set fillchars=fold:\ ,
 
 function! NeatFoldText() "{{{2
 let lines_count = v:foldend - v:foldstart + 1
