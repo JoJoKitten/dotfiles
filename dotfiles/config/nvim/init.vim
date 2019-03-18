@@ -21,7 +21,6 @@ Plugin 'mildred/vim-bufmru'
 Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
 Plugin 'jnurmine/Zenburn'
-Plugin 'tmhedberg/SimpylFold'
 Plugin 'mboughaba/i3config.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'klen/python-mode'
@@ -81,6 +80,23 @@ set softtabstop=4
 set expandtab
 set autoindent
 
+"-------------------- folding ------------------------------
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
+set foldminlines=0
+:highlight Folded guibg=none guifg=LightGrey
+:highlight FoldColumn guibg=none guifg=white
+set fillchars="vert:|,fold:-"
+
+function! NeatFoldText() "{{{2
+let lines_count = v:foldend - v:foldstart + 1
+return repeat(' ', v:foldlevel*4) . '+++ ' . lines_count
+endfunction
+set foldtext=NeatFoldText()
+" }}}2
+
 "-------------------- python -------------------------------
 " code running
 let g:pymode_run=1
@@ -90,6 +106,9 @@ autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
 autocmd FileType python match Excess /\%81v.*/
 autocmd FileType python set textwidth=79 colorcolumn=80
 autocmd FileType python set foldmethod=indent
+
+" goto method
+autocmd FileType python nmap <M-m> :Lines<cr>def
 
 " snipptes
 autocmd FileType python inoremap öw while<space>:<left>
@@ -159,6 +178,8 @@ map <M-i> <C-i>
 
 " folds
 nnoremap <M-a> za
+nnoremap <tab> za
+nnoremap <M-tab> zO
 nnoremap <M-+> zo
 nnoremap <M--> zc
 nnoremap <M-S-+> zR
@@ -193,7 +214,7 @@ autocmd BufRead,BufNewFile ~/dotfiles/dotfiles/i3/config set filetype=i3config
 
 "--------------------- Nerd tree ---------------------------
 map <M-n> :NERDTreeToggle<cr>
-let NERDTreeWinPos="left"
+let NERDTreeWinPos="right"
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
 "--------------------- vimwiki -----------------------------
