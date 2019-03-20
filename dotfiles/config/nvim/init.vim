@@ -23,8 +23,8 @@ Plugin 'morhetz/gruvbox'
 Plugin 'jnurmine/Zenburn'
 Plugin 'Lokaltog/powerline'
 Plugin 'mboughaba/i3config.vim'
+Plugin 'python-mode/python-mode', { 'branch': 'develop' }
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'python-mode/python-mode'
 Plugin 'scrooloose/syntastic'
 call vundle#end()
 "----------------------------------------------------------
