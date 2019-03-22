@@ -72,7 +72,7 @@ autocmd BufWritePre * %s/\s\+$//e
 set confirm
 
 " shortcut timeouts
-set timeout timeoutlen=300 ttimeout ttimeoutlen=200
+set timeout timeoutlen=500 ttimeout ttimeoutlen=200
 
 " tabs
 set shiftwidth=4
