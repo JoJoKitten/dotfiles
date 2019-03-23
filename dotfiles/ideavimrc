@@ -1,20 +1,10 @@
 set surround
 set multiple-cursors
 
-" nnoremap yy "+yy
-" vnoremap y "+y
-" nnoremap p "+p
-" nnoremap P "+P
-" set clipboard=unnamedplus
-
 let mapleader = " "
 
 set relativenumber
 set scrolloff=10
-
-" Completion
-set wildmenu
-set wildmode=longest,list,full
 
 " case insensitive search except when using capital letters
 set ignorecase
@@ -23,7 +13,6 @@ set hlsearch
 
 " timeouts
 set timeout timeoutlen=300 ttimeout ttimeoutlen=200
-
 
 
 "-------------------- Mappings -----------------------------
@@ -36,16 +25,16 @@ inoremap öw while (
 inoremap öi if (
 inoremap öa <Esc>0f)i,<space>
 
-inoremap äu public<space>
-inoremap är private<space>
-inoremap ääu public static<space>
-inoremap äär private static<space>
-inoremap äv void<space>
-inoremap äi int<space>
-inoremap äd double<space>
-inoremap äs String<space>
-inoremap äl long<space>
-inoremap än null
+inoremap öu public<space>
+inoremap ör private<space>
+inoremap öus public static<space>
+inoremap örs private static<space>
+inoremap öv void<space>
+inoremap öj int<space>
+inoremap öd double<space>
+inoremap ös String<space>
+inoremap öl long<space>
+inoremap ön null
 
 nnoremap <leader>fs :w<cr>
 nnoremap <leader>fq :wq<cr>
@@ -53,10 +42,3 @@ nnoremap <leader>fq :wq<cr>
 " split
 nnoremap <leader>sv :vs<cr>
 nnoremap <leader>sh :sp<cr>
-
-" too lazy to press Ctrl :)
-map <M-u> <C-u>
-map <M-d> <C-d>
-map <M-o> <C-o>
-map <M-i> <C-i>
-

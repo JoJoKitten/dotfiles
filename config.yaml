@@ -156,3 +156,4 @@ profiles:
     - f_config.fish
     - f_bashrc
     - f_init.vim
+    - f_ideavimrc
