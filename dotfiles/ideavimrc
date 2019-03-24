@@ -21,21 +21,36 @@ map Y y$
 inoremap jj <esc>o
 inoremap hh <backspace>
 
-inoremap öw while (
-inoremap öi if (
+" java
+inoremap öw while<sapce>()<space>{<left><left><left>
+inoremap öi if<space>()<space>{<left><left><left>
+inoremap öe <esc>o<backspace>else<space>{<cr>
 inoremap öa <Esc>0f)i,<space>
 
+inoremap öp private<space>
 inoremap öu public<space>
-inoremap ör private<space>
-inoremap öus public static<space>
-inoremap örs private static<space>
+inoremap öt static<space>
 inoremap öv void<space>
 inoremap öj int<space>
 inoremap öd double<space>
 inoremap ös String<space>
 inoremap öl long<space>
 inoremap ön null
+inoremap är return<space>
 
+" python
+inoremap äw while<space>:<left>
+inoremap äi if<space>:<left>
+inoremap äe <esc>o<backspace>else:<cr>
+inoremap äp <esc>0f)i,<space>
+inoremap än None
+inoremap är return<space>
+inoremap äs self.
+" getter and setter
+inoremap äag <esc>bywodef<space>get_<esc>pa(self):<cr>return<space>self.<esc>pkkdd
+inoremap äas <esc>bywodef<space>set_<esc>pa(self,<space><esc>pA:<cr>self.<esc>pa<space>=<space><esc>pkkdd
+
+" files
 nnoremap <leader>fs :w<cr>
 nnoremap <leader>fq :wq<cr>
 
