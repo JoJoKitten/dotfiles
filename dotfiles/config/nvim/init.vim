@@ -206,6 +206,7 @@ set rtp+=~/.fzf
 nnoremap <M-e> :Buffers<cr>
 nnoremap <M-h> :Files<cr>
 nnoremap <leader>fo :Files<cr>
+nnoremap <leader>fd  :Files <C-r>=expand("%:h")<CR>/<CR>
 nnoremap <M-r> :History<cr>
 nnoremap <leader>fr :History<cr>
 nnoremap <leader>ff :Files<space>
