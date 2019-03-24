@@ -225,11 +225,10 @@ let g:vimwiki_folding='expr'
 "--------------------- easymotion --------------------------
 :let g:EasyMotion_keys="asdghklqwertyuiopzxcvbnmfj"
 " move to char
-nnoremap  ö <Plug>(easymotion-bd-f)
-nnoremap ö <Plug>(easymotion-overwin-f)
+nmap f <Plug>(easymotion-bd-f)
 " move up/down
-nnoremap <M-j> <Plug>(easymotion-j)
-nnoremap <M-k> <Plug>(easymotion-k)
+map <M-j> <Plug>(easymotion-j)
+map <M-k> <Plug>(easymotion-k)
 
 "--------------------- syntastic ---------------------------
 let g:syntastic_always_populate_loc_list=1
