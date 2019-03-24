@@ -21,6 +21,7 @@ Plugin 'mildred/vim-bufmru'
 Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
 Plugin 'jnurmine/Zenburn'
+Plugin 'SirVer/ultisnips'
 Plugin 'Lokaltog/powerline'
 Plugin 'mboughaba/i3config.vim'
 Plugin 'Valloric/YouCompleteMe'
@@ -249,6 +250,11 @@ let g:syntastic_style_error_symbol='X'
 let g:syntastic_warning_symbol='x'
 let g:syntastic_style_warning_symbol='x'
 let g:syntastic_python_checkers=['flake8', 'pydocstyle', 'python']
+
+"--------------------- ultisnips ---------------------------
+let g:UltiSnipsExpandTrigger="<m-s>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 "--------------------- YouCompleteMe -----------------------
 let g:ycm_autoclose_preview_window_after_completion=1
