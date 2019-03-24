@@ -215,7 +215,6 @@ nnoremap <leader>hk :Maps<cr>
 nnoremap <leader>hc :Commands<cr>
 nnoremap <leader>zc :Colors<cr>
 nnoremap <M-e> :Buffers<cr>
-nnoremap <M-l> :Lines<cr>
 nnoremap gl :Lines<cr>
 
 "--------------------- i3config.vim ------------------------
