@@ -41,7 +41,7 @@ set hidden
 set nostartofline
 set splitbelow splitright
 set ruler
-set relativenumber
+set number relativenumber
 set scrolloff=10
 " highlight cursor line
 set cursorline
@@ -127,7 +127,6 @@ autocmd FileType python inoremap öas <esc>bywodef<space>set_<esc>pa(self,<space
 " general bindings
 inoremap jk <esc>
 nnoremap Y y$
-nnoremap s :w<cr>
 nnoremap <M-l> :nohl<cr><C-L>
 nnoremap <leader>ho <C-]>
 
@@ -149,6 +148,7 @@ inoremap jh <C-o>o<backspace>
 inoremap hh <backspace>
 
 " Files
+nnoremap s :w<cr>
 :nnoremap <leader>fs :w<cr>
 :nnoremap <leader>fq :wq<cr>
 :nnoremap <leader>qz :qa<cr>
@@ -159,10 +159,13 @@ inoremap hh <backspace>
 " Replace all
 nnoremap <leader>ra :%s//gc<left><left><left>
 
+" options
+nnoremap <leader>zw :set invwrap<cr>
+
 " line numbers
-nnoremap <leader>nr :set relativenumber<cr>
-nnoremap <leader>na :set number<cr>
-nnoremap <leader>nn :set nonumber<cr>:set norelativenumber<cr>
+nnoremap <leader>nr :set number relativenumber<cr>
+nnoremap <leader>na :set number norelativenumber<cr>
+nnoremap <leader>nn :set nonumber norelativenumber<cr>
 
 " split
 nnoremap <leader>sv :vs<cr>
@@ -201,13 +204,16 @@ nnoremap <leader>bd :bd<cr>
 "--------------------- fzf ---------------------------------
 set rtp+=~/.fzf
 nnoremap <M-e> :Buffers<cr>
+nnoremap <M-h> :Files<cr>
 nnoremap <leader>fo :Files<cr>
+nnoremap <M-r> :History<cr>
 nnoremap <leader>fr :History<cr>
 nnoremap <leader>ff :Files<space>
 nnoremap <leader>hk :Maps<cr>
 nnoremap <leader>hc :Commands<cr>
 nnoremap <leader>zc :Colors<cr>
 nnoremap <M-e> :Buffers<cr>
+nnoremap <M-l> :Lines<cr>
 nnoremap gl :Lines<cr>
 
 "--------------------- i3config.vim ------------------------

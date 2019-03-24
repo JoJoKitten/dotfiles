@@ -1,5 +1,12 @@
 #!/bin/bash
-shopt -s autocd # cd without 'cd'
+
+#  - autocd, no need to type 'cd' when changing directory
+#  - cdspell, automatically fix directory typos when changing directory
+#  - direxpand, automatically expand directory globs when completing
+#  - dirspell, automatically fix directory typos when completing
+#  - nocaseglob, case-insensitive globbing
+shopt -s autocd cdspell direxpand dirspell nocaseglob
+
 HISTSIZE= HISTFILESIZE= # Infinite history.
 if [ ! -z $TERM ]; then
     export PS1="\[$(tput setaf 1)\]\$(RET=\$?; [[ \$RET != 0 ]] && echo -n \$RET\ )\[$(tput setaf 3)\]\W \[$(tput sgr0)\]\[$(tput bold)\]\[$(tput setaf 2)\]> "
