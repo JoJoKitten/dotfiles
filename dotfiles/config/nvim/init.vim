@@ -232,7 +232,7 @@ let g:vimwiki_folding='expr'
 "--------------------- easymotion --------------------------
 :let g:EasyMotion_keys="asdghklqwertyuiopzxcvbnmfj"
 " move to char
-nmap f <Plug>(easymotion-bd-f)
+nmap ö <Plug>(easymotion-bd-f)
 " move up/down
 map <M-j> <Plug>(easymotion-j)
 map <M-k> <Plug>(easymotion-k)
