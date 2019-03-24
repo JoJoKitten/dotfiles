@@ -35,6 +35,7 @@ set encoding=utf-8
 syntax enable
 filetype plugin indent on
 set showcmd
+set hidden
 " we don't need the following because of the + register
 " set clipboard=unnamedplus
 set nostartofline
@@ -111,7 +112,7 @@ autocmd FileType python set foldmethod=indent
 autocmd FileType python nmap <M-m> :Lines<cr>def
 
 " snipptes
-autocmd FileType python inoremap öw while<space>:<left>
+autocmd FileType python inoremap öw whsle<space>:<left>
 autocmd FileType python inoremap öi if<space>:<left>
 autocmd FileType python inoremap öf def<space>(self):<esc>F(i
 autocmd FileType python inoremap öp <esc>0f)i,<space>
