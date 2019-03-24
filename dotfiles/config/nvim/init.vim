@@ -124,8 +124,9 @@ autocmd FileType python inoremap öas <esc>bywodef<space>set_<esc>pa(self,<space
 
 "-------------------- Mappings -----------------------------
 " general bindings
-imap jk <esc>
-map Y y$
+inoremap jk <esc>
+nnoremap Y y$
+nnoremap s :w<cr>
 nnoremap <M-l> :nohl<cr><C-L>
 nnoremap <leader>ho <C-]>
 
@@ -171,10 +172,10 @@ nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 
 " too lazy to press Ctrl :)
-map <M-u> <C-u>
-map <M-d> <C-d>
-map <M-o> <C-o>
-map <M-i> <C-i>
+nnoremap <M-u> <C-u>
+nnoremap <M-d> <C-d>
+nnoremap <M-o> <C-o>
+nnoremap <M-i> <C-i>
 
 " folds
 nnoremap <M-a> za
@@ -186,14 +187,14 @@ nnoremap <M-S-+> zR
 nnoremap <M-S--> zM
 
 " windows
-map <leader>wd :q<cr>
-map <leader>wm <C-w>o
+nnoremap <leader>wd :q<cr>
+nnoremap <leader>wm <C-w>o
 
 " buffers
 nnoremap <M-f> :BufMRUNext<cr>
 nnoremap <M-S-f> :BufMRUPrev<cr>
-map <leader>bn :enew<cr>
-map <leader>bd :bd<cr>
+nnoremap <leader>bn :enew<cr>
+nnoremap <leader>bd :bd<cr>
 
 
 "--------------------- fzf ---------------------------------
@@ -206,14 +207,14 @@ nnoremap <leader>hk :Maps<cr>
 nnoremap <leader>hc :Commands<cr>
 nnoremap <leader>zc :Colors<cr>
 nnoremap <M-e> :Buffers<cr>
-map gl :Lines<cr>
+nnoremap gl :Lines<cr>
 
 "--------------------- i3config.vim ------------------------
 autocmd BufRead,BufNewFile ~/dotfiles/dotfiles/i3/config set filetype=i3config
 
 
 "--------------------- Nerd tree ---------------------------
-map <M-n> :NERDTreeToggle<cr>
+nnoremap <M-n> :NERDTreeToggle<cr>
 let NERDTreeWinPos="right"
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
@@ -223,11 +224,11 @@ let g:vimwiki_folding='expr'
 "--------------------- easymotion --------------------------
 :let g:EasyMotion_keys="asdghklqwertyuiopzxcvbnmfj"
 " move to char
-map  ö <Plug>(easymotion-bd-f)
-nmap ö <Plug>(easymotion-overwin-f)
+nnoremap  ö <Plug>(easymotion-bd-f)
+nnoremap ö <Plug>(easymotion-overwin-f)
 " move up/down
-map <M-j> <Plug>(easymotion-j)
-map <M-k> <Plug>(easymotion-k)
+nnoremap <M-j> <Plug>(easymotion-j)
+nnoremap <M-k> <Plug>(easymotion-k)
 
 "--------------------- syntastic ---------------------------
 let g:syntastic_always_populate_loc_list=1
@@ -245,7 +246,7 @@ let g:syntastic_python_checkers=['flake8', 'pydocstyle', 'python']
 "--------------------- YouCompleteMe -----------------------
 let g:ycm_autoclose_preview_window_after_completion=1
 set completeopt-=preview
-nmap <C-b> :YcmCompleter GoTo<CR>
-nmap <C-M-b> :YcmCompleter GoToDefinition<CR>
+nnoremap <C-b> :YcmCompleter GoTo<CR>
+nnoremap <C-M-b> :YcmCompleter GoToDefinition<CR>
 
 
