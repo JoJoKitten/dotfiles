@@ -20,6 +20,7 @@ imap jk <Esc>
 map Y y$
 inoremap jj <esc>o
 inoremap hh <backspace>
+nnoremap s :w<cr>
 
 " java
 inoremap öw while<sapce>()<space>{<left><left><left>
