@@ -113,14 +113,24 @@ autocmd FileType python set foldmethod=indent
 " goto method
 autocmd FileType python nmap <M-m> :Lines<cr>def
 
-" snipptes
-autocmd FileType python inoremap öw whsle<space>:<left>
+" some simple snipptes
+autocmd FileType python inoremap öw while<space>:<left>
 autocmd FileType python inoremap öi if<space>:<left>
-autocmd FileType python inoremap öf def<space>(self):<esc>F(i
+autocmd FileType python inoremap öd def<space>(self):<esc>F(i
 autocmd FileType python inoremap öp <esc>0f)i,<space>
 autocmd FileType python inoremap ön None
+autocmd FileType python inoremap öe <space>==<space>
+autocmd FileType python inoremap öx <space>!=<space>
+autocmd FileType python inoremap öh <space><<space>
+autocmd FileType python inoremap öl <space>><space>
+autocmd FileType python inoremap öH <space><=<space>
+autocmd FileType python inoremap öL <space>>=<space>
+autocmd FileType python inoremap öv <space>is<space>
+autocmd FileType python inoremap öc <space>is not<space>
 autocmd FileType python inoremap ör return<space>
 autocmd FileType python inoremap ös self.
+autocmd FileType python inoremap öt True
+autocmd FileType python inoremap öf False
 " getter and setter
 autocmd FileType python inoremap öag <esc>bywodef<space>get_<esc>pa(self):<cr>return<space>self.<esc>pkkdd
 autocmd FileType python inoremap öas <esc>bywodef<space>set_<esc>pa(self,<space><esc>pa):<cr>self.<esc>pa<space>=<space><esc>pkkdd
@@ -252,10 +262,10 @@ let g:syntastic_style_warning_symbol='x'
 let g:syntastic_python_checkers=['flake8', 'pydocstyle', 'python']
 
 "--------------------- ultisnips ---------------------------
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
+let g:UltiSnipsSnippetDirectories = ['~/.vim/bundle/vim-snippets/UltiSnips', 'UltiSnips']
 let g:UltiSnipsExpandTrigger="<m-s>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 "--------------------- YouCompleteMe -----------------------
 let g:ycm_autoclose_preview_window_after_completion=1
