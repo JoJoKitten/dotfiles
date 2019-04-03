@@ -27,7 +27,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'Lokaltog/powerline'
 Plugin 'mboughaba/i3config.vim'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
 call vundle#end()
 "----------------------------------------------------------
 
@@ -249,18 +249,20 @@ nmap ö <Plug>(easymotion-bd-f)
 map <M-j> <Plug>(easymotion-j)
 map <M-k> <Plug>(easymotion-k)
 
-"--------------------- syntastic ---------------------------
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_enable_signs=1
-let g:syntastic_check_on_wq=0
-let g:syntastic_aggregate_errors=1
-let g:syntastic_loc_list_height=5
-let g:syntastic_error_symbol='X'
-let g:syntastic_style_error_symbol='X'
-let g:syntastic_warning_symbol='x'
-let g:syntastic_style_warning_symbol='x'
-let g:syntastic_python_checkers=['flake8', 'pydocstyle', 'python']
+"--------------------- ale ---------------------------------
+nnoremap <M-w> :lnext<cr>
+nnoremap <M-S-w> :lprevious<cr>
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'python': ['isort', 'yapf'],
+\}
+
+" 'add_blank_lines_for_python_control_statements' - Add blank lines before control statements.
+" 'autopep8' - Fix PEP8 issues with autopep8.
+" 'black' - Fix PEP8 issues with black.
+" 'isort' - Sort Python imports with isort.
+" 'yapf' - Fix Python files with yapf.
 
 "--------------------- ultisnips ---------------------------
 let g:UltiSnipsSnippetDirectories = ['~/.vim/bundle/vim-snippets/UltiSnips', 'UltiSnips']
