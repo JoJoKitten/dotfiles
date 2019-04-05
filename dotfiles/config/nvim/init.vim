@@ -252,7 +252,7 @@ map <M-k> <Plug>(easymotion-k)
 "--------------------- ale ---------------------------------
 nnoremap <M-w> :lnext<cr>
 nnoremap <M-S-w> :lprevious<cr>
-let g:ale_fix_on_save = 1
+" let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'python': ['isort', 'yapf'],
@@ -275,5 +275,3 @@ let g:ycm_autoclose_preview_window_after_completion=1
 set completeopt-=preview
 nnoremap <C-b> :YcmCompleter GoTo<CR>
 nnoremap <C-M-b> :YcmCompleter GoToDefinition<CR>
-
-
