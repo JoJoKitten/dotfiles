@@ -69,9 +69,6 @@ set ignorecase
 set smartcase
 set hlsearch
 
-" delete trailing whitespace on save
-autocmd BufWritePre * %s/\s\+$//e
-
 " unsaved changes: ask instead of fail
 set confirm
 
@@ -253,6 +250,7 @@ map <M-k> <Plug>(easymotion-k)
 nnoremap <M-w> :lnext<cr>
 nnoremap <M-S-w> :lprevious<cr>
 " let g:ale_fix_on_save = 1
+nnoremap <M-S-l> :ALEFix<cr>
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'python': ['isort', 'yapf'],
