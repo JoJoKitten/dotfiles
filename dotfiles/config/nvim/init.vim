@@ -17,6 +17,7 @@ Plugin 'vim-scripts/YankRing.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
+Plugin 'terryma/vim-multiple-cursors'
 Plugin 'mildred/vim-bufmru'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Yggdroot/indentLine'
@@ -250,7 +251,7 @@ map <M-k> <Plug>(easymotion-k)
 nnoremap <M-w> :lnext<cr>
 nnoremap <M-S-w> :lprevious<cr>
 " let g:ale_fix_on_save = 1
-nnoremap <M-S-l> :ALEFix<cr>
+nnoremap S :write<cr>:ALEFix<cr>
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'python': ['isort', 'yapf'],
