@@ -24,6 +24,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'Lokaltog/powerline'
 Plugin 'mboughaba/i3config.vim'
+Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'w0rp/ale'
 
@@ -67,11 +68,6 @@ colorscheme PaperColor
 " nice without termguicolors
 " colorscheme pablo
 
-" case insensitive search except when using capital letters
-set ignorecase
-set smartcase
-set hlsearch
-
 " unsaved changes: ask instead of fail
 set confirm
 
@@ -83,6 +79,23 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set autoindent
+
+" case insensitive search except when using capital letters
+set ignorecase
+set smartcase
+set hlsearch
+
+
+"----------------- search and replace ----------------------
+" search recursively
+map <M-s> :execute "vimgrep //j **" <bar> cw<left><left><left><left><left><left><left><left><left><left><left>
+
+" Replace all ocurrences of the word under the cursor.
+:nnoremap <leader>rw :%s/\<<C-r><C-w>\>//gc<left><left><left>
+
+" Replace all
+nnoremap <leader>ra :%s//gc<left><left><left>
+
 
 "-------------------- folding ------------------------------
 set foldmethod=indent
@@ -100,6 +113,7 @@ return repeat(' ', v:foldlevel*4) . '+++ ' . lines_count
 endfunction
 set foldtext=NeatFoldText()
 " }}}2
+
 
 "-------------------- python -------------------------------
 " code running
@@ -136,6 +150,7 @@ autocmd FileType python inoremap öf False
 autocmd FileType python inoremap öag <esc>bywodef<space>get_<esc>pa(self):<cr>return<space>self.<esc>pkkdd
 autocmd FileType python inoremap öas <esc>bywodef<space>set_<esc>pa(self,<space><esc>pa):<cr>self.<esc>pa<space>=<space><esc>pkkdd
 
+
 "-------------------- Mappings -----------------------------
 " general bindings
 inoremap jk <esc>
@@ -165,12 +180,6 @@ nnoremap s :w<cr>
 :nnoremap <leader>fs :w<cr>
 :nnoremap <leader>fq :wq<cr>
 :nnoremap <leader>qz :qa<cr>
-
-" Replace all ocurrences of the word under the cursor.
-:nnoremap <leader>rw :%s/\<<C-r><C-w>\>//gc<left><left><left>
-
-" Replace all
-nnoremap <leader>ra :%s//gc<left><left><left>
 
 " options
 nnoremap <leader>zw :set invwrap<cr>
@@ -238,6 +247,7 @@ nnoremap <M-n> :NERDTreeToggle<cr>
 let NERDTreeWinPos="right"
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
+
 "--------------------- vimwiki -----------------------------
 let g:vimwiki_folding='expr'
 
@@ -248,6 +258,7 @@ nmap ö <Plug>(easymotion-bd-f)
 " move up/down
 map <M-j> <Plug>(easymotion-j)
 map <M-k> <Plug>(easymotion-k)
+
 
 "--------------------- ale ---------------------------------
 nnoremap <M-w> :lnext<cr>
@@ -265,11 +276,13 @@ let g:ale_fixers = {
 " 'isort' - Sort Python imports with isort.
 " 'yapf' - Fix Python files with yapf.
 
+
 "--------------------- ultisnips ---------------------------
 let g:UltiSnipsSnippetDirectories = ['~/.vim/bundle/vim-snippets/UltiSnips', 'UltiSnips']
 let g:UltiSnipsExpandTrigger="<m-s>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
 
 "--------------------- YouCompleteMe -----------------------
 let g:ycm_autoclose_preview_window_after_completion=1
