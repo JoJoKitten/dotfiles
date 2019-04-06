@@ -20,14 +20,17 @@ Plugin 'tpope/vim-surround'
 Plugin 'mildred/vim-bufmru'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Yggdroot/indentLine'
-Plugin 'morhetz/gruvbox'
-Plugin 'jnurmine/Zenburn'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'Lokaltog/powerline'
 Plugin 'mboughaba/i3config.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'w0rp/ale'
+
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'morhetz/gruvbox'
+Plugin 'mhartington/oceanic-next'
+Plugin 'sonobre/briofita_vim'
 call vundle#end()
 "----------------------------------------------------------
 
@@ -59,7 +62,7 @@ set mouse=a
 " appearance
 set background=dark
 set termguicolors
-colorscheme gruvbox
+colorscheme PaperColor
 " colorscheme zenburn
 " nice without termguicolors
 " colorscheme pablo
