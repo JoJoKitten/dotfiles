@@ -279,7 +279,7 @@ let g:ale_fixers = {
 
 "--------------------- ultisnips ---------------------------
 let g:UltiSnipsSnippetDirectories = ['~/.vim/bundle/vim-snippets/UltiSnips', 'UltiSnips']
-let g:UltiSnipsExpandTrigger="<m-s>"
+let g:UltiSnipsExpandTrigger="<m-v>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
