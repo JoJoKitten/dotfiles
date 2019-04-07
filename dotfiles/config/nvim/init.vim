@@ -114,6 +114,12 @@ endfunction
 set foldtext=NeatFoldText()
 " }}}2
 
+"-------------------- fugit --------------------------------
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gl :Glog<cr>
+nnoremap <leader>gc :Gcommit<cr>
+nnoremap <leader>gp :Gpull<cr>
 
 "-------------------- python -------------------------------
 " code running
@@ -198,8 +204,8 @@ nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 
 " too lazy to press Ctrl :)
-nnoremap <M-u> <C-u>
-nnoremap <M-d> <C-d>
+noremap <M-u> <C-u>
+noremap <M-d> <C-d>
 nnoremap <M-o> <C-o>
 nnoremap <M-i> <C-i>
 
@@ -221,6 +227,7 @@ nnoremap <M-f> :BufMRUNext<cr>
 nnoremap <M-S-f> :BufMRUPrev<cr>
 nnoremap <leader>bn :enew<cr>
 nnoremap <leader>bd :bd<cr>
+nnoremap <m-x> :bd<cr>
 
 
 "--------------------- fzf ---------------------------------
@@ -228,6 +235,8 @@ set rtp+=~/.fzf
 nnoremap <M-e> :Buffers<cr>
 nnoremap <M-h> :Files<cr>
 nnoremap <leader>fo :Files<cr>
+nnoremap <leader>fg :GitFiles?
+nnoremap <M-g> :GitFiles?<cr>
 nnoremap <leader>fd  :Files <C-r>=expand("%:h")<CR>/<CR>
 nnoremap <M-r> :History<cr>
 nnoremap <leader>fr :History<cr>
