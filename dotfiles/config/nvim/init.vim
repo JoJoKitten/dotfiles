@@ -22,7 +22,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Yggdroot/indentLine'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'Lokaltog/powerline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mboughaba/i3config.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
@@ -33,8 +34,8 @@ Plugin 'morhetz/gruvbox'
 Plugin 'mhartington/oceanic-next'
 Plugin 'sonobre/briofita_vim'
 call vundle#end()
-"----------------------------------------------------------
 
+"----------------------------------------------------------
 let mapleader = " "
 
 " general
@@ -64,7 +65,6 @@ set mouse=
 set background=dark
 set termguicolors
 colorscheme PaperColor
-" colorscheme zenburn
 " nice without termguicolors
 " colorscheme pablo
 
@@ -259,6 +259,16 @@ nmap ö <Plug>(easymotion-bd-f)
 map <M-j> <Plug>(easymotion-j)
 map <M-k> <Plug>(easymotion-k)
 
+"--------------------- airline -----------------------------
+:let g:airline_theme='gruvbox'
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols = {}
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 
 "--------------------- ale ---------------------------------
 nnoremap <M-w> :lnext<cr>
