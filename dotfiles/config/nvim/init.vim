@@ -61,6 +61,9 @@ set wildmenu
 set wildmode=longest,list,full
 set mouse=
 
+" hide status info
+:set noshowmode 
+
 " appearance
 set background=dark
 set termguicolors
@@ -160,6 +163,7 @@ autocmd FileType python inoremap öas <esc>bywodef<space>set_<esc>pa(self,<space
 "-------------------- Mappings -----------------------------
 " general bindings
 inoremap jk <esc>
+inoremap kj <esc>
 nnoremap Y y$
 nnoremap <M-l> :nohl<cr><C-L>
 nnoremap <leader>ho <C-]>
