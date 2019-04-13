@@ -64,7 +64,7 @@ set mouse=
 " appearance
 set background=dark
 set termguicolors
-colorscheme PaperColor
+colorscheme gruvbox
 " nice without termguicolors
 " colorscheme pablo
 
