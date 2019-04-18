@@ -46,7 +46,7 @@ font-3 = Font Awesome 5 Free:pixelsize=10;2
 ; Modules
 modules-left = i3
 modules-center =
-modules-right = network cpu mem filesystem pulseaudio date time
+modules-right = network cpu mem filesystem pulseaudio battery date time
 
 ; The separator will be inserted between the output of each module
 separator = "|"
@@ -364,3 +364,21 @@ tail = false
 interval = 2
 click-left = notify-send "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)"
 click-right = notify-send "$(echo -e 'Shows CPU usage.\nLeft click to show processes with most usage.')"
+
+
+[module/battery]
+type = internal/battery
+full-at = 99
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT1
+adapter = ADP1
+poll-interval = 10
+format-discharging = <label-discharging>
+label-discharging =  %percentage%%
+label-discharging-padding = 3
+format-charging = <label-charging>
+label-charging =  %percentage%%
+label-charging-padding = 3
+

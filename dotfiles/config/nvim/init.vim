@@ -62,7 +62,7 @@ set wildmode=longest,list,full
 set mouse=
 
 " hide status info
-:set noshowmode 
+:set noshowmode
 
 " appearance
 set background=dark
@@ -171,6 +171,11 @@ nnoremap <leader>ho <C-]>
 inoremap xn <C-x><C-n>
 inoremap xp <C-x><C-p>
 inoremap xl <C-x><C-l>
+
+" . on all selected lines
+vnoremap . :normal .<cr>
+" execute tag t on all selected lines
+vnoremap @ :normal @t<cr>
 
 " copy/paste
 noremap <M-c> "+y
