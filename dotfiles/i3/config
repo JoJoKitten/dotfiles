@@ -365,7 +365,7 @@ mode "$menu_launcher" {
     bindsym t exec ~/scripts/open_tmux_session.sh , mode "default"
     bindsym p mode "default", exec \
       pactl set-sink-volume 1 85% \
-      && ~/Applications/Pianoteq_6_STAGE/amd64/Pianoteq\ 6\ STAGE \
+      && /opt/Pianoteq_6_STAGE/amd64/Pianoteq\ 6\ STAGE \
       && pactl set-sink-volume 1 30%
     bindsym a exec firefox --new-window https://music.amazon.de/my/albums, mode "default"
     bindsym q mode "default"

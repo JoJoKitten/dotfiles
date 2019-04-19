@@ -68,10 +68,10 @@
     per_monitor_dpi = false
 
 [shortcuts]
-    close = ctrl+space
+    # close = ctrl+space
     # close_all = ctrl+shift+space
-    history = ctrl+shift+space
-    context = ctrl+shift+period
+    # history = ctrl+shift+space
+    # context = ctrl+shift+period
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
