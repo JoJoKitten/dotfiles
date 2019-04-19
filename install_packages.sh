@@ -2,6 +2,7 @@
 # This script installs all my packages on arch.
 
 packages="
+bash-completion
 breath-dark-icon-theme
 clipmenu
 compton
