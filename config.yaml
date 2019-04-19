@@ -37,6 +37,9 @@ dotfiles:
   f_init.vim:
     dst: ~/.config/nvim/init.vim
     src: config/nvim/init.vim
+  f_inputrc:
+    dst: ~/.inputrc
+    src: inputrc
   f_lfrc:
     dst: ~/.config/lf/lfrc
     src: config/lf/lfrc
@@ -157,3 +160,4 @@ profiles:
     - f_bashrc
     - f_init.vim
     - f_ideavimrc
+    - f_inputrc

@@ -1,0 +1,15 @@
+# Tab to complete
+TAB: menu-complete
+# Shift-Tab to choose previous
+"\e[Z": menu-complete-backward
+# first press of Tab diplays choices
+set menu-complete-display-prefix on
+set show-all-if-ambiguous on
+
+# various other settings
+set colored-stats on
+set colored-completion-prefix on
+set completion-ignore-case on
+set bell-style none
+set echo-control-characters off
+
