@@ -117,6 +117,11 @@ endfunction
 set foldtext=NeatFoldText()
 " }}}2
 
+"-------------------- YankRing -----------------------------
+" fix for error message
+let g:yankring_clipboard_monitor=0
+
+
 "-------------------- fugit --------------------------------
 nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gd :Gdiff<cr>
