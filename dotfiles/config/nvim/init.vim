@@ -140,7 +140,7 @@ autocmd FileType python set textwidth=80 colorcolumn=81
 autocmd FileType python set foldmethod=indent
 
 " goto method
-autocmd FileType python nmap <M-m> :Lines<cr>def
+autocmd FileType python nmap <M-m> :Lines<cr>def<space>
 
 " some simple snipptes
 autocmd FileType python inoremap öw while<space>:<left>
@@ -170,7 +170,7 @@ autocmd FileType python inoremap öas <esc>bywodef<space>set_<esc>pa(self,<space
 inoremap jk <esc>
 inoremap kj <esc>
 nnoremap Y y$
-nnoremap <M-l> :nohl<cr><C-L>
+nnoremap <leader>l :nohl<cr><C-L>
 nnoremap <leader>ho <C-]>
 
 inoremap xn <C-x><C-n>
@@ -197,9 +197,9 @@ inoremap hh <backspace>
 
 " Files
 nnoremap s :w<cr>
-:nnoremap <leader>fs :w<cr>
-:nnoremap <leader>fq :wq<cr>
-:nnoremap <leader>qz :qa<cr>
+:nnoremap <leader>qq :q<cr>
+:nnoremap <leader>qa :qa<cr>
+:nnoremap <leader>wq :wq<cr>
 
 " options
 nnoremap <leader>zw :set invwrap<cr>
@@ -241,7 +241,7 @@ nnoremap <M-f> :BufMRUNext<cr>
 nnoremap <M-S-f> :BufMRUPrev<cr>
 nnoremap <leader>bn :enew<cr>
 nnoremap <leader>bd :bd<cr>
-nnoremap <m-x> :bd<cr>
+nnoremap <M-q> :bd<cr>
 
 
 "--------------------- fzf ---------------------------------
@@ -259,7 +259,7 @@ nnoremap <leader>hk :Maps<cr>
 nnoremap <leader>hc :Commands<cr>
 nnoremap <leader>zc :Colors<cr>
 nnoremap <M-e> :Buffers<cr>
-nnoremap gl :Lines<cr>
+nnoremap <M-l> :Lines<cr>
 
 "--------------------- i3config.vim ------------------------
 autocmd BufRead,BufNewFile ~/dotfiles/dotfiles/i3/config set filetype=i3config
