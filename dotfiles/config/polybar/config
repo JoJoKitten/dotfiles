@@ -354,11 +354,7 @@ format =  <label>
 format-padding = 3
 ; format-background = ${colors.module_bg}
 
-{%@@ if profile == "laptop-i3" @@%}
 exec = top -1 -bn1 | awk '/^%CPU/{print $2"%"}'
-{%@@ else @@%}
-exec = top -bn1 | awk '/^%CPU/{print $2"%"}'
-{%@@ endif @@%}
 
 tail = false
 interval = 2
