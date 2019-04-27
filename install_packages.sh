@@ -31,7 +31,6 @@ python-pip
 xf86-input-synaptics
 ranger
 redshift
-rofi
 sxiv
 system-config-printer
 termite
