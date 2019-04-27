@@ -59,7 +59,8 @@ unzip
 
 aur_packages="
 polybar
-dropbox"
+dropbox
+xnee"
 
 # install packages from the main repos
 for p in $packages; do

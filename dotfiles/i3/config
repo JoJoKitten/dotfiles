@@ -189,7 +189,6 @@ bindsym $mod+Mod1+j move down 50px
 # change to an application
 bindsym $mod2+f [class="(?i)firefox"] focus
 bindsym $mod2+t [class="(?i)thunderbird"] focus
-bindsym $mod2+e [class="(?i)emacs"] focus
 bindsym $mod2+r [title="(?i)ranger"] focus
 bindsym $mod2+n [class="(?i)pcmanfm"] focus
 bindsym $mod2+p [title="(?i)pianoteq"] focus
@@ -220,7 +219,6 @@ exec --no-startup-id xfce4-power-manager
 # XKB indicator
 # exec_always --no-startup-id sbxkb
 exec --no-startup-id xautolock -time 30 -locker blurlock
-exec --no-startup-id emacs --daemon
 exec --no-startup-id "sleep 100 && dropbox start"
 # Execute some other tasks that depend on the machine
 exec ~/.i3/start_jobs.sh
@@ -354,11 +352,10 @@ mode "$menu" {
 }
 
 ############# application launcher ###############
-set $menu_launcher (f)irefox | (e)macs | (r)anger | (m)ail | pcma(n)fm \
+set $menu_launcher (f)irefox | (r)anger | (m)ail | pcma(n)fm \
 | (t)mux |(p)ianoteq | (a)mazon music
 mode "$menu_launcher" {
     bindsym f exec firefox, mode "default"
-    bindsym e exec emacs, mode "default"
     bindsym r exec $terminal --name=ranger -e ranger, mode "default"
     bindsym m exec thunderbird, mode "default"
     bindsym n exec pcmanfm, mode "default"
