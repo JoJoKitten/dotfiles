@@ -5,6 +5,7 @@ packages="
 bash-completion
 breath-dark-icon-theme
 clipmenu
+cmake
 compton
 cronie
 cups
