@@ -9,6 +9,7 @@ compton
 cronie
 cups
 dunst
+feh
 figlet
 firefox
 fzf
