@@ -5,6 +5,7 @@
 [ -n "$ZSH_VERSION" ] && [ -f "$HOME/.zshrc" ] && source "$HOME/.zshrc"
 
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
+[ -d "$HOME/scripts" ] && PATH="$HOME/scripts:$PATH"
 export EDITOR="nvim"
 export TERMINAL="termite"
 export BROWSER="firefox"

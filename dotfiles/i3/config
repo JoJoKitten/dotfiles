@@ -49,6 +49,8 @@ bindsym $mod+z exec --no-startup-id morc_menu
 
 # launch clipmenu
 bindsym $mod+c exec clipmenu -i -fn Terminus:size=12 -l 20 -i -b
+# launch clipmenu and insert the text
+bindsym $mod+i exec clipmenu -i -fn Terminus:size=12 -l 20 -i -b && xdotool key Shift+Insert
 
 # change focus
 bindsym $mod+h focus left
@@ -204,7 +206,7 @@ bindsym $mod2+i [class="(?i)idea"] focus
 # Autostart applications
 exec_always "xrdb ~/.Xresources"
 exec_always "sleep 5 && setxkbmap lv && xmodmap ~/my_neo_de.xmodmap && xset -r 51"
-exec_always feh --bg-scale /home/jbensmann/.config/wallpaper.jpg
+exec_always set_wallpaper
 exec_always compton -b
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
@@ -359,7 +361,7 @@ mode "$menu_launcher" {
     bindsym r exec $terminal --name=ranger -e ranger, mode "default"
     bindsym m exec thunderbird, mode "default"
     bindsym n exec pcmanfm, mode "default"
-    bindsym t exec ~/scripts/open_tmux_session.sh , mode "default"
+    bindsym t exec open_tmux_session , mode "default"
     bindsym p mode "default", exec \
       pactl set-sink-volume 1 85% \
       && /opt/Pianoteq_6_STAGE/amd64/Pianoteq\ 6\ STAGE \
@@ -372,8 +374,8 @@ mode "$menu_launcher" {
 ################### cnee #########################
 set $menu_cnee (r)ecord | (p)lay
 mode "$menu_cnee" {
-    bindsym r exec ~/scripts/cnee_record.sh, mode "default"
-    bindsym p exec ~/scripts/cnee_replay.sh, mode "default"
+    bindsym r exec cnee_record, mode "default"
+    bindsym p exec cnee_replay, mode "default"
     bindsym q mode "default"
     bindsym Escape mode "default"
 }
@@ -404,11 +406,11 @@ mode "$menu_keyboard" {
 set $menu_tools (n)ethogs | (e)mojis | (d)e translate | (t) en translate | (k)ontakte | (u)pdate time
 mode "$menu_tools" {
     bindsym n exec --no-startup-id $terminal -e 'bash -c "sudo nethogs"', mode "default"
-    bindsym e exec --no-startup-id ~/scripts/dmenu_emojis.sh, mode "default"
+    bindsym e exec --no-startup-id dmenu_emojis, mode "default"
     bindsym d exec $terminal -e 'bash -c "rofi -dmenu -lines 0 | trans :de -v -theme random"', mode "default"
     bindsym t exec $terminal -e 'bash -c "rofi -dmenu -lines 0 | trans :en -v -theme random"', mode "default"
     bindsym k exec cat ~/vimwiki/kontakte.wiki | rofi -dmenu, mode "default"
-    bindsym u exec $terminal -e 'bash -c "~/scripts/update_time.sh && read"', mode "default"
+    bindsym u exec $terminal -e 'bash -c "update_time && read"', mode "default"
     bindsym q mode "default"
     bindsym Escape mode "default"
 }
