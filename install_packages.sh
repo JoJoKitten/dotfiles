@@ -103,6 +103,9 @@ if ! hash entr; then
     cd eradman-entr-* && ./configure && make test && sudo make install
 fi
 
+# python support for neovim
+sudo pip install neovim
+
 echo "Done!
 Things that have to be done manually:
  - install vim plugins
