@@ -35,6 +35,9 @@ bind -x '"\el": ls'
 # fuzzy keybindings
 source /usr/share/fzf/key-bindings.bash
 
+# M-e find with fzf and open in editor
+bind -x '"\ee": fzf | xargs -r nvim'
+
 # aliases
 alias del='~/scripts/trash.sh'
 alias ss='sudo systemctl'

@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script installs all my packages on arch.
+# This script installs all my packages and configs on arch.
 
 packages="
 bash-completion
@@ -102,4 +102,11 @@ if ! hash entr; then
     cd eradman-entr-* && ./configure && make test && sudo make install
 fi
 
-echo "Done!"
+echo "Done!
+Things that have to be done manually:
+ - install vim plugins
+ - set git user name and email globally
+ - sync firefox
+ - set up thunderbird
+ - set up dropbox"
+
