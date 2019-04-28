@@ -379,13 +379,12 @@ mode "$menu_cnee" {
 }
 
 ################### dotfiles #####################
-set $menu_dotfiles (p)ull | (i)nstall | (c)ommit and push | i(3) | (n)eovim
+set $menu_dotfiles (p)ull | (i)nstall | (c)ommit and push | (o)pen
 mode "$menu_dotfiles" {
     bindsym p exec $terminal -e ~/dotfiles/pull.sh, mode "default"
     bindsym i exec "~/dotfiles/dotdrop.sh install -f && i3-msg restart", mode "default"
     bindsym c exec $terminal -e ~/dotfiles/push.sh, mode "default"
-    bindsym 3 exec $terminal -e "nvim $HOME/dotfiles/dotfiles/i3/config", mode "default"
-    bindsym n exec $terminal -e "nvim $HOME/dotfiles/dotfiles/config/nvim/init.vim", mode "default"
+    bindsym o exec $terminal -d "$HOME/dotfiles/", mode "default"
     bindsym q mode "default"
     bindsym Escape mode "default"
 }
