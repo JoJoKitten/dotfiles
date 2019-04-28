@@ -401,9 +401,10 @@ mode "$menu_keyboard" {
 }
 
 ##################### tools ######################
-set $menu_tools (n)ethogs | (e)mojis | (d)e translate | (t) en translate | (k)ontakte | (u)pdate time
+set $menu_tools (n)ethogs | fa (i)cons | (e)mojis | (d)e translate | (t) en translate | (k)ontakte | (u)pdate time
 mode "$menu_tools" {
     bindsym n exec --no-startup-id $terminal -e 'bash -c "sudo nethogs"', mode "default"
+    bindsym i exec --no-startup-id dmenu_fa_icons, mode "default"
     bindsym e exec --no-startup-id dmenu_emojis, mode "default"
     bindsym d exec $terminal -e 'bash -c "echo  Translate to German: && read tmp && echo $tmp | trans en:de -v -theme random"', mode "default"
     bindsym t exec $terminal -e 'bash -c "echo  Translate to English: && read tmp && echo $tmp | trans de:en -v -theme random"', mode "default"

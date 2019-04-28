@@ -28,6 +28,9 @@ dotfiles:
   f_emoji:
     dst: ~/.emoji
     src: emoji
+  f_fa_icons:
+    dst: ~/.fa_icons
+    src: fa_icons
   f_i3_config:
     dst: ~/.i3/config
     src: i3/config
@@ -109,6 +112,7 @@ profiles:
     - f_my_neo_de.xmodmap
     - f_dunstrc
     - f_emoji
+    - f_fa_icons
     - d_ranger
     - f_config.fish
     - f_bashrc
@@ -131,6 +135,7 @@ profiles:
     - f_my_neo_de.xmodmap
     - f_dunstrc
     - f_emoji
+    - f_fa_icons
     - d_ranger
     - f_config.fish
     - f_bashrc
@@ -155,6 +160,7 @@ profiles:
     - f_my_neo_de.xmodmap
     - f_dunstrc
     - f_emoji
+    - f_fa_icons
     - d_ranger
     - f_config.fish
     - f_bashrc
