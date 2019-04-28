@@ -44,6 +44,7 @@ bind -x '"\es": fzf_ssh'
 # aliases
 alias del=trash
 alias s=fzf_ssh
+alias fk=fzf_kill
 alias ss='sudo systemctl'
 alias e='emacsclient -t'
 alias v='nvim'
