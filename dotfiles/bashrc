@@ -39,7 +39,7 @@ source /usr/share/fzf/key-bindings.bash
 bind -x '"\ee": fzf | xargs -r nvim'
 
 # aliases
-alias del='~/scripts/trash.sh'
+alias del=trash
 alias ss='sudo systemctl'
 alias e='emacsclient -t'
 alias v='nvim'
