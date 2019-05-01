@@ -50,6 +50,9 @@ bindsym $mod+c exec clipmenu -i -fn Terminus:size=12 -l 20 -i -b
 # launch clipmenu and insert the text
 bindsym $mod+i exec clipmenu -i -fn Terminus:size=12 -l 20 -i -b && xdotool key Shift+Insert
 
+# choose host name with dmenu and insert it
+bindsym $mod+Shift+i exec dmenu_host
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down

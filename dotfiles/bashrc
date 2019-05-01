@@ -38,8 +38,11 @@ source /usr/share/fzf/key-bindings.bash
 # M-e find with fzf and open in editor
 bind -x '"\ee": fzf | xargs -r nvim'
 
-# M-s to open ssh connection
+# M-s to open ssh connection with fzf
 bind -x '"\es": fzf_ssh'
+
+# M-h to insert host with fzf
+bind -x '"\eh": fzf_host'
 
 # aliases
 alias del=trash
