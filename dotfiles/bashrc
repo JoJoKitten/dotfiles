@@ -46,7 +46,8 @@ bind -x '"\eh": fzf_host'
 
 # aliases
 alias del=trash
-alias s=fzf_ssh
+alias fs=fzf_ssh
+alias fc=fzf_scp
 alias fk=fzf_kill
 alias ss='sudo systemctl'
 alias e='emacsclient -t'
