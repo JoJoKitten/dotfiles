@@ -121,6 +121,7 @@ profiles:
   jb-work:
     dotfiles:
     - f_xinitrc
+    - f_profile
     - f_spacemacs
     - f_i3_config
     - f_polybar_config
