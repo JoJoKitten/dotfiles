@@ -36,14 +36,18 @@ bind -x '"\el": ls'
 source /usr/share/fzf/key-bindings.bash
 
 # M-e find with fzf and open in editor
-bind -x '"\ee": fzf | xargs -r nvim'
+bind -x '"\ee": fzf --preview="head -$LINES {}" | xargs -r nvim'
 
-# M-s to open ssh connection
+# M-s to open ssh connection with fzf
 bind -x '"\es": fzf_ssh'
+
+# M-h to insert host with fzf
+bind -x '"\eh": fzf_host'
 
 # aliases
 alias del=trash
-alias s=fzf_ssh
+alias fs=fzf_ssh
+alias fc=fzf_scp
 alias fk=fzf_kill
 alias ss='sudo systemctl'
 alias e='emacsclient -t'
