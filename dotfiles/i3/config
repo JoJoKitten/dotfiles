@@ -240,8 +240,8 @@ bindsym $mod+Shift+s mark --add _swap
 bindsym $mod+s swap container with mark _swap
 
 
-# type something
-# bindsym --release $mod+Control+p exec --no-startup-id xdotool type --clearmodifiers "..."
+# set vi mode in bash
+bindsym --release $mod+Shift+v exec --no-startup-id xdotool type --clearmodifiers "$(printf "set -o vi\n\r")"
 
 # simulate right mouse down to enable grabbing with touchpad
 bindsym $mod+Ctrl+r --release exec xdotool mousedown 3
