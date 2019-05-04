@@ -1,0 +1,27 @@
+#  _            _                             _            
+# | |_ __ _ ___| | ____      ____ _ _ __ _ __(_) ___  _ __ 
+# | __/ _` / __| |/ /\ \ /\ / / _` | '__| '__| |/ _ \| '__|
+# | || (_| \__ \   <  \ V  V / (_| | |  | |  | | (_) | |   
+#  \__\__,_|___/_|\_\  \_/\_/ \__,_|_|  |_|  |_|\___/|_|   
+                                                         
+# Use the command 'task show' to see all defaults and overrides
+
+data.location=~/.task
+
+# Color theme
+#include /usr/share/doc/task/rc/light-16.theme
+#include /usr/share/doc/task/rc/light-256.theme
+#include /usr/share/doc/task/rc/dark-16.theme
+#include /usr/share/doc/task/rc/dark-256.theme
+#include /usr/share/doc/task/rc/dark-red-256.theme
+include /usr/share/doc/task/rc/dark-green-256.theme
+#include /usr/share/doc/task/rc/dark-blue-256.theme
+#include /usr/share/doc/task/rc/dark-violets-256.theme
+#include /usr/share/doc/task/rc/dark-yellow-green.theme
+#include /usr/share/doc/task/rc/dark-gray-256.theme
+#include /usr/share/doc/task/rc/dark-gray-blue-256.theme
+#include /usr/share/doc/task/rc/solarized-dark-256.theme
+#include /usr/share/doc/task/rc/solarized-light-256.theme
+#include /usr/share/doc/task/rc/no-color.theme
+
+confirmation=off

@@ -67,6 +67,9 @@ dotfiles:
   f_spacemacs:
     dst: ~/.spacemacs
     src: spacemacs
+  f_taskrc:
+    dst: ~/.taskrc
+    src: taskrc
   f_termite_config:
     dst: ~/.config/termite/config
     src: config/termite/config
@@ -94,77 +97,80 @@ dotfiles:
 profiles:
   desktop-i3:
     dotfiles:
-    - f_xinitrc
-    - f_xresources
-    - f_profile
-    - f_i3_config
-    - f_spacemacs
-    - f_vimrc
-    - f_polybar_config
-    - f_polybar_launch.sh
     - d_qpdfview
-    - f_redshift.conf
-    - f_tmux.conf
-    - f_termite_config
-    - f_morc_menu_v1.conf
-    - f_zathurarc
-    - f_xmouselessrc
-    - f_my_neo_de.xmodmap
+    - d_ranger
+    - f_bashrc
+    - f_config.fish
     - f_dunstrc
     - f_emoji
     - f_fa_icons
-    - d_ranger
-    - f_config.fish
-    - f_bashrc
-    - f_init.vim
+    - f_i3_config
     - f_ideavimrc
+    - f_init.vim
+    - f_morc_menu_v1.conf
+    - f_my_neo_de.xmodmap
+    - f_polybar_config
+    - f_polybar_launch.sh
+    - f_profile
+    - f_redshift.conf
+    - f_spacemacs
+    - f_taskrc
+    - f_termite_config
+    - f_tmux.conf
+    - f_vimrc
+    - f_xinitrc
+    - f_xmouselessrc
+    - f_xresources
+    - f_zathurarc
   jb-work:
     dotfiles:
-    - f_xinitrc
-    - f_profile
-    - f_spacemacs
-    - f_i3_config
-    - f_polybar_config
-    - f_polybar_launch.sh
     - d_qpdfview
-    - f_redshift.conf
-    - f_tmux.conf
-    - f_termite_config
-    - f_morc_menu_v1.conf
-    - f_zathurarc
-    - f_xmouselessrc
-    - f_my_neo_de.xmodmap
+    - d_ranger
+    - f_bashrc
+    - f_config.fish
     - f_dunstrc
     - f_emoji
     - f_fa_icons
-    - d_ranger
-    - f_config.fish
-    - f_bashrc
-    - f_init.vim
+    - f_i3_config
     - f_ideavimrc
+    - f_init.vim
+    - f_morc_menu_v1.conf
+    - f_my_neo_de.xmodmap
+    - f_polybar_config
+    - f_polybar_launch.sh
+    - f_profile
+    - f_redshift.conf
+    - f_spacemacs
+    - f_taskrc
+    - f_termite_config
+    - f_tmux.conf
+    - f_xinitrc
+    - f_xmouselessrc
+    - f_zathurarc
   laptop-i3:
     dotfiles:
-    - f_xinitrc
-    - f_xresources
-    - f_profile
-    - f_i3_config
-    - f_spacemacs
-    - f_polybar_config
-    - f_polybar_launch.sh
     - d_qpdfview
-    - f_redshift.conf
-    - f_tmux.conf
-    - f_termite_config
-    - f_morc_menu_v1.conf
-    - f_zathurarc
-    - f_xmouselessrc
-    - f_my_neo_de.xmodmap
+    - d_ranger
+    - f_bashrc
+    - f_config.fish
     - f_dunstrc
     - f_emoji
     - f_fa_icons
-    - d_ranger
-    - f_config.fish
-    - f_bashrc
-    - f_init.vim
+    - f_i3_config
     - f_ideavimrc
+    - f_init.vim
     - f_inputrc
+    - f_morc_menu_v1.conf
+    - f_my_neo_de.xmodmap
+    - f_polybar_config
+    - f_polybar_launch.sh
+    - f_profile
+    - f_redshift.conf
+    - f_spacemacs
+    - f_taskrc
+    - f_termite_config
+    - f_tmux.conf
+    - f_xinitrc
+    - f_xmouselessrc
+    - f_xresources
+    - f_zathurarc
