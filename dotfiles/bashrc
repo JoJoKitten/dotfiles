@@ -58,8 +58,9 @@ alias sr='sudo ranger'
 alias ka='killall'
 
 alias p='pacman'
-alias sp='sudo pacman'
 alias pss='pacman -Ss'
+alias sp='sudo pacman'
+alias sps='sudo pacman -S'
 
 alias g='git'
 alias gs='git status'
