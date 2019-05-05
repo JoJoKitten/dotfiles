@@ -52,6 +52,8 @@ xorg-xprop
 xorg-xinit
 xorg-xinput
 xorg-xev
+zathura
+zathura-pdf-poppler
 zip
 unzip
 "
