@@ -141,7 +141,6 @@ profiles:
     - f_profile
     - f_redshift.conf
     - f_spacemacs
-    - f_taskrc
     - f_termite_config
     - f_tmux.conf
     - f_xinitrc
