@@ -45,7 +45,7 @@ bind -x '"\es": fzf_ssh'
 bind -x '"\eh": fzf_host'
 
 # M-i to insert word from current tmux pane
-bind -x '"\ei": fzf_tmux_insert'
+bind -x '"\ei": tmux_copy'
 
 # aliases
 alias del=trash
