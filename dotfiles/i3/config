@@ -342,13 +342,14 @@ bindsym $mod+Ctrl+Shift+minus gaps outer all minus 10
 bindsym $mod+space mode "$menu"
 
 ################# root menu ######################
-set $menu (l)auncher | (d)otfiles | (c)nee | (k)eyborrd layout | (t)ools | (Shift+e)xit
+set $menu (l)auncher | (d)otfiles | (c)nee | (k)eyborrd layout | (t)ools | (w)ork | (Shift+e)xit
 mode "$menu" {
     bindsym l mode "$menu_launcher"
     bindsym c mode "$menu_cnee"
     bindsym d mode "$menu_dotfiles"
     bindsym k mode "$menu_keyboard"
     bindsym t mode "$menu_tools"
+    bindsym w mode "$menu_work"
     bindsym Shift+e mode "$menu_exit"
     bindsym q mode "default"
     bindsym Escape mode "default"
@@ -412,6 +413,16 @@ mode "$menu_tools" {
     bindsym t exec $terminal -e 'bash -c "echo  Translate to English: && read tmp && echo $tmp | trans de:en -v -theme random"', mode "default"
     bindsym k exec cat ~/vimwiki/kontakte.wiki | dmenu -i -l 20, mode "default"
     bindsym u exec $terminal -e 'bash -c "update_time && read"', mode "default"
+    bindsym q mode "default"
+    bindsym Escape mode "default"
+}
+
+##################### work $######################
+set $menu_work (b)egin | (e)nd | (s)how
+mode "$menu_work" {
+    bindsym b exec --no-startup-id workt start, mode "default"
+    bindsym e exec --no-startup-id workt stop, mode "default"
+    bindsym s exec --no-startup-id workt show, mode "default"
     bindsym q mode "default"
     bindsym Escape mode "default"
 }
