@@ -191,6 +191,10 @@ noremap! <M-p> <C-r>+
 nnoremap <leader>cd :cd %:p:h<cr>
 nnoremap <leader>cdw :lcd %:p:h<cr>
 
+" execute current file
+nnoremap <F5> :! "%:p"<cr>
+
+" movement in insert mode
 inoremap jj <C-o>o
 inoremap jh <C-o>o<backspace>
 inoremap hh <backspace>
