@@ -376,8 +376,8 @@ mode "$menu_launcher" {
 ################### cnee #########################
 set $menu_cnee (r)ecord | (p)lay
 mode "$menu_cnee" {
-    bindsym r exec cnee_record, mode "default"
-    bindsym p exec cnee_replay, mode "default"
+    bindsym r exec cnee_dmenu record, mode "default"
+    bindsym p exec cnee_dmenu play, mode "default"
     bindsym q mode "default"
     bindsym Escape mode "default"
 }
