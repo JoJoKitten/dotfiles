@@ -228,7 +228,6 @@ nnoremap <M-o> <C-o>
 nnoremap <M-i> <C-i>
 
 " folds
-nnoremap <M-a> za
 nnoremap <tab> za
 nnoremap <M-tab> zO
 nnoremap <M-+> zo
