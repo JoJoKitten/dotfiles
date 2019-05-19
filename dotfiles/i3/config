@@ -216,8 +216,6 @@ exec --no-startup-id clipmenud
 exec_always --no-startup-id sleep 8 && xmouseless
 exec --no-startup-id redshift
 # exec conky -c ~/.config/conky/conkyrc
-exec --no-startup-id xfce4-power-manager
-# Bluetooth manager
 # exec --no-startup-id blueman-applet
 # XKB indicator
 # exec_always --no-startup-id sbxkb
