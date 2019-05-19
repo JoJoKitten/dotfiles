@@ -85,6 +85,12 @@ dotfiles:
   f_xinitrc:
     dst: ~/.xinitrc
     src: xinitrc
+  f_xmobar.hs:
+    dst: ~/.xmonad/xmobar.hs
+    src: xmonad/xmobar.hs
+  f_xmonad.hs:
+    dst: ~/.xmonad/xmonad.hs
+    src: xmonad/xmonad.hs
   f_xmouselessrc:
     dst: ~/.config/xmouseless/xmouselessrc
     src: config/xmouseless/xmouselessrc
@@ -119,6 +125,8 @@ profiles:
     - f_tmux.conf
     - f_vimrc
     - f_xinitrc
+    - f_xmonad.hs
+    - f_xmobar.hs
     - f_xmouselessrc
     - f_xresources
     - f_zathurarc
@@ -145,6 +153,8 @@ profiles:
     - f_termite_config
     - f_tmux.conf
     - f_xinitrc
+    - f_xmonad.hs
+    - f_xmobar.hs
     - f_xmouselessrc
     - f_zathurarc
   laptop-i3:
@@ -171,6 +181,8 @@ profiles:
     - f_termite_config
     - f_tmux.conf
     - f_xinitrc
+    - f_xmonad.hs
+    - f_xmobar.hs
     - f_xmouselessrc
     - f_xresources
     - f_zathurarc
