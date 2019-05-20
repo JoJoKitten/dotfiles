@@ -20,31 +20,30 @@ import qualified Data.Map        as M
 
 -- XMonad:
 main = do
-  xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar.hs"
-  xmonad $ defaultConfig
-    { terminal           = myTerminal
-    , focusFollowsMouse  = myFocusFollowsMouse
-    , borderWidth        = myBorderWidth
-    , modMask            = myModMask
-    , workspaces         = myWorkspaces
-    , normalBorderColor  = myNormalBorderColor
-    , focusedBorderColor = myFocusedBorderColor
+    xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar.hs"
+    xmonad $ defaultConfig {
+        terminal           = myTerminal,
+        focusFollowsMouse  = myFocusFollowsMouse,
+        borderWidth        = myBorderWidth,
+        modMask            = myModMask,
+        workspaces         = myWorkspaces,
+        normalBorderColor  = myNormalBorderColor,
+        focusedBorderColor = myFocusedBorderColor,
 
-    , keys               = myKeys
-    , mouseBindings      = myMouseBindings
+        keys               = myKeys,
+        mouseBindings      = myMouseBindings,
 
-    , layoutHook         = avoidStruts $ myLayout
-    , manageHook         = manageDocks <+> myManageHook
-    , handleEventHook    = docksEventHook
-    , startupHook        = docksStartupHook <+> myStartupHook
-    , logHook            = dynamicLogWithPP $ xmobarPP {
-          ppOutput = hPutStrLn xmproc
-        , ppTitle = xmobarColor xmobarTitleColor "" . shorten 100
-        , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor ""
-        , ppSep = "   "
+        layoutHook         = avoidStruts $ myLayout,
+        manageHook         = manageDocks <+> myManageHook,
+        handleEventHook    = docksEventHook,
+        startupHook        = docksStartupHook <+> myStartupHook,
+        logHook            = dynamicLogWithPP $ xmobarPP {
+            ppOutput = hPutStrLn xmproc,
+            ppTitle = xmobarColor xmobarTitleColor "" . shorten 100,
+            ppCurrent = xmobarColor xmobarCurrentWorkspaceColor "",
+            ppSep = "   "
+        }
     }
-    -- hooks, layouts
-}
 
 
 myTerminal = "termite"
@@ -55,15 +54,7 @@ myWorkspaces = map show [1..9]
 ------------------------------------------------------------------------
 -- Window rules
 myManageHook = composeAll
-    [ className =? "Chromium"       --> doShift "2:web"
-    , className =? "Google-chrome"  --> doShift "2:web"
-    , className =? "Sublime_text"   --> doShift "3:code"
-    , resource  =? "desktop_window" --> doIgnore
-    , className =? "Galculator"     --> doFloat
-    , className =? "Steam"          --> doFloat
-    , className =? "Gimp"           --> doFloat
-    , className =? "Vlc"            --> doShift "4:media"
-    , className =? "MPlayer"        --> doShift "4:media"
+    [ resource  =? "desktop_window" --> doIgnore
     , className =? "stalonetray"    --> doIgnore
     , className =? "polybar"        --> doIgnore
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
@@ -71,14 +62,6 @@ myManageHook = composeAll
 
 ------------------------------------------------------------------------
 -- Layouts
--- You can specify and transform your layouts by modifying these values.
--- If you change layout bindings be sure to use 'mod-shift-space' after
--- restarting (with 'mod-q') to reset your layout state to the new
--- defaults, as xmonad preserves your old layout settings by default.
---
--- The available layouts.  Note that each layout is separated by |||,
--- which denotes layout choice.
---
 myLayout = avoidStruts (
     spacing 10 $ Tall 1 (3/100) (1/2) |||
     Mirror (Tall 1 (3/100) (1/2)) |||
@@ -109,32 +92,22 @@ myBorderWidth = 2
 myModMask = mod4Mask
 
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
-  ----------------------------------------------------------------------
-  -- Custom key bindings
-  --
 
-  -- Start a terminal.  Terminal to start is specified by myTerminal variable.
+  -- Start a terminal
   [ ((modMask, xK_Return),
      spawn $ XMonad.terminal conf)
-
-  -- Lock the screen using xscreensaver.
-  , ((modMask .|. controlMask, xK_l),
-     spawn "gnome-screensaver-command -l")
 
   -- Launch dmenu
   , ((modMask, xK_p),
      spawn "dmenu_run $DMENU_OPTIONS")
 
-  -- Take a screenshot in select mode.
-  -- After pressing this key binding, click a window, or draw a rectangle with
-  -- the mouse.
+  -- Take a screenshot
   , ((modMask .|. shiftMask, xK_p),
-     spawn "select-screenshot")
+     spawn "scrot && notify-send Taken a screenshot")
 
-  -- Take full screenshot in multi-head mode.
-  -- That is, take a screenshot of everything you see.
+  -- Take full screenshot of selection
   , ((modMask .|. controlMask .|. shiftMask, xK_p),
-     spawn "screenshot")
+     spawn "scrot -s")
 
   -- Fetch a single use password.
   , ((modMask .|. shiftMask, xK_o),
@@ -151,6 +124,9 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   -- Increase volume.
   , ((modMask .|. controlMask, xK_k),
      spawn "amixer -q set Master 10%+")
+
+  , ((modMask, xK_s),
+     spawn "toggle_stalonetray")
 
   --------------------------------------------------------------------
   -- "Standard" xmonad key bindings
@@ -238,6 +214,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   [((m .|. modMask, k), windows $ f i)
       | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
       , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
+
   ++
 
   -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
@@ -286,4 +263,16 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 
 ------------------------------------------------------------------------
 -- Startup hook
-myStartupHook = return ()
+myStartupHook = do
+    spawn "xrdb ~/.Xresources"
+    spawn "sleep 5 && setxkbmap lv && xmodmap ~/my_neo_de.xmodmap && xset -r 51"
+    spawn "set_wallpaper"
+    spawn "compton -b"
+    spawn "nm-applet"
+    spawn "bash -c 'killall pulseaudio && sleep 1 && pulseaudio'"
+    spawn "clipmenud"
+    spawn "sleep 8 && xmouseless"
+    spawn "redshift"
+    spawn "xautolock -time 30 -locker blurlock"
+    spawn "sleep 100 && dropbox start"
+    spawn "~/.start_jobs.sh"
