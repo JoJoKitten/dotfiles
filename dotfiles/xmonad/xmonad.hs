@@ -1,7 +1,9 @@
--- xmonad config used by Vic Fryzel
--- Author: Vic Fryzel
--- http://github.com/vicfryzel/xmonad-config
-
+--                                       _ 
+-- __  ___ __ ___   ___  _ __   __ _  __| |
+-- \ \/ / '_ ` _ \ / _ \| '_ \ / _` |/ _` |
+--  >  <| | | | | | (_) | | | | (_| | (_| |
+-- /_/\_\_| |_| |_|\___/|_| |_|\__,_|\__,_|
+                                        
 import System.IO
 import System.Exit
 import XMonad
@@ -18,7 +20,6 @@ import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
 
--- XMonad:
 main = do
     xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar.hs"
     xmonad $ defaultConfig {
@@ -101,56 +102,36 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, xK_p),
      spawn "dmenu_run $DMENU_OPTIONS")
 
-  -- Take a screenshot
-  , ((modMask .|. shiftMask, xK_p),
-     spawn "scrot && notify-send Taken a screenshot")
-
-  -- Take full screenshot of selection
-  , ((modMask .|. controlMask .|. shiftMask, xK_p),
-     spawn "scrot -s")
-
-  -- Fetch a single use password.
-  , ((modMask .|. shiftMask, xK_o),
-     spawn "fetchotp -x")
-
   -- Mute volume.
   , ((modMask .|. controlMask, xK_m),
-     spawn "amixer -q set Master toggle")
+     spawn "pactl set-sink-mute 0 toggle")
 
   -- Decrease volume.
   , ((modMask .|. controlMask, xK_j),
-     spawn "amixer -q set Master 10%-")
+     spawn "pactl set-sink-volume 0 -5%")
 
   -- Increase volume.
   , ((modMask .|. controlMask, xK_k),
-     spawn "amixer -q set Master 10%+")
+     spawn "pactl set-sink-volume 0 +5%")
 
   , ((modMask, xK_s),
      spawn "toggle_stalonetray")
-
-  --------------------------------------------------------------------
-  -- "Standard" xmonad key bindings
-  --
 
   -- Close focused window.
   , ((modMask .|. shiftMask, xK_q),
      kill)
 
-  -- Cycle through the available layout algorithms.
+  -- Change layout
   , ((modMask, xK_a),
      sendMessage NextLayout)
 
-  --  Reset the layouts on the current workspace to default.
+  --  Reset the layouts on the current workspace to default
   , ((modMask .|. shiftMask, xK_a),
      setLayout $ XMonad.layoutHook conf)
 
   -- Resize viewed windows to the correct size.
   , ((modMask, xK_n),
      refresh)
-
-  -- Move focus to the next window.
-  , ((modMask, xK_Tab),
-     windows W.focusDown)
 
   -- Move focus to the next window.
   , ((modMask, xK_j),
@@ -195,9 +176,6 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   -- Decrement the number of windows in the master area.
   , ((modMask, xK_period),
      sendMessage (IncMasterN (-1)))
-
-  -- Toggle the status bar gap.
-  -- TODO: update this binding with avoidStruts, ((modMask, xK_b),
 
   -- Quit xmonad.
   , ((modMask .|. shiftMask, xK_x),
@@ -267,6 +245,7 @@ myStartupHook = do
     spawn "xrdb ~/.Xresources"
     spawn "sleep 5 && setxkbmap lv && xmodmap ~/my_neo_de.xmodmap && xset -r 51"
     spawn "set_wallpaper"
+    spawn "dunst"
     spawn "compton -b"
     spawn "nm-applet"
     spawn "bash -c 'killall pulseaudio && sleep 1 && pulseaudio'"
