@@ -28,7 +28,6 @@ pcmanfm
 pulseaudio
 python
 python-pip
-xf86-input-synaptics
 ranger
 redshift
 scrot
@@ -48,8 +47,9 @@ wget
 xarchiver
 xclip
 xdotool
-xorg-xbacklight
+xorg-drivers
 xorg-server
+xorg-xbacklight
 xorg-xprop
 xorg-xinit
 xorg-xinput
