@@ -94,6 +94,9 @@ myModMask = mod4Mask
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   [
+  -- launch terminal
+  ((modMask, xK_Return), spawn $ XMonad.terminal conf),
+
   -- Close focused window.
   ((modMask .|. shiftMask, xK_q), kill),
 
