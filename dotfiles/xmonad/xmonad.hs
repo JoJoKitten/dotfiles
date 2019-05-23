@@ -57,7 +57,6 @@ myWorkspaces = map show [1..9]
 myManageHook = composeAll
     [ resource  =? "desktop_window" --> doIgnore
     , className =? "stalonetray"    --> doIgnore
-    , className =? "polybar"        --> doIgnore
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
 
 
@@ -94,96 +93,57 @@ myModMask = mod4Mask
 
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
-  -- Start a terminal
-  [ ((modMask, xK_Return),
-     spawn $ XMonad.terminal conf)
-
-  -- Launch dmenu
-  , ((modMask, xK_p),
-     spawn "dmenu_run $DMENU_OPTIONS")
-
-  -- Mute volume.
-  , ((modMask .|. controlMask, xK_m),
-     spawn "pactl set-sink-mute 0 toggle")
-
-  -- Decrease volume.
-  , ((modMask .|. controlMask, xK_j),
-     spawn "pactl set-sink-volume 0 -5%")
-
-  -- Increase volume.
-  , ((modMask .|. controlMask, xK_k),
-     spawn "pactl set-sink-volume 0 +5%")
-
-  , ((modMask, xK_s),
-     spawn "toggle_stalonetray")
-
+  [
   -- Close focused window.
-  , ((modMask .|. shiftMask, xK_q),
-     kill)
+  ((modMask .|. shiftMask, xK_q), kill),
 
   -- Change layout
-  , ((modMask, xK_a),
-     sendMessage NextLayout)
+  ((modMask, xK_a), sendMessage NextLayout),
 
   --  Reset the layouts on the current workspace to default
-  , ((modMask .|. shiftMask, xK_a),
-     setLayout $ XMonad.layoutHook conf)
+  ((modMask .|. shiftMask, xK_a), setLayout $ XMonad.layoutHook conf),
 
   -- Resize viewed windows to the correct size.
-  , ((modMask, xK_n),
-     refresh)
+  ((modMask, xK_n), refresh),
 
   -- Move focus to the next window.
-  , ((modMask, xK_j),
-     windows W.focusDown)
+  ((modMask, xK_j), windows W.focusDown),
 
   -- Move focus to the previous window.
-  , ((modMask, xK_k),
-     windows W.focusUp  )
+  ((modMask, xK_k), windows W.focusUp  ),
 
   -- Move focus to the master window.
-  , ((modMask, xK_m),
-     windows W.focusMaster  )
+  ((modMask, xK_m), windows W.focusMaster  ),
 
   -- Swap the focused window and the master window.
-  , ((modMask, xK_e),
-     windows W.swapMaster)
+  ((modMask, xK_e), windows W.swapMaster),
 
   -- Swap the focused window with the next window.
-  , ((modMask .|. shiftMask, xK_j),
-     windows W.swapDown  )
+  ((modMask .|. shiftMask, xK_j), windows W.swapDown  ),
 
   -- Swap the focused window with the previous window.
-  , ((modMask .|. shiftMask, xK_k),
-     windows W.swapUp    )
+  ((modMask .|. shiftMask, xK_k), windows W.swapUp    ),
 
   -- Shrink the master area.
-  , ((modMask, xK_h),
-     sendMessage Shrink)
+  ((modMask, xK_h), sendMessage Shrink),
 
   -- Expand the master area.
-  , ((modMask, xK_l),
-     sendMessage Expand)
+  ((modMask, xK_l), sendMessage Expand),
 
   -- Push window back into tiling.
-  , ((modMask, xK_t),
-     withFocused $ windows . W.sink)
+  ((modMask, xK_t), withFocused $ windows . W.sink),
 
   -- Increment the number of windows in the master area.
-  , ((modMask, xK_comma),
-     sendMessage (IncMasterN 1))
+  ((modMask, xK_comma), sendMessage (IncMasterN 1)),
 
   -- Decrement the number of windows in the master area.
-  , ((modMask, xK_period),
-     sendMessage (IncMasterN (-1)))
+  ((modMask, xK_period), sendMessage (IncMasterN (-1))),
 
   -- Quit xmonad.
-  , ((modMask .|. shiftMask, xK_x),
-     io (exitWith ExitSuccess))
+  ((modMask .|. shiftMask, xK_x), io (exitWith ExitSuccess)),
 
   -- Restart xmonad.
-  , ((modMask .|. shiftMask, xK_r),
-     restart "xmonad" True)
+  ((modMask .|. shiftMask, xK_r), restart "xmonad" True)
   ]
   ++
 
@@ -243,6 +203,7 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 -- Startup hook
 myStartupHook = do
     spawn "xrdb ~/.Xresources"
+    spawn "sxhkd"
     spawn "sleep 5 && setxkbmap lv && xmodmap ~/my_neo_de.xmodmap && xset -r 51"
     spawn "set_wallpaper"
     spawn "dunst"

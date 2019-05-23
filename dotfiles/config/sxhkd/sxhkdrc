@@ -1,0 +1,70 @@
+#           _     _       _ 
+#  _____  _| |__ | | ____| |
+# / __\ \/ / '_ \| |/ / _` |
+# \__ \>  <| | | |   < (_| |
+# |___/_/\_\_| |_|_|\_\__,_|
+                          
+# general
+super + Return
+    $TERMINAL
+
+super + shift + Return
+    $TERMINAL -e tmux
+
+super + control + Return
+    $TERMINAL -e "tmux -c nvim"
+
+super + p
+    dmenu_run
+
+super + p
+    morc_menu
+
+# clipmenu
+super + c
+    clipmenu -i -fn Terminus:size=12 -l 20 -i -b
+
+super + i
+    clipmenu -i -fn Terminus:size=12 -l 20 -i -b && xdotool key shift+Insert
+
+# audio
+XF86AudioMute
+    pactl set-sink-mute 0 toggle
+
+XF86AudioLowerVolume
+    pactl set-sink-volume 0 -5%
+
+XF86AudioRaiseVolume
+    pactl set-sink-volume 0 +5%
+
+shift + XF86AudioMute
+    pactl set-sink-mute 1 toggle
+
+shift + XF86AudioLowerVolume
+    pactl set-sink-volume 1 -5%
+
+shift + XF86AudioRaiseVolume
+    pactl set-sink-volume 1 +5%
+
+
+# Sreen brightness controls
+XF86MonBrightnessUp 
+    xbacklight -inc 10
+
+XF86MonBrightnessDown 
+    xbacklight -dec 10
+
+
+# tools
+super + shift + i
+    dmenu_host
+
+# screenshots
+Print 
+    scrot
+
+super + Print 
+    scrot -u
+
+super + shift + Print 
+    scrot -s
