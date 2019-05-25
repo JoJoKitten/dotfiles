@@ -35,8 +35,8 @@ main = do
         mouseBindings      = myMouseBindings,
 
         layoutHook         = avoidStruts $ myLayout,
-        manageHook         = manageDocks <+> fullscreenManageHook <+> myManageHook,
-        handleEventHook    = docksEventHook <+> fullscreenEventHook,
+        manageHook         = manageDocks <+> myManageHook,
+        handleEventHook    = docksEventHook,
         startupHook        = docksStartupHook <+> myStartupHook,
         logHook            = dynamicLogWithPP $ xmobarPP {
             ppOutput = hPutStrLn xmproc,
@@ -50,12 +50,15 @@ main = do
 myTerminal = "termite"
 myWorkspaces = map show [1..9]
 
+-- Key binding to toggle the gap for the bar.
+toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
+
 ------------------------------------------------------------------------
 -- Window rules
-myManageHook = composeAll
-    [ resource  =? "desktop_window" --> doIgnore,
-    className =? "stalonetray"    --> doIgnore,
-    isFullscreen --> (doF W.focusDown <+> doFullFloat)]
+myManageHook = composeAll [ 
+    resource  =? "desktop_window" --> doIgnore,
+    className =? "stalonetray"    --> doIgnore
+    ]
 
 
 ------------------------------------------------------------------------
