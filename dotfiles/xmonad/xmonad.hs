@@ -35,8 +35,8 @@ main = do
         mouseBindings      = myMouseBindings,
 
         layoutHook         = avoidStruts $ myLayout,
-        manageHook         = manageDocks <+> myManageHook,
-        handleEventHook    = docksEventHook,
+        manageHook         = manageDocks <+> fullscreenManageHook <+> myManageHook,
+        handleEventHook    = docksEventHook <+> fullscreenEventHook,
         startupHook        = docksStartupHook <+> myStartupHook,
         logHook            = dynamicLogWithPP $ xmobarPP {
             ppOutput = hPutStrLn xmproc,
