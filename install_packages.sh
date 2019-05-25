@@ -45,6 +45,7 @@ adobe-source-code-pro-fonts
 neovim
 wget
 xarchiver
+xautolock
 xclip
 xdotool
 xorg-drivers
