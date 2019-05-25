@@ -26,6 +26,7 @@ Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mboughaba/i3config.vim'
+Plugin 'baskerville/vim-sxhkdrc'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'w0rp/ale'
@@ -267,6 +268,9 @@ nnoremap <M-l> :Lines<cr>
 
 "--------------------- i3config.vim ------------------------
 autocmd BufRead,BufNewFile ~/dotfiles/dotfiles/i3/config set filetype=i3config
+
+"--------------------- sxhkd syntax ------------------------
+autocmd BufRead,BufNewFile ~/dotfiles/dotfiles/sxhkd/sxhkdrc set filetype=sxhkdrc
 
 
 "--------------------- Nerd tree ---------------------------
