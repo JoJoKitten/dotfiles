@@ -26,4 +26,4 @@ compton -b &
 redshift &
 set_wallpaper &
 
-exec xmonad > $HOME/.xmonad/log.txt 2>&1
+exec ~/.xmonad/xmonad-x86_64-linux > $HOME/.xmonad/log.txt 2>&1
