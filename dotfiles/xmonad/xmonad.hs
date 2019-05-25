@@ -48,16 +48,14 @@ main = do
 
 
 myTerminal = "termite"
-
 myWorkspaces = map show [1..9]
-
 
 ------------------------------------------------------------------------
 -- Window rules
 myManageHook = composeAll
-    [ resource  =? "desktop_window" --> doIgnore
-    , className =? "stalonetray"    --> doIgnore
-    , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
+    [ resource  =? "desktop_window" --> doIgnore,
+    className =? "stalonetray"    --> doIgnore,
+    isFullscreen --> (doF W.focusDown <+> doFullFloat)]
 
 
 ------------------------------------------------------------------------
@@ -72,20 +70,12 @@ myLayout = avoidStruts (
 
 ------------------------------------------------------------------------
 -- Colors and borders
--- Currently based on the ir_black theme.
---
-myNormalBorderColor  = "#999999"
-myFocusedBorderColor = "#FFFFFF"
-
--- Color of current window title in xmobar.
-xmobarTitleColor = "#b58900"
-
--- Color of current workspace in xmobar.
-xmobarCurrentWorkspaceColor = "#859900"
-
--- Width of the window border in pixels.
+myNormalBorderColor  = "#555555"
+myFocusedBorderColor = "#ffffff"
 myBorderWidth = 2
 
+xmobarTitleColor = "#a0f0a0"
+xmobarCurrentWorkspaceColor = "#a0f0a0"
 
 ------------------------------------------------------------------------
 -- Key bindings
@@ -205,17 +195,4 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 ------------------------------------------------------------------------
 -- Startup hook
 myStartupHook = do
-    spawn "xrdb ~/.Xresources"
-    spawn "sxhkd"
-    spawn "sleep 5 && setxkbmap lv && xmodmap ~/my_neo_de.xmodmap && xset -r 51"
-    spawn "set_wallpaper"
-    spawn "dunst"
-    spawn "compton -b"
-    spawn "nm-applet"
-    spawn "bash -c 'killall pulseaudio && sleep 1 && pulseaudio'"
-    spawn "clipmenud"
-    spawn "sleep 8 && xmouseless"
-    spawn "redshift"
-    spawn "xautolock -time 30 -locker blurlock"
-    spawn "sleep 100 && dropbox start"
     spawn "~/.start_jobs.sh"

@@ -14,4 +14,16 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 [ -f $userresources ] && xrdb -merge $userresources
 [ -f $usermodmap ] && xmodmap -merge $usermodmap
 
+# start some programs
+sxhkd &
+setxkbmap lv && xmodmap ~/my_neo_de.xmodmap && xset -r 51 &
+clipmenud &
+dunst &
+nm-applet &
+sleep 5 && xmouseless &
+sleep 20 && dropbox start &
+compton -b &
+redshift &
+set_wallpaper &
+
 exec xmonad > $HOME/.xmonad/log.txt 2>&1
