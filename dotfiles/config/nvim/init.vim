@@ -27,6 +27,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mboughaba/i3config.vim'
 Plugin 'baskerville/vim-sxhkdrc'
+Plugin 'neovimhaskell/haskell-vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'w0rp/ale'
@@ -36,6 +37,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'mhartington/oceanic-next'
 Plugin 'sonobre/briofita_vim'
 call vundle#end()
+
 
 "----------------------------------------------------------
 let mapleader = " "
