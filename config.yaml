@@ -182,7 +182,6 @@ profiles:
     - f_taskrc
     - f_termite_config
     - f_tmux.conf
-    - f_xinitrc
     - f_xmonad.hs
     - f_xmobar.hs
     - f_xmouselessrc
