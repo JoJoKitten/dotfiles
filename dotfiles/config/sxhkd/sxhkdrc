@@ -8,9 +8,6 @@
 super + control + Return
     $TERMINAL -e "tmux -c nvim"
 
-super + p
-    dmenu_run
-
 super + z
     morc_menu
 
