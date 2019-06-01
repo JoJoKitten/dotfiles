@@ -28,7 +28,8 @@ set_wallpaper &
 
 # set status bar content
 while true; do
-    xsetroot -name "$(date)"
+    dwm_status
+    sleep 1
 done &
 
 while true; do
