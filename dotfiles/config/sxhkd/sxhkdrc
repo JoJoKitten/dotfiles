@@ -47,7 +47,7 @@ super + d ; {p,i,c,o}
     {$TERMINAL -e ~/dotfiles/pull.sh, \
     ~/dotfiles/dotdrop.sh install -f, \
     $TERMINAL -e ~/dotfiles/push.sh, \
-    $TERMINAL -d "$HOME/dotfiles/"}
+    cd ~/dotfiles && $TERMINAL}
 
 # cnee
 super + space ; c ; {r,p}
