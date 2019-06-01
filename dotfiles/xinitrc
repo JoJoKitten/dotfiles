@@ -33,5 +33,5 @@ while true; do
 done &
 
 while true; do
-    exec dwm > $HOME/.dwm.log 2>&1
+    dwm > $HOME/.dwm.log 2>&1
 done
