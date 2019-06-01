@@ -5,9 +5,6 @@
 # |___/_/\_\_| |_|_|\_\__,_|
                           
 # general
-super + shift + Return
-    $TERMINAL -e tmux
-
 super + control + Return
     $TERMINAL -e "tmux -c nvim"
 
