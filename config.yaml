@@ -128,8 +128,6 @@ profiles:
     - f_tmux.conf
     - f_vimrc
     - f_xinitrc
-    - f_xmonad.hs
-    - f_xmobar.hs
     - f_xmouselessrc
     - f_xresources
     - f_zathurarc
@@ -155,8 +153,7 @@ profiles:
     - f_taskrc
     - f_termite_config
     - f_tmux.conf
-    - f_xmonad.hs
-    - f_xmobar.hs
+    - f_xinitrc
     - f_xmouselessrc
     - f_zathurarc
   laptop-i3:
@@ -182,8 +179,7 @@ profiles:
     - f_taskrc
     - f_termite_config
     - f_tmux.conf
-    - f_xmonad.hs
-    - f_xmobar.hs
+    - f_xinitrc
     - f_xmouselessrc
     - f_xresources
     - f_zathurarc

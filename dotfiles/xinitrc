@@ -26,4 +26,11 @@ compton -b &
 redshift &
 set_wallpaper &
 
-exec ~/.xmonad/xmonad-x86_64-linux > $HOME/.xmonad/log.txt 2>&1
+# set status bar content
+while true; do
+    xsetroot -name "$(date)"
+done &
+
+while true; do
+    exec dwm > $HOME/.dwm.log 2>&1
+done
