@@ -24,8 +24,6 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'Glench/Vim-Jinja2-Syntax'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mboughaba/i3config.vim'
 Plugin 'baskerville/vim-sxhkdrc'
 Plugin 'neovimhaskell/haskell-vim'
@@ -56,10 +54,11 @@ set splitbelow splitright
 set ruler
 set number relativenumber
 set scrolloff=10
-" highlight cursor line
-set cursorline
+" highlight cursor line ?
+set nocursorline
+
 " 2 to always show status bar
-set laststatus=2
+set laststatus=1
 
 " completion
 set wildmenu
@@ -70,9 +69,9 @@ set mouse=
 :set noshowmode
 
 " appearance
-set background=dark
-set termguicolors
-colorscheme gruvbox
+" set background=dark
+" set termguicolors
+" colorscheme gruvbox
 " nice without termguicolors
 " colorscheme pablo
 
@@ -292,17 +291,6 @@ nmap ö <Plug>(easymotion-bd-f)
 " move up/down
 map <M-j> <Plug>(easymotion-j)
 map <M-k> <Plug>(easymotion-k)
-
-"--------------------- airline -----------------------------
-:let g:airline_theme='gruvbox'
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols = {}
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
 
 "--------------------- ale ---------------------------------
 nnoremap <M-w> :lnext<cr>
