@@ -37,7 +37,7 @@ super + shift + s
 # launch applications
 super + o ; {f,r,m,n,t,p} 
     {firefox, \
-    $TERMINAL --name=ranger -e ranger, \
+    $TERMINAL -e ranger, \
     thunderbird, \
     pcmanfm, \
     open_tmux_session, \
