@@ -29,7 +29,7 @@ Plugin 'baskerville/vim-sxhkdrc'
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'w0rp/ale'
+" Plugin 'w0rp/ale'
 
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'morhetz/gruvbox'
