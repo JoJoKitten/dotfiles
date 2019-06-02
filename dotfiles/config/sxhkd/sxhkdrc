@@ -30,6 +30,10 @@ XF86MonBrightness{Up,Down}
 {_,super + ,super + shift + } Print 
     sleep 0.2 && scrot {_,-u,-s}
 
+# system tray
+super + shift + s
+    toggle_stalonetray
+
 # launch applications
 super + o ; {f,r,m,n,t,p} 
     {firefox, \
