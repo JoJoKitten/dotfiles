@@ -4,10 +4,7 @@
 # \__ \>  <| | | |   < (_| |
 # |___/_/\_\_| |_|_|\_\__,_|
                           
-# general
-super + control + Return
-    $TERMINAL -e "tmux -c nvim"
-
+# categorized menu
 super + z
     morc_menu
 
