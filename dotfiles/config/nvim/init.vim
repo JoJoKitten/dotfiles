@@ -29,7 +29,7 @@ Plugin 'baskerville/vim-sxhkdrc'
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
-" Plugin 'w0rp/ale'
+Plugin 'w0rp/ale'
 
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'morhetz/gruvbox'
@@ -294,6 +294,9 @@ map <M-j> <Plug>(easymotion-j)
 map <M-k> <Plug>(easymotion-k)
 
 "--------------------- ale ---------------------------------
+" color of left column
+highlight SignColumn ctermbg=none
+
 nnoremap <M-w> :lnext<cr>
 nnoremap <M-S-w> :lprevious<cr>
 " let g:ale_fix_on_save = 1
