@@ -3,11 +3,11 @@
 # / __\ \/ / '_ \| |/ / _` |
 # \__ \>  <| | | |   < (_| |
 # |___/_/\_\_| |_|_|\_\__,_|
-                          
-# general
-super + control + Return
-    $TERMINAL -e "tmux -c nvim"
 
+# This file includes several bindings that are independent of the window
+# manager. It does not include bindings to launch a terminal and for dmenu.
+                          
+# categorized menu
 super + z
     morc_menu
 
