@@ -99,7 +99,7 @@ set hlsearch
 map <M-s> :execute "vimgrep //j **" <bar> cw<left><left><left><left><left><left><left><left><left><left><left>
 
 " Replace all ocurrences of the word under the cursor.
-:nnoremap <leader>rw :%s/\<<C-r><C-w>\>//gc<left><left><left>
+nnoremap <leader>rw :%s/\<<C-r><C-w>\>//gc<left><left><left>
 
 " Replace all
 nnoremap <leader>ra :%s//gc<left><left><left>
@@ -111,8 +111,8 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=2
 set foldminlines=0
-:highlight Folded guibg=none guifg=LightGrey
-:highlight FoldColumn guibg=none guifg=white
+highlight Folded ctermbg=none ctermfg=LightGrey
+highlight FoldColumn ctermbg=none ctermfg=white
 set fillchars=fold:\ ,
 
 function! NeatFoldText() "{{{2
@@ -206,9 +206,9 @@ inoremap hh <backspace>
 
 " Files
 nnoremap s :w<cr>
-:nnoremap <leader>qq :q<cr>
-:nnoremap <leader>qa :qa<cr>
-:nnoremap <leader>wq :wq<cr>
+nnoremap <leader>qq :q<cr>
+nnoremap <leader>qa :qa<cr>
+nnoremap <leader>wq :wq<cr>
 
 " options
 nnoremap <leader>zw :set invwrap<cr>
@@ -286,7 +286,7 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 let g:vimwiki_folding='expr'
 
 "--------------------- easymotion --------------------------
-:let g:EasyMotion_keys="asdghklqwertyuiopzxcvbnmfj"
+let g:EasyMotion_keys="asdghklqwertyuiopzxcvbnmfj"
 " move to char
 nmap ö <Plug>(easymotion-bd-f)
 " move up/down
