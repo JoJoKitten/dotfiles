@@ -27,10 +27,7 @@ redshift &
 set_wallpaper &
 
 # set status bar content
-while true; do
-    dwm_status
-    sleep 1
-done &
+dwm_status &
 
 while true; do
     dwm > $HOME/.dwm.log 2>&1
