@@ -14,6 +14,9 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 [ -f $userresources ] && xrdb -merge $userresources
 [ -f $usermodmap ] && xmodmap -merge $usermodmap
 
+# fix for java applications in dwm
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 # start some programs
 sxhkd &
 setxkbmap lv && xmodmap ~/my_neo_de.xmodmap && xset -r 51 &
