@@ -3,14 +3,11 @@
 # / __\ \/ / '_ \| |/ / _` |
 # \__ \>  <| | | |   < (_| |
 # |___/_/\_\_| |_|_|\_\__,_|
+
+# This file includes several bindings that are independent of the window
+# manager. It does not include bindings to launch a terminal and for dmenu.
                           
-# general
-super + control + Return
-    $TERMINAL -e "tmux -c nvim"
-
-super + p
-    dmenu_run
-
+# categorized menu
 super + z
     morc_menu
 
@@ -33,10 +30,14 @@ XF86MonBrightness{Up,Down}
 {_,super + ,super + shift + } Print 
     sleep 0.2 && scrot {_,-u,-s}
 
+# system tray
+super + shift + s
+    toggle_stalonetray
+
 # launch applications
 super + o ; {f,r,m,n,t,p} 
     {firefox, \
-    $TERMINAL --name=ranger -e ranger, \
+    $TERMINAL -e ranger, \
     thunderbird, \
     pcmanfm, \
     open_tmux_session, \
