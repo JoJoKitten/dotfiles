@@ -30,6 +30,11 @@ XF86MonBrightness{Up,Down}
 {_,super + ,super + shift + } Print 
     sleep 0.2 && scrot {_,-u,-s}
 
+# mouse control
+super + d
+    xmouseless
+
+
 # system tray
 super + shift + s
     toggle_stalonetray

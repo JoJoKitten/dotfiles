@@ -23,7 +23,6 @@ setxkbmap lv && xmodmap ~/my_neo_de.xmodmap && xset -r 51 &
 clipmenud &
 dunst &
 nm-applet &
-sleep 5 && xmouseless &
 sleep 20 && dropbox start &
 compton -b &
 redshift &
