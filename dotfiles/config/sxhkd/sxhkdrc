@@ -32,8 +32,7 @@ XF86MonBrightness{Up,Down}
 
 # mouse control
 super + d
-    xmouseless
-
+    sleep 0.2 && xmouseless
 
 # system tray
 super + shift + s
@@ -49,7 +48,7 @@ super + o ; {f,r,m,n,t,p}
     pianoteq}
 
 # dotfiles
-super + d ; {p,i,c,o}
+super + space; d ; {p,i,c,o}
     {$TERMINAL -e ~/dotfiles/pull.sh, \
     ~/dotfiles/dotdrop.sh install -f, \
     $TERMINAL -e ~/dotfiles/push.sh, \
