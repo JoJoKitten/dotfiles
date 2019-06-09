@@ -75,3 +75,5 @@ alias gpl='git pull'
 alias gps='git push'
 
 alias cht='cht.sh'
+alias trde='trans de:en -v -theme random'
+alias tred='trans en:de -v -theme random'
