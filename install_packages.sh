@@ -62,7 +62,6 @@ unzip
 "
 
 aur_packages="
-cht.sh
 polybar
 dropbox
 xnee"
@@ -112,7 +111,7 @@ fi
 # cht.sh
 curl https://cht.sh/:cht.sh > /tmp/cht.sh
 sudo cp /tmp/cht.sh /usr/local/bin/cht.sh
-chmod +x /usr/local/bin/cht.sh
+sudo chmod +x /usr/local/bin/cht.sh
 
 # python support for neovim
 sudo pip install neovim
