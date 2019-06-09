@@ -62,7 +62,6 @@ unzip
 "
 
 aur_packages="
-polybar
 dropbox
 xnee"
 
