@@ -80,7 +80,7 @@ done
 # dotfiles
 cd
 if [ ! -d dotfiles ]; then
-    git clone --recurse-submodules https://github.com/jojokitten/dotfiles.git dotfiles
+    git clone --recurse-submodules https://github.com/jbensmann/dotfiles.git dotfiles
 fi
 echo "Installing dotfiles"
 cd dotfiles
@@ -95,7 +95,7 @@ fi
 # xmouseless
 if ! hash xmouseless; then
     cd /tmp
-    git clone https://github.com/jojokitten/xmouseless.git
+    git clone https://github.com/jbensmann/xmouseless.git
     cd xmouseless && make && sudo make install
 fi
 
