@@ -69,13 +69,13 @@ xnee"
 # install packages from the main repos
 for p in $packages; do
     echo "Installing $p ..."
-    sudo pacman --needed --noconfirm -S $p > /dev/null
+    sudo pacman --needed --noconfirm -S "$p" > /dev/null
 done
 
 # install packages from AUR
 for p in $aur_packages; do
     echo "Installing $p from AUR ..."
-    trizen --needed --noconfirm --sudo-autorepeat -S $p > /dev/null
+    trizen --needed --noconfirm --sudo-autorepeat -S "$p" > /dev/null
 done
 
 # dotfiles
@@ -107,6 +107,11 @@ if ! hash entr; then
     tar -xf entr-4.1.tar.gz
     cd eradman-entr-* && ./configure && make test && sudo make install
 fi
+
+# cht.sh
+curl https://cht.sh/:cht.sh > /tmp/cht.sh
+sudo cp /tmp/cht.sh /usr/local/bin/cht.sh
+chmod +x /usr/local/bin/cht.sh
 
 # python support for neovim
 sudo pip install neovim
