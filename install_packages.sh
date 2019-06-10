@@ -31,6 +31,7 @@ python-pip
 ranger
 redshift
 scrot
+shellcheck
 stalonetray
 sxiv
 system-config-printer
