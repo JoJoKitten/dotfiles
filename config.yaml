@@ -7,7 +7,7 @@ config:
   link_by_default: false
   longkey: false
 dotfiles:
-  d_in:
+  d_bin:
     dst: ~/bin
     src: bin
   d_ranger:
@@ -85,6 +85,7 @@ dotfiles:
 profiles:
   desktop-i3:
     dotfiles:
+    - d_bin
     - d_ranger
     - f_bashrc
     - f_dunstrc
@@ -105,6 +106,7 @@ profiles:
     - f_zathurarc
   jb-work:
     dotfiles:
+    - d_bin
     - d_ranger
     - f_bashrc
     - f_dunstrc
@@ -125,6 +127,7 @@ profiles:
     - f_zathurarc
   laptop-i3:
     dotfiles:
+    - d_bin
     - d_ranger
     - f_bashrc
     - f_dunstrc
@@ -143,4 +146,4 @@ profiles:
     - f_inputrc
     - f_xinitrc
     - f_zathurarc
-    - d_in
+    - d_bin
