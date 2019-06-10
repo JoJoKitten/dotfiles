@@ -4,22 +4,12 @@
 delim="  |  "
 
 my_vol() {
-    muted=$(pactl list sinks | sed -n 's/.*Stumm: \([^ ]*\).*/\1/p')
-
-    vol=$(pactl list sinks | sed -n 's/\tLautst[^%]* \([^%]*\).*/\1/p')
-
-    if [ "$vol" -eq 0 ]; then
-        icon=
-    elif [ "$vol" -lt 31 ]; then
-        icon=
-    else
-        icon=
-    fi
-    if [ "$muted" = "ja" ]; then
-        echo "  mut"
-    else
-        echo "$icon  $vol"
-    fi
+    sink_name=$(pacmd stat | sed -n 's/Default sink name: \(.*\)/\1/p')
+    vol_info=$(pactl list sinks | grep -m 1 "$sink_name" -A 7)
+    vol=$(echo "$vol_info" | sed -n 's/\tLautst[^%]* \([^%]*\).*/\1/p')
+    muted=$(echo "$vol_info" | sed -n 's/.*Stumm: \([^ ]*\).*/\1/p')
+    [ "$muted" = "ja" ] && vol=mut
+    echo "  $vol"
 }
 
 update_status() {
