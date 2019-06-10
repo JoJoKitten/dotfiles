@@ -7,21 +7,12 @@ config:
   link_by_default: false
   longkey: false
 dotfiles:
-  d_qpdfview:
-    dst: ~/.config/qpdfview
-    src: config/qpdfview
   d_ranger:
     dst: ~/.config/ranger
     src: config/ranger
   f_bashrc:
     dst: ~/.bashrc
     src: bashrc
-  f_config.fish:
-    dst: ~/.config/fish/config.fish
-    src: config/fish/config.fish
-  f_conkyrc:
-    dst: ~/.config/conky/conkyrc
-    src: config/conky/conkyrc
   f_dunstrc:
     dst: ~/.config/dunst/dunstrc
     src: config/dunst/dunstrc
@@ -64,9 +55,6 @@ dotfiles:
   f_redshift.conf:
     dst: ~/.config/redshift/redshift.conf
     src: config/redshift/redshift.conf
-  f_spacemacs:
-    dst: ~/.spacemacs
-    src: spacemacs
   f_sxhkdrc:
     dst: ~/.config/sxhkd/sxhkdrc
     src: config/sxhkd/sxhkdrc
@@ -88,98 +76,67 @@ dotfiles:
   f_xinitrc:
     dst: ~/.xinitrc
     src: xinitrc
-  f_xmobar.hs:
-    dst: ~/.xmonad/xmobar.hs
-    src: xmonad/xmobar.hs
-  f_xmonad.hs:
-    dst: ~/.xmonad/xmonad.hs
-    src: xmonad/xmonad.hs
-  f_xmouselessrc:
-    dst: ~/.config/xmouseless/xmouselessrc
-    src: config/xmouseless/xmouselessrc
-  f_xresources:
-    dst: ~/.Xresources
-    src: Xresources
   f_zathurarc:
     dst: ~/.config/zathura/zathurarc
     src: config/zathura/zathurarc
 profiles:
   desktop-i3:
     dotfiles:
-    - d_qpdfview
     - d_ranger
     - f_bashrc
-    - f_config.fish
     - f_dunstrc
     - f_emoji
     - f_fa_icons
-    - f_i3_config
     - f_ideavimrc
     - f_init.vim
+    - f_vimrc
     - f_morc_menu_v1.conf
     - f_my_neo_de.xmodmap
-    - f_polybar_config
-    - f_polybar_launch.sh
     - f_profile
     - f_redshift.conf
     - f_sxhkdrc
     - f_taskrc
-    - f_termite_config
     - f_tmux.conf
-    - f_vimrc
     - f_xinitrc
-    - f_xmouselessrc
-    - f_xresources
+    - f_inputrc
     - f_zathurarc
   jb-work:
     dotfiles:
-    - d_qpdfview
     - d_ranger
     - f_bashrc
-    - f_config.fish
     - f_dunstrc
     - f_emoji
     - f_fa_icons
-    - f_i3_config
     - f_ideavimrc
     - f_init.vim
+    - f_vimrc
     - f_morc_menu_v1.conf
     - f_my_neo_de.xmodmap
-    - f_polybar_config
-    - f_polybar_launch.sh
     - f_profile
     - f_redshift.conf
     - f_sxhkdrc
     - f_taskrc
-    - f_termite_config
     - f_tmux.conf
     - f_xinitrc
-    - f_xmouselessrc
+    - f_inputrc
     - f_zathurarc
   laptop-i3:
     dotfiles:
-    - d_qpdfview
     - d_ranger
     - f_bashrc
-    - f_config.fish
     - f_dunstrc
     - f_emoji
     - f_fa_icons
-    - f_i3_config
     - f_ideavimrc
     - f_init.vim
-    - f_inputrc
+    - f_vimrc
     - f_morc_menu_v1.conf
     - f_my_neo_de.xmodmap
-    - f_polybar_config
-    - f_polybar_launch.sh
     - f_profile
     - f_redshift.conf
     - f_sxhkdrc
     - f_taskrc
-    - f_termite_config
     - f_tmux.conf
+    - f_inputrc
     - f_xinitrc
-    - f_xmouselessrc
-    - f_xresources
     - f_zathurarc
