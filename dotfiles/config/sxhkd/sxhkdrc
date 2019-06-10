@@ -32,7 +32,7 @@ XF86MonBrightness{Up,Down}
 
 # mouse control
 super + d
-    sleep 0.2 && xmouseless
+    xmouseless
 
 # system tray
 super + shift + s
