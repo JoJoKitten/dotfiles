@@ -1,0 +1,60 @@
+#!/bin/sh
+# periodically sets the status bar content in dwm
+
+delim="  |  "
+
+my_vol() {
+    muted=$(pactl list sinks | sed -n 's/.*Stumm: \([^ ]*\).*/\1/p')
+
+    vol=$(pactl list sinks | sed -n 's/\tLautst[^%]* \([^%]*\).*/\1/p')
+
+    if [ "$vol" -eq 0 ]; then
+        icon=
+    elif [ "$vol" -lt 31 ]; then
+        icon=
+    else
+        icon=
+    fi
+    if [ "$muted" = "ja" ]; then
+        echo "  mut"
+    else
+        echo "$icon  $vol"
+    fi
+}
+
+update_status() {
+    # calculate bandwidth
+    net_device=$(ip addr | sed -n 's/.: \([^:]*\).*state UP.*/\1/p')
+    old_time=$new_time
+    new_time=$(( $(date +%s%N) / 1000000 ))
+    old_bytes=$new_bytes
+    new_bytes=$(cat "/sys/class/net/$net_device/statistics/rx_bytes")
+    bandwith=$(((new_bytes - old_bytes) / (new_time - old_time)))
+}
+
+my_status() {
+    # network bandwidth
+    echo "  $bandwith"
+
+    # cpu
+    echo "  $(top -1 -bn1 | awk '/^%CPU/{print $2"%"}')"
+
+    # memory
+    echo "  $(free | awk '/^Speicher/{print int(100*$3/$2)"%"}')"
+
+    # volume
+    my_vol
+
+    # date
+    date "+  %d.%m."
+
+    # time
+    date "+  %H:%M"
+}
+
+
+while true; do
+    update_status
+    xsetroot -name "$(my_status | paste -sd D | sed "s/D/$delim/g" )"
+    sleep 3
+done

@@ -1,0 +1,2 @@
+#!/bin/sh
+sudo date -s "$(wget -qSO- --max-redirect=0 www.wikipedia.org 2>&1 | grep Date: | cut -d" " -f5-8)Z"

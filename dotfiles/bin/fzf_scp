@@ -1,0 +1,38 @@
+#!/bin/sh
+# chooses a host, the src file/directory and the dest directory
+# with fzf and types the command to copy it with scp
+hosts_file=~/.hosts
+
+host=$(fzf < "$hosts_file" | cut -d "|" -f 2 | sed 's/ //g')
+[ "$host" != "" ] || exit 0
+
+users=$(grep "$host" "$hosts_file" | cut -d "|" -f 3 | sed 's/ //g')
+# check if , in users
+if [ "${users#*,}" = "$users" ]; then
+    user="$users"
+else
+    user=$(echo "$users" | sed 's/,/\n/g' | fzf)
+fi
+[ "$user" != "" ] || exit 0
+
+printf 'Password: '; read -r pw
+printf "\n"
+
+direction=$(printf "to\nfrom" | fzf --header="Direction")
+[ "$direction" != "" ] || exit 0
+
+if [ "$direction" = "to" ]; then
+    src=$(find . | fzf --header='Choose src file/directory')
+    dest="${user}@${host}:$(sshpass -p "$pw" ssh "${user}@${host}" "find . -type d" \
+            | fzf --header='Choose dest directory')"
+else
+    src="${user}@${host}:$(sshpass -p "$pw" ssh "${user}@${host}" "find ." \
+            | fzf --header='Choose src file/directory')"
+    dest=$(find . -type d | fzf --header='Choose dest directory')
+fi
+
+# copy the command to clipboard
+printf "scp -r %s %s" "$src" "$dest" | xclip -i
+
+printf "Copying..."
+sshpass -p "$pw" scp -r "$src" "$dest"

@@ -1,0 +1,6 @@
+#!/bin/sh
+# selects a process to kill with fzf
+# all arguments are passed to kill
+pid=$(ps -ef | fzf | awk '{print $2}')
+[ -z "$pid" ] && exit
+kill "$@" "$pid"

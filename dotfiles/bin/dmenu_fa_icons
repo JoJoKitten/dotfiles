@@ -1,0 +1,9 @@
+#!/bin/sh
+# selects a font awesome icon with dmenu
+chosen=$(grep -v "#" ~/.fa_icons | dmenu -i -l 20 )
+
+[ "$chosen" != "" ] || exit
+
+s=$(echo "$chosen" | awk '{print $1}')
+echo "$s" | tr -d '\n' | xclip -selection clipboard
+notify-send "'$s' copied to clipboard" &

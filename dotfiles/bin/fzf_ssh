@@ -1,0 +1,25 @@
+#!/bin/sh
+# chooses a host with fzf and types the command to ssh into it
+# if first argument is given, it is used as the user
+hosts_file=~/.hosts
+
+host=$(fzf < $hosts_file | cut -d "|" -f 2 | sed 's/ //g')
+[ "$host" != "" ] || exit 0
+
+if [ -n "$1" ]; then
+    user="$1"
+else
+    users=$(grep "$host" "$hosts_file" | cut -d "|" -f 3 | sed 's/ //g')
+    # check if , in users
+    if [ "${users#*,}" = "$users" ]; then
+        user="$users"
+    else
+        user=$(echo "$users" | sed 's/,/\n/g' | fzf)
+    fi
+fi
+[ "$user" != "" ] || exit 0
+
+# the command ends with \r because the \n is removed
+# by shell substitution if at the end
+cmd=$(printf 'ssh %s@%s\n\r' "$user" "$host")
+xdotool type "$cmd"

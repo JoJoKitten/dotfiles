@@ -1,0 +1,68 @@
+#!/bin/sh
+# Records and replays keyboard and mouse with cnee.
+start_delay=1
+pause_key='F10'
+resume_key='F11'
+stop_key='F12'
+folder="$HOME/cnee_recordings"
+tmp_file="$folder/tmp.xns"
+
+mkdir -p "$folder"
+
+record() {
+    sleep "$start_delay"
+    notify-send "Starting recording"
+    cnee --record --keyboard --mouse \
+         --stop-key "$stop_key" \
+         --pause-key "$pause_key" \
+         --resume-key "$resume_key" \
+         -o "$tmp_file"
+
+    # get the new filename
+    msg='Enter the filename to save the recording.'
+    name=$(ls "$folder" | dmenu -l 20 -p "$msg")
+
+    # if Esc is pressed in dmenu (so that the return is empty),
+    # simply keep the tempory file
+    [ "$name" ] || exit
+
+    # if file exists, ask to overwrite
+    if [ -e "$folder/$name" ]; then
+        msg="File '$name' already exists, overwrite?"
+        ans=$(printf 'no\nyes' | dmenu -l 20 -p "$msg")
+        [ "$ans" = "yes" ] || exit 1
+    fi
+
+    # rename the file
+    mv "$tmp_file" "$folder/$name"
+}
+
+
+play() {
+    # get the filename via dmenu
+    msg='Enter the file you want to replay.'
+    name=$(ls "$folder" | dmenu -l 20 -p "$msg")
+
+    # get the speed via dmenu
+    msg='Enter the speed in percentage (lower if faster).'
+    speed=$(printf "100\n75\n50\n30\n20\n10" | dmenu -l 20 -p "$msg")
+
+    # wait some time before starting replay
+    sleep "$start_delay"
+    notify-send "Starting replay"
+    cnee --replay -f "$folder/$name" \
+         -v -e /tmp/xnee.log -ns \
+         --stop-key "$stop_key" \
+         --speed-percent "$speed"
+
+    notify-send "Replay stoped"
+}
+
+case $1 in
+    record)
+        record;;
+    play)
+        play;;
+    **)
+        echo 'Usage: cnee_dmenu { record | play }'
+esac

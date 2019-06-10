@@ -1,0 +1,10 @@
+#!/bin/sh
+# copies a word or line from the current tmux pane
+
+content=$(tmux capture-pane -pS -1000)
+words=$(echo "$content" | sed 's_\s\+_\n_g')
+words2=$(echo "$content" | sed 's_[\s/"]\+_\n_g')
+
+sel=$(echo "$words $words2 $content" | fzf)
+printf "%s" "$sel" | xclip -i
+xdotool type "$sel"

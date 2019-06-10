@@ -7,6 +7,9 @@ config:
   link_by_default: false
   longkey: false
 dotfiles:
+  d_in:
+    dst: ~/bin
+    src: bin
   d_ranger:
     dst: ~/.config/ranger
     src: config/ranger
@@ -140,3 +143,4 @@ profiles:
     - f_inputrc
     - f_xinitrc
     - f_zathurarc
+    - d_in
