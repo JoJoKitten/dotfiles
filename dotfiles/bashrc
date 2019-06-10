@@ -53,7 +53,6 @@ alias fs=fzf_ssh
 alias fsc=fzf_scp
 alias fk=fzf_kill
 alias ss='sudo systemctl'
-alias e='emacsclient -t'
 alias v='nvim'
 alias vf='fzf | xargs -r nvim'
 alias r='rangercd'
