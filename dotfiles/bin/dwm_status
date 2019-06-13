@@ -15,11 +15,15 @@ my_vol() {
 update_status() {
     # calculate bandwidth
     net_device=$(ip addr | sed -n 's/.: \([^:]*\).*state UP.*/\1/p')
-    old_time=$new_time
-    new_time=$(( $(date +%s%N) / 1000000 ))
-    old_bytes=$new_bytes
-    new_bytes=$(cat "/sys/class/net/$net_device/statistics/rx_bytes")
-    bandwith=$(((new_bytes - old_bytes) / (new_time - old_time)))
+    if [ "$net_device" != "" ]; then
+        old_time=$new_time
+        new_time=$(( $(date +%s%N) / 1000000 ))
+        old_bytes=$new_bytes
+        new_bytes=$(cat "/sys/class/net/$net_device/statistics/rx_bytes")
+        bandwith=$(((new_bytes - old_bytes) / (new_time - old_time)))
+    else
+        bandwith='-'
+    fi
 }
 
 my_status() {
