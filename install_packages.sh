@@ -15,6 +15,7 @@ figlet
 firefox
 fzf
 git
+gpick
 i3-gaps
 lxappearance
 menda-themes-dark
