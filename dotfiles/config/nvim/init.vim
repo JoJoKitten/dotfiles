@@ -30,6 +30,7 @@ Plugin 'neovimhaskell/haskell-vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'w0rp/ale'
+Plugin 'vim-perl/vim-perl'
 
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'morhetz/gruvbox'
