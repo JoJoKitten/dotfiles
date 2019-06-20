@@ -65,6 +65,7 @@ unzip
 
 aur_packages="
 dropbox
+lf-bin
 xnee"
 
 # install packages from the main repos
