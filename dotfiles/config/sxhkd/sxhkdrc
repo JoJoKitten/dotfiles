@@ -39,9 +39,10 @@ super + shift + s
     toggle_stalonetray
 
 # launch applications
-super + o ; {f,r,m,n,t,p} 
+super + o ; {f,r,l,m,n,t,p} 
     {firefox, \
     $TERMINAL -e ranger, \
+    $TERMINAL -e lf, \
     thunderbird, \
     pcmanfm, \
     open_tmux_session, \
