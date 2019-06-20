@@ -27,6 +27,8 @@ sleep 20 && dropbox start &
 compton -b &
 redshift &
 set_wallpaper &
+# other machine dependent program
+~/.start_jobs &
 
 # set status bar content
 dwm_status &
