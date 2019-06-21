@@ -43,6 +43,8 @@ map r push :rename<space>
 cmd trash %set -f; trash $fx
 map D trash
 
+# change background image
+map bg %set_wallpaper $f
 # number of columns depends on terminal size
 %{{
     w=$(tput cols)
