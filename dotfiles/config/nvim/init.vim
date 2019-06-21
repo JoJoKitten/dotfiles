@@ -35,7 +35,6 @@ Plugin 'vim-perl/vim-perl'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'morhetz/gruvbox'
 Plugin 'mhartington/oceanic-next'
-Plugin 'sonobre/briofita_vim'
 call vundle#end()
 
 
@@ -71,11 +70,13 @@ set mouse=
 set noshowmode
 
 " appearance
-" set background=dark
-" set termguicolors
-" colorscheme gruvbox
-" nice without termguicolors
-" colorscheme pablo
+set background=dark
+colorscheme slate
+
+map <M-1> :set notermguicolors<cr>:colorscheme slate<cr>
+map <M-2> :set termguicolors<cr>:colorscheme OceanicNext<cr>
+map <M-3> :set termguicolors<cr>:colorscheme PaperColor<cr>
+map <M-4> :set termguicolors<cr>:colorscheme gruvbox<cr>
 
 " unsaved changes: ask instead of fail
 set confirm
@@ -295,6 +296,7 @@ map <M-j> <Plug>(easymotion-j)
 map <M-k> <Plug>(easymotion-k)
 
 "--------------------- ale ---------------------------------
+nnoremap <M-S-a> :ALEToggle<cr>
 " color of left column
 highlight SignColumn ctermbg=none
 
