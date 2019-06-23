@@ -42,7 +42,7 @@ super + shift + s
 super + o ; {f,r,l,m,n,t,p} 
     {firefox, \
     $TERMINAL -e ranger, \
-    $TERMINAL -e lf, \
+    $TERMINAL -e tmux new-session lf \; set-option status on, \
     thunderbird, \
     pcmanfm, \
     open_tmux_session, \
