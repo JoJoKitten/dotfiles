@@ -21,6 +21,9 @@ map X !$f
 map o &mimeopen $f
 map O $mimeopen --ask $f
 
+# list the current directory or file (mainly to see symlinks)
+map L %ls -ld $f
+
 # cd with fzf
 map gf $lf -remote "send $id select '$(fzf)'"
 
