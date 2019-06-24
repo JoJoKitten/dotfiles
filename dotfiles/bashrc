@@ -47,6 +47,9 @@ bind -x '"\eh": fzf_host'
 # M-i to insert word from current tmux pane
 bind -x '"\ei": tmux_copy'
 
+# M-d to show tasks with taskwarrior
+bind -x '"\ed": task'
+
 # aliases
 alias del=trash
 alias fs=fzf_ssh
