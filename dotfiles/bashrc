@@ -48,7 +48,7 @@ bind -x '"\eh": fzf_host'
 bind -x '"\ei": tmux_copy'
 
 # M-d to show tasks with taskwarrior
-bind -x '"\ed": task'
+bind -x '"\ed": clear; task'
 
 # aliases
 alias del=trash
