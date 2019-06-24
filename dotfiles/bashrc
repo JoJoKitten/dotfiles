@@ -28,9 +28,10 @@ rangercd() {
     rm -f $tmp
 }
 
-# clear and ls
+# clear
 bind -x '"\C-l": clear'
-bind -x '"\el": ls'
+# clear and ls
+bind -x '"\el": clear; ls'
 
 # fuzzy keybindings
 source /usr/share/fzf/key-bindings.bash
