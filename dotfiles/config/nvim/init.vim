@@ -31,6 +31,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'w0rp/ale'
 Plugin 'vim-perl/vim-perl'
+Plugin 'junegunn/goyo.vim'
 
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'morhetz/gruvbox'
@@ -59,7 +60,6 @@ set nocursorline
 
 " 2 to always show status bar
 set laststatus=2
-hi StatusLine ctermbg=NONE cterm=NONE
 
 " completion
 set wildmenu
@@ -72,8 +72,9 @@ set noshowmode
 " appearance
 set background=dark
 colorscheme slate
+hi StatusLine ctermbg=NONE cterm=NONE
 
-map <M-1> :set notermguicolors<cr>:colorscheme slate<cr>
+map <M-1> :set notermguicolors<cr>:colorscheme slate<cr>:hi StatusLine ctermbg=NONE cterm=NONE<cr>
 map <M-2> :set termguicolors<cr>:colorscheme OceanicNext<cr>
 map <M-3> :set termguicolors<cr>:colorscheme PaperColor<cr>
 map <M-4> :set termguicolors<cr>:colorscheme gruvbox<cr>
@@ -283,6 +284,8 @@ nnoremap <M-n> :NERDTreeToggle<cr>
 let NERDTreeWinPos="right"
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
+"--------------------- Goyo --------------------------------
+nnoremap <M-0> :Goyo<cr>
 
 "--------------------- vimwiki -----------------------------
 let g:vimwiki_folding='expr'
