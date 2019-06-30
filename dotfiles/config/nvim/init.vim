@@ -90,13 +90,17 @@ set softtabstop=4
 set expandtab
 set autoindent
 
+
+"----------------- search and replace ----------------------
 " case insensitive search except when using capital letters
 set ignorecase
 set smartcase
 set hlsearch
 
+" alternative bindings for search
+nnoremap + /
+nnoremap - ?
 
-"----------------- search and replace ----------------------
 " search recursively
 map <M-s> :execute "vimgrep //j **" <bar> cw<left><left><left><left><left><left><left><left><left><left><left>
 
