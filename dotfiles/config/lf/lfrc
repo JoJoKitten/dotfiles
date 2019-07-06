@@ -29,12 +29,13 @@ map gf $lf -remote "send $id select '$(fzf)'"
 
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
-# use either file extensions and/or mime types here. Below uses an editor for
-# text files and a file opener for the rest.
+# use either file extensions and/or mime types here.
 cmd open ${{
     case $(file --mime-type $f -b) in
         application/pdf) zathura $fx;;
         image/*) sxiv $fx;;
+        audio/*) mpv $fx;;
+        video/*) mpv $fx;;
         text/*) $EDITOR $fx;;
         *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
