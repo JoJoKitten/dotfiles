@@ -43,6 +43,9 @@ map o open
 # file opener with ask
 map O $mimeopen --ask $f
 
+# open in new terminal 
+map E %$TERMINAL -e nvim $f
+
 # rename current file without overwrite
 cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
 map r push :rename<space>
