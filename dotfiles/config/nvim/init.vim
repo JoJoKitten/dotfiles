@@ -303,6 +303,7 @@ map <M-j> <Plug>(easymotion-j)
 map <M-k> <Plug>(easymotion-k)
 
 "--------------------- ale ---------------------------------
+autocmd VimEnter * ALEDisable
 nnoremap <M-S-a> :ALEToggle<cr>
 " color of left column
 highlight SignColumn ctermbg=none
