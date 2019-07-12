@@ -20,14 +20,6 @@ alias ls='ls -N --color=auto --group-directories-first'
 alias grep="grep --color=auto"
 alias diff="diff --color=auto"
 
-# start ranger and change working directory on exit
-rangercd() {
-    tmp=$(mktemp)
-    ranger "--cmd=set column_ratios 1,1" --choosedir="$tmp"
-    cd $(cat $tmp)
-    rm -f $tmp
-}
-
 # clear
 bind -x '"\C-l": clear'
 # clear and ls
@@ -59,8 +51,6 @@ alias fk=fzf_kill
 alias ss='sudo systemctl'
 alias v='nvim'
 alias vf='fzf | xargs -r nvim'
-alias r='rangercd'
-alias sr='sudo ranger'
 alias ka='killall'
 
 alias p='pacman'
