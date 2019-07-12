@@ -22,6 +22,9 @@ super + {c,i}
 {_,shift + }XF86Audio{Lower,Raise}Volume
     pactl set-sink-volume {0,1} {-,+}5%
 
+super + control + {_,shift + }{minus,plus}
+    pactl set-sink-volume {0,1} {-,+}5%
+
 # sreen brightness
 XF86MonBrightness{Up,Down}
     xbacklight {-inc,-dec} 10
