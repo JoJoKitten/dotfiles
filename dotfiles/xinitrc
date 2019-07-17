@@ -18,8 +18,9 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # start some programs
-setxkbmap de && sxhkd &
-setxkbmap lv && xmodmap ~/my_neo_de.xmodmap && xset -r 51 &
+setxkbmap de
+sxhkd &
+sleep 5 && setxkbmap lv && xmodmap ~/my_neo_de.xmodmap && xset -r 51 &
 clipmenud &
 dunst &
 nm-applet &
