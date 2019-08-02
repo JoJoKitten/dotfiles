@@ -19,6 +19,7 @@ gpick
 i3-gaps
 lxappearance
 menda-themes-dark
+mlocate
 morc_menu
 mpv
 networkmanager
