@@ -25,11 +25,22 @@ bind -x '"\C-l": clear'
 # clear and ls
 bind -x '"\el": clear; ls'
 
-# fuzzy keybindings
-source /usr/share/fzf/key-bindings.bash
+# cd with fzf
+fzf_cd() {
+    sel=$(locate "$PWD" | fzf)
+    [ -f $sel ] && sel=$(dirname "$sel")
+    cd "$sel"
+}
+
+# M-c cd with fzf
+bind -x '"\ec": fzf_cd' # TODO: not working
+alias c='fzf_cd'
+
+bind -x '"\ey": echo blub' # TODO: not working
 
 # M-e find with fzf and open in editor
-bind -x '"\ee": fzf --preview="head -$LINES {}" | xargs -r nvim'
+bind -x '"\ee": locate "$PWD" | fzf --preview="head -$LINES {}" | xargs -r nvim'
+alias vf='locate "$PWD" | fzf --preview="head -$LINES {}" | xargs -r nvim'
 
 # M-s to open ssh connection with fzf
 bind -x '"\es": fzf_ssh'
@@ -50,7 +61,6 @@ alias fsc=fzf_scp
 alias fk=fzf_kill
 alias ss='sudo systemctl'
 alias v='nvim'
-alias vf='locate "$(pwd)" | fzf | xargs -r nvim'
 alias ka='killall'
 
 alias p='pacman'
