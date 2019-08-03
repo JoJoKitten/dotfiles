@@ -36,8 +36,6 @@ fzf_cd() {
 bind -x '"\ec": fzf_cd' # TODO: not working
 alias c='fzf_cd'
 
-bind -x '"\ey": echo blub' # TODO: not working
-
 # M-e find with fzf and open in editor
 bind -x '"\ee": locate "$PWD" | fzf --preview="head -$LINES {}" | xargs -r nvim'
 alias vf='locate "$PWD" | fzf --preview="head -$LINES {}" | xargs -r nvim'
