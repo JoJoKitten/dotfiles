@@ -39,15 +39,11 @@ fzf_dir() {
     printf '%s' "$sel"
 }
 
-# get entry from history
-# TODO
+# get entry from command history
 fzf_history() {
-  local line
-  shopt -u nocaseglob nocasematch
   line=$(history | fzf)
-  sed 's/^ *\([0-9]*\)\** .*/!\1/' <<< "$line"
+  sed 's/^[0-9 ]*//' <<< "$line"
 }
-
 
 # needed below
 bind '"\C-x\C-a": vi-movement-mode'
@@ -69,10 +65,8 @@ alias eh='locate "$HOME*" | fzf --preview="head -$LINES {}" | xargs -r sudo nvim
 alias eg='locate "/*" | fzf --preview="head -$LINES {}" | xargs -r sudo nvim'
 
 # search history with fzf
-# TODO
-# bind '"\C-r": "`fzf_history`\C-x\C-e\C-x^\C-x\C-a$a"'
-bind '"\C-r": "`fzf_history`\C-x\C-e\C-x\C-a$a"'
-bind -m vi-command '"\C-r": "i\C-r"'
+bind '"\er": "`fzf_history`\C-x\C-e\C-x\C-a$a"'
+bind -m vi-command '"\er": "i\C-r"'
 
 # open ssh connection with fzf
 bind -x '"\es": fzf_ssh'
@@ -96,6 +90,7 @@ alias p='pacman'
 alias pss='pacman -Ss'
 alias sp='sudo pacman'
 alias sps='sudo pacman -S'
+alias spy='sudo pacman -Sy'
 
 alias g='git'
 alias gs='git status'
