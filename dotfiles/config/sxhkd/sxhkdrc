@@ -19,6 +19,10 @@ super + {c,i}
 super + shift + i
     dmenu_host
 
+# insert 'set -o vi'
+super + shift + v
+    sleep 0.3 && xdotool type --clearmodifiers 'set -o vi' && xdotool key --clearmodifiers Return
+
 # audio
 {_,shift + }XF86AudioMute
     pactl set-sink-mute {0,1} toggle
