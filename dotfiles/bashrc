@@ -39,15 +39,13 @@ alias cg='fzf_cd "/"'
 
 # find with fzf and open in editor
 bind -x '"\ee": locate "$PWD" | fzf --preview="head -$LINES {}" | xargs -r nvim'
-alias e='locate "$PWD" | fzf --preview="head -$LINES {}" | xargs -r nvim'
+alias e='locate "$PWD*" | fzf --preview="head -$LINES {}" | xargs -r nvim'
+alias eh='locate "$HOME*" | fzf --preview="head -$LINES {}" | xargs -r sudo nvim'
 alias eg='locate "/*" | fzf --preview="head -$LINES {}" | xargs -r sudo nvim'
 
 # open ssh connection with fzf
 bind -x '"\es": fzf_ssh'
 alias fs=fzf_ssh
-
-# M-h to insert host with fzf
-bind -x '"\eh": fzf_host'
 
 # M-i to insert word from current tmux pane
 bind -x '"\ei": tmux_copy'
