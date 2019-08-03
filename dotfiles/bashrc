@@ -27,21 +27,24 @@ bind -x '"\el": clear; ls'
 
 # cd with fzf
 fzf_cd() {
-    sel=$(locate "$PWD" | fzf)
+    base_dir=$1
+    sel=$(locate "${base_dir}*" | fzf)
     [ -f $sel ] && sel=$(dirname "$sel")
     cd "$sel"
 }
 
-# M-c cd with fzf
-bind -x '"\ec": fzf_cd' # TODO: not working
-alias c='fzf_cd'
+alias c='fzf_cd "$PWD"'
+alias ch='fzf_cd "$HOME"'
+alias cg='fzf_cd "/"'
 
-# M-e find with fzf and open in editor
+# find with fzf and open in editor
 bind -x '"\ee": locate "$PWD" | fzf --preview="head -$LINES {}" | xargs -r nvim'
-alias vf='locate "$PWD" | fzf --preview="head -$LINES {}" | xargs -r nvim'
+alias e='locate "$PWD" | fzf --preview="head -$LINES {}" | xargs -r nvim'
+alias eg='locate "/*" | fzf --preview="head -$LINES {}" | xargs -r sudo nvim'
 
-# M-s to open ssh connection with fzf
+# open ssh connection with fzf
 bind -x '"\es": fzf_ssh'
+alias fs=fzf_ssh
 
 # M-h to insert host with fzf
 bind -x '"\eh": fzf_host'
@@ -52,9 +55,8 @@ bind -x '"\ei": tmux_copy'
 # M-d to show tasks with taskwarrior
 bind -x '"\ed": clear; task'
 
-# aliases
+# other aliases
 alias del=trash
-alias fs=fzf_ssh
 alias fsc=fzf_scp
 alias fk=fzf_kill
 alias ss='sudo systemctl'
