@@ -15,6 +15,10 @@ super + z
 super + {c,i}
     clipmenu -i -fn Terminus:size=12 -l 20 -i -b {_,&& xdotool key shift+Insert}
 
+# insert host name
+super + shift + i
+    dmenu_host
+
 # audio
 {_,shift + }XF86AudioMute
     pactl set-sink-mute {0,1} toggle

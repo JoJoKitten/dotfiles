@@ -1,0 +1,7 @@
+#!/bin/sh
+# chooses a host with dmenu, copies it to clipboard and types it
+hosts_file=~/.hosts
+host=$(dmenu -i -l 20 < $hosts_file | awk '{print $2}')
+[ "$host" != "" ] || exit 0
+printf "%s" "$host" | xclip -i
+xdotool type "$host"
