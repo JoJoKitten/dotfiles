@@ -108,3 +108,10 @@ alias gps='git push'
 alias cht='cht.sh'
 alias trde='trans de:en -v -theme random'
 alias tred='trans en:de -v -theme random'
+
+
+# TODO
+_fzf_complete_scp() {
+  [ -n "${COMP_WORDS[COMP_CWORD]}" ] && return 1
+    COMPREPLY=( "$selected" )
+}
