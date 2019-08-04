@@ -13,7 +13,7 @@ super + z
 
 # clipmenu
 super + {c,i}
-    clipmenu -i -fn Terminus:size=12 -l 20 -i -b {_,&& xdotool key shift+Insert}
+    clipmenu -i -fn Terminus:size=12 -l 20 -i -b {_,&& xdotool type $(xclip -o)}
 
 # insert host name
 super + shift + i
