@@ -34,7 +34,7 @@ fzf_file() {
 
 # get a directory with fzf
 fzf_dir() {
-    sel=$(fzf_file)
+    sel=$(fzf_file $1)
     [ -f $sel ] && sel=$(dirname "$sel")
     printf '%s' "$sel"
 }
@@ -56,7 +56,7 @@ alias cg='cd "$(fzf_dir /)"'
 bind '"\ec": "cd `fzf_dir $PWD`\C-x\C-e\C-m"'
 
 # insert filename
-bind '"\et": "`fzf_file $PWD`\C-x\C-e"'
+bind '"\ef": "`fzf_file $PWD`\C-x\C-e"'
 
 # find with fzf and open in editor
 bind -x '"\ee": locate "$PWD" | fzf --preview="head -$LINES {}" | xargs -r nvim'
@@ -77,6 +77,10 @@ bind -x '"\ei": tmux_copy'
 
 # M-d to show tasks with taskwarrior
 bind -x '"\ed": clear; task'
+
+# clear line
+bind '"\ew": kill-whole-line'
+bind -m vi-command '"\ew": kill-whole-line'
 
 # other aliases
 alias del=trash
