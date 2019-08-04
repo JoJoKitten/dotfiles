@@ -3,5 +3,5 @@
 hosts_file=~/.hosts
 host=$(dmenu -i -l 20 < $hosts_file | awk '{print $2}')
 [ "$host" != "" ] || exit 0
-printf "%s" "$host" | xclip -i
+printf "%s" "$host" | xclip -selection clip -i
 xdotool type "$host"
