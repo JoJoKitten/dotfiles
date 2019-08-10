@@ -56,15 +56,6 @@ map D trash
 
 # change background image
 map bg %set_wallpaper $f
-# number of columns depends on terminal size
-%{{
-    w=$(tput cols)
-    if [ $w -le 100 ]; then
-        lf -remote "send $id set ratios 1:2"
-    else
-        lf -remote "send $id set ratios 1:2:3"
-    fi
-}}
 
 # delete current file or selected files (prompting)
 cmd delete ${{
