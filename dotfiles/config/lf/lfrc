@@ -48,7 +48,10 @@ map E %$TERMINAL -e nvim $f
 
 # rename current file without overwrite
 cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
-map r push :rename<space>
+map rc push :rename<space>
+
+# append filename
+map ra $lf -remote "send $id push :rename<space>$f"
 
 # move current file or selected files to trash folder
 cmd trash %set -f; trash $fx
@@ -59,11 +62,12 @@ map bg %set_wallpaper $f
 
 # delete current file or selected files (prompting)
 cmd delete ${{
+    mkdir -p /tmp/lf_trash
     set -f
     printf "$fx\n"
     printf "delete?[y/n]"
     read ans
-    [ $ans = "y" ] && rm -rf $fx
+    [ $ans = "y" ] && mv $fx /tmp/lf_trash
 }}
 
 # extract the current file with the right command
