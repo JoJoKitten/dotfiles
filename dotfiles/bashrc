@@ -83,7 +83,6 @@ bind '"\ew": kill-whole-line'
 bind -m vi-command '"\ew": kill-whole-line'
 
 # other aliases
-alias del=trash
 alias fsc=fzf_scp
 alias fk=fzf_kill
 alias ss='sudo systemctl'

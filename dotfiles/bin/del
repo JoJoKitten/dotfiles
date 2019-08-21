@@ -1,0 +1,11 @@
+#!/bin/bash
+# moves the arguments to /tmp/trash
+trashdir='/tmp/trash'
+mkdir -p "$trashdir"
+for a in "$@"; do
+    dest=${trashdir}/$(basename "$a")
+    while [ -e "$dest" ]; do
+        dest=${dest}_
+    done
+    mv "$a" "$dest"
+done
