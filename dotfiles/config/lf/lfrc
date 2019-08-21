@@ -50,6 +50,10 @@ map E %$TERMINAL -e nvim $f
 cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
 map rc push :rename<space>
 
+# add file or directory
+map af push $touch<space>
+map ad push $mkdir<space>
+
 # append filename
 map ra $lf -remote "send $id push :rename<space>$f"
 
