@@ -26,22 +26,23 @@ bind -x '"\C-l": clear'
 bind -x '"\el": clear; ls'
 
 # get a file or directory
-fzf_file() {
+_fzf_file() {
     base_dir=$1
     sel=$(locate "${base_dir}*" | fzf)
     printf '%s' "$sel"
 }
 
 # get a directory with fzf
-fzf_dir() {
-    sel=$(fzf_file $1)
+_fzf_dir() {
+    sel=$(_fzf_file $1)
     [ -f $sel ] && sel=$(dirname "$sel")
     printf '%s' "$sel"
 }
 
 # get entry from command history
-fzf_history() {
-  line=$(history | fzf)
+_fzf_history() {
+  line=$(history |
+  FZF_DEFAULT_OPTS="--height 40% $FZF_DEFAULT_OPTS --tac --sync --tiebreak=index --bind=ctrl-r:toggle-sort +m" fzf)
   sed 's/^[0-9 ]*//' <<< "$line"
 }
 
@@ -50,13 +51,13 @@ bind '"\C-x\C-a": vi-movement-mode'
 bind '"\C-x\C-e": shell-expand-line'
 
 # various cd helpers
-alias c='cd "$(fzf_dir $PWD)"'
-alias ch='cd "$(fzf_dir $HOME)"'
-alias cg='cd "$(fzf_dir /)"'
-bind '"\ec": "cd `fzf_dir $PWD`\C-x\C-e\C-m"'
+alias c='cd "$(_fzf_dir $PWD)"'
+alias ch='cd "$(_fzf_dir $HOME)"'
+alias cg='cd "$(_fzf_dir /)"'
+bind '"\ec": "cd `_fzf_dir $PWD`\C-x\C-e\C-m"'
 
 # insert filename
-bind '"\ef": "`fzf_file $PWD`\C-x\C-e"'
+bind '"\ef": "`_fzf_file $PWD`\C-x\C-e"'
 
 # find with fzf and open in editor
 bind -x '"\ee": locate "$PWD" | fzf --preview="head -$LINES {}" | xargs -r nvim'
@@ -65,7 +66,7 @@ alias eh='locate "$HOME*" | fzf --preview="head -$LINES {}" | xargs -r sudo nvim
 alias eg='locate "/*" | fzf --preview="head -$LINES {}" | xargs -r sudo nvim'
 
 # search history with fzf
-bind '"\C-r": "`fzf_history`\C-x\C-e\C-x\C-a$a"'
+bind '"\C-r": "`_fzf_history`\C-x\C-e\C-x\C-a$a"'
 bind -m vi-command '"\C-r": "i\C-r"'
 
 # open ssh connection with fzf
