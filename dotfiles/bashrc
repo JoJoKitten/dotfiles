@@ -49,6 +49,8 @@ _fzf_history() {
 # needed below
 bind '"\C-x\C-a": vi-movement-mode'
 bind '"\C-x\C-e": shell-expand-line'
+bind '"\er": redraw-current-line'
+bind '"\e^": history-expand-line'
 
 # various cd helpers
 alias c='cd "$(_fzf_dir $PWD)"'
@@ -66,7 +68,7 @@ alias eh='locate "$HOME*" | fzf --preview="head -$LINES {}" | xargs -r sudo nvim
 alias eg='locate "/*" | fzf --preview="head -$LINES {}" | xargs -r sudo nvim'
 
 # search history with fzf
-bind '"\C-r": "`_fzf_history`\C-x\C-e\C-x\C-a$a"'
+bind '"\C-r": "`_fzf_history`\C-x\C-e\C-x\C-a$a\er\e^"'
 bind -m vi-command '"\C-r": "i\C-r"'
 
 # open ssh connection with fzf
