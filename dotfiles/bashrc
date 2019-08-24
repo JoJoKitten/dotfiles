@@ -68,7 +68,7 @@ alias eh='locate "$HOME*" | fzf --preview="head -$LINES {}" | xargs -r sudo nvim
 alias eg='locate "/*" | fzf --preview="head -$LINES {}" | xargs -r sudo nvim'
 
 # search history with fzf
-bind '"\C-r": "`_fzf_history`\C-x\C-e\C-x\C-a$a\er\e^"'
+bind '"\C-r": "\C-x\C-acc`_fzf_history`\C-x\C-e\C-x\C-a$a\er\e^"'
 bind -m vi-command '"\C-r": "i\C-r"'
 
 # open ssh connection with fzf
