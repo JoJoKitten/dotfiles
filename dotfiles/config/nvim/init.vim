@@ -332,6 +332,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 
 "--------------------- YouCompleteMe -----------------------
+" let g:ycm_filetype_blacklist={}
 let g:ycm_autoclose_preview_window_after_completion=1
 set completeopt-=preview
 nnoremap <C-b> :YcmCompleter GoTo<CR>
