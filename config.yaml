@@ -16,6 +16,9 @@ dotfiles:
   f_bashrc:
     dst: ~/.bashrc
     src: bashrc
+  f_compton.conf:
+    dst: ~/.config/compton/compton.conf
+    src: config/compton/compton.conf
   f_dunstrc:
     dst: ~/.config/dunst/dunstrc
     src: config/dunst/dunstrc
@@ -105,6 +108,7 @@ profiles:
     - f_xinitrc
     - f_inputrc
     - f_zathurarc
+    - f_compton.conf
   jb-work:
     dotfiles:
     - d_bin
@@ -127,6 +131,7 @@ profiles:
     - f_xinitrc
     - f_inputrc
     - f_zathurarc
+    - f_compton.conf
   laptop-i3:
     dotfiles:
     - d_bin
@@ -150,3 +155,4 @@ profiles:
     - f_xinitrc
     - f_zathurarc
     - d_bin
+    - f_compton.conf
