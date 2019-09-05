@@ -58,6 +58,9 @@ dotfiles:
   f_profile:
     dst: ~/.profile
     src: profile
+  f_rc.lua:
+    dst: ~/.config/awesome/rc.lua
+    src: config/awesome/rc.lua
   f_redshift.conf:
     dst: ~/.config/redshift/redshift.conf
     src: config/redshift/redshift.conf
@@ -156,3 +159,4 @@ profiles:
     - f_zathurarc
     - d_bin
     - f_compton.conf
+    - f_rc.lua
