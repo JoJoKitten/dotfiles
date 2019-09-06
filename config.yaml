@@ -58,7 +58,7 @@ dotfiles:
   f_profile:
     dst: ~/.profile
     src: profile
-  f_rc.lua:
+  f_awesome_rc.lua:
     dst: ~/.config/awesome/rc.lua
     src: config/awesome/rc.lua
   f_redshift.conf:
@@ -112,6 +112,7 @@ profiles:
     - f_inputrc
     - f_zathurarc
     - f_compton.conf
+    - f_awesome_rc.lua
   jb-work:
     dotfiles:
     - d_bin
@@ -135,6 +136,7 @@ profiles:
     - f_inputrc
     - f_zathurarc
     - f_compton.conf
+    - f_awesome_rc.lua
   laptop-i3:
     dotfiles:
     - d_bin
@@ -159,4 +161,4 @@ profiles:
     - f_zathurarc
     - d_bin
     - f_compton.conf
-    - f_rc.lua
+    - f_awesome_rc.lua
