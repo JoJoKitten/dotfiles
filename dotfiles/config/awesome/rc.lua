@@ -13,6 +13,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 -- show only used tags
 require("eminent")
+local scratch = require("scratch")
 
 modkey = "Mod4"
 
@@ -101,7 +102,7 @@ local tasklist_buttons = gears.table.join(
 awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
     for i = 1, 9 do
-        awful.tag.add("" .. i .. " ", {
+        awful.tag.add(" " .. i .. " ", {
             layout             = awful.layout.layouts[1],
             gap_single_client  = true,
             screen             = s,
@@ -247,9 +248,16 @@ globalkeys = gears.table.join(
                   }
               end,
               {description = "lua execute prompt", group = "awesome"}),
+
     -- Menubar
     awful.key({ modkey }, "z", function() menubar.show() end,
-              {description = "show the menubar", group = "awesome"})
+              {description = "show the menubar", group = "awesome"}),
+
+
+    -- Dropdown terminal
+    awful.key({ modkey }, "s", 
+            function() scratch.drop(terminal, "center", "center", 0.9, 0.9, false) end,
+            {description = "dropdown terminal", group = "awesome"})
 )
 
 clientkeys = gears.table.join(
