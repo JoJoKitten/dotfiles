@@ -14,6 +14,9 @@ require("awful.hotkeys_popup.keys")
 -- show only used tags
 require("eminent")
 local scratch = require("scratch")
+local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
+local volumearc_widget = require("awesome-wm-widgets.volumearc-widget.volumearc")
+local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
 
 modkey = "Mod4"
 
@@ -69,6 +72,12 @@ awful.layout.layouts = {
 -- {{{ Wibar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
+
+
+myseperator = wibox.widget{
+    markup = ' | ',
+    widget = wibox.widget.textbox
+}
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -140,15 +149,22 @@ awful.screen.connect_for_each_screen(function(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            s.mylayoutbox,
             s.mytaglist,
             s.mypromptbox,
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            cpu_widget,
+            myseperator,
+            ram_widget,
+            myseperator,
+            volumearc_widget,
+            myseperator,
             mytextclock,
-            wibox.widget.systray(),
+            myseperator,
+            s.mylayoutbox,
+            -- wibox.widget.systray(),
         },
     }
 end)
