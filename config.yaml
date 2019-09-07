@@ -7,6 +7,9 @@ config:
   link_by_default: false
   longkey: false
 dotfiles:
+  d_awesome:
+    dst: ~/.config/awesome
+    src: config/awesome
   d_bin:
     dst: ~/bin
     src: bin
@@ -58,9 +61,6 @@ dotfiles:
   f_profile:
     dst: ~/.profile
     src: profile
-  f_awesome_rc.lua:
-    dst: ~/.config/awesome/rc.lua
-    src: config/awesome/rc.lua
   f_redshift.conf:
     dst: ~/.config/redshift/redshift.conf
     src: config/redshift/redshift.conf
@@ -112,7 +112,7 @@ profiles:
     - f_inputrc
     - f_zathurarc
     - f_compton.conf
-    - f_awesome_rc.lua
+    - d_awesome
   jb-work:
     dotfiles:
     - d_bin
@@ -136,7 +136,7 @@ profiles:
     - f_inputrc
     - f_zathurarc
     - f_compton.conf
-    - f_awesome_rc.lua
+    - d_awesome
   laptop-i3:
     dotfiles:
     - d_bin
@@ -161,4 +161,4 @@ profiles:
     - f_zathurarc
     - d_bin
     - f_compton.conf
-    - f_awesome_rc.lua
+    - d_awesome
