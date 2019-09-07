@@ -10,6 +10,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
+require("awful.hotkeys_popup.keys")
 -- show only used tags
 require("eminent")
 
@@ -34,6 +35,11 @@ beautiful.fg_focus      = "#ffffff"
 beautiful.fg_urgent     = "#ffffff"
 beautiful.fg_minimize   = "#ffffff"
 
+beautiful.hotkeys_bg = "#ffffff"
+beautiful.hotkeys_fg = "#000000"
+beautiful.hotkeys_label_bg = "#40a0a0"
+beautiful.hotkeys_group_margin = 20
+
 beautiful.useless_gap   = 5
 beautiful.border_width  = 0
 beautiful.border_normal = "#000000"
@@ -45,12 +51,12 @@ awful.layout.layouts = {
     awful.layout.suit.tile,
     awful.layout.suit.floating,
     awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
     awful.layout.suit.spiral.dwindle,
     awful.layout.suit.magnifier,
+    -- awful.layout.suit.fair.horizontal,
+    -- awful.layout.suit.max.fullscreen,
     -- awful.layout.suit.corner.nw,
     -- awful.layout.suit.spiral,
     -- awful.layout.suit.tile.top,
@@ -164,20 +170,19 @@ globalkeys = gears.table.join(
         function ()
             awful.client.focus.byidx( 1)
         end,
-        {description = "focus next", group = "awesome"}
+        {description = "focus next", group = "client"}
     ),
     awful.key({ modkey,           }, "k",
         function ()
             awful.client.focus.byidx(-1)
         end,
-        {description = "focus previous", group = "awesome"}
+        {description = "focus previous", group = "client"}
     ),
 
-    -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
-              {description = "swap with next client by index", group = "awesome"}),
+              {description = "swap with next client", group = "client"}),
     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end,
-              {description = "swap with previous client by index", group = "awesome"}),
+              {description = "swap with previous", group = "client"}),
 
     awful.key({ modkey            }, "period", function () awful.screen.focus_relative( 1) end,
               {description = "focus the next screen", group = "awesome"}),
@@ -191,7 +196,7 @@ globalkeys = gears.table.join(
                 client.focus:raise()
             end
         end,
-        {description = "go back", group = "awesome"}),
+        {description = "go back", group = "client"}),
 
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
@@ -226,7 +231,7 @@ globalkeys = gears.table.join(
                     )
                   end
               end,
-              {description = "restore minimized", group = "awesome"}),
+              {description = "restore minimized", group = "client"}),
 
     -- Prompt
     awful.key({ modkey },            "p",     function () awful.screen.focused().mypromptbox:run() end,
