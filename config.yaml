@@ -108,7 +108,6 @@ profiles:
     - f_sxhkdrc
     - f_taskrc
     - f_tmux.conf
-    - f_xinitrc
     - f_inputrc
     - f_zathurarc
     - f_compton.conf
@@ -132,7 +131,6 @@ profiles:
     - f_sxhkdrc
     - f_taskrc
     - f_tmux.conf
-    - f_xinitrc
     - f_inputrc
     - f_zathurarc
     - f_compton.conf
@@ -157,7 +155,6 @@ profiles:
     - f_taskrc
     - f_tmux.conf
     - f_inputrc
-    - f_xinitrc
     - f_zathurarc
     - d_bin
     - f_compton.conf
