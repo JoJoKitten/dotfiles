@@ -2,14 +2,13 @@ local awful = require("awful")
 local watch = require("awful.widget.watch")
 local wibox = require("wibox")
 
---- Main ram widget shown on wibar
-local ramgraph_widget = wibox.widget {
+local ram_widget = wibox.widget {
     border_width = 0,
     colors = {
         '#74aeab', '#26403f'
     },
     display_labels = false,
-    forced_width = 25,
+    forced_width = 20,
     widget = wibox.widget.piechart
 }
 
@@ -42,7 +41,7 @@ local function getPercentage(value)
     return math.floor(value / (total+total_swap) * 100 + 0.5) .. '%'
 end
 
-watch('bash -c "LANGUAGE=en_US.UTF-8 free | grep -z Mem.*Swap.*"', 1,
+watch('bash -c "LANGUAGE=en_US.UTF-8 free | grep -z Mem.*Swap.*"', 5,
     function(widget, stdout, stderr, exitreason, exitcode)
         total, used, free, shared, buff_cache, available, total_swap, used_swap, free_swap =
             stdout:match('(%d+)%s*(%d+)%s*(%d+)%s*(%d+)%s*(%d+)%s*(%d+)%s*Swap:%s*(%d+)%s*(%d+)%s*(%d+)')
@@ -57,10 +56,10 @@ watch('bash -c "LANGUAGE=en_US.UTF-8 free | grep -z Mem.*Swap.*"', 1,
             }
         end
     end,
-    ramgraph_widget
+    ram_widget
 )
 
-ramgraph_widget:buttons(
+ram_widget:buttons(
     awful.util.table.join(
         awful.button({}, 1, function()
             awful.placement.top_right(w, { margins = {top = 25, right = 10}, parent = awful.screen.focused() })
@@ -75,4 +74,4 @@ ramgraph_widget:buttons(
     )
 )
 
-return ramgraph_widget
+return ram_widget
