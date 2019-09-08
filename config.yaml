@@ -32,8 +32,8 @@ dotfiles:
     dst: ~/.fa_icons
     src: fa_icons
   f_i3_config:
-    dst: ~/.i3/config
-    src: i3/config
+    dst: ~/.config/i3/config
+    src: config/i3/config
   f_ideavimrc:
     dst: ~/.ideavimrc
     src: ideavimrc
