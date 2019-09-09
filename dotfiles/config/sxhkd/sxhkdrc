@@ -8,8 +8,8 @@
 # manager. It does not include bindings to launch a terminal and for dmenu.
                           
 # categorized menu
-super + z
-    morc_menu
+#super + z
+#    morc_menu
 
 # clipmenu
 super + {c,i}
