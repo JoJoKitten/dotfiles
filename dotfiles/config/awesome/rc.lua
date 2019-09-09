@@ -20,7 +20,7 @@ local ram_widget = require("mywidgets.ram")
 
 modkey = "Mod4"
 
-terminal = "st -e tmux"
+terminal = "st -e tmux new-session "
 editor = os.getenv("EDITOR") or "nvim"
 dmenu_cmd = "dmenu_run -fn 'monospace:size=10' -nb '#202020' -nf '#b0b0b0' -sb '#508050' -sf '#e0e0e0'"
 
@@ -277,7 +277,12 @@ globalkeys = gears.table.join(
     -- Dropdown terminal
     awful.key({ modkey }, "s", 
             function() scratch.drop(terminal, "center", "center", 0.9, 0.9, false) end,
-            {description = "dropdown terminal", group = "awesome"})
+            {description = "dropdown terminal", group = "awesome"}),
+
+    -- Dropdown file manager
+    awful.key({ modkey }, "a", 
+            function() scratch.drop(terminal .. "lf", "center", "center", 0.9, 0.9, false) end,
+            {description = "dropdown file manager", group = "awesome"})
 )
 
 clientkeys = gears.table.join(
