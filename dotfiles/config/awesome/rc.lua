@@ -280,13 +280,13 @@ globalkeys = gears.table.join(
             {description = "dropdown terminal", group = "awesome"}),
 
     -- Dropdown file manager
-    awful.key({ modkey }, "a", 
+    awful.key({ modkey }, "f", 
             function() scratch.drop(terminal .. "lf", "center", "center", 0.9, 0.9, false) end,
             {description = "dropdown file manager", group = "awesome"})
 )
 
 clientkeys = gears.table.join(
-    awful.key({ modkey            }, "f",
+    awful.key({ modkey, "Shift"   }, "f",
         function (c)
             c.fullscreen = not c.fullscreen
             c:raise()
