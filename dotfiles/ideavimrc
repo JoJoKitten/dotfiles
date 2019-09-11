@@ -22,6 +22,16 @@ inoremap jj <esc>o
 inoremap hh <backspace>
 nnoremap s :w<cr>
 
+nnoremap <leader>l :nohlcr>
+
+" files
+nnoremap <leader>fs :w<cr>
+nnoremap <leader>fq :wq<cr>
+
+" split
+nnoremap <leader>sv :vs<cr>
+nnoremap <leader>sh :sp<cr>
+
 " java
 inoremap öw while<sapce>()<space>{<left><left><left>
 inoremap öi if<space>()<space>{<left><left><left>
@@ -51,10 +61,3 @@ inoremap äs self.
 inoremap äag <esc>bywodef<space>get_<esc>pa(self):<cr>return<space>self.<esc>pkkdd
 inoremap äas <esc>bywodef<space>set_<esc>pa(self,<space><esc>pA:<cr>self.<esc>pa<space>=<space><esc>pkkdd
 
-" files
-nnoremap <leader>fs :w<cr>
-nnoremap <leader>fq :wq<cr>
-
-" split
-nnoremap <leader>sv :vs<cr>
-nnoremap <leader>sh :sp<cr>
