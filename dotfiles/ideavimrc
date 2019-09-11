@@ -1,5 +1,4 @@
 set surround
-set multiple-cursors
 
 let mapleader = " "
 
@@ -17,6 +16,7 @@ set timeout timeoutlen=300 ttimeout ttimeoutlen=200
 
 "-------------------- Mappings -----------------------------
 imap jk <Esc>
+imap kj <Esc>
 map Y y$
 inoremap jj <esc>o
 inoremap hh <backspace>
