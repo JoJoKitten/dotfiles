@@ -29,6 +29,9 @@ watch([[bash -c "cat /proc/stat | grep '^cpu '"]], 3,
 
         total_prev = total
         idle_prev = idle
+
+    -- fix for memory leak (caused by all watch calls)
+    collectgarbage("collect")
     end,
     cpu_widget
 )

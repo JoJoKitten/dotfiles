@@ -54,6 +54,9 @@ watch('bash -c "LANGUAGE=en_US.UTF-8 free | grep -z Mem.*Swap.*"', 5,
                 {'free ' .. getPercentage(free + free_swap), free + free_swap},
                 {'buff_cache ' .. getPercentage(buff_cache), buff_cache}
             }
+
+        -- fix for memory leak (caused by all watch calls)
+        collectgarbage("collect")
         end
     end,
     ram_widget

@@ -42,6 +42,9 @@ local update_graphic = function(widget, stdout, _, _, _)
         widget.colors = { "#f06060" }
     end
     widget.value = volume / 100;
+
+    -- fix for memory leak (caused by all watch calls)
+    collectgarbage("collect")
 end
 
 volume_widget:connect_signal("button::press", function(_, _, _, button)
