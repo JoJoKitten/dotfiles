@@ -108,6 +108,11 @@ alias gl='git log'
 alias gpl='git pull'
 alias gps='git push'
 
+alias ta='task add'
+alias tm='task modify'
+alias td='task done'
+alias tdel='task delete'
+
 alias cht='cht.sh'
 alias trde='trans de:en -v -theme random'
 alias tred='trans en:de -v -theme random'

@@ -419,9 +419,9 @@ awful.rules.rules = {
 
     -- Set Firefox to always map on the tag 1 on screen 1.
     { rule = { class = "firefox" },
-      properties = { screen = 1, tag = " 1 " } },
-    { rule = { class = "jetbrains-idea" },
-      properties = { screen = 1, tag = " 3 " } },
+      properties = { tag = " 1 " } },
+    -- { rule = { class = "jetbrains-idea" },
+    --   properties = { tag = " 3 " } },
 }
 -- }}}
 
