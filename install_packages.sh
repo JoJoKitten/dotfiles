@@ -15,6 +15,7 @@ figlet
 firefox
 fzf
 git
+gnuplot
 gpick
 i3-gaps
 lxappearance

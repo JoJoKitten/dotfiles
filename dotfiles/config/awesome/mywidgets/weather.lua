@@ -30,7 +30,14 @@ weather_widget:buttons(
                              text = report,
                              timeout = 10,
                          })
-            awful.placement.top_right(forecast_wibox, { margins = {top = 25, right = 10}, parent = awful.screen.focused() })
+            naughty.notify({ preset = naughty.config.presets.information,
+                             -- title = "Wettervorhersage",
+                             message = "Wettervorhersage",
+                             icon = "/home/jbensmann/.config/awesome/mywidgets/weather_forecast.jpg",
+                             position = "top_right",
+                             -- icon_size = 100,
+                             timeout = 10,
+                         })
         end)
     )
 )
