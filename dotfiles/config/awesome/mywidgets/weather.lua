@@ -16,7 +16,7 @@ local update_weather = function(widget, stdout, _, _, _)
     current_temp = stdout:match('(%d+)')
     report = stdout:match('[^\n]*\n(.*)')
 
-    widget.text = '' .. current_temp
+    widget.text = current_temp .. '°'
 
     -- fix for memory leak (caused by all watch calls)
     collectgarbage("collect")
@@ -33,9 +33,9 @@ weather_widget:buttons(
             naughty.notify({ preset = naughty.config.presets.information,
                              -- title = "Wettervorhersage",
                              message = "Wettervorhersage",
-                             icon = "/home/jbensmann/.config/awesome/mywidgets/weather_forecast.jpg",
+                             icon = "/home/jbensmann/.config/awesome/mywidgets/weather_forecast.png",
                              position = "top_right",
-                             -- icon_size = 100,
+                             icon_size = 1000,
                              timeout = 10,
                          })
         end)

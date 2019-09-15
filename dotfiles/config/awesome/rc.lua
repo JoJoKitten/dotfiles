@@ -52,6 +52,8 @@ beautiful.border_normal = "#000000"
 beautiful.border_focus  = "#535d6c"
 beautiful.border_marked = "#91231c"
 
+beautiful.notification_bg = "#303030d0"
+
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     awful.layout.suit.tile,
