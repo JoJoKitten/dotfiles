@@ -12,7 +12,7 @@ echo "$output" | sed -n 's/.*\(hour\|precipitationProbability\|temperature\): \(
     > $widgets_dir/weather_forecast.dat
 
 gnuplot -p -e 'set terminal png size 1500,500 background rgb "#d0d0d0"; 
-set title "Prognose für die nächsten Stunden"; 
+set title "'"$report_today"'"; 
 set multiplot;
 set palette model RGB defined (0 "#303080",20 "#808030", 40 "#a03030");
 set style line 1 lc palette lt 1 lw 4 pt 7 pi 2 ps 1.5;

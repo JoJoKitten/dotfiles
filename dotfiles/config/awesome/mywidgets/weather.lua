@@ -25,11 +25,11 @@ end
 weather_widget:buttons(
     awful.util.table.join(
         awful.button({}, 1, function()
-            naughty.notify({ preset = naughty.config.presets.information,
-                             title = "Wetter",
-                             text = report,
-                             timeout = 10,
-                         })
+            -- naughty.notify({ preset = naughty.config.presets.information,
+            --                  title = "Wetter",
+            --                  text = report,
+            --                  timeout = 10,
+            --              })
             naughty.notify({ preset = naughty.config.presets.information,
                              -- title = "Wettervorhersage",
                              message = "Wettervorhersage",
