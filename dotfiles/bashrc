@@ -25,16 +25,9 @@ bind -x '"\C-l": clear'
 # clear and ls
 bind -x '"\el": clear; ls'
 
-# get a file or directory
-_fzf_file() {
-    base_dir=$1
-    sel=$(locate "${base_dir}*" | fzf)
-    printf '%s' "$sel"
-}
-
 # get a directory with fzf
 _fzf_dir() {
-    sel=$(_fzf_file $1)
+    sel=$(fzf)
     [ -f $sel ] && sel=$(dirname "$sel")
     printf '%s' "$sel"
 }
@@ -59,13 +52,13 @@ alias cg='cd "$(_fzf_dir /)"'
 bind '"\ec": "cd `_fzf_dir $PWD`\C-x\C-e\C-m"'
 
 # insert filename
-bind '"\ef": "`_fzf_file $PWD`\C-x\C-e"'
+bind '"\ef": "`fzf `\C-x\C-e"'
 
 # find with fzf and open in editor
-bind -x '"\ee": locate "$PWD" | fzf --preview="head -$LINES {}" | xargs -r nvim'
-alias e='locate "$PWD*" | fzf --preview="head -$LINES {}" | xargs -r nvim'
-alias eh='locate "$HOME*" | fzf --preview="head -$LINES {}" | xargs -r sudo nvim'
+bind -x '"\ee": fzf --preview="head -$LINES {}" | xargs -r nvim'
+alias e='fzf --preview="head -$LINES {}" | xargs -r nvim'
 alias eg='locate "/*" | fzf --preview="head -$LINES {}" | xargs -r sudo nvim'
+alias vg='locate "/*" | fzf --preview="head -$LINES {}" | xargs -r nvim'
 
 # search history with fzf
 bind '"\C-r": "\C-x\C-acc`_fzf_history`\C-x\C-e\C-x\C-a$a\er\e^"'
