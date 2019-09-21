@@ -199,6 +199,10 @@ noremap <M-c> "+y
 nnoremap <M-p> "+p
 noremap! <M-p> <C-r>+
 
+noremap y<S-a> :%y+<cr>
+noremap d<S-a> ggdG
+noremap c<S-a> ggdG"+p
+
 " cd
 nnoremap <leader>cd :cd %:p:h<cr>
 nnoremap <leader>cdw :lcd %:p:h<cr>
