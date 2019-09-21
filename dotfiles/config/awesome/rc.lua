@@ -18,6 +18,7 @@ local cpu_widget = require("mywidgets.cpu")
 local volume_widget = require("mywidgets.volume")
 local ram_widget = require("mywidgets.ram")
 local weather_widget = require("mywidgets.weather")
+local network_widget = require("mywidgets.network")
 
 modkey = "Mod4"
 
@@ -162,6 +163,8 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            network_widget,
+            myseperator,
             weather_widget,
             myseperator,
             cpu_widget,
