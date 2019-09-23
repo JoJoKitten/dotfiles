@@ -42,10 +42,6 @@ weather_widget:buttons(
     )
 )
 
-<<<<<<< HEAD
 watch('bash -c ~/.config/awesome/mywidgets/get_weather.sh', 67 * 61, update_weather, weather_widget)
-=======
-watch('bash -c ~/.config/awesome/mywidgets/weather.sh', 30 * 60, update_weather, weather_widget)
->>>>>>> e12cfccea52a91485524d1722f68c807e89fe1c3
 
 return weather_widget
