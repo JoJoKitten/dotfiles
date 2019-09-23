@@ -68,6 +68,7 @@ unzip
 aur_packages="
 dropbox
 lf-bin
+xmouseless
 xnee"
 
 # install packages from the main repos
@@ -95,13 +96,6 @@ cd dotfiles
 # Vundle (vim plugin manager)
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
-
-# xmouseless
-if ! hash xmouseless; then
-    cd /tmp
-    git clone https://github.com/jbensmann/xmouseless.git
-    cd xmouseless && make && sudo make install
 fi
 
 # entr
