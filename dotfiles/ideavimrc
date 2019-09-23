@@ -22,7 +22,7 @@ inoremap jj <esc>o
 inoremap hh <backspace>
 nnoremap s :w<cr>
 
-nnoremap <leader>l :nohlcr>
+nnoremap <leader>l :nohl<cr>
 
 " files
 nnoremap <leader>fs :w<cr>
