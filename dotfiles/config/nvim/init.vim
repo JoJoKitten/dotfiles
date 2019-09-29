@@ -144,7 +144,7 @@ let g:pymode_run_bind='<F5>'
 
 autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
 autocmd FileType python match Excess /\%81v.*/
-autocmd FileType python set textwidth=80 colorcolumn=81
+autocmd FileType python set textwidth=80
 autocmd FileType python set foldmethod=indent
 
 " goto method
@@ -276,9 +276,6 @@ nnoremap <leader>zc :Colors<cr>
 nnoremap <M-e> :Buffers<cr>
 nnoremap <M-l> :Lines<cr>
 
-"--------------------- i3config.vim ------------------------
-autocmd BufRead,BufNewFile ~/dotfiles/dotfiles/i3/config set filetype=i3config
-
 "--------------------- sxhkd syntax ------------------------
 autocmd BufRead,BufNewFile ~/dotfiles/dotfiles/sxhkd/sxhkdrc set filetype=sxhkdrc
 
@@ -314,7 +311,7 @@ nnoremap <M-S-w> :lprevious<cr>
 nnoremap S :write<cr>:ALEFix<cr>
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'python': ['isort', 'yapf'],
+\   'python': ['isort'],
 \}
 
 " 'add_blank_lines_for_python_control_statements' - Add blank lines before control statements.
@@ -322,13 +319,6 @@ let g:ale_fixers = {
 " 'black' - Fix PEP8 issues with black.
 " 'isort' - Sort Python imports with isort.
 " 'yapf' - Fix Python files with yapf.
-
-
-"--------------------- ultisnips ---------------------------
-let g:UltiSnipsSnippetDirectories = ['~/.vim/bundle/vim-snippets/UltiSnips', 'UltiSnips']
-let g:UltiSnipsExpandTrigger="<m-v>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 
 "--------------------- YouCompleteMe -----------------------
