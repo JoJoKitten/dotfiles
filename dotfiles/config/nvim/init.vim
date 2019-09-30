@@ -22,12 +22,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'mildred/vim-bufmru'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Yggdroot/indentLine'
-Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'baskerville/vim-sxhkdrc'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'w0rp/ale'
-Plugin 'vim-perl/vim-perl'
-Plugin 'junegunn/goyo.vim'
 
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'morhetz/gruvbox'
@@ -311,15 +308,7 @@ nnoremap <M-S-w> :lprevious<cr>
 nnoremap S :write<cr>:ALEFix<cr>
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'python': ['isort'],
 \}
-
-" 'add_blank_lines_for_python_control_statements' - Add blank lines before control statements.
-" 'autopep8' - Fix PEP8 issues with autopep8.
-" 'black' - Fix PEP8 issues with black.
-" 'isort' - Sort Python imports with isort.
-" 'yapf' - Fix Python files with yapf.
-
 
 "--------------------- YouCompleteMe -----------------------
 " let g:ycm_filetype_blacklist={}
