@@ -64,6 +64,9 @@ dotfiles:
   f_redshift.conf:
     dst: ~/.config/redshift/redshift.conf
     src: config/redshift/redshift.conf
+  f_vscode_settings:
+    dst: ~/.config/Code - OSS/User/settings.json
+    src: config/Code - OSS/User/settings.json
   f_sxhkdrc:
     dst: ~/.config/sxhkd/sxhkdrc
     src: config/sxhkd/sxhkdrc
@@ -112,6 +115,7 @@ profiles:
     - f_zathurarc
     - f_compton.conf
     - d_awesome
+    - f_vscode_settings
   jb-work:
     dotfiles:
     - d_bin
@@ -135,6 +139,7 @@ profiles:
     - f_zathurarc
     - f_compton.conf
     - d_awesome
+    - f_vscode_settings
   laptop-i3:
     dotfiles:
     - d_bin
@@ -159,3 +164,4 @@ profiles:
     - d_bin
     - f_compton.conf
     - d_awesome
+    - f_vscode_settings

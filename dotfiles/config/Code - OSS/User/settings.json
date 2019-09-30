@@ -1,0 +1,40 @@
+{
+    "files.autoSave": "afterDelay",
+    "editor.fontSize": 15,
+    "zenMode.hideLineNumbers": false,
+    "window.menuBarVisibility": "toggle",
+    "workbench.colorTheme": "Atom One Dark",
+    "vim.easymotion": true,
+    "vim.easymotionKeys": "hklyuiopnmqwertzxcvbasdgjf",
+    "vim.leader": " ",
+    "vim.enableNeovim": true,
+    "vim.sneakReplacesF": true,
+    "vim.sneak": true,
+    "vim.useCtrlKeys": false,
+    "workbench.activityBar.visible": false,
+    "workbench.settings.editor": "json",
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": ["k", "j"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": ["j", "j"],
+            "after": ["<Enter>"]
+        },
+        {
+            "before": ["j", "j"],
+            "after": ["<Enter>"]
+        }
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["leader", "b", "d"],
+            "after": [":", "q", "<Enter>"]
+        }
+    ]
+}
