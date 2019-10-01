@@ -1,9 +1,15 @@
 {
     "files.autoSave": "afterDelay",
     "editor.fontSize": 15,
+    "editor.lineNumbers": "relative",
+    "editor.renderIndentGuides": false,
+    "editor.minimap.enabled": false,
     "zenMode.hideLineNumbers": false,
+    "zenMode.fullScreen": false,
     "window.menuBarVisibility": "toggle",
     "workbench.colorTheme": "Atom One Dark",
+    "workbench.activityBar.visible": false,
+    "workbench.settings.editor": "json",
     "vim.easymotion": true,
     "vim.easymotionKeys": "hklyuiopnmqwertzxcvbasdgjf",
     "vim.leader": " ",
@@ -11,8 +17,6 @@
     "vim.sneakReplacesF": true,
     "vim.sneak": true,
     "vim.useCtrlKeys": false,
-    "workbench.activityBar.visible": false,
-    "workbench.settings.editor": "json",
     "vim.insertModeKeyBindings": [
         {
             "before": ["j", "k"],

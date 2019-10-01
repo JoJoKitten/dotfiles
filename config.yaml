@@ -16,6 +16,9 @@ dotfiles:
   d_ranger:
     dst: ~/.config/ranger
     src: config/ranger
+  d_vscode:
+    dst: ~/.config/Code - OSS/User
+    src: config/Code - OSS/User
   f_bashrc:
     dst: ~/.bashrc
     src: bashrc
@@ -64,9 +67,6 @@ dotfiles:
   f_redshift.conf:
     dst: ~/.config/redshift/redshift.conf
     src: config/redshift/redshift.conf
-  f_vscode_settings:
-    dst: ~/.config/Code - OSS/User/settings.json
-    src: config/Code - OSS/User/settings.json
   f_sxhkdrc:
     dst: ~/.config/sxhkd/sxhkdrc
     src: config/sxhkd/sxhkdrc
@@ -115,7 +115,7 @@ profiles:
     - f_zathurarc
     - f_compton.conf
     - d_awesome
-    - f_vscode_settings
+    - d_vscode
   jb-work:
     dotfiles:
     - d_bin
@@ -139,7 +139,7 @@ profiles:
     - f_zathurarc
     - f_compton.conf
     - d_awesome
-    - f_vscode_settings
+    - d_vscode
   laptop-i3:
     dotfiles:
     - d_bin
@@ -164,4 +164,4 @@ profiles:
     - d_bin
     - f_compton.conf
     - d_awesome
-    - f_vscode_settings
+    - d_vscode
