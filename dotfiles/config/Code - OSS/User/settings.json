@@ -16,7 +16,6 @@
     "vim.enableNeovim": true,
     "vim.sneakReplacesF": true,
     "vim.sneak": true,
-    "vim.useCtrlKeys": false,
     "vim.insertModeKeyBindings": [
         {
             "before": ["j", "k"],

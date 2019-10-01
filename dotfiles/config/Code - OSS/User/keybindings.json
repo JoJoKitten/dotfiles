@@ -75,7 +75,7 @@
         "command": "-workbench.action.closeActiveEditor"
     },
     {
-        "key": "alt+e",
+        "key": "alt+n",
         "command": "workbench.action.quickOpenNavigateNextInFilePicker",
         "when": "inFilesPicker && inQuickOpen"
     },
@@ -85,7 +85,7 @@
         "when": "inFilesPicker && inQuickOpen"
     },
     {
-        "key": "alt+e",
+        "key": "alt+n",
         "command": "workbench.action.quickOpen"
     },
     {
@@ -125,5 +125,42 @@
     {
         "key": "ctrl+shift+p",
         "command": "-workbench.action.showCommands"
+    },
+    {
+        "key": "alt+d",
+        "command": "extension.vim_ctrl+d",
+        "when": "editorTextFocus && vim.active && !inDebugRepl"
+    },
+    {
+        "key": "alt+u",
+        "command": "extension.vim_ctrl+u",
+        "when": "editorTextFocus && vim.active && vim.use<C-u> && !inDebugRepl"
+    },
+    {
+        "key": "alt+4",
+        "command": "workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+        "when": "inFilesPicker && inQuickOpen"
+    },
+    {
+        "key": "alt+l",
+        "command": "editor.action.formatDocument",
+        "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "-editor.action.formatDocument",
+        "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
     }
 ]
