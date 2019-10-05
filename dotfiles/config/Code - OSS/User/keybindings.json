@@ -331,5 +331,33 @@
         "key": "ctrl+k ctrl+j",
         "command": "-editor.unfoldAll",
         "when": "editorTextFocus && foldingEnabled"
-    }
+    },
+    {
+        "key": "alt+t",
+        "command": "workbench.action.nextPanelView"
+    },
+    {
+        "key": "alt+shift+t",
+        "command": "workbench.action.previousPanelView"
+    },
+    {
+        "key": "alt+c",
+        "command": "editor.action.clipboardCopyAction",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "-editor.action.clipboardCopyAction",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt+c",
+        "command": "-workbench.action.terminal.toggleFindCaseSensitiveTerminalFocus",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+c",
+        "command": "-workbench.action.terminal.toggleFindCaseSensitive",
+        "when": "terminalFindWidgetFocused"
+    },
 ]
