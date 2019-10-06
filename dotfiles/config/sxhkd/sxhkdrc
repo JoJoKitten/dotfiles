@@ -50,10 +50,11 @@ super + shift + s
     toggle_stalonetray
 
 # launch applications
-super + o ; {f,r,l,m,n,t,p} 
+super + o ; {f,r,l,v,m,n,t,p} 
     {firefox, \
     $TERMINAL -e ranger, \
     $TERMINAL -e tmux new-session lf \; set-option status on, \
+    $TERMINAL -e tmux new-session nvim -c ":colorscheme gruvbox", \
     thunderbird, \
     pcmanfm, \
     open_tmux_session, \
