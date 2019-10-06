@@ -25,6 +25,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'baskerville/vim-sxhkdrc'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'w0rp/ale'
+Plugin 'unegunn/goyo.vim'
 
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'morhetz/gruvbox'
@@ -283,7 +284,7 @@ let NERDTreeWinPos="right"
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
 "--------------------- Goyo --------------------------------
-nnoremap <M-0> :Goyo<cr>
+nnoremap <M-0> :Goyo 120<cr>
 
 "--------------------- vimwiki -----------------------------
 let g:vimwiki_folding='expr'
