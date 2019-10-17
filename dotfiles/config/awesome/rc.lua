@@ -22,7 +22,8 @@ local network_widget = require("mywidgets.network")
 
 modkey = "Mod4"
 
-terminal = "st -e tmux new-session "
+terminal = "st"
+terminal_tmux = terminal .. " -e tmux new-session "
 editor = os.getenv("EDITOR") or "nvim"
 dmenu_cmd = "dmenu_run -fn 'monospace:size=10' -nb '#202020' -nf '#b0b0b0' -sb '#508050' -sf '#e0e0e0'"
 
@@ -228,7 +229,9 @@ globalkeys = gears.table.join(
         {description = "go back", group = "client"}),
 
     -- Standard program
-    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
+    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal_tmux) end,
+              {description = "open a terminal with tmux", group = "awesome"}),
+    awful.key({ modkey, "Shift"     }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "awesome"}),
     awful.key({ modkey, "Shift" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
@@ -282,14 +285,14 @@ globalkeys = gears.table.join(
               {description = "show the menubar", group = "awesome"}),
 
 
-    -- Dropdown terminal
+    -- Dropdown terminal_tmux
     awful.key({ modkey }, "s", 
-            function() scratch.drop(terminal, "center", "center", 0.9, 0.9, false) end,
-            {description = "dropdown terminal", group = "awesome"}),
+            function() scratch.drop(terminal_tmux, "center", "center", 0.9, 0.9, false) end,
+            {description = "dropdown terminal_tmux", group = "awesome"}),
 
     -- Dropdown file manager
     awful.key({ modkey }, "f", 
-            function() scratch.drop(terminal .. "lf", "center", "center", 0.9, 0.9, false) end,
+            function() scratch.drop(terminal_tmux .. "lf", "center", "center", 0.9, 0.9, false) end,
             {description = "dropdown file manager", group = "awesome"})
 )
 
