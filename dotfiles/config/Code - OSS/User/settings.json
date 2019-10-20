@@ -17,6 +17,7 @@
     "vim.sneakReplacesF": true,
     "vim.hlsearch": true,
     "vim.sneak": true,
+    "vim.foldfix": true,
     "vim.insertModeKeyBindings": [
         {
             "before": [
