@@ -7,13 +7,14 @@
     "zenMode.hideLineNumbers": false,
     "zenMode.fullScreen": false,
     "window.menuBarVisibility": "toggle",
+    "window.zoomLevel": 0,
     "workbench.colorTheme": "Atom One Dark",
     "workbench.activityBar.visible": false,
     "workbench.settings.editor": "json",
+    "vscode-json-editor.theme": "dark",
     "vim.easymotion": true,
     "vim.easymotionKeys": "hklyuiopnmqwertzxcvbasdgjf",
     "vim.leader": " ",
-    "vim.enableNeovim": true,
     "vim.sneakReplacesF": true,
     "vim.hlsearch": true,
     "vim.sneak": true,
@@ -85,9 +86,8 @@
             "after": [
                 "leader",
                 "leader",
-                "s",
+                "s"
             ]
         }
-    ],
-    "window.zoomLevel": 0
+    ]
 }
