@@ -359,4 +359,14 @@
         "command": "-workbench.action.terminal.toggleFindCaseSensitive",
         "when": "terminalFindWidgetFocused"
     },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeGroup",
+        "when": "activeEditorGroupEmpty && multipleEditorGroups"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeWindow",
+        "when": "!editorIsOpen && !multipleEditorGroups"
+    }
 ]
