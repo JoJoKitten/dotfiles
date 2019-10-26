@@ -7,6 +7,7 @@
     "editor.lineNumbers": "relative",
     "editor.renderIndentGuides": false,
     "editor.minimap.enabled": false,
+    "editor.cursorSurroundingLines": 10,
     "zenMode.hideLineNumbers": false,
     "zenMode.fullScreen": false,
     "window.menuBarVisibility": "toggle",
@@ -91,6 +92,15 @@
                 "leader",
                 "leader",
                 "s"
+            ]
+        }
+    ],
+    "multiCommand.commands": [
+        {
+            "command": "multiCommand.gotoMethod",
+            "sequence": [
+                "workbench.action.gotoMethod",
+                "editor.unfoldRecursively"
             ]
         }
     ]

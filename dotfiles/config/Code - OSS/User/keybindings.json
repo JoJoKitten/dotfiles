@@ -368,5 +368,17 @@
         "key": "ctrl+w",
         "command": "-workbench.action.closeWindow",
         "when": "!editorIsOpen && !multipleEditorGroups"
+    },
+    {
+        "key": "alt+[BracketRight]",
+        "command": "editor.unfoldRecursively"
+    },
+    {
+        "key": "alt+-",
+        "command": "editor.foldRecursively"
+    },
+    {
+        "key": "alt+m",
+        "command": "multiCommand.gotoMethod"
     }
 ]

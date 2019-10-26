@@ -1,0 +1,8 @@
+vscodevim.vim
+ms-python.python
+richterger.perl
+davidanson.vscode-markdownlint
+nickdemayo.vscode-json-editor
+ryuta46.multi-command
+trixnz.go-to-method
+akamud.vscode-theme-onedark
