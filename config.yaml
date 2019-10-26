@@ -18,7 +18,7 @@ dotfiles:
     src: config/ranger
   d_vscode:
     dst: ~/.config/Code - OSS/User
-    src: config/Code - OSS/User
+    src: config/vscode/User
   f_bashrc:
     dst: ~/.bashrc
     src: bashrc
