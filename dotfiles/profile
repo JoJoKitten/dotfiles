@@ -7,7 +7,7 @@
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
 [ -d "$HOME/scripts" ] && PATH="$HOME/scripts:$PATH"
 export EDITOR="nvim"
-export TERMINAL="st"
+export TERMINAL="alacritty"
 export BROWSER="firefox"
 export READER="zathura"
 

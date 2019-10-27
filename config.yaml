@@ -19,6 +19,9 @@ dotfiles:
   d_vscode:
     dst: ~/.config/Code - OSS/User
     src: config/vscode/User
+  f_alacritty.yml:
+    dst: ~/.config/alacritty/alacritty.yml
+    src: config/alacritty/alacritty.yml
   f_bashrc:
     dst: ~/.bashrc
     src: bashrc
@@ -116,6 +119,7 @@ profiles:
     - f_compton.conf
     - d_awesome
     - d_vscode
+    - f_alacritty.yml
   jb-work:
     dotfiles:
     - d_bin
@@ -140,6 +144,7 @@ profiles:
     - f_compton.conf
     - d_awesome
     - d_vscode
+    - f_alacritty.yml
   laptop-i3:
     dotfiles:
     - d_bin
@@ -165,3 +170,4 @@ profiles:
     - f_compton.conf
     - d_awesome
     - d_vscode
+    - f_alacritty.yml
