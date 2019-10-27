@@ -12,7 +12,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'junegunn/fzf.vim'
-Plugin 'vimwiki/vimwiki'
 Plugin 'vim-scripts/YankRing.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-commentary'
