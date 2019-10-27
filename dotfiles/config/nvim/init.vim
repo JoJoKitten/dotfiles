@@ -22,6 +22,7 @@ Plugin 'mildred/vim-bufmru'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Yggdroot/indentLine'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'rhysd/vim-fixjson'
 Plugin 'baskerville/vim-sxhkdrc'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'w0rp/ale'
@@ -306,7 +307,7 @@ highlight SignColumn ctermbg=none
 nnoremap <M-w> :lnext<cr>
 nnoremap <M-S-w> :lprevious<cr>
 " let g:ale_fix_on_save = 1
-nnoremap S :write<cr>:ALEFix<cr>
+nmap S :write<cr>:ALEFix<cr>
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \}
@@ -317,3 +318,7 @@ let g:ycm_autoclose_preview_window_after_completion=1
 set completeopt-=preview
 nnoremap <C-b> :YcmCompleter GoTo<CR>
 nnoremap <C-M-b> :YcmCompleter GoToDefinition<CR>
+
+"-------------------- json ---------------------------------
+autocmd FileType json autocmd BufWritePre :FixJson<cr>
+
