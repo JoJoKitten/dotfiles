@@ -2,6 +2,7 @@
 # This script installs all my packages and configs on arch.
 
 packages="
+alacritty
 bash-completion
 breath-dark-icon-theme
 clipmenu
