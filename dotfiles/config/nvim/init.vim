@@ -143,7 +143,7 @@ let g:pymode_run_bind='<F5>'
 
 autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
 autocmd FileType python match Excess /\%81v.*/
-autocmd FileType python set textwidth=80
+autocmd FileType python set textwidth=120
 autocmd FileType python set foldmethod=indent
 
 " goto method
@@ -310,6 +310,7 @@ nnoremap <M-S-w> :lprevious<cr>
 nmap S :write<cr>:ALEFix<cr>
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'python': ['isort', 'autopep8'],
 \}
 
 "--------------------- YouCompleteMe -----------------------
