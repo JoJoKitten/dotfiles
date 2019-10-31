@@ -13,6 +13,9 @@ set hlsearch
 " timeouts
 set timeout timeoutlen=300 ttimeout ttimeoutlen=200
 
+" smart join
+set ideajoin
+
 
 "-------------------- Mappings -----------------------------
 imap jk <Esc>
