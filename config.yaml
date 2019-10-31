@@ -13,6 +13,9 @@ dotfiles:
   d_bin:
     dst: ~/bin
     src: bin
+  d_oni2:
+    dst: ~/.config/oni2
+    src: config/oni2
   d_ranger:
     dst: ~/.config/ranger
     src: config/ranger
@@ -120,6 +123,7 @@ profiles:
     - d_awesome
     - d_vscode
     - f_alacritty.yml
+    - d_oni2
   jb-work:
     dotfiles:
     - d_bin
@@ -145,6 +149,7 @@ profiles:
     - d_awesome
     - d_vscode
     - f_alacritty.yml
+    - d_oni2
   laptop-i3:
     dotfiles:
     - d_bin
@@ -171,3 +176,4 @@ profiles:
     - d_awesome
     - d_vscode
     - f_alacritty.yml
+    - d_oni2
