@@ -312,3 +312,9 @@ inoremap <silent><expr> <Tab>
 
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" coc-prettier
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+nmap <M-S-l> :Prettier<cr>
+vmap <M-S-l> <Plug>(coc-format-selected)
+
