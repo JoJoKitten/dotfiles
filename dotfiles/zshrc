@@ -81,6 +81,9 @@ bindkey '^[i' _tmux_copy
 # M-d to show tasks with taskwarrior
 bindkey -s '^[d' 'clear; task\n'
 
+# M-l for ls
+bindkey -s '^[l' 'ls\n'
+
 # C-k to kill process with fzf
 bindkey -s '^k' 'kill \t'
 
