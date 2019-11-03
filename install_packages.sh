@@ -64,6 +64,8 @@ zathura
 zathura-pdf-poppler
 zip
 unzip
+zsh
+zsh-syntax-highlighting
 "
 
 aur_packages="
