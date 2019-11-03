@@ -19,7 +19,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'plasticboy/vim-markdown'
 Plug 'baskerville/vim-sxhkdrc'
 Plug 'vimwiki/vimwiki'
-Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim'
 Plug 'junegunn/goyo.vim'
 
@@ -298,21 +297,6 @@ nmap ö <Plug>(easymotion-bd-f)
 map <M-j> <Plug>(easymotion-j)
 map <M-k> <Plug>(easymotion-k)
 
-"--------------------- ale ---------------------------------
-autocmd VimEnter * ALEDisable
-nnoremap <M-S-a> :ALEToggle<cr>
-" color of left column
-highlight SignColumn ctermbg=none
-
-nnoremap <M-w> :lnext<cr>
-nnoremap <M-S-w> :lprevious<cr>
-" let g:ale_fix_on_save = 1
-nmap S :write<cr>:ALEFix<cr>
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'python': ['isort', 'autopep8'],
-\}
-
 
 "--------------------- coc.nvim ----------------------------
 " use <tab> for trigger completion and navigate to the next complete item
@@ -326,3 +310,5 @@ inoremap <silent><expr> <Tab>
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"

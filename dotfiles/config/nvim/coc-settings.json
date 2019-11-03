@@ -1,6 +1,5 @@
 {
     "suggest.autoTrigger": "always",
     "suggest.triggerAfterInsertEnter": true,
-    "suggest.timeout": 500,
-    "suggest.noselect": false    
+    "suggest.timeout": 500
 }
