@@ -100,6 +100,12 @@ dotfiles:
   f_zathurarc:
     dst: ~/.config/zathura/zathurarc
     src: config/zathura/zathurarc
+  f_zprofile:
+    dst: ~/.zprofile
+    src: zprofile
+  f_zshrc:
+    dst: ~/.zshrc
+    src: zshrc
 profiles:
   desktop-i3:
     dotfiles:
@@ -128,6 +134,8 @@ profiles:
     - d_vscode
     - f_alacritty.yml
     - d_oni2
+    - f_zprofile
+    - f_zshrc
   jb-work:
     dotfiles:
     - d_bin
@@ -155,6 +163,8 @@ profiles:
     - d_vscode
     - f_alacritty.yml
     - d_oni2
+    - f_zprofile
+    - f_zshrc
   laptop-i3:
     dotfiles:
     - d_bin
@@ -183,3 +193,5 @@ profiles:
     - d_vscode
     - f_alacritty.yml
     - d_oni2
+    - f_zprofile
+    - f_zshrc

@@ -1,3 +1,5 @@
+# This file is not relevant for zsh
+
 # Tab to complete
 TAB: menu-complete
 # Shift-Tab to choose previous
