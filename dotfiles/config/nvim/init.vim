@@ -4,34 +4,34 @@
 " | | | |  __/ (_) \ V /| | | | | | |
 " |_| |_|\___|\___/ \_/ |_|_| |_| |_|
 
-"--------------- Vundle plugin manager ---------------------
+"--------------- vim-plug plugin manager ---------------------
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf.vim'
+Plug 'vim-scripts/YankRing.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-fugitive'
+Plug 'mildred/vim-bufmru'
+Plug 'scrooloose/nerdtree'
+Plug 'Yggdroot/indentLine'
+Plug 'plasticboy/vim-markdown'
+Plug 'baskerville/vim-sxhkdrc'
+Plug 'vimwiki/vimwiki'
+Plug 'w0rp/ale'
+Plug 'neoclide/coc.nvim'
+Plug 'junegunn/goyo.vim'
+
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'morhetz/gruvbox'
+Plug 'mhartington/oceanic-next'
+call plug#end()
+
+
+"----------------------------------------------------------
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'junegunn/fzf.vim'
-Plugin 'vim-scripts/YankRing.vim'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-fugitive'
-Plugin 'mildred/vim-bufmru'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Yggdroot/indentLine'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'rhysd/vim-fixjson'
-Plugin 'baskerville/vim-sxhkdrc'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'w0rp/ale'
-Plugin 'unegunn/goyo.vim'
-
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'morhetz/gruvbox'
-Plugin 'mhartington/oceanic-next'
-call vundle#end()
 
 
 "----------------------------------------------------------
@@ -313,13 +313,16 @@ let g:ale_fixers = {
 \   'python': ['isort', 'autopep8'],
 \}
 
-"--------------------- YouCompleteMe -----------------------
-" let g:ycm_filetype_blacklist={}
-let g:ycm_autoclose_preview_window_after_completion=1
-set completeopt-=preview
-nnoremap <C-b> :YcmCompleter GoTo<CR>
-nnoremap <C-M-b> :YcmCompleter GoToDefinition<CR>
 
-"-------------------- json ---------------------------------
-autocmd FileType json autocmd BufWritePre :FixJson<cr>
+"--------------------- coc.nvim ----------------------------
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
 

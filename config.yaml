@@ -28,6 +28,9 @@ dotfiles:
   f_bashrc:
     dst: ~/.bashrc
     src: bashrc
+  f_coc-settings.json:
+    dst: ~/.config/nvim/coc-settings.json
+    src: config/nvim/coc-settings.json
   f_compton.conf:
     dst: ~/.config/compton/compton.conf
     src: config/compton/compton.conf
@@ -109,6 +112,7 @@ profiles:
     - f_fa_icons
     - f_ideavimrc
     - f_init.vim
+    - f_coc-settings.json
     - f_vimrc
     - f_morc_menu_v1.conf
     - f_my_neo_de.xmodmap
@@ -135,6 +139,7 @@ profiles:
     - f_fa_icons
     - f_ideavimrc
     - f_init.vim
+    - f_coc-settings.json
     - f_vimrc
     - f_morc_menu_v1.conf
     - f_my_neo_de.xmodmap
@@ -161,6 +166,7 @@ profiles:
     - f_fa_icons
     - f_ideavimrc
     - f_init.vim
+    - f_coc-settings.json
     - f_vimrc
     - f_morc_menu_v1.conf
     - f_my_neo_de.xmodmap
