@@ -51,16 +51,14 @@ function zle-keymap-select {
   fi
 }
 
+# Use beam shape cursor on startup.
+echo -ne '\e[5 q'
+# Use beam shape cursor for each new prompt.
+preexec() { echo -ne '\e[5 q' ;}
+
 # fzf
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
-
-# get a directory with fzf
-_fzf_dir() {
-    sel=$(fzf)
-    [ -f $sel ] && sel=$(dirname "$sel")
-    printf '%s' "$sel"
-}
 
 # find with fzf and open in editor
 alias e='fzf --preview="head -$LINES {}" | xargs -r nvim'
@@ -74,14 +72,16 @@ zle -N _tmux_copy
 bindkey '^[i' _tmux_copy
 
 # M-d to show tasks with taskwarrior
-_task() { clear; task }
-zle -N _task
-bindkey '^[d' _task
+bindkey -s '^[d' 'clear; task\n'
 
-# open ssh connection with fzf
-_fzf_ssh() { fzf_ssh }
-zle -N _fzf_ssh
-bindkey '^[s' _fzf_ssh
+# C-k to kill process with fzf
+bindkey -s '^k' 'kill \t'
+
+# M-s to open ssh connection with fzf
+bindkey -s '^[s' 'fzf_ssh\n'
+
+# M-f as alternative to C-t (select file)
+bindkey '^[f' fzf-file-widget
 
 # other aliases
 alias fk=fzf_kill
@@ -104,11 +104,6 @@ alias gd='git diff'
 alias gl='git log'
 alias gpl='git pull'
 alias gps='git push'
-
-alias ta='task add'
-alias tm='task modify'
-alias td='task done'
-alias tdel='task delete'
 
 alias cht='cht.sh'
 alias trde='trans de:en -v -theme random'
