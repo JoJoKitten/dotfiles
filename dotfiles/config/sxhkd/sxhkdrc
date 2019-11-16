@@ -50,8 +50,9 @@ super + shift + s
     toggle_stalonetray
 
 # launch applications
-super + o ; {f,r,l,v,m,n,t,p} 
+super + o ; {f,c,r,l,v,m,n,t,p} 
     {firefox, \
+    chromium, \
     $TERMINAL -e ranger, \
     $TERMINAL -e tmux new-session lf \; set-option status on, \
     $TERMINAL -e tmux new-session nvim -c ":colorscheme gruvbox", \
