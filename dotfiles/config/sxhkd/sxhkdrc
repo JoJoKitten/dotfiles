@@ -85,6 +85,6 @@ super + space ; t; {n,i,e,d,t,k,u,h}
     dmenu_emojis, \
     $TERMINAL -e bash -c 'echo  Translate to German: && read tmp && echo $tmp | trans en:de -v -theme random', \
     $TERMINAL -e bash -c 'echo  Translate to English: && read tmp && echo $tmp | trans de:en -v -theme random', \
-    cat ~/vimwiki/kontakte.wiki | dmenu -i -l 20, \
+    cat ~/wiki/kontakte.md | dmenu -i -l 20, \
     $TERMINAL -e bash -c "update_time && read", \
     dmenu_host}
