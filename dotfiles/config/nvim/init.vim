@@ -13,6 +13,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/vim-easy-align'
 Plug 'mildred/vim-bufmru'
 Plug 'scrooloose/nerdtree'
 Plug 'Yggdroot/indentLine'
@@ -256,6 +257,13 @@ nnoremap <leader>bn :enew<cr>
 nnoremap <leader>bd :bd<cr>
 nnoremap <M-q> :bd<cr>
 
+"--------------------- easy-align --------------------------
+"
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 "--------------------- fzf ---------------------------------
 set rtp+=~/.fzf
