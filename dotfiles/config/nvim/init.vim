@@ -97,6 +97,10 @@ set hlsearch
 nnoremap + /
 nnoremap - ?
 
+" allows incsearch highlighting for range commands
+cnoremap <M-d> <CR>:t''<CR>
+cnoremap <M-m> <CR>:m''<CR>
+
 " search recursively
 map <M-s> :execute "vimgrep //j **" <bar> cw<left><left><left><left><left><left><left><left><left><left><left>
 

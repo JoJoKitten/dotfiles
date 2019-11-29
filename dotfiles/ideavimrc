@@ -1,5 +1,3 @@
-set surround
-
 let mapleader = " "
 
 set relativenumber
@@ -16,6 +14,15 @@ set timeout timeoutlen=300 ttimeout ttimeoutlen=200
 " smart join
 set ideajoin
 
+set nonumber
+
+" emulated vim plugins
+set easymotion
+set surround
+set commentary
+
+nmap s <Plug>(easymotion-s2)
+
 
 "-------------------- Mappings -----------------------------
 imap jk <Esc>
@@ -23,7 +30,14 @@ imap kj <Esc>
 map Y y$
 inoremap jj <esc>o
 inoremap hh <backspace>
-nnoremap s :w<cr>
+
+" alternative bindings for search
+nnoremap + /
+nnoremap - ?
+
+" allows incsearch highlighting for range commands
+nnoremap äd :t''<CR>
+nnoremap äm :m''<CR>
 
 nnoremap <leader>l :nohl<cr>
 
@@ -36,31 +50,17 @@ nnoremap <leader>sv :vs<cr>
 nnoremap <leader>sh :sp<cr>
 
 " java
-inoremap öw while<sapce>()<space>{<left><left><left>
-inoremap öi if<space>()<space>{<left><left><left>
-inoremap öe <esc>o<backspace>else<space>{<cr>
-inoremap öa <Esc>0f)i,<space>
-
-inoremap öp private<space>
-inoremap öu public<space>
-inoremap öt static<space>
+inoremap ör private<space>
 inoremap öv void<space>
-inoremap öj int<space>
+inoremap öi int<space>
 inoremap öd double<space>
 inoremap ös String<space>
 inoremap öl long<space>
 inoremap ön null
 inoremap är return<space>
 
-" python
-inoremap äw while<space>:<left>
-inoremap äi if<space>:<left>
-inoremap äe <esc>o<backspace>else:<cr>
-inoremap äp <esc>0f)i,<space>
-inoremap än None
-inoremap är return<space>
-inoremap äs self.
-" getter and setter
-inoremap äag <esc>bywodef<space>get_<esc>pa(self):<cr>return<space>self.<esc>pkkdd
-inoremap äas <esc>bywodef<space>set_<esc>pa(self,<space><esc>pA:<cr>self.<esc>pa<space>=<space><esc>pkkdd
 
+inoremap ötr private static<space>
+inoremap ötu public static<space>
+inoremap öfr private static final<space>
+inoremap öfu public static final<space>
