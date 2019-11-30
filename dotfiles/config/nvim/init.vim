@@ -17,11 +17,12 @@ Plug 'junegunn/vim-easy-align'
 Plug 'mildred/vim-bufmru'
 Plug 'scrooloose/nerdtree'
 Plug 'Yggdroot/indentLine'
+Plug 'vimwiki/vimwiki'
+Plug 'junegunn/goyo.vim'
+Plug 'neoclide/coc.nvim'
+
 Plug 'plasticboy/vim-markdown'
 Plug 'baskerville/vim-sxhkdrc'
-Plug 'vimwiki/vimwiki'
-Plug 'neoclide/coc.nvim'
-Plug 'junegunn/goyo.vim'
 
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
@@ -59,7 +60,8 @@ set laststatus=2
 " completion
 set wildmenu
 set wildmode=longest,list,full
-set mouse=
+
+set mouse=nv
 
 " hide status info
 set noshowmode
@@ -181,7 +183,7 @@ autocmd FileType python inoremap öas <esc>bywodef<space>set_<esc>pa(self,<space
 inoremap jk <esc>
 inoremap kj <esc>
 nnoremap Y y$
-nnoremap <leader>l :nohl<cr><C-L>
+nnoremap <M-l> :nohl<cr><C-L>
 nnoremap <leader>ho <C-]>
 
 inoremap xn <C-x><C-n>
@@ -262,7 +264,6 @@ nnoremap <leader>bd :bd<cr>
 nnoremap <M-q> :bd<cr>
 
 "--------------------- easy-align --------------------------
-"
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
@@ -283,8 +284,7 @@ nnoremap <leader>ff :Files<space>
 nnoremap <leader>hk :Maps<cr>
 nnoremap <leader>hc :Commands<cr>
 nnoremap <leader>zc :Colors<cr>
-nnoremap <M-e> :Buffers<cr>
-nnoremap <M-l> :Lines<cr>
+nnoremap <leader>l :Lines<cr>
 
 "--------------------- sxhkd syntax ------------------------
 autocmd BufRead,BufNewFile ~/dotfiles/dotfiles/sxhkd/sxhkdrc set filetype=sxhkdrc
