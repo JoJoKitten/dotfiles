@@ -21,7 +21,7 @@ set easymotion
 set surround
 set commentary
 
-nmap s <Plug>(easymotion-s2)
+nmap s <Plug>(easymotion-bd-f)
 
 
 "-------------------- Mappings -----------------------------
@@ -39,7 +39,13 @@ nnoremap - ?
 nnoremap äd :t''<CR>
 nnoremap äm :m''<CR>
 
+" . on all selected lines
+vnoremap . :normal .<cr>
+" execute tag t on all selected lines
+vnoremap @ :normal @t<cr>
+
 nnoremap <leader>l :nohl<cr>
+nnoremap <M-l> :nohl<cr>
 
 " files
 nnoremap <leader>fs :w<cr>
