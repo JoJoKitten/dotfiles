@@ -58,6 +58,9 @@ dotfiles:
   f_lfrc:
     dst: ~/.config/lf/lfrc
     src: config/lf/lfrc
+  f_linopenrc:
+    dst: ~/.linopenrc
+    src: linopenrc
   f_morc_menu_v1.conf:
     dst: ~/.config/morc_menu/morc_menu_v1.conf
     src: config/morc_menu/morc_menu_v1.conf
@@ -107,7 +110,7 @@ dotfiles:
     dst: ~/.zshrc
     src: zshrc
 profiles:
-  desktop-i3:
+  desktop:
     dotfiles:
     - d_bin
     - d_ranger
@@ -136,6 +139,7 @@ profiles:
     - d_oni2
     - f_zprofile
     - f_zshrc
+    - f_linopenrc
   jb-work:
     dotfiles:
     - d_bin
@@ -165,7 +169,8 @@ profiles:
     - d_oni2
     - f_zprofile
     - f_zshrc
-  laptop-i3:
+    - f_linopenrc
+  laptop:
     dotfiles:
     - d_bin
     - d_ranger
@@ -195,3 +200,4 @@ profiles:
     - d_oni2
     - f_zprofile
     - f_zshrc
+    - f_linopenrc

@@ -70,6 +70,7 @@ zsh-syntax-highlighting
 
 aur_packages="
 dropbox
+linopen
 lf-bin
 xmouseless
 xnee"
