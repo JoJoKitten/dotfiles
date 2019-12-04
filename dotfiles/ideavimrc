@@ -21,7 +21,7 @@ set easymotion
 set surround
 set commentary
 
-" nmap s <Plug>(easymotion-bd-s)
+nmap s :w<CR>
 
 
 "-------------------- Mappings -----------------------------
