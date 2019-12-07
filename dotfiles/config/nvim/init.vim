@@ -183,7 +183,7 @@ autocmd FileType python inoremap öas <esc>bywodef<space>set_<esc>pa(self,<space
 inoremap jk <esc>
 inoremap kj <esc>
 nnoremap Y y$
-nnoremap <M-l> :nohl<cr><C-L>
+nnoremap <leader>l :nohl<cr><C-l>
 nnoremap <leader>ho <C-]>
 
 inoremap xn <C-x><C-n>
@@ -284,7 +284,7 @@ nnoremap <leader>ff :Files<space>
 nnoremap <leader>hk :Maps<cr>
 nnoremap <leader>hc :Commands<cr>
 nnoremap <leader>zc :Colors<cr>
-nnoremap <leader>l :Lines<cr>
+nnoremap <M-l> :Lines<cr>
 
 "--------------------- sxhkd syntax ------------------------
 autocmd BufRead,BufNewFile ~/dotfiles/dotfiles/sxhkd/sxhkdrc set filetype=sxhkdrc
@@ -302,6 +302,7 @@ nnoremap <M-0> :Goyo 120<cr>
 let g:vimwiki_folding='expr'
 
 "--------------------- easymotion --------------------------
+let g:EasyMotion_smartcase = 1
 let g:EasyMotion_keys="asdghklqwertyuiopzxcvbnmfj"
 " move to char
 nmap ö <Plug>(easymotion-bd-f)
