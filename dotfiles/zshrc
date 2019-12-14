@@ -20,6 +20,9 @@ setopt hist_verify
 setopt inc_append_history
 setopt share_history
 
+# prompt
+PS1="%B%{$fg[yellow]%}[%~]%{$reset_color%}%b "
+
 # completion
 setopt autocd extendedglob
 unsetopt beep
@@ -27,7 +30,6 @@ bindkey -v
 zstyle :compinstall filename '/home/jbensmann/.zshrc'
 
 autoload -U colors && colors
-PS1="%B%{$fg[yellow]%}[%~]%{$reset_color%}%b "
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zmodload zsh/complist
