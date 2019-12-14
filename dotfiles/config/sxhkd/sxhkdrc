@@ -50,15 +50,15 @@ super + shift + s
     toggle_stalonetray
 
 # launch applications
-super + o ; {f,c,r,l,v,m,n,t,p} 
+super + o ; {f,c,r,l,v,t,m,n,p} 
     {firefox, \
     chromium, \
     $TERMINAL -e ranger, \
     $TERMINAL -e tmux new-session lf \; set-option status on, \
     $TERMINAL -e tmux new-session nvim -c ":colorscheme gruvbox", \
+    $TERMINAL -e tmux new-session -s GEN \; rename-window gen \; set status on, \
     thunderbird, \
     pcmanfm, \
-    open_tmux_session, \
     pianoteq}
 
 # dotfiles
