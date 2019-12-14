@@ -3,6 +3,10 @@
 # with fzf and types the command to copy it with scp
 hosts_file=~/.hosts
 
+# $1 is the directory on the other machine (optional)
+remote_dir="$1"
+[ -z "$remote_dir" ] && remote_dir='.'
+
 host=$(fzf < "$hosts_file" | cut -d "|" -f 2 | sed 's/ //g')
 [ "$host" != "" ] || exit 0
 
@@ -15,19 +19,16 @@ else
 fi
 [ "$user" != "" ] || exit 0
 
-printf 'Password: '; read -r pw
-printf "\n"
-
 direction=$(printf "to\nfrom" | fzf --header="Direction")
 [ "$direction" != "" ] || exit 0
 
 if [ "$direction" = "to" ]; then
-    src=$(find . | fzf --header='Choose src file/directory')
-    dest="${user}@${host}:$(sshpass -p "$pw" ssh "${user}@${host}" "find . -type d" \
+    src=$(find . | fzf -m --header='Choose src files/directories')
+    dest="${user}@${host}:$(ssh "${user}@${host}" "find $remote_dir -type d" \
             | fzf --header='Choose dest directory')"
 else
-    src="${user}@${host}:$(sshpass -p "$pw" ssh "${user}@${host}" "find ." \
-            | fzf --header='Choose src file/directory')"
+    src="${user}@${host}:$(ssh "${user}@${host}" "find $remote_dir" \
+            | fzf -m --header='Choose src files/directories')"
     dest=$(find . -type d | fzf --header='Choose dest directory')
 fi
 
@@ -35,4 +36,4 @@ fi
 printf "scp -r %s %s" "$src" "$dest" | xclip -i
 
 printf "Copying..."
-sshpass -p "$pw" scp -r "$src" "$dest"
+scp -r $src "$dest"
