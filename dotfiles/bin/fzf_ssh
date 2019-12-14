@@ -3,8 +3,13 @@
 # if first argument is given, it is used as the user
 hosts_file=~/.hosts
 
-host=$(fzf < $hosts_file | cut -d "|" -f 2 | sed 's/ //g')
+line=$(fzf < $hosts_file)
+
+host=$(echo "$line" | cut -d "|" -f 2 | sed 's/ //g')
 [ "$host" != "" ] || exit 0
+
+alias=$(echo "$line" | cut -d "|" -f 6 | sed 's/ //g')
+[ "$alias" = "" ] && alias="$host"
 
 if [ -n "$1" ]; then
     user="$1"
@@ -19,7 +24,10 @@ else
 fi
 [ "$user" != "" ] || exit 0
 
-# the command ends with \r because the \n is removed
-# by shell substitution if at the end
-cmd=$(printf 'ssh %s@%s\n\r' "$user" "$host")
-xdotool type "$cmd"
+# set tmux window name if there is only one pane
+if [ "$(tmux list-panes | wc -l)" = 1 ]; then
+    tmux rename-window "$alias"
+fi
+
+ssh "$user@$host"
+
