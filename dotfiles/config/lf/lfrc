@@ -24,6 +24,18 @@ map L %ls -ld $f
 # cd with fzf
 map gf $lf -remote "send $id select '$(fzf)'"
 
+# cd
+map gt cd ~/.tmp
+map gb cd ~/.bak
+map gr cd ~/.trash
+map gd cd ~/Downloads
+map gD cd ~/Dokumente 
+map gb cd ~/Bilder
+
+map gpc cd ~/c
+map gpj cd ~/java
+map gpp cd ~/python
+
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
 # use either file extensions and/or mime types here.
