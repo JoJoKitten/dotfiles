@@ -29,11 +29,13 @@ unsetopt beep
 bindkey -v
 zstyle :compinstall filename '/home/jbensmann/.zshrc'
 
+autoload -Uz compinit
 autoload -U colors && colors
 
+zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zmodload zsh/complist
-autoload -Uz compinit && compinit
+compinit
 
 # Include hidden files in autocomplete:
 _comp_options+=(globdots)
