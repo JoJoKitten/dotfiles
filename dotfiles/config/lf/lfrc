@@ -23,6 +23,7 @@ map L %ls -ld $f
 
 # cd with fzf
 map gf $lf -remote "send $id select '$(fzf)'"
+map <a-c> $lf -remote "send $id select '$(fzf)'"
 
 # cd
 map gt cd ~/.tmp
@@ -35,6 +36,12 @@ map gb cd ~/Bilder
 map gpc cd ~/c
 map gpj cd ~/java
 map gpp cd ~/python
+
+# toggle hidden files
+map <a-h> set hidden!
+
+map <a-d> half-down
+map <a-u> half-up
 
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to

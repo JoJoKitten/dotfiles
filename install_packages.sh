@@ -72,7 +72,8 @@ aur_packages="
 dropbox
 linopen
 lf-bin
-xmouseless
+tdrop-git
+xmouseless-git
 xnee"
 
 # install packages from the main repos

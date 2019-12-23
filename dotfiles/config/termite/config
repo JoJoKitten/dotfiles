@@ -1,9 +1,5 @@
 [options]
-{%@@ if profile == "laptop-i3" @@%}
-font = SourceCodePro 11
-{%@@ else @@%}
-font = SourceCodePro 11
-{%@@ endif @@%}
+font = SourceCodePro {{@@ term_font_size @@}}
 mouse_autohide = true
 scrollback_lines = 100000
 

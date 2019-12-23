@@ -22,7 +22,7 @@ local network_widget = require("mywidgets.network")
 
 modkey = "Mod4"
 
-terminal = "alacritty"
+terminal = "{{@@ term @@}}"
 terminal_tmux = terminal .. " -e tmux new-session "
 editor = os.getenv("EDITOR") or "nvim"
 dmenu_cmd = "dmenu_run -fn 'monospace:size=10' -nb '#202020' -nf '#b0b0b0' -sb '#508050' -sf '#e0e0e0'"

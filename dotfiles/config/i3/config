@@ -1,9 +1,19 @@
+#  _   _____ 
+# (_) |___ / 
+# | |   |_ \ 
+# | |  ___) |
+# |_| |____/ 
+#           
+
 # Set mod key to Super
 set $mod Mod4
 # another mod key to change between apps
 set $mod2 Mod2
 
-set $terminal termite
+set $terminal {{@@ term @@}}
+
+# Launch terminal
+bindsym $mod+Shift+Return exec $terminal
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -28,30 +38,10 @@ bindsym $mod+Shift+q kill
 bindsym --whole-window $mod+button2 kill
 
 # toggle tiling / floating
-bindsym $mod+Shift+o floating toggle
+bindsym $mod+Shift+space floating toggle
 bindsym --whole-window $mod+Shift+button3 floating toggle
 # change focus between tiling / floating windows
-bindsym $mod+o focus mode_toggle
-
-# start a terminal with tmux
-bindsym $mod+Return exec $terminal -e tmux
-# start a terminal
-bindsym $mod+Shift+Return exec $terminal
-# start a terminal with tmux and neovim
-bindsym $mod+Ctrl+Return exec $terminal -e "tmux -c nvim"
-
-# program launcher
-bindsym $mod+d exec dmenu_run
-# launch categorized menu
-bindsym $mod+z exec --no-startup-id morc_menu
-
-# launch clipmenu
-bindsym $mod+c exec clipmenu -i -fn Terminus:size=12 -l 20 -i -b
-# launch clipmenu and insert the text
-bindsym $mod+i exec clipmenu -i -fn Terminus:size=12 -l 20 -i -b && xdotool key Shift+Insert
-
-# choose host name with dmenu and insert it
-bindsym $mod+Shift+i exec dmenu_host
+bindsym $mod+Shift+o focus mode_toggle
 
 # change focus
 bindsym $mod+h focus left
@@ -89,7 +79,7 @@ bindsym $mod+a focus parent
 bindsym $mod+Shift+a focus child
 
 # workspace back and forth
-bindsym $mod+b workspace back_and_forth
+bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # move the currently focused window to the scratchpad
@@ -121,29 +111,17 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
-# move focused container to workspace
-bindsym $mod+Ctrl+1 move container to workspace $ws1
-bindsym $mod+Ctrl+2 move container to workspace $ws2
-bindsym $mod+Ctrl+3 move container to workspace $ws3
-bindsym $mod+Ctrl+4 move container to workspace $ws4
-bindsym $mod+Ctrl+5 move container to workspace $ws5
-bindsym $mod+Ctrl+6 move container to workspace $ws6
-bindsym $mod+Ctrl+7 move container to workspace $ws7
-bindsym $mod+Ctrl+8 move container to workspace $ws8
-bindsym $mod+Ctrl+9 move container to workspace $ws9
-bindsym $mod+Ctrl+0 move container to workspace $ws10
-
 # Move to workspace with focused container
-bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
+bindsym $mod+Shift+1 move container to workspace $ws1;
+bindsym $mod+Shift+2 move container to workspace $ws2;
+bindsym $mod+Shift+3 move container to workspace $ws3;
+bindsym $mod+Shift+4 move container to workspace $ws4;
+bindsym $mod+Shift+5 move container to workspace $ws5;
+bindsym $mod+Shift+6 move container to workspace $ws6;
+bindsym $mod+Shift+7 move container to workspace $ws7;
+bindsym $mod+Shift+8 move container to workspace $ws8;
+bindsym $mod+Shift+9 move container to workspace $ws9;
+bindsym $mod+Shift+0 move container to workspace $ws10;
 
 # kill all windows on a workspace
 bindsym $mod+Ctrl+Shift+1 [workspace=$ws1] kill
@@ -158,19 +136,11 @@ bindsym $mod+Ctrl+Shift+9 [workspace=$ws9] kill
 bindsym $mod+Ctrl+Shift+0 [workspace=$ws10] kill
 
 # navigate workspaces next / previous
-bindsym $mod+p workspace prev
 bindsym $mod+n workspace next
-bindsym $mod+Shift+p move container to workspace prev; workspace prev
-bindsym $mod+Shift+n move container to workspace next; workspace next
-
-# screenshot of whole screen / current window / selection
-bindsym Print exec --no-startup-id i3-scrot
-bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+bindsym $mod+Shift+n workspace prev
 
 # Open specific applications in floating mode
 for_window [class="GParted"] floating enable border normal
-for_window [class="Lightdm-settings"] floating enable
 for_window [class="Lxappearance"] floating enable border normal
 for_window [class="Pavucontrol"] floating enable
 for_window [class="(?i)System-config-printer.py"] floating enable border normal
@@ -189,96 +159,6 @@ bindsym $mod+Mod1+l move right 50px
 bindsym $mod+Mod1+k move up 50px
 bindsym $mod+Mod1+j move down 50px
 
-# change to an application
-bindsym $mod2+f [class="(?i)firefox"] focus
-bindsym $mod2+t [class="(?i)thunderbird"] focus
-bindsym $mod2+r [title="(?i)ranger"] focus
-bindsym $mod2+n [class="(?i)pcmanfm"] focus
-bindsym $mod2+p [title="(?i)pianoteq"] focus
-bindsym $mod2+a [title="(?i)amazon musik"] focus
-bindsym $mod2+c [class="(?i)chrom"] focus
-bindsym $mod2+w [class="(?i)remmina"] focus
-bindsym $mod2+x [class="(?i)termite"] focus
-bindsym $mod2+l [class="(?i)postman"] focus
-bindsym $mod2+b [class="(?i)brickv"] focus
-bindsym $mod2+z [class="(?i)filezilla"] focus
-bindsym $mod2+i [class="(?i)idea"] focus
-
-# Autostart applications
-exec_always "xrdb ~/.Xresources"
-exec_always "sleep 5 && setxkbmap lv && xmodmap ~/my_neo_de.xmodmap && xset -r 51"
-exec_always set_wallpaper
-exec_always compton -b
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nm-applet
-exec --no-startup-id bash -c "killall pulseaudio && sleep 1 && pulseaudio"
-exec --no-startup-id clipmenud
-exec_always --no-startup-id sleep 8 && xmouseless
-exec --no-startup-id redshift
-# exec conky -c ~/.config/conky/conkyrc
-# exec --no-startup-id blueman-applet
-# XKB indicator
-# exec_always --no-startup-id sbxkb
-exec --no-startup-id xautolock -time 30 -locker blurlock
-exec --no-startup-id "sleep 100 && dropbox start"
-# Execute some other tasks that depend on the machine
-exec ~/.i3/start_jobs.sh
-
-# Start a dropdown terminal
-exec --no-startup-id $terminal --name=dropdown -e tmux
-for_window [instance="dropdown"] floating enable;
-for_window [instance="dropdown"] move scratchpad; \
-    [instance="dropdown"] scratchpad show; move position 0px 30px; \
-    resize set 100ppt 40ppt; move scratchpad
-# show dropdown terminal
-bindsym $mod+t [instance="dropdown"] scratchpad show
-# start a new dropdown terminal
-bindsym $mod+Shift+t exec --no-startup-id $terminal --name=dropdown -e tmux
-
-
-# swap two containers
-bindsym $mod+Shift+s mark --add _swap
-bindsym $mod+s swap container with mark _swap
-
-
-# set vi mode in bash
-bindsym --release $mod+Shift+v exec --no-startup-id xdotool type --clearmodifiers "$(printf "set -o vi\n\r")"
-
-# simulate right mouse down to enable grabbing with touchpad
-bindsym $mod+Ctrl+r --release exec xdotool mousedown 3
-
-# Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
-
-bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5%
-bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5%
-bindsym Shift+XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle
-
-# Media player controls
-# bindsym XF86AudioPlay exec playerctl play-pause
-# bindsym XF86AudioPause exec playerctl pause
-# bindsym XF86AudioNext exec playerctl next
-# bindsym XF86AudioPrev exec playerctl previous
-
-# Instead of playerctl, control Amazon Music in Firefox
-bindsym XF86AudioPlay  exec xdotool search --name "Amazon.*Firefox" key space
-bindsym XF86AudioPause exec xdotool search --name "Amazon.*Firefox" key space
-bindsym XF86AudioNext  exec xdotool search --name "Amazon.*Firefox" key Right
-bindsym XF86AudioPrev  exec xdotool search --name "Amazon.*Firefox" key Left
-# Show currently played title
-bindsym Shift+XF86AudioPlay  exec xdotool search --name "Amazon.*Firefox" getwindowname | sed 's/\(.*\)bei Amazon.*/"\1"/' | xargs notify-send
-
-
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
-
-
-# bind apps to workspaces
-assign [class="(?i)virtualbox"] 9
-
 # window colors
 set $active-border       #a0b0b0
 set $inactive-border     #303030
@@ -296,29 +176,17 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 # start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-bindsym $mod+m exec polybar-msg cmd toggle
-
-# this mode is used externally by xmouseless (only to show that xmouseless is running)
-mode "xmouseless" {
-    bindsym Escape mode "default"
-}
 
 ##################################################
 ############### For i3-gaps ######################
 ##################################################
 
 # Set inner/outer gaps
-gaps inner 20
+gaps inner 15
 gaps outer 0
 
-# No gaps and borders when there only is one container
-{%@@ if profile == "laptop-i3" @@%}
 # smart_gaps on
 # smart_borders on
-{%@@ else @@%}
-# smart_gaps on
-# smart_borders on
-{%@@ endif @@%}
 
 # Change gaps on current workspace
 bindsym $mod+plus gaps inner current plus 10
@@ -332,108 +200,3 @@ bindsym $mod+Ctrl+minus gaps inner all minus 10
 bindsym $mod+Ctrl+Shift+plus gaps outer all plus 10
 bindsym $mod+Ctrl+Shift+minus gaps outer all minus 10
 
-
-##################################################
-############### general purpose menu #############
-##################################################
-
-bindsym $mod+space mode "$menu"
-
-################# root menu ######################
-set $menu (l)auncher | (d)otfiles | (c)nee | (k)eyborrd layout | (t)ools | (w)ork | (Shift+e)xit
-mode "$menu" {
-    bindsym l mode "$menu_launcher"
-    bindsym c mode "$menu_cnee"
-    bindsym d mode "$menu_dotfiles"
-    bindsym k mode "$menu_keyboard"
-    bindsym t mode "$menu_tools"
-    bindsym w mode "$menu_work"
-    bindsym Shift+e mode "$menu_exit"
-    bindsym q mode "default"
-    bindsym Escape mode "default"
-}
-
-############# application launcher ###############
-set $menu_launcher (f)irefox | (r)anger | (m)ail | pcma(n)fm \
-| (t)mux |(p)ianoteq | (a)mazon music
-mode "$menu_launcher" {
-    bindsym f exec firefox, mode "default"
-    bindsym r exec $terminal --name=ranger -e ranger, mode "default"
-    bindsym m exec thunderbird, mode "default"
-    bindsym n exec pcmanfm, mode "default"
-    bindsym t exec open_tmux_session , mode "default"
-    bindsym p mode "default", exec \
-      pactl set-sink-volume 1 85% \
-      && /opt/Pianoteq_6_STAGE/amd64/Pianoteq\ 6\ STAGE \
-      && pactl set-sink-volume 1 30%
-    bindsym a exec firefox --new-window https://music.amazon.de/my/albums, mode "default"
-    bindsym q mode "default"
-    bindsym Escape mode "default"
-}
-
-################### cnee #########################
-set $menu_cnee (r)ecord | (p)lay
-mode "$menu_cnee" {
-    bindsym r exec cnee_dmenu record, mode "default"
-    bindsym p exec cnee_dmenu play, mode "default"
-    bindsym q mode "default"
-    bindsym Escape mode "default"
-}
-
-################### dotfiles #####################
-set $menu_dotfiles (p)ull | (i)nstall | (c)ommit and push | (o)pen
-mode "$menu_dotfiles" {
-    bindsym p exec $terminal -e ~/dotfiles/pull.sh, mode "default"
-    bindsym i exec "~/dotfiles/dotdrop.sh install -f && i3-msg restart", mode "default"
-    bindsym c exec $terminal -e ~/dotfiles/push.sh, mode "default"
-    bindsym o exec $terminal -d "$HOME/dotfiles/", mode "default"
-    bindsym q mode "default"
-    bindsym Escape mode "default"
-}
-
-############# keyboard layout ####################
-set $menu_keyboard (d)e | (n)eo | (m)y neo
-mode "$menu_keyboard" {
-    bindsym d exec --no-startup-id "setxkbmap de && xset r 51", mode "default"
-    bindsym n exec --no-startup-id setxkbmap de neo, mode "default"
-    bindsym m exec --no-startup-id "setxkbmap lv && xmodmap ~/my_neo_de.xmodmap && xset -r 51", mode "default"
-    bindsym q mode "default"
-    bindsym Escape mode "default"
-}
-
-##################### tools ######################
-set $menu_tools (n)ethogs | fa (i)cons | (e)mojis | (d)e translate | (t) en translate | (k)ontakte | (u)pdate time
-mode "$menu_tools" {
-    bindsym n exec --no-startup-id $terminal -e 'bash -c "sudo nethogs"', mode "default"
-    bindsym i exec --no-startup-id dmenu_fa_icons, mode "default"
-    bindsym e exec --no-startup-id dmenu_emojis, mode "default"
-    bindsym d exec $terminal -e 'bash -c "echo  Translate to German: && read tmp && echo $tmp | trans en:de -v -theme random"', mode "default"
-    bindsym t exec $terminal -e 'bash -c "echo  Translate to English: && read tmp && echo $tmp | trans de:en -v -theme random"', mode "default"
-    bindsym k exec cat ~/vimwiki/kontakte.wiki | dmenu -i -l 20, mode "default"
-    bindsym u exec $terminal -e 'bash -c "update_time && read"', mode "default"
-    bindsym q mode "default"
-    bindsym Escape mode "default"
-}
-
-##################### work $######################
-set $menu_work (b)egin | (e)nd | (s)how
-mode "$menu_work" {
-    bindsym b exec --no-startup-id workt start, mode "default"
-    bindsym e exec --no-startup-id workt stop, mode "default"
-    bindsym s exec --no-startup-id workt show, mode "default"
-    bindsym q mode "default"
-    bindsym Escape mode "default"
-}
-
-############## exit, shutdown etc. ###############
-set $menu_exit (l)ock | log(o)ut | (s)hutdown | (h)ibernate | (r)eboot | sus(p)end
-mode "$menu_exit" {
-    bindsym l exec --no-startup-id blurlock, mode "default"
-    bindsym p exec --no-startup-id systemctl suspend, mode "default"
-    bindsym o exec --no-startup-id i3-msg exit, mode "default"
-    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym s exec --no-startup-id systemctl poweroff, mode "default"
-    bindsym q mode "default"
-    bindsym Escape mode "default"
-}

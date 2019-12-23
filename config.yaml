@@ -4,8 +4,9 @@ config:
   create: true
   dotpath: dotfiles
   keepdot: false
-  link_by_default: false
   longkey: false
+  link_on_import: nolink
+  minversion: 0.30.0
 dotfiles:
   d_awesome:
     dst: ~/.config/awesome
@@ -94,9 +95,6 @@ dotfiles:
   f_vimrc:
     dst: ~/.vimrc
     src: vimrc
-  f_wallpaper.jpg:
-    dst: ~/.config/wallpaper.jpg
-    src: config/wallpaper.jpg
   f_xinitrc:
     dst: ~/.xinitrc
     src: xinitrc
@@ -109,95 +107,67 @@ dotfiles:
   f_zshrc:
     dst: ~/.zshrc
     src: zshrc
+  f_bspwmrc:
+    src: config/bspwm/bspwmrc
+    dst: ~/.config/bspwm/bspwmrc
 profiles:
+  general:
+    variables:
+      term_font_size: test
+      test: 12
+    dotfiles:
+    - d_awesome
+    - d_bin
+    - d_oni2
+    - d_ranger
+    - d_vscode
+    - f_alacritty.yml
+    - f_bashrc
+    - f_coc-settings.json
+    - f_compton.conf
+    - f_dunstrc
+    - f_emoji
+    - f_fa_icons
+    - f_i3_config
+    - f_ideavimrc
+    - f_init.vim
+    - f_inputrc
+    - f_lfrc
+    - f_linopenrc
+    - f_morc_menu_v1.conf
+    - f_my_neo_de.xmodmap
+    - f_polybar_config
+    - f_polybar_launch.sh
+    - f_profile
+    - f_redshift.conf
+    - f_sxhkdrc
+    - f_taskrc
+    - f_termite_config
+    - f_tmux.conf
+    - f_vimrc
+    - f_xinitrc
+    - f_zathurarc
+    - f_zprofile
+    - f_zshrc
+    - f_bspwmrc
   desktop:
-    dotfiles:
-    - d_bin
-    - d_ranger
-    - f_lfrc
-    - f_bashrc
-    - f_dunstrc
-    - f_emoji
-    - f_fa_icons
-    - f_ideavimrc
-    - f_init.vim
-    - f_coc-settings.json
-    - f_vimrc
-    - f_morc_menu_v1.conf
-    - f_my_neo_de.xmodmap
-    - f_profile
-    - f_redshift.conf
-    - f_sxhkdrc
-    - f_taskrc
-    - f_tmux.conf
-    - f_inputrc
-    - f_zathurarc
-    - f_compton.conf
-    - d_awesome
-    - d_vscode
-    - f_alacritty.yml
-    - d_oni2
-    - f_zprofile
-    - f_zshrc
-    - f_linopenrc
-  jb-work:
-    dotfiles:
-    - d_bin
-    - d_ranger
-    - f_lfrc
-    - f_bashrc
-    - f_dunstrc
-    - f_emoji
-    - f_fa_icons
-    - f_ideavimrc
-    - f_init.vim
-    - f_coc-settings.json
-    - f_vimrc
-    - f_morc_menu_v1.conf
-    - f_my_neo_de.xmodmap
-    - f_profile
-    - f_redshift.conf
-    - f_sxhkdrc
-    - f_taskrc
-    - f_tmux.conf
-    - f_inputrc
-    - f_zathurarc
-    - f_compton.conf
-    - d_awesome
-    - d_vscode
-    - f_alacritty.yml
-    - d_oni2
-    - f_zprofile
-    - f_zshrc
-    - f_linopenrc
+    include:
+    - general
+    variables:
+      wm: awesome
+      term: alacritty
+      term_font_size: 11
   laptop:
-    dotfiles:
-    - d_bin
-    - d_ranger
-    - f_lfrc
-    - f_bashrc
-    - f_dunstrc
-    - f_emoji
-    - f_fa_icons
-    - f_ideavimrc
-    - f_init.vim
-    - f_coc-settings.json
-    - f_vimrc
-    - f_morc_menu_v1.conf
-    - f_my_neo_de.xmodmap
-    - f_profile
-    - f_redshift.conf
-    - f_sxhkdrc
-    - f_taskrc
-    - f_tmux.conf
-    - f_inputrc
-    - f_zathurarc
-    - d_bin
-    - f_compton.conf
-    - d_awesome
-    - d_vscode
-    - f_alacritty.yml
-    - d_oni2
-    - f_zprofile
-    - f_zshrc
-    - f_linopenrc
+    include:
+    - general
+    variables:
+      wm: bspwm
+      term: alacritty
+      term_font_size: 10
+  jb-work:
+    include:
+    - general
+    variables:
+      wm: awesome
+      term: alacritty
+      term_font_size: 11

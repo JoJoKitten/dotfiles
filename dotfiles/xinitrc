@@ -17,23 +17,28 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 # fix for java applications in dwm
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-# start some programs
+# set keyboard layout
 setxkbmap de
 sxhkd &
 sleep 5 && setxkbmap lv && xmodmap ~/my_neo_de.xmodmap && xset -r 51 &
+
+set_wallpaper &
+
+# start some programs
 clipmenud &
 dunst &
 nm-applet &
 sleep 20 && dropbox start &
 compton -b &
 redshift &
-set_wallpaper &
 # other machine dependent program
 ~/.start_jobs &
 
-# set status bar content
-dwm_status &
-
-while true; do
-    dwm > $HOME/.dwm.log 2>&1
-done
+# start the window manager
+{%@@ if wm == "i3" @@%}
+i3
+{%@@ elif wm == "awesome" @@%}
+awesome
+{%@@ elif wm == "bspwm" @@%}
+bspwm
+{%@@ endif @@%}

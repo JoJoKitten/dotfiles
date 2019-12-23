@@ -4,12 +4,22 @@
 # \__ \>  <| | | |   < (_| |
 # |___/_/\_\_| |_|_|\_\__,_|
 
-# This file includes several bindings that are independent of the window
-# manager. It does not include bindings to launch a terminal and for dmenu.
-                          
-# categorized menu
-#super + z
-#    morc_menu
+# This file includes wm independent bindings.
+
+# terminal with tmux
+super + shift + Return
+    {{@@ term @@}} -e tmux
+
+# terminal
+super + Return
+    {{@@ term @@}} -e tmux
+
+# program launcher
+bindsym $mod+p exec dmenu_run -fn 'monospace:size=10' -nb '#202020' -nf '#b0b0b0' -sb '#508050' -sf '#e0e0e0'
+
+# make sxhkd reload its configuration files:
+super + Escape
+    pkill -USR1 -x sxhkd
 
 # clipmenu
 super + {c,i}
@@ -44,10 +54,6 @@ XF86MonBrightness{Up,Down}
 # mouse control
 super + d
     xmouseless
-
-# system tray
-super + shift + s
-    toggle_stalonetray
 
 # launch applications
 super + o ; {f,c,r,l,v,t,m,n,p} 
@@ -88,3 +94,101 @@ super + space ; t; {n,i,e,d,t,k,u,h}
     cat ~/wiki/kontakte.md | dmenu -i -l 20, \
     $TERMINAL -e bash -c "update_time && read", \
     dmenu_host}
+
+
+{%@@ if wm == "bspwm" @@%}
+# restart bspwm
+super + shift + r
+    bspc wm -r
+
+# close and kill
+super + shift + {_,ctrl + }q
+    bspc node -{c,k}
+
+# alternate between the tiled and monocle layout
+super + m
+    bspc desktop -l next
+
+# set the window state
+super + {t,shift + t,shift + space,shift + f}
+    bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+    bspc node -{f,s} {west,south,north,east}
+
+# focus the next/previous node in the current desktop
+super + {n,p}
+    bspc node -f {next,prev}.local
+
+# focus the next/previous desktop in the current monitor
+super + {_,shift} + n
+    bspc desktop -f {next,prev}.local
+
+# focus the last node/desktop
+super + {a,Tab}
+    bspc {node,desktop} -f last
+
+# focus the older or newer node in the focus history
+super + ctrl + {o,i}
+    bspc wm -h off; \
+    bspc node {older,newer} -f; \
+    bspc wm -h on
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+    bspc {desktop -f,node -d} '^{1-9,10}'
+
+# preselect the direction
+super + ctrl + {v,y}
+    bspc node -p {south,east}
+
+# preselect the ratio
+super + ctrl + {1-9}
+    bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+    bspc node -p cancel
+
+# expand a window by moving one of its side outward
+super + ctrl + {h,j,k,l}
+    bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + ctrl + shift + {h,j,k,l}
+    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move a floating window
+super + {Left,Down,Up,Right}
+    bspc node -v {-20 0,0 20,0 -20,20 0}
+
+{%@@ endif @@%}
+
+
+{%@@ if wm == "i3" or wm == "bspwm" @@%}
+# scratchpad terminal
+super + s
+    tdrop -ma -w 80% -x 10% -h 80% -y 10% -n 1 -s DROP_T {{@@ term @@}}
+
+# scratchpad file manager
+super + f
+    tdrop -ma -w 80% -x 10% -h 80% -y 10% -n 2 -s DROP_F {{@@ term @@}}
+
+# toggle polybar
+super + b 
+    polybar-msg cmd toggle
+{%@@ endif @@%}
+
+{#@@ no system tray in awesome bar @@#}
+{%@@ if wm == "awesome" @@%}
+# system tray
+super + shift + s
+    toggle_stalonetray
+{%@@ endif @@%}
+                          
+{%@@ if wm == "i3" or wm == "bspwm" @@%}
+# categorized menu
+super + z
+    morc_menu
+{%@@ endif @@%}

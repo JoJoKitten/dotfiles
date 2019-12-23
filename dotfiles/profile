@@ -6,8 +6,9 @@
 
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
 [ -d "$HOME/scripts" ] && PATH="$HOME/scripts:$PATH"
+
 export EDITOR="nvim"
-export TERMINAL="alacritty"
+export TERMINAL="{{@@ term @@}}"
 export BROWSER="firefox"
 export READER="zathura"
 

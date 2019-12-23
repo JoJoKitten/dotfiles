@@ -44,13 +44,18 @@ underline-color = #fff
 ;   border-{left,top,right,bottom}-color
 border-bottom-size = 0
 
-font-0 = NotoSans-Regular:size=10;2
+font-0 = NotoSans-Regular:size=9;2
 font-1 = Font Awesome 5 Brands:pixelsize=10;2
 font-2 = Font Awesome 5 Free Solid:pixelsize=10;2
 font-3 = Font Awesome 5 Free:pixelsize=10;2
 
 ; Modules
+{%@@ if wm == "i3" @@%}
 modules-left = i3
+{%@@ elif wm == "bspwm" @@%}
+modules-left = bspwm
+{%@@ endif @@%}
+
 modules-center =
 modules-right = network cpu mem filesystem pulseaudio battery date time
 
@@ -69,7 +74,6 @@ tray-detached = false
 ; Tray icon max size
 tray-maxsize = 16
 
-tray-transparent = true
 tray-background = ${colors.tray_bg}
 
 ; Tray offset defined as pixel value (e.g. 35) or percentage (e.g. 50%)
@@ -97,6 +101,91 @@ double-click-left =
 double-click-middle =
 double-click-right =
 
+[module/bspwm]
+type = internal/bspwm
+
+; Only show workspaces defined on the same output as the bar
+; NOTE: The bspwm and XRandR monitor names must match, which they do by default.
+; But if you rename your bspwm monitors with bspc -n this option will no longer
+; behave correctly.
+; Default: true
+pin-workspaces = true
+
+; Output mode flags after focused state label
+inline-mode = true
+
+enable-click = true
+enable-scroll = true
+reverse-scroll = true
+
+; Use fuzzy (partial) matching on labels when assigning 
+; icons to workspaces
+fuzzy-match = true
+
+; Available tags:
+;   <label-monitor>
+;   <label-state> - gets replaced with <label-(focused|urgent|occupied|empty)>
+;   <label-mode> - gets replaced with <label-(monocle|tiled|fullscreen|floating|locked|sticky|private)>
+; Default: <label-state>
+format = <label-monitor> <label-state> <label-mode>
+
+; Available tokens:
+;   %name%
+; Default: %name%
+label-monitor = 
+
+; If any values for label-dimmed-N are defined, the workspace/mode
+; colors will get overridden with those values if the monitor is out of focus
+; To only override workspaces in a specific state, use:
+;   label-dimmed-focused
+;   label-dimmed-occupied
+;   label-dimmed-urgent
+;   label-dimmed-empty
+label-dimmed-foreground = #555
+label-dimmed-underline = #555
+label-dimmed-focused-background = #f00
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-focused = %name%
+label-focused-padding = 3
+label-focused-foreground = #ffffff
+label-focused-background = #3f3f3f
+# label-focused-underline = #3f3f3f
+
+label-occupied = %name%
+label-occupied-padding = 3
+label-occupied-underline = #555555
+
+label-urgent = %name%
+label-urgent-padding = 3
+label-urgent-foreground = #000000
+label-urgent-underline = #bd2c40
+
+label-empty = 
+
+; The following labels will be used to indicate the layout/mode
+; for the focused workspace. Requires <label-mode>
+label-monocle = 
+label-tiled = 
+label-fullscreen = 
+label-floating = 
+label-pseudotiled = 
+label-locked = 
+label-locked-foreground = #bd2c40
+label-sticky = 
+label-sticky-foreground = #fba922
+label-private = 
+label-private-foreground = #bd2c40
+label-marked = 
+
+; Separator in between workspaces
+label-separator = 
+label-separator-padding = 0
+label-separator-foreground = #ffb52a
 
 [module/i3]
 type = internal/i3
@@ -200,7 +289,7 @@ label-urgent-padding = 6
 
 [module/xwindow]
 type = internal/xwindow
-{%@@ if profile == "laptop-i3" @@%}
+{%@@ if profile == "laptop" @@%}
 label = %title:0:50:...%
 label-padding = 5
 {%@@ else @@%}
@@ -212,7 +301,7 @@ label-padding = 50
 [module/network]
 type = internal/network
 
-{%@@ if profile == "laptop-i3" @@%}
+{%@@ if profile == "laptop" @@%}
 interface = wlp2s0
 {%@@ else @@%}
 interface = wlp8s0
