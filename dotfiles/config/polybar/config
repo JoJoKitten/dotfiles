@@ -448,7 +448,7 @@ format =  <label>
 format-padding = 3
 ; format-background = ${colors.module_bg}
 
-exec = top -bn1 | awk '/^%CPU/{print $2"%"}'
+exec = top -bn1 | sed -n 's/^.CPU.*: *\([^ ]*\).*/\1/p' | awk '{ total += $1; count++ } END { printf "%2s%", int(total/count) }'
 
 tail = false
 interval = 2
