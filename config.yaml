@@ -154,7 +154,7 @@ profiles:
     include:
     - general
     variables:
-      wm: awesome
+      wm: bspwm
       term: alacritty
       term_font_size: 11
   laptop:

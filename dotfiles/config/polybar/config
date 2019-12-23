@@ -158,7 +158,6 @@ label-focused-background = #3f3f3f
 
 label-occupied = %name%
 label-occupied-padding = 3
-label-occupied-underline = #555555
 
 label-urgent = %name%
 label-urgent-padding = 3
@@ -449,7 +448,7 @@ format =  <label>
 format-padding = 3
 ; format-background = ${colors.module_bg}
 
-exec = top -1 -bn1 | awk '/^%CPU/{print $2"%"}'
+exec = top -bn1 | awk '/^%CPU/{print $2"%"}'
 
 tail = false
 interval = 2
