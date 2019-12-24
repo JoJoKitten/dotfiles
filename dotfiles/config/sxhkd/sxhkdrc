@@ -120,9 +120,13 @@ super + {_,shift + }{h,j,k,l}
   [[ "$LAYOUT" == "tiled" ]] && bspc node -{f,s} {west,south,north,east}.local; \
   [[ "$LAYOUT" == "monocle" ]] && bspc node -{f,s} {prev,next,prev,next}.local
 
-focus the next/previous desktop in the current monitor
+# focus the next/previous desktop in the current monitor
 super + {_,shift} + n
     bspc desktop -f {next,prev}.local
+
+# focus monitor / move workspace to monitor
+super + {_,shift} + {comma,period}
+    bspc {monitor -f,desktop -m} {west,east}.local
 
 # focus the last node/desktop
 super + {a,Tab}
