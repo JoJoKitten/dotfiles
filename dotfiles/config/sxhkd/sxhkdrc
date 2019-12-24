@@ -114,17 +114,15 @@ super + m
 super + {t,shift + t,shift + space,shift + f}
     bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
-# focus the node in the given direction
+# Change focused window and move window
 super + {_,shift + }{h,j,k,l}
-    bspc node -{f,s} {west,south,north,east}
+  LAYOUT=$(bspc query -T -d | jq -r .layout); \
+  [[ "$LAYOUT" == "tiled" ]] && bspc node -{f,s} {west,south,north,east}.local; \
+  [[ "$LAYOUT" == "monocle" ]] && bspc node -{f,s} {prev,next,prev,next}.local
 
-# focus the next/previous node in the current desktop
-super + {n,shift + n}
-    bspc node -f {next,prev}.local
-
-# focus the next/previous desktop in the current monitor
-# super + {_,shift} + n
-#     bspc desktop -f {next,prev}.local
+focus the next/previous desktop in the current monitor
+super + {_,shift} + n
+    bspc desktop -f {next,prev}.local
 
 # focus the last node/desktop
 super + {a,Tab}
