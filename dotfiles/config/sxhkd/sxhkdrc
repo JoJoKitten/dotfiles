@@ -126,7 +126,7 @@ super + {_,shift} + n
 
 # focus monitor / move workspace to monitor
 super + {_,shift} + {comma,period}
-    bspc {monitor -f,desktop -m} {west,east}.local
+    bspc {monitor -f,desktop -m} {west,east}
 
 # focus the last node/desktop
 super + {a,Tab}
@@ -143,16 +143,20 @@ super + {_,shift + }{1-9,0}
     bspc {desktop -f,node -d} '^{1-9,10}'
 
 # preselect the direction
-super + ctrl + {v,y}
+super + {v,y}
     bspc node -p {south,east}
+
+# cancel the preselection for the focused node
+super + x
+    bspc node -p cancel
+
+# send the node to the newest preselected node
+super + w
+    bspc node -n newest.!automatic.local
 
 # preselect the ratio
 super + ctrl + {1-9}
     bspc node -o 0.{1-9}
-
-# cancel the preselection for the focused node
-super + ctrl + space
-    bspc node -p cancel
 
 # expand a window by moving one of its side outward
 super + ctrl + {h,j,k,l}
