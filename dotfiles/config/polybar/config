@@ -376,7 +376,7 @@ interval = 10
 mount-0 = /
 
 ; Display fixed precision values
-fixed-values = true
+fixed-values = false
 
 ; Spacing between entries
 spacing = 4
