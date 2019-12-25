@@ -70,9 +70,9 @@ super + o ; {f,c,r,l,v,t,m,n,p}
 
 # dotfiles
 super + space; d ; {p,i,c,o}
-    {$TERMINAL -e ~/dotfiles/pull.sh, \
-    ~/dotfiles/dotdrop.sh install -f, \
-    $TERMINAL -e ~/dotfiles/push.sh, \
+    {$TERMINAL -e bash -c "git -C ~/dotfiles pull; sleep 1", \
+    $TERMINAL -e bash -c "~/dotfiles/dotdrop.sh install -f; sleep 1", \
+    $TERMINAL -e bash -c "cd ~/dotfiles && git commit -a && git push; sleep 1", \
     cd ~/dotfiles && $TERMINAL}
 
 # cnee
