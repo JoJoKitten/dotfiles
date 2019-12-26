@@ -49,10 +49,14 @@ font-1 = Font Awesome 5 Brands:pixelsize=10;2
 font-2 = Font Awesome 5 Free Solid:pixelsize=10;2
 font-3 = Font Awesome 5 Free:pixelsize=10;2
 
-; Modules
 {%@@ if wm == "i3" @@%}
+wm-restack = i3
+override-redirect = true
+
 modules-left = i3
 {%@@ elif wm == "bspwm" @@%}
+wm-restack = bspwm
+
 modules-left = bspwm
 {%@@ endif @@%}
 

@@ -110,11 +110,13 @@ super + shift + {_,ctrl + }q
 super + m
     bspc desktop -l next
 
-# set the window state
-super + {t,shift + t,shift + space,shift + f}
-    bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+# set the window state (toggles between titled and other state)
+super + {t, shift + t,shift + space,shift + f}
+    state={tiled,pseudo_tiled,floating,fullscreen}; \
+    bspc query -N "focused.$\{state\}" && state=tiled; \
+    bspc node -t "$state"
 
-# Change focused window and move window
+# change focused window and move window
 super + {_,shift + }{h,j,k,l}
   LAYOUT=$(bspc query -T -d | jq -r .layout); \
   [[ "$LAYOUT" == "tiled" ]] && bspc node -{f,s} {west,south,north,east}.local; \
