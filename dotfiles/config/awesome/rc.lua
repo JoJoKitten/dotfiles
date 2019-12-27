@@ -13,7 +13,6 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 -- show only used tags
 require("eminent")
-local scratch = require("scratch")
 local cpu_widget = require("mywidgets.cpu")
 local volume_widget = require("mywidgets.volume")
 local ram_widget = require("mywidgets.ram")
@@ -284,16 +283,6 @@ globalkeys = gears.table.join(
     awful.key({ modkey }, "z", function() menubar.show() end,
               {description = "show the menubar", group = "awesome"}),
 
-
-    -- Dropdown terminal_tmux
-    awful.key({ modkey }, "s", 
-            function() scratch.drop(terminal_tmux, "center", "center", 0.9, 0.9, false) end,
-            {description = "dropdown terminal_tmux", group = "awesome"}),
-
-    -- Dropdown file manager
-    awful.key({ modkey }, "f", 
-            function() scratch.drop(terminal_tmux .. "lf", "center", "center", 0.9, 0.9, false) end,
-            {description = "dropdown file manager", group = "awesome"})
 )
 
 clientkeys = gears.table.join(
