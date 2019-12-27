@@ -9,19 +9,48 @@
 data.location=~/.task
 
 # Color theme
-#include /usr/share/doc/task/rc/light-16.theme
-#include /usr/share/doc/task/rc/light-256.theme
-#include /usr/share/doc/task/rc/dark-16.theme
-#include /usr/share/doc/task/rc/dark-256.theme
-#include /usr/share/doc/task/rc/dark-red-256.theme
-#include /usr/share/doc/task/rc/dark-green-256.theme
-#include /usr/share/doc/task/rc/dark-blue-256.theme
-#include /usr/share/doc/task/rc/dark-violets-256.theme
-#include /usr/share/doc/task/rc/dark-yellow-green.theme
-#include /usr/share/doc/task/rc/dark-gray-256.theme
-#include /usr/share/doc/task/rc/dark-gray-blue-256.theme
 include /usr/share/doc/task/rc/solarized-dark-256.theme
-#include /usr/share/doc/task/rc/solarized-light-256.theme
-#include /usr/share/doc/task/rc/no-color.theme
 
 confirmation=off
+
+# attribute for ivy lee method
+uda.lee.label      = Lee
+uda.lee.type       = string
+uda.lee.values     = 1,2,3,4,5,6
+
+color.uda.lee=bold green
+
+
+# next report
+report.next.labels=ID,Active,Deps,P,Project,Tag,S,Due,Until,Description,Lee
+report.next.columns=id,start.age,depends,priority,project,tags,scheduled.countdown,due.relative,until.remaining,description,lee
+report.next.filter=status:pending limit:page
+report.next.sort=start-,urgency-
+
+# urgency settings
+urgency.uda.lee.1.coefficient =90
+urgency.uda.lee.2.coefficient=80
+urgency.uda.lee.3.coefficient=70
+urgency.uda.lee.4.coefficient=60
+urgency.uda.lee.5.coefficient=50
+urgency.uda.lee.6.coefficient=40
+
+urgency.due.coefficient=12.0
+
+urgency.uda.priority.H.coefficient=9.0
+urgency.uda.priority.M.coefficient=6.0
+urgency.uda.priority.L.coefficient=3.0
+
+urgency.age.coefficient=2.0
+urgency.age.max=365
+
+urgency.blocked.coefficient=-5.0
+urgency.blocking.coefficient=5.0
+
+urgency.annotations.coefficient=0.0
+urgency.scheduled.coefficient=0.0
+urgency.tags.coefficient=0.0
+urgency.waiting.coefficient=0.0
+urgency.user.tag.next.coefficient=0.0
+urgency.active.coefficient=0.0
+urgency.project.coefficient=0.0

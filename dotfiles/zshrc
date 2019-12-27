@@ -136,6 +136,22 @@ alias ta='task add'
 alias tm='task modify'
 alias td='task done'
 alias tdel='task delete'
+function tl {
+    # changes the lee attribute
+    # $1: id(s) of the task(s)
+    # $2: lee value (1-6)
+    task $1 modify lee:
+    [ -n "$(task lee:$2 ids)" ] && tl $(task lee:$2 ids) $(( $2 + 1 ))
+    task $1 modify lee:$2
+}
+function tlu {
+    # rearranges the lee attributes so that they count from 1 up
+    for t in 1 1 1 1 1; do
+        for i in 2 3 4 5 6; do
+            [ -n "$(task lee:$i ids)" ] && [ -z "$(task lee:$(($i-1)) ids)" ] && task $(task lee:$i ids) modify lee:$(($i-1))
+        done
+    done
+}
 
 alias cht='cht.sh'
 alias trde='trans de:en -v -theme random'
