@@ -20,6 +20,8 @@ uda.lee.values     = 1,2,3,4,5,6
 
 color.uda.lee=bold green
 
+# week starts on monday
+weekstart=monday
 
 # next report
 report.next.labels=ID,Active,Deps,P,Project,Tag,S,Due,Until,Description,Lee
