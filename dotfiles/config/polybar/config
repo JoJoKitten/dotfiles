@@ -12,11 +12,7 @@ tray_bg = #063020
 ; Use the following command to list available outputs:
 ; $ xrandr -q | grep " connected" | cut -d ' ' -f1
 
-{%@@ if profile == "jb-work" @@%}
-monitor = HDMI3
-{%@@ else @@%}
-monitor =
-{%@@ endif @@%}
+monitor = ${env:MONITOR:}
 monitor-fallback =
 
 bottom = false
