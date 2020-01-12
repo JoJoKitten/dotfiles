@@ -171,3 +171,5 @@ profiles:
       wm: awesome
       term: alacritty
       term_font_size: 11
+      monitor1: HDMI3
+      monitor2: VGA1
