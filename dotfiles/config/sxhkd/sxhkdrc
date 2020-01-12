@@ -56,6 +56,14 @@ XF86MonBrightness{Up,Down}
 super + d
     xmouseless
 
+# scratchpad terminal
+super + s
+    tdrop -ma -w 80% -x 10% -h 80% -y 10% -n 1 -s DROP_T {{@@ term @@}}
+
+# scratchpad file manager
+super + f
+    tdrop -ma -w 80% -x 10% -h 80% -y 10% -n 2 -s DROP_F {{@@ term @@}}
+
 # launch applications
 super + o ; {f,c,r,l,v,t,m,n,p} 
     {firefox, \
@@ -126,9 +134,9 @@ super + {_,shift + }{h,j,k,l}
 super + {_,shift} + n
     bspc desktop -f {next,prev}.local
 
-# focus monitor / move workspace to monitor
+# focus monitor / move to monitor
 super + {_,shift} + {comma,period}
-    bspc {monitor -f,desktop -m} {west,east}
+    bspc {monitor -f,node -m} {west,east}
 
 # focus the last node/desktop
 super + {a,Tab}
@@ -174,16 +182,7 @@ super + {Left,Down,Up,Right}
 
 {%@@ endif @@%}
 
-
 {%@@ if wm == "i3" or wm == "bspwm" @@%}
-# scratchpad terminal
-super + s
-    tdrop -ma -w 80% -x 10% -h 80% -y 10% -n 1 -s DROP_T {{@@ term @@}}
-
-# scratchpad file manager
-super + f
-    tdrop -ma -w 80% -x 10% -h 80% -y 10% -n 2 -s DROP_F {{@@ term @@}}
-
 # toggle polybar
 super + b 
     polybar-msg cmd toggle
