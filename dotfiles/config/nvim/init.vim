@@ -246,6 +246,10 @@ noremap <M-d> <C-d>
 nnoremap <M-o> <C-o>
 nnoremap <M-i> <C-i>
 
+" horizontal scrolling
+nnoremap <C-h> zH
+nnoremap <C-l> zL
+
 " folds
 nnoremap <tab> za
 nnoremap <M-tab> zO
