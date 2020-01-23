@@ -47,13 +47,20 @@ play() {
     msg='Enter the speed in percentage (lower if faster).'
     speed=$(printf "100\n75\n50\n30\n20\n10" | dmenu -l 20 -p "$msg")
 
+    # get the repititions via dmenu
+    msg='Repititions:'
+    repititions=$(printf "1\n2\n3\n5\n10\n20" | dmenu -l 20 -p "$msg")
+
     # wait some time before starting replay
     sleep "$start_delay"
-    notify-send "Starting replay"
-    cnee --replay -f "$folder/$name" \
-         -v -e /tmp/xnee.log -ns \
-         --stop-key "$stop_key" \
-         --speed-percent "$speed"
+
+    for i in $(seq $repititions); do
+        notify-send "Starting replay $i"
+        cnee --replay -f "$folder/$name" \
+             -v -e /tmp/xnee.log -ns \
+             --stop-key "$stop_key" \
+             --speed-percent "$speed"
+     done
 
     notify-send "Replay stoped"
 }
