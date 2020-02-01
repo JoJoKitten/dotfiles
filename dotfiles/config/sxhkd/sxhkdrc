@@ -8,7 +8,7 @@
 
 # terminal with tmux
 super + shift + Return
-    {{@@ term @@}} -e tmux
+    {{@@ term @@}}
 
 # terminal
 super + Return
