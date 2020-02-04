@@ -12,6 +12,7 @@ compton
 cronie
 cups
 dunst
+fd
 feh
 figlet
 firefox

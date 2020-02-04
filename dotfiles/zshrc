@@ -47,7 +47,7 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
-export KEYTIMEOUT=1
+KEYTIMEOUT=1
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
@@ -81,9 +81,10 @@ source /usr/share/fzf/key-bindings.zsh
 
 # find with fzf and open in editor
 alias e='fzf --preview="head -$LINES {}" | xargs -r nvim'
-alias eg='locate "/*" | fzf --preview="head -$LINES {}" | xargs -r sudo nvim'
-alias vg='locate "/*" | fzf --preview="head -$LINES {}" | xargs -r nvim'
 
+FZF_DEFAULT_COMMAND="fd . $HOME"
+FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+FZF_ALT_C_COMMAND="fd -t d . $HOME"
 
 # M-i to insert word from current tmux pane
 _tmux_copy() { tmux_copy }
