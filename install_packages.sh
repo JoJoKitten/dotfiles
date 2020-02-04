@@ -5,6 +5,7 @@ packages="
 alacritty
 bash-completion
 breath-dark-icon-theme
+broot
 clipmenu
 cmake
 compton
