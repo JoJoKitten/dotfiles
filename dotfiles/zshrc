@@ -118,11 +118,6 @@ alias spy='sudo pacman -Sy'
 alias sps='sudo pacman -S'
 alias spr='sudo pacman -Rns'
 
-alias fp='sudo pacman -S $(pacman -Ss | paste - - | fzf | awk '\''{print $1}'\'')'
-function ft {
-    trizen -S $(trizen -Ss $1 | paste - - | fzf | awk '{print $1}')
-}
-
 alias g='git'
 alias gs='git status'
 alias ga='git add'
@@ -160,5 +155,5 @@ alias tred='trans en:de -v -theme random'
 # syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
-# commands starting with rm in red
-ZSH_HIGHLIGHT_PATTERNS=('rm *' 'fg=white,bold,bg=red')
+# commands starting with 'rm -' in red
+ZSH_HIGHLIGHT_PATTERNS=('rm -*' 'fg=white,bold,bg=red')
