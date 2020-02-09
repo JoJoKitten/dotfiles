@@ -150,7 +150,7 @@ let g:pymode_run=1
 let g:pymode_run_bind='<F5>'
 
 autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
-autocmd FileType python match Excess /\%81v.*/
+autocmd FileType python match Excess /\%121v.*/
 autocmd FileType python set textwidth=120
 autocmd FileType python set foldmethod=indent
 
