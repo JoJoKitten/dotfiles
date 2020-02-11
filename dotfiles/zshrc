@@ -157,4 +157,4 @@ alias tred='trans en:de -v -theme random'
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 # commands starting with 'rm -' in red
-ZSH_HIGHLIGHT_PATTERNS=('rm -*' 'fg=white,bold,bg=red')
+ZSH_HIGHLIGHT_PATTERNS=('rm -r*' 'fg=white,bold,bg=red')
