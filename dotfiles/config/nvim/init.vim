@@ -17,12 +17,10 @@ Plug 'junegunn/vim-easy-align'
 Plug 'mildred/vim-bufmru'
 Plug 'scrooloose/nerdtree'
 Plug 'Yggdroot/indentLine'
-Plug 'vimwiki/vimwiki'
 Plug 'junegunn/goyo.vim'
 Plug 'neoclide/coc.nvim'
 
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-
+Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
 Plug 'baskerville/vim-sxhkdrc'
 
