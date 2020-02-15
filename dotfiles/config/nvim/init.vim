@@ -154,9 +154,6 @@ autocmd FileType python match Excess /\%121v.*/
 autocmd FileType python set textwidth=120
 autocmd FileType python set foldmethod=indent
 
-" goto method
-autocmd FileType python nmap <M-m> :Lines<cr>def<space>
-
 " some simple snipptes
 autocmd FileType python inoremap öw while<space>:<left>
 autocmd FileType python inoremap öi if<space>:<left>
@@ -187,10 +184,6 @@ inoremap kj <esc>
 nnoremap Y y$
 nnoremap <leader>l :nohl<cr><C-l>
 nnoremap <leader>ho <C-]>
-
-inoremap xn <C-x><C-n>
-inoremap xp <C-x><C-p>
-inoremap xl <C-x><C-l>
 
 " . on all selected lines
 vnoremap . :normal .<cr>
@@ -246,6 +239,9 @@ noremap <M-d> <C-d>
 nnoremap <M-o> <C-o>
 nnoremap <M-i> <C-i>
 
+" tags
+map <C-b> <C-]>
+
 " horizontal scrolling
 nnoremap <C-h> zH
 nnoremap <C-l> zL
@@ -276,6 +272,7 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
+
 "--------------------- fzf ---------------------------------
 set rtp+=~/.fzf
 nnoremap <M-e> :Buffers<cr>
@@ -291,6 +288,8 @@ nnoremap <leader>hk :Maps<cr>
 nnoremap <leader>hc :Commands<cr>
 nnoremap <leader>zc :Colors<cr>
 nnoremap <M-l> :Lines<cr>
+nnoremap <M-m> :Tags<cr>
+
 
 "--------------------- sxhkd syntax ------------------------
 autocmd BufRead,BufNewFile ~/dotfiles/dotfiles/sxhkd/sxhkdrc set filetype=sxhkdrc
