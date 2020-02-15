@@ -95,10 +95,6 @@ set ignorecase
 set smartcase
 set hlsearch
 
-" alternative bindings for search
-nnoremap + /
-nnoremap - ?
-
 " allows incsearch highlighting for range commands
 cnoremap <M-d> <CR>:t''<CR>
 cnoremap <M-m> <CR>:m''<CR>
@@ -157,15 +153,6 @@ autocmd FileType python inoremap öw while<space>:<left>
 autocmd FileType python inoremap öi if<space>:<left>
 autocmd FileType python inoremap öd def<space>(self):<esc>F(i
 autocmd FileType python inoremap öp <esc>0f)i,<space>
-autocmd FileType python inoremap ön None
-autocmd FileType python inoremap öe <space>==<space>
-autocmd FileType python inoremap öx <space>!=<space>
-autocmd FileType python inoremap öh <space><<space>
-autocmd FileType python inoremap öl <space>><space>
-autocmd FileType python inoremap öH <space><=<space>
-autocmd FileType python inoremap öL <space>>=<space>
-autocmd FileType python inoremap öv <space>is<space>
-autocmd FileType python inoremap öc <space>is not<space>
 autocmd FileType python inoremap ör return<space>
 autocmd FileType python inoremap ös self.
 autocmd FileType python inoremap öt True
@@ -181,7 +168,6 @@ inoremap jk <esc>
 inoremap kj <esc>
 nnoremap Y y$
 nnoremap <leader>l :nohl<cr><C-l>
-nnoremap <leader>ho <C-]>
 
 " . on all selected lines
 vnoremap . :normal .<cr>
@@ -203,11 +189,6 @@ nnoremap <leader>cdw :lcd %:p:h<cr>
 
 " execute current file
 nnoremap <F5> :! "%:p"<cr>
-
-" movement in insert mode
-inoremap jj <C-o>o
-inoremap jh <C-o>o<backspace>
-inoremap hh <backspace>
 
 " Files
 nnoremap s :w<cr>
@@ -237,12 +218,16 @@ noremap <M-d> <C-d>
 nnoremap <M-o> <C-o>
 nnoremap <M-i> <C-i>
 
+" goto next/previous change
+nnoremap <C-h> g;
+nnoremap <C-l> g,
+
 " tags
 map <C-b> <C-]>
 
 " horizontal scrolling
-nnoremap <C-h> zH
-nnoremap <C-l> zL
+nnoremap zh zH
+nnoremap zl zL
 
 " folds
 nnoremap <tab> za
