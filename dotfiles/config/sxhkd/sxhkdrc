@@ -127,8 +127,11 @@ super + {t, shift + t,shift + space,shift + f}
 # change focused window and move window
 super + {_,shift + }{h,j,k,l}
   LAYOUT=$(bspc query -T -d | jq -r .layout); \
-  [[ "$LAYOUT" == "tiled" ]] && bspc node -{f,s} {west,south,north,east}.local; \
-  [[ "$LAYOUT" == "monocle" ]] && bspc node -{f,s} {prev,next,prev,next}.local
+  move={f,s}; \
+  dir={west,south,north,east}; \
+  [ "$LAYOUT" = "monocle" ] && [ "$dir" = "north" ] && dir=prev; \
+  [ "$LAYOUT" = "monocle" ] && [ "$dir" = "south" ] && dir=next; \
+  bspc node -$move $dir.local;
 
 # focus the next/previous desktop in the current monitor
 super + {_,shift} + n
