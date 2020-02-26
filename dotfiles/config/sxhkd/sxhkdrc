@@ -121,7 +121,7 @@ super + m
 # set the window state (toggles between titled and other state)
 super + {t, shift + t,shift + space,shift + f}
     state={tiled,pseudo_tiled,floating,fullscreen}; \
-    bspc query -N "focused.$\{state\}" && state=tiled; \
+    bspc query -N "focused.$\{state\}" > /dev/null && state=tiled; \
     bspc node -t "$state"
 
 # change focused window and move window
