@@ -29,7 +29,7 @@ clipmenud &
 dunst &
 nm-applet &
 sleep 10 && dropbox start &
-compton -b &
+sleep 10 && compton -b &
 redshift &
 # other machine dependent program
 ~/.start_jobs &
