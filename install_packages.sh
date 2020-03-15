@@ -20,7 +20,6 @@ fzf
 git
 gnuplot
 gpick
-i3-gaps
 jq
 lxappearance
 menda-themes-dark
