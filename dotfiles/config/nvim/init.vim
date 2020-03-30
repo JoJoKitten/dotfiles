@@ -17,6 +17,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'mildred/vim-bufmru'
 Plug 'scrooloose/nerdtree'
 Plug 'Yggdroot/indentLine'
+Plug 'ap/vim-css-color'
 Plug 'junegunn/goyo.vim'
 Plug 'neoclide/coc.nvim'
 
