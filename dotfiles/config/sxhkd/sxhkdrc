@@ -55,6 +55,8 @@ XF86MonBrightness{Up,Down}
 # mouse control
 super + d
     xmouseless
+alt + space
+    xmouseless
 
 # scratchpad terminal
 super + s
