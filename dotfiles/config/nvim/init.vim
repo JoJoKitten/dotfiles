@@ -25,7 +25,6 @@ Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
 Plug 'baskerville/vim-sxhkdrc'
 
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
 Plug 'mhartington/oceanic-next'
 call plug#end()
@@ -72,10 +71,10 @@ set background=dark
 colorscheme slate
 hi StatusLine ctermbg=NONE cterm=NONE
 
-map <M-1> :set notermguicolors<cr>:colorscheme slate<cr>:hi StatusLine ctermbg=NONE cterm=NONE<cr>
-map <M-2> :set termguicolors<cr>:colorscheme OceanicNext<cr>
-map <M-3> :set termguicolors<cr>:colorscheme PaperColor<cr>
-map <M-4> :set termguicolors<cr>:colorscheme gruvbox<cr>
+map <M-1> :set background=dark<cr>:set notermguicolors<cr>:colorscheme slate<cr>:hi StatusLine ctermbg=NONE cterm=NONE<cr>
+map <M-2> :set background=dark<cr>:set termguicolors<cr>:colorscheme OceanicNext<cr>
+map <M-3> :set background=dark<cr>:set termguicolors<cr>:colorscheme gruvbox<cr>
+map <M-4> :set background=light<cr>:set termguicolors<cr>:colorscheme gruvbox<cr>
 
 " unsaved changes: ask instead of fail
 set confirm
