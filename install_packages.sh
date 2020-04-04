@@ -32,6 +32,7 @@ openssh
 openvpn
 pcmanfm
 pulseaudio
+pwgen
 python
 python-pip
 ranger

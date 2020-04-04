@@ -110,6 +110,9 @@ dotfiles:
   f_bspwmrc:
     src: config/bspwm/bspwmrc
     dst: ~/.config/bspwm/bspwmrc
+  f_dmenu-pwgen:
+    src: bin/dmenu-pwgen
+    dst: ~/bin/dmenu-pwgen
 profiles:
   general:
     variables:
@@ -157,6 +160,8 @@ profiles:
       wm: bspwm
       term: alacritty
       term_font_size: 11
+    dotfiles:
+    - f_dmenu-pwgen
   laptop:
     include:
     - general

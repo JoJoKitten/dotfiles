@@ -1,0 +1,23 @@
+#!/bin/sh
+# generates a password and copies it to clipboard
+options='1 letters + numbers + symbols
+2 letters + numbers
+3 letters
+4 lowercase letters + numbers
+5 lowercase letters'
+
+chosen=$(echo "$options" | dmenu -i -l 10 -p "Choose the symbols" | awk '{print $1}')
+length=$(echo "15" | dmenu -i -l 10 -p "Choose the length")
+
+case $chosen in
+    1) pw=$(pwgen -sB -N1 --symbols                     "$length");;
+    2) pw=$(pwgen -sB -N1                               "$length");;
+    3) pw=$(pwgen -sB -N1 --no-numerals                 "$length");;
+    4) pw=$(pwgen -sB -N1 --no-capitalize               "$length");;
+    5) pw=$(pwgen -sB -N1 --no-capitalize --no-numerals "$length");;
+esac
+
+echo "PW: $pw"
+
+printf "%s" "$pw" | xclip -selection clip -i
+
