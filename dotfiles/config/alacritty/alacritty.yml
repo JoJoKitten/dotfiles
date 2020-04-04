@@ -493,6 +493,9 @@ key_bindings:
   - { key: P,        mods: Control|Shift, action: IncreaseFontSize }
   - { key: M,        mods: Control|Shift, action: DecreaseFontSize }
 
+  # my bindings
+  - { key: O,        mods: Control|Shift, command: {program: "bash", args: ["-c", "sed -i '/^colors:/{/dark/{s/dark/light/;n}; s/light/dark/}' ~/.config/alacritty/alacritty.yml"]} }
+
   # (macOS only)
   #- { key: Key0,   mods: Command,         action: ResetFontSize    }
   #- { key: Equals, mods: Command,         action: IncreaseFontSize }
