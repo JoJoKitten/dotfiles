@@ -35,7 +35,6 @@ pulseaudio
 pwgen
 python
 python-pip
-ranger
 redshift
 scrot
 shellcheck

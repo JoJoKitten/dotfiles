@@ -17,9 +17,6 @@ dotfiles:
   d_oni2:
     dst: ~/.config/oni2
     src: config/oni2
-  d_ranger:
-    dst: ~/.config/ranger
-    src: config/ranger
   d_vscode:
     dst: ~/.config/Code - OSS/User
     src: config/vscode/User
@@ -110,9 +107,6 @@ dotfiles:
   f_bspwmrc:
     src: config/bspwm/bspwmrc
     dst: ~/.config/bspwm/bspwmrc
-  f_dmenu-pwgen:
-    src: bin/dmenu-pwgen
-    dst: ~/bin/dmenu-pwgen
 profiles:
   general:
     variables:
@@ -122,7 +116,6 @@ profiles:
     - d_awesome
     - d_bin
     - d_oni2
-    - d_ranger
     - d_vscode
     - f_alacritty.yml
     - f_bashrc
@@ -160,8 +153,6 @@ profiles:
       wm: bspwm
       term: alacritty
       term_font_size: 11
-    dotfiles:
-    - f_dmenu-pwgen
   laptop:
     include:
     - general
