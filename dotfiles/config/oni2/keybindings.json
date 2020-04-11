@@ -1,12 +1,11 @@
 [
-  { "key": "<C-N>", "command": "workbench.action.quickOpen", "when": "editorTextFocus" },
-  { "key": "<C-P>", "command": "workbench.action.showCommands", "when": "editorTextFocus" },
-  { "key": "<C-V>", "command": "editor.action.clipboardPasteAction", "when": "editorTextFocus" },
+  { "key": "<A-E>", "command": "workbench.action.quickOpen", "when": "editorTextFocus" },
+  { "key": "<A-A>", "command": "workbench.action.showCommands", "when": "editorTextFocus" },
+  { "key": "<A-P>", "command": "editor.action.clipboardPasteAction", "when": "editorTextFocus" },
   
-  
-  { "key": "<C-P>", "command": "list.focusUp", "when": "menuFocus || textInputFocus" },
-  { "key": "<C-B>", "command": "list.focusDown", "when": "menuFocus || textInputFocus" },
-  { "key": "<C-W>", "command": "explorer.togglee", "when": "editorTextFocus" },
-  { "key": "<C-F>", "command": "workbench.action.quickOpenNavigateNextInEditorPicker", "when": "editorTextFocus" },
-  { "key": "<C-S-F>", "command": "workbench.action.quickOpenNavigatePreviousInEditorPicker", "when": "editorTextFocus" }
+  { "key": "jk", "command": "vim.esc", "when": "insertMode" },
+  { "key": "kj", "command": "vim.esc", "when": "insertMode" },
+
+  { "key": "<A-W>", "command": "workbench.actions.view.problems" },
+
 ]
