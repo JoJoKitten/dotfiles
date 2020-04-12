@@ -15,10 +15,19 @@
   
   { "key": "<A-P>", "command": "editor.action.clipboardPasteAction", "when": "insertMode" },
 
-  { "key": "<A-W>", "command": "workbench.actions.view.problems" },
+  { "key": "<A-S-W>", "command": "workbench.actions.view.problems" },
 
   { "key": "<A-1>", "command": "explorer.toggle" , "when": "editorTextFocus"},
   { "key": "<A-O>", "command": "sneak.start"},
+
+  { "key": " sv", "command": "view.splitVertical"},
+  { "key": " sh", "command": "view.splitHorizontal"},
+  { "key": "<A-W><A-E>", "command": "view.splitVertical"},
+  { "key": "<A-W><A-R>", "command": "view.splitHorizontal"},
+  { "key": "<A-W><A-H>", "command": "window.moveLeft"},
+  { "key": "<A-W><A-J>", "command": "window.moveDown"},
+  { "key": "<A-W><A-K>", "command": "window.moveUp"},
+  { "key": "<A-W><A-L>", "command": "window.moveRight"},
 
   { "key": "<C-N>", "command": "terminal.normalMode", "when": " terminalFocus &&  insertMode"}
 ]
