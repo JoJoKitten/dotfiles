@@ -1,11 +1,24 @@
 [
-  { "key": "<A-E>", "command": "workbench.action.quickOpen", "when": "editorTextFocus" },
   { "key": "<A-A>", "command": "workbench.action.showCommands", "when": "editorTextFocus" },
-  { "key": "<A-P>", "command": "editor.action.clipboardPasteAction", "when": "editorTextFocus" },
+  { "key": "<A-J>", "command": "list.focusDown" , "when": "listFocus || textInputFocus"},
+  { "key": "<A-K>", "command": "list.focusUp" , "when": "listFocus || textInputFocus"},
+  
+  { "key": "<A-E>", "command": "workbench.action.quickOpen", "when": "editorTextFocus" },
+  { "key": "<A-F>", "command": "workbench.action.openNextRecentlyUsedEditorInGroup" , "when": "editorTextFocus"},
+  { "key": "<A-F>", "command": "workbench.action.quickOpenNavigateNextInEditorPicker" , "when": "inEditorsPicker"},
+  { "key": "<A-S-F>", "command": "workbench.action.quickOpenNavigatePreviousInEditorPicker" , "when": "inEditorsPicker"},
   
   { "key": "jk", "command": "vim.esc", "when": "insertMode" },
   { "key": "kj", "command": "vim.esc", "when": "insertMode" },
+  { "key": "s", "command": "workbench.action.files.save" , "when": "editorTextFocus && normalMode"},
+  { "key": "<A-Q>", "command": "view.closeEditor"},
+  
+  { "key": "<A-P>", "command": "editor.action.clipboardPasteAction", "when": "insertMode" },
 
   { "key": "<A-W>", "command": "workbench.actions.view.problems" },
 
+  { "key": "<A-1>", "command": "explorer.toggle" , "when": "editorTextFocus"},
+  { "key": "<A-O>", "command": "sneak.start"},
+
+  { "key": "<C-N>", "command": "terminal.normalMode", "when": " terminalFocus &&  insertMode"}
 ]
