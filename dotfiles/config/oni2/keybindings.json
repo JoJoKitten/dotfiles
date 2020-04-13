@@ -20,8 +20,6 @@
   { "key": "<A-1>", "command": "explorer.toggle" , "when": "editorTextFocus"},
   { "key": "<A-O>", "command": "sneak.start"},
 
-  { "key": " sv", "command": "view.splitVertical"},
-  { "key": " sh", "command": "view.splitHorizontal"},
   { "key": "<A-W><A-E>", "command": "view.splitVertical"},
   { "key": "<A-W><A-R>", "command": "view.splitHorizontal"},
   { "key": "<A-W><A-H>", "command": "window.moveLeft"},
