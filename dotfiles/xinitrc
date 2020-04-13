@@ -17,9 +17,11 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 # fix for java applications in dwm
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-# set keyboard layout
+# start sxhkd before setting my keyboard layout
 setxkbmap de
 sxhkd &
+
+# set keyboard layout
 sleep 5 && setxkbmap lv && xmodmap ~/my_neo_de.xmodmap && xset -r 51 &
 
 # set key repitition rate and delay
@@ -31,8 +33,9 @@ set_wallpaper &
 clipmenud &
 dunst &
 nm-applet &
-sleep 10 && compton -b &
+compton -b &
 redshift &
+
 # other machine dependent program
 ~/.start_jobs &
 

@@ -1,5 +1,5 @@
 #!/bin/sh
-if [ $(ps -ef | grep -c " stalonetray") -gt 1 ]; then
+if [ pgrep stalonetray ]; then
     killall stalonetray
 else
     stalonetray > /dev/null 2>&1 &

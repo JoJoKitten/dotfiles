@@ -28,12 +28,6 @@ nmap s :w<CR>
 imap jk <Esc>
 imap kj <Esc>
 map Y y$
-inoremap jj <esc>o
-inoremap hh <backspace>
-
-" alternative bindings for search
-nnoremap + /
-nnoremap - ?
 
 " allows incsearch highlighting for range commands
 nnoremap äd :t''<CR>
@@ -45,7 +39,6 @@ vnoremap . :normal .<cr>
 vnoremap @ :normal @t<cr>
 
 nnoremap <leader>l :nohl<cr>
-nnoremap <M-l> :nohl<cr>
 
 " files
 nnoremap <leader>fs :w<cr>
@@ -54,19 +47,3 @@ nnoremap <leader>fq :wq<cr>
 " split
 nnoremap <leader>sv :vs<cr>
 nnoremap <leader>sh :sp<cr>
-
-" java
-inoremap ör private<space>
-inoremap öv void<space>
-inoremap öi int<space>
-inoremap öd double<space>
-inoremap ös String<space>
-inoremap öl long<space>
-inoremap ön null
-inoremap är return<space>
-
-
-inoremap ötr private static<space>
-inoremap ötu public static<space>
-inoremap öfr private static final<space>
-inoremap öfu public static final<space>

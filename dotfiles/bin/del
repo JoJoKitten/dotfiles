@@ -1,5 +1,7 @@
 #!/bin/bash
-# moves the arguments to /tmp/trash
+# Moves the arguments to /tmp/trash.
+# I use this instead of rm when I don't want to keep the files in my trash
+# folder and the files are not too big.
 trashdir='/tmp/trash'
 mkdir -p "$trashdir"
 for a in "$@"; do

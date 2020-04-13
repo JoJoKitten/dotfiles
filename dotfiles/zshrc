@@ -68,6 +68,12 @@ echo -ne '\e[5 q'
 # Use beam shape cursor for each new prompt.
 preexec() { echo -ne '\e[5 q' ;}
 
+# syntax highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+
+# commands starting with 'rm -' in red
+ZSH_HIGHLIGHT_PATTERNS=('rm -r*' 'fg=white,bold,bg=red')
 
 # color
 alias grep="grep --color=auto"
@@ -85,20 +91,12 @@ bindkey -s '^[l' 'ls\n'
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 
-# find with fzf and open in editor
-alias e='fzf --preview="head -$LINES {}" | xargs -r nvim'
-
 FZF_DEFAULT_COMMAND="fd . $HOME"
 FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 FZF_ALT_C_COMMAND="fd -t d . $HOME"
 
-# M-i to insert word from current tmux pane
-_tmux_copy() { tmux_copy }
-zle -N _tmux_copy
-bindkey '^[i' _tmux_copy
-
-# M-d to show tasks with taskwarrior
-bindkey -s '^[d' 'clear; task\n'
+# find with fzf and open in editor
+alias e='fzf --preview="head -$LINES {}" | xargs -r nvim'
 
 # C-k to kill process with fzf
 bindkey -s '^k' 'kill \t'
@@ -108,6 +106,14 @@ bindkey -s '^[s' 'fzf_ssh\n'
 
 # M-f as alternative to C-t (select file)
 bindkey '^[f' fzf-file-widget
+
+# M-i to insert word from current tmux pane
+_tmux_copy() { tmux_copy }
+zle -N _tmux_copy
+bindkey '^[i' _tmux_copy
+
+# M-d to show tasks with taskwarrior
+bindkey -s '^[d' 'clear; task\n'
 
 # other aliases
 alias fk=fzf_kill
@@ -157,9 +163,3 @@ alias trde='trans de:en -v -theme random'
 alias tred='trans en:de -v -theme random'
 
 alias ku='kubectl'
-
-# syntax highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
-# commands starting with 'rm -' in red
-ZSH_HIGHLIGHT_PATTERNS=('rm -r*' 'fg=white,bold,bg=red')
