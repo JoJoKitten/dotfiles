@@ -1,4 +1,10 @@
-# This file is not relevant for zsh
+# This is the configuration file for GNU readline, which is used e.g. in bash 
+# and the python interactive console.
+# It is not used in zsh though.
+
+# vi style editing
+# does the same as "set -o vi" in bashrc
+set editing-mode vi
 
 # Tab to complete
 TAB: menu-complete
