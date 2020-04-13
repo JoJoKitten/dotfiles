@@ -10,7 +10,7 @@
   
   { "key": "jk", "command": "vim.esc", "when": "insertMode" },
   { "key": "kj", "command": "vim.esc", "when": "insertMode" },
-  { "key": "s", "command": "workbench.action.files.save" , "when": "editorTextFocus && normalMode"},
+  { "key": "s", "command": "workbench.action.files.save" , "when": "editorTextFocus && normalMode && !listFocus && !terminalFocus && !sneakMode"},
   { "key": "<A-Q>", "command": "view.closeEditor"},
   
   { "key": "<A-P>", "command": "editor.action.clipboardPasteAction", "when": "insertMode" },
