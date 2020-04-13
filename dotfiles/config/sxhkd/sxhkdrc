@@ -196,16 +196,7 @@ super + {Left,Down,Up,Right}
 # toggle polybar
 super + b 
     polybar-msg cmd toggle
-{%@@ endif @@%}
 
-{#@@ no system tray in awesome bar @@#}
-{%@@ if wm == "awesome" @@%}
-# system tray
-super + shift + s
-    toggle_stalonetray
-{%@@ endif @@%}
-                          
-{%@@ if wm == "i3" or wm == "bspwm" @@%}
 # categorized menu
 super + z
     morc_menu

@@ -8,9 +8,6 @@ config:
   link_on_import: nolink
   minversion: 0.30.0
 dotfiles:
-  d_awesome:
-    dst: ~/.config/awesome
-    src: config/awesome
   d_bin:
     dst: ~/bin
     src: bin
@@ -113,7 +110,6 @@ profiles:
       term_font_size: test
       test: 12
     dotfiles:
-    - d_awesome
     - d_bin
     - d_oni2
     - d_vscode

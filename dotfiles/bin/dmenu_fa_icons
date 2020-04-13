@@ -1,5 +1,5 @@
 #!/bin/sh
-# selects a font awesome icon with dmenu
+# selects a font-awesome icon with dmenu
 chosen=$(grep -v "#" ~/.fa_icons | dmenu -i -l 20 )
 
 [ "$chosen" != "" ] || exit

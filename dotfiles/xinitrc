@@ -39,8 +39,6 @@ redshift &
 # start the window manager
 {%@@ if wm == "i3" @@%}
 i3
-{%@@ elif wm == "awesome" @@%}
-awesome
 {%@@ elif wm == "bspwm" @@%}
 bspwm
 {%@@ endif @@%}
