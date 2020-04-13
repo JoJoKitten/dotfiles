@@ -70,9 +70,15 @@ preexec() { echo -ne '\e[5 q' ;}
 
 
 # color
-alias ls='ls -N --color=auto --group-directories-first'
 alias grep="grep --color=auto"
 alias diff="diff --color=auto"
+
+# exa as ls replacement
+alias ls='exa --group-directories-first'
+alias l='exa -l --group-directories-first'
+alias la='exa -la --group-directories-first'
+# M-l
+bindkey -s '^[l' 'ls\n'
 
 
 # fzf
@@ -93,9 +99,6 @@ bindkey '^[i' _tmux_copy
 
 # M-d to show tasks with taskwarrior
 bindkey -s '^[d' 'clear; task\n'
-
-# M-l for ls
-bindkey -s '^[l' 'ls\n'
 
 # C-k to kill process with fzf
 bindkey -s '^k' 'kill \t'

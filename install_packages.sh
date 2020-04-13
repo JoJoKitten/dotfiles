@@ -12,6 +12,7 @@ compton
 cronie
 cups
 dunst
+exa
 fd
 feh
 figlet
