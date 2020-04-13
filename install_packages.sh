@@ -99,20 +99,12 @@ fi
 echo "Installing dotfiles"
 cd dotfiles
 ./install_requirements.sh
-./dotdrop.sh install -f -p laptop-i3
+./dotdrop.sh install -f
 
 # vim-plug
 if [ ! -f ~/.local/share/nvim/site/autoload/plug.vim ]; then
     curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-fi
-
-# entr
-if ! hash entr; then
-    cd /tmp
-    wget http://eradman.com/entrproject/code/entr-4.1.tar.gz
-    tar -xf entr-4.1.tar.gz
-    cd eradman-entr-* && ./configure && make test && sudo make install
 fi
 
 # cht.sh
@@ -123,11 +115,4 @@ sudo chmod +x /usr/local/bin/cht.sh
 # python support for neovim
 sudo pip install neovim
 
-echo "Done!
-Things that have to be done manually:
- - install vim plugins
- - set git user name and email globally
- - sync firefox
- - set up thunderbird
- - set up dropbox"
-
+echo "Done."
