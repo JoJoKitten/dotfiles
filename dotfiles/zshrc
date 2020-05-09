@@ -141,6 +141,8 @@ alias gd='git diff'
 alias gl='git log'
 alias gpl='git pull'
 alias gps='git push'
+alias ge='git checkout'
+alias gb='git branch'
 
 alias ta='task add'
 alias tm='task modify'
