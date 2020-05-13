@@ -26,9 +26,9 @@ dotfiles:
   f_coc-settings.json:
     dst: ~/.config/nvim/coc-settings.json
     src: config/nvim/coc-settings.json
-  f_compton.conf:
-    dst: ~/.config/compton/compton.conf
-    src: config/compton/compton.conf
+  f_picom.conf:
+    dst: ~/.config/picom/picom.conf
+    src: config/picom/picom.conf
   f_dunstrc:
     dst: ~/.config/dunst/dunstrc
     src: config/dunst/dunstrc
@@ -116,7 +116,7 @@ profiles:
     - f_alacritty.yml
     - f_bashrc
     - f_coc-settings.json
-    - f_compton.conf
+    - f_picom.conf
     - f_dunstrc
     - f_emoji
     - f_fa_icons

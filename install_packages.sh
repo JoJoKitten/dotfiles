@@ -8,7 +8,6 @@ breath-dark-icon-theme
 broot
 clipmenu
 cmake
-compton
 cronie
 cups
 dunst
@@ -33,6 +32,7 @@ network-manager-applet
 openssh
 openvpn
 pcmanfm
+picom
 pulseaudio
 pwgen
 python
