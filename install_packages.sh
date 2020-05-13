@@ -21,6 +21,7 @@ fzf
 git
 gnuplot
 gpick
+ttf-jetbrains-mono
 jq
 lxappearance
 menda-themes-dark
@@ -49,7 +50,6 @@ translate-shell
 trizen
 ttf-dejavu
 ttf-font-awesome
-adobe-source-code-pro-fonts
 neovim
 wget
 xarchiver

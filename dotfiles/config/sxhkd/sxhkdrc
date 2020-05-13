@@ -6,6 +6,7 @@
 
 # This file includes wm independent bindings.
 
+{%@@ if wm == "i3" or wm == "bspwm" @@%}
 # terminal with tmux
 super + shift + Return
     {{@@ term @@}}
@@ -17,6 +18,7 @@ super + Return
 # program launcher
 super + p
     exec dmenu_run -fn 'monospace:size=10' -nb '#202020' -nf '#b0b0b0' -sb '#508050' -sf '#e0e0e0'
+{%@@ endif @@%}
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -35,14 +37,14 @@ super + shift + v
     sleep 0.3 && xdotool type --clearmodifiers 'set -o vi' && xdotool key --clearmodifiers Return
 
 # audio
-{_,shift + }XF86AudioMute
-    pactl set-sink-mute {0,1} toggle
+{_,shift + ,ctrl + }XF86AudioMute
+    pactl set-sink-mute {0,1,2} toggle
 
-{_,shift + }XF86Audio{Lower,Raise}Volume
-    pactl set-sink-volume {0,1} {-,+}5%
+{_,shift + ,ctrl + }XF86Audio{Lower,Raise}Volume
+    pactl set-sink-volume {0,1,2} {-,+}5%
 
-super + control + {_,shift + }{minus,plus}
-    pactl set-sink-volume {0,1} {-,+}5%
+super + {shift + ,ctrl + ,shift + control + }{Down,Up}
+    pactl set-sink-volume {0,1,2} {-,+}5%
 
 # sreen brightness
 XF86MonBrightness{Up,Down}
@@ -58,6 +60,7 @@ super + d
 alt + space
     xmouseless
 
+{%@@ if wm == "i3" or wm == "bspwm" @@%}
 # scratchpad terminal
 super + s
     tdrop -ma -w 80% -x 10% -h 80% -y 10% -n 1 -s DROP_T {{@@ term @@}}
@@ -65,6 +68,12 @@ super + s
 # scratchpad file manager
 super + f
     tdrop -ma -w 80% -x 10% -h 80% -y 10% -n 2 -s DROP_F {{@@ term @@}}
+{%@@ endif @@%}
+
+{%@@ if wm == "dwm" @@%}
+super + shift + s
+    toggle_stalonetray
+{%@@ endif @@%}
 
 # launch applications
 super + o ; {f,c,r,l,v,t,m,n,p} 
@@ -196,8 +205,9 @@ super + {Left,Down,Up,Right}
 # toggle polybar
 super + b 
     polybar-msg cmd toggle
+{%@@ endif @@%}
 
 # categorized menu
 super + z
     morc_menu
-{%@@ endif @@%}
+

@@ -146,8 +146,9 @@ profiles:
     include:
     - general
     variables:
-      wm: bspwm
-      term: alacritty
+      # possible values for wm: bspwm, i3, dwm
+      wm: dwm
+      term: st
       term_font_size: 11
   laptop:
     include:

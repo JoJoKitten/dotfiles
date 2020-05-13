@@ -1,5 +1,5 @@
 #!/bin/sh
-if [ pgrep stalonetray ]; then
+if pgrep stalonetray; then
     killall stalonetray
 else
     stalonetray > /dev/null 2>&1 &
