@@ -154,15 +154,15 @@ profiles:
     include:
     - general
     variables:
-      wm: bspwm
-      term: alacritty
+      wm: dwm
+      term: st
       term_font_size: 10
   jb-work:
     include:
     - general
     variables:
-      wm: bspwm
-      term: alacritty
+      wm: dwm
+      term: st
       term_font_size: 11
       monitor1: HDMI3
       monitor2: VGA1
