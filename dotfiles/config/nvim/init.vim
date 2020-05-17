@@ -291,7 +291,8 @@ let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'syntax': 'markdown', 'ext'
                      \{'path': '~/Dropbox/vimwiki-work/', 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_folding='expr'
 
-nnoremap <M-w> :VimwikiVSplitLink<cr>
+autocmd FileType vimwiki set textwidth=80
+nnoremap <M-.> :VimwikiVSplitLink<cr>
 
 "--------------------- easymotion --------------------------
 let g:EasyMotion_smartcase = 1
