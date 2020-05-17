@@ -206,10 +206,7 @@ nnoremap <leader>nn :set nonumber norelativenumber<cr>
 " split
 nnoremap <leader>sv :vs<cr>
 nnoremap <leader>sh :sp<cr>
-nnoremap <C-h> <C-w><C-h>
-nnoremap <C-j> <C-w><C-j>
-nnoremap <C-k> <C-w><C-k>
-nnoremap <C-l> <C-w><C-l>
+nnoremap <M-w> <C-w>
 
 " too lazy to press Ctrl :)
 noremap <M-u> <C-u>
@@ -293,6 +290,8 @@ let g:vim_markdown_folding_disabled = 1
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'syntax': 'markdown', 'ext': '.md'},
                      \{'path': '~/Dropbox/vimwiki-work/', 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_folding='expr'
+
+nnoremap <M-w> :VimwikiVSplitLink<cr>
 
 "--------------------- easymotion --------------------------
 let g:EasyMotion_smartcase = 1
