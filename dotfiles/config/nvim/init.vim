@@ -285,6 +285,10 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 "--------------------- Goyo --------------------------------
 nnoremap <M-0> :Goyo 120<cr>
 
+"--------------------- markdown ----------------------------
+" disable folding, otherwise it does not work in vimwiki
+let g:vim_markdown_folding_disabled = 1
+
 "--------------------- vimwiki -----------------------------
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'syntax': 'markdown', 'ext': '.md'},
                      \{'path': '~/Dropbox/vimwiki-work/', 'syntax': 'markdown', 'ext': '.md'}]
