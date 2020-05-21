@@ -112,7 +112,6 @@ profiles:
     dotfiles:
     - d_bin
     - d_oni2
-    - d_vscode
     - f_alacritty.yml
     - f_bashrc
     - f_coc-settings.json
