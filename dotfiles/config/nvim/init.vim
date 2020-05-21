@@ -287,8 +287,8 @@ nnoremap <M-0> :Goyo 120<cr>
 let g:vim_markdown_folding_disabled = 1
 
 "--------------------- vimwiki -----------------------------
-let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'syntax': 'markdown', 'ext': '.md'},
-                     \{'path': '~/Dropbox/vimwiki-work/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'syntax': 'markdown', 'ext': '.md', 'custom_wiki2html': 'vimwiki_markdown'},
+                     \{'path': '~/Dropbox/vimwiki-work/', 'syntax': 'markdown', 'ext': '.md', 'custom_wiki2html': 'vimwiki_markdown'}]
 let g:vimwiki_folding='expr'
 
 autocmd FileType vimwiki set textwidth=80
