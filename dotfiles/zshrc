@@ -96,9 +96,35 @@ bindkey -s '^[l' 'ls\n'
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 
-FZF_DEFAULT_COMMAND="fd . $HOME"
-FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-FZF_ALT_C_COMMAND="fd -t d . $HOME"
+FZF_DEFAULT_COMMAND="fd ."
+
+# M-f to select a file in cwd
+fzf-file-widget-local() { FZF_CTRL_T_COMMAND="fd ."; fzf-file-widget }
+zle -N fzf-file-widget-local
+bindkey '^[f' fzf-file-widget-local
+
+# M-S-f to select a file in cwd
+fzf-file-widget-home() { FZF_CTRL_T_COMMAND="fd . $HOME"; fzf-file-widget }
+zle -N fzf-file-widget-home
+bindkey '^[F' fzf-file-widget-home
+
+# M-c to switch to a dir in cwd
+fzf-cd-widget-local() { FZF_ALT_C_COMMAND="fd -t d -L ." fzf-cd-widget }
+zle -N fzf-cd-widget-local
+bindkey '^[C' fzf-cd-widget-local
+
+# M-S-c to switch to a dir in home
+fzf-cd-widget-home() { FZF_ALT_C_COMMAND="fd -t d -L . $HOME" fzf-cd-widget }
+zle -N fzf-cd-widget-home
+bindkey '^[C' fzf-cd-widget-home
+
+# M-g to select a file from home dir
+fzf-file-widget-global() {
+    FZF_CTRL_T_COMMAND="fd . $HOME"
+    fzf-file-widget
+}
+zle -N fzf-file-widget-global
+bindkey '^[g' fzf-file-widget-global
 
 # find with fzf and open in editor
 alias e='fzf --preview="head -$LINES {}" | xargs -r nvim'
@@ -108,9 +134,6 @@ bindkey -s '^k' 'kill \t'
 
 # M-s to open ssh connection with fzf
 bindkey -s '^[s' 'fzf_ssh\n'
-
-# M-f as alternative to C-t (select file)
-bindkey '^[f' fzf-file-widget
 
 # M-i to insert word from current tmux pane
 _tmux_copy() { tmux_copy }
