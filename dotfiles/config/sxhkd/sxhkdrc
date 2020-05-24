@@ -105,7 +105,7 @@ super + space ; k; {d,n,m}
     setxkbmap lv && xmodmap ~/my_neo_de.xmodmap && xset -r 51}
 
 # tools
-super + space ; t; {n,i,e,d,t,k,u,h}
+super + space ; t; {n,i,e,d,t,k,u,p,h}
     {$TERMINAL -e sudo nethogs, \
     dmenu_fa_icons, \
     dmenu_emojis, \
@@ -113,6 +113,7 @@ super + space ; t; {n,i,e,d,t,k,u,h}
     $TERMINAL -e bash -c 'echo  Translate to English: && read tmp && echo $tmp | trans de:en -v -theme random', \
     cat ~/wiki/kontakte.md | dmenu -i -l 20, \
     $TERMINAL -e bash -c "update_time && read", \
+    pomodoro, \
     dmenu_host}
 
 # generate

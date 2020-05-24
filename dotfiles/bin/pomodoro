@@ -1,0 +1,22 @@
+#!/bin/sh
+
+notify() {
+    notify-send -t 30000 -i ~/Bilder/pomodoro.jpg "$1"
+}
+
+pomodoro_length=${1:-25}
+break_length=${2:-5}
+
+notify "Pomodoro started: $pomodoro_length min"
+sleep $(($pomodoro_length * 60 / 2))
+
+notify "Pomodoro half time"
+
+sleep $(($pomodoro_length * 60 / 2))
+
+notify "Pomodoro ended: $break_length min break"
+
+sleep $(($break_length * 60))
+
+notify "Break ended"
+
