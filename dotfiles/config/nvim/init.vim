@@ -23,6 +23,7 @@ Plug 'neoclide/coc.nvim'
 Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
 Plug 'baskerville/vim-sxhkdrc'
+Plug 'MTDL9/vim-log-highlighting'
 
 Plug 'morhetz/gruvbox'
 Plug 'mhartington/oceanic-next'
