@@ -31,9 +31,11 @@ networkmanager
 network-manager-applet
 openssh
 openvpn
+pamixer
 pcmanfm
 picom
 pulseaudio
+pulsemixer
 pwgen
 python
 python-pip
@@ -73,6 +75,7 @@ zsh-syntax-highlighting
 
 aur_packages="
 dropbox
+libxft-bgra
 linopen
 lf-bin
 tdrop-git
