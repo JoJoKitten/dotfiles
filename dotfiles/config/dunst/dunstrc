@@ -1,7 +1,7 @@
 [global]
     monitor = 0
     follow = keyboard
-    geometry = "0-0+24"
+    geometry = "0-20+24"
     indicate_hidden = yes
     # shrink is ignored if width=0
     shrink = yes
@@ -39,7 +39,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "%s\n%b"
+    format = "<b>%s</b>\n%b"
 
     alignment = left
     show_age_threshold = 60
@@ -83,8 +83,8 @@
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#806020"
-    foreground = "#ebdbb2"
+    background = "#304040"
+    foreground = "#e0d0b0"
     timeout = 5
 
 [urgency_critical]
