@@ -44,12 +44,11 @@ getforecast() {
 }
 
 showweather() {
-    report="$(cat $report_file)"
     # get maximum temperature until midnight
-    temp_max=$(echo "$report" | awk 'BEGIN {max=0} {if ($4>max) max=$4} {if ($2==0) exit} END {print max}')
+    temp_max=$(awk 'BEGIN {max=0} {if ($4>max) max=$4} {if ($2==0) exit} END {print max}' "$report_file")
 
-    #   
-    echo " $temp_max"
+    #    
+    echo " $temp_max"
 }
 
 case $BLOCK_BUTTON in
