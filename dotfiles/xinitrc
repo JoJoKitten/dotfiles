@@ -45,8 +45,8 @@ i3
 {%@@ elif wm == "bspwm" @@%}
 bspwm
 {%@@ elif wm == "dwm" @@%}
-# set status bar content
-dwm_status &
+
+dwmblocks &
 
 while true; do
     dwm > $HOME/.dwm.log 2>&1
