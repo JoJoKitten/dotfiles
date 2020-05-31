@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# this script is assumed to be called every 5s
+
+case "$BLOCK_BUTTON" in
+    6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+logfile="$HOME/.cache/netlog"
+[ -f "$logfile" ] || echo "0 0" > "$logfile"
+read -r rxprev txprev < "$logfile"
+
+rxcurrent="$(($(paste -d '+' /sys/class/net/[ew]*/statistics/rx_bytes)))"
+txcurrent="$(($(paste -d '+' /sys/class/net/[ew]*/statistics/tx_bytes)))"
+
+printf " %d  %d" "$(((rxcurrent-rxprev)/1024/5))" "$(((txcurrent-txprev)/1024/5))"
+
+echo "$rxcurrent $txcurrent" > "$logfile"
+

@@ -1,0 +1,27 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+    1) setsid "$TERMINAL" -e pulsemixer & ;;
+    3) pamixer -t ;;
+    4) pamixer --allow-boost -i 3 ;;
+    5) pamixer --allow-boost -d 3 ;;
+    6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+sleep 0.01
+
+if [ "$(pamixer --get-mute)" = true ]; then
+    icon=""
+    vol=-
+else
+    vol="$(pamixer --get-volume)"
+    if [ "$vol" -gt "30" ]; then
+        icon=""
+    elif [ "$vol" -gt "0" ]; then
+        icon=""
+    else 
+        icon=""
+    fi
+fi
+
+printf "%s %s" "$icon" "$vol"

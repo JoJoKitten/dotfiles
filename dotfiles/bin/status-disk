@@ -1,0 +1,11 @@
+#!/bin/sh
+
+location=/
+
+case $BLOCK_BUTTON in
+	1) notify-send " Disk space" "$(df -h --output=target,used,size)" ;;
+	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+printf "%s %s\n" "" "$(df "$location" | awk ' /dev/ { print int($3 * 100 / $2) "%" }')"
+

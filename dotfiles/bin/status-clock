@@ -1,0 +1,10 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+    1) notify-send "Kalender" "$(cal --color=always | sed 's_..3m_<span color="red">_;s_..23m_</span>_')" ;;
+    3) notify-send "Kalender" "$(cal -3 --color=always | sed 's_..3m_<span color="red">_;s_..23m_</span>_')" ;;
+    6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+date "+ %d.%m.  %H:%M%p"
+
