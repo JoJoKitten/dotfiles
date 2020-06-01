@@ -4,47 +4,19 @@
 # \__ \>  <| | | |   < (_| |
 # |___/_/\_\_| |_|_|\_\__,_|
 
-# This file includes wm independent bindings.
+# in the first lines are the wm independent bindings 
+# and below the bspwm specific bindings 
 
-{%@@ if wm == "i3" or wm == "bspwm" @@%}
-# terminal with tmux
-super + shift + Return
-    {{@@ term @@}}
 
-# terminal
-super + Return
-    {{@@ term @@}} -e tmux
+# mouse control
+super + d
+    xmouseless
+alt + space
+    xmouseless
 
-# program launcher
-super + p
-    exec dmenu_run -fn 'monospace:size=10' -nb '#202020' -nf '#b0b0b0' -sb '#508050' -sf '#e0e0e0'
-{%@@ endif @@%}
-
-# make sxhkd reload its configuration files:
-super + Escape
-    pkill -USR1 -x sxhkd
-
-# clipmenu
-super + {c,i}
-    clipmenu -i -fn Terminus:size=12 -l 20 -i -b {_,&& xdotool type "$(xclip -o)"}
-
-# insert host name
-super + shift + i
-    dmenu_host
-
-# insert 'set -o vi'
-super + shift + v
-    sleep 0.3 && xdotool type --clearmodifiers 'set -o vi' && xdotool key --clearmodifiers Return
-
-# audio
-{_,shift + ,ctrl + }XF86AudioMute
-    pactl set-sink-mute {0,1,2} toggle
-
-{_,shift + ,ctrl + }XF86Audio{Lower,Raise}Volume
-    pactl set-sink-volume {0,1,2} {-,+}5%
-
-super + {shift + ,ctrl + ,shift + control + }{Down,Up}
-    pactl set-sink-volume {0,1,2} {-,+}5%
+# categorized menu
+super + z
+    morc_menu
 
 # sreen brightness
 XF86MonBrightness{Up,Down}
@@ -54,26 +26,13 @@ XF86MonBrightness{Up,Down}
 {_,super + ,super + shift + } Print 
     sleep 0.2 && scrot {_,-u,-s}
 
-# mouse control
-super + d
-    xmouseless
-alt + space
-    xmouseless
+# clipmenu
+super + {c,i}
+    clipmenu -i -fn Terminus:size=12 -l 20 -i -b {_,&& xdotool type "$(xclip -o)"}
 
-{%@@ if wm == "i3" or wm == "bspwm" @@%}
-# scratchpad terminal
-super + s
-    tdrop -ma -w 80% -x 10% -h 80% -y 10% -n 1 -s DROP_T {{@@ term @@}}
-
-# scratchpad file manager
-super + f
-    tdrop -ma -w 80% -x 10% -h 80% -y 10% -n 2 -s DROP_F {{@@ term @@}}
-{%@@ endif @@%}
-
-{%@@ if wm == "dwm" @@%}
-super + shift + s
-    toggle_stalonetray
-{%@@ endif @@%}
+# insert host name
+super + shift + i
+    dmenu_host
 
 # launch applications
 super + o ; {f,c,r,l,v,t,m,n,p} 
@@ -122,7 +81,47 @@ super + space ; g; {u,p}
     dmenu-pwgen}
 
 
+
 {%@@ if wm == "bspwm" @@%}
+
+# terminal with tmux
+super + shift + Return
+    {{@@ term @@}}
+
+# terminal
+super + Return
+    {{@@ term @@}} -e tmux
+
+# program launcher
+super + p
+    exec dmenu_run -fn 'monospace:size=10' -nb '#202020' -nf '#b0b0b0' -sb '#508050' -sf '#e0e0e0'
+
+# make sxhkd reload its configuration files:
+super + Escape
+    pkill -USR1 -x sxhkd
+
+# insert 'set -o vi'
+super + shift + v
+    sleep 0.3 && xdotool type --clearmodifiers 'set -o vi' && xdotool key --clearmodifiers Return
+
+# audio
+{_,shift + ,ctrl + }XF86AudioMute
+    pactl set-sink-mute {0,1,2} toggle
+
+{_,shift + ,ctrl + }XF86Audio{Lower,Raise}Volume
+    pactl set-sink-volume {0,1,2} {-,+}5%
+
+super + {shift + ,ctrl + ,shift + control + }{Down,Up}
+    pactl set-sink-volume {0,1,2} {-,+}5%
+
+# scratchpad terminal
+super + s
+    tdrop -ma -w 80% -x 10% -h 80% -y 10% -n 1 -s DROP_T {{@@ term @@}}
+
+# scratchpad file manager
+super + f
+    tdrop -ma -w 80% -x 10% -h 80% -y 10% -n 2 -s DROP_F {{@@ term @@}}
+
 # restart bspwm
 super + shift + r
     bspc wm -r
@@ -200,15 +199,8 @@ super + ctrl + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
     bspc node -v {-20 0,0 20,0 -20,20 0}
 
-{%@@ endif @@%}
-
-{%@@ if wm == "i3" or wm == "bspwm" @@%}
 # toggle polybar
 super + b 
     polybar-msg cmd toggle
+
 {%@@ endif @@%}
-
-# categorized menu
-super + z
-    morc_menu
-

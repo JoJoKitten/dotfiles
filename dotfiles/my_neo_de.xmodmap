@@ -89,15 +89,6 @@ keysym ISO_Level3_Shift = ISO_Level3_Shift ISO_Level3_Shift ISO_Group_Shift ISO_
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 add Mod4 = Super_L
 
-! Mod2 is used to switch applications (see i3 config)
-{%@@ if profile == "laptop" @@%}
-remove control = Control_R
-add Mod2 = Control_R
-{%@@ else @@%}
-remove Mod4 = Super_R
-add Mod2 = Super_R
-{%@@ endif @@%}
-
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! general Lock

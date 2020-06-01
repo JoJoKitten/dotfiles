@@ -38,9 +38,6 @@ dotfiles:
   f_fa_icons:
     dst: ~/.fa_icons
     src: fa_icons
-  f_i3_config:
-    dst: ~/.config/i3/config
-    src: config/i3/config
   f_ideavimrc:
     dst: ~/.ideavimrc
     src: ideavimrc
@@ -119,7 +116,6 @@ profiles:
     - f_dunstrc
     - f_emoji
     - f_fa_icons
-    - f_i3_config
     - f_ideavimrc
     - f_init.vim
     - f_inputrc
@@ -145,7 +141,7 @@ profiles:
     include:
     - general
     variables:
-      # possible values for wm: bspwm, i3, dwm
+      # possible values for wm: bspwm, dwm
       wm: dwm
       term: st
       term_font_size: 11

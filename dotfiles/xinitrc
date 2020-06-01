@@ -40,9 +40,7 @@ redshift &
 ~/.start_jobs &
 
 # start the window manager
-{%@@ if wm == "i3" @@%}
-i3
-{%@@ elif wm == "bspwm" @@%}
+{%@@ if wm == "bspwm" @@%}
 bspwm
 {%@@ elif wm == "dwm" @@%}
 
