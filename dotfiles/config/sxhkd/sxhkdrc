@@ -34,6 +34,9 @@ super + {c,i}
 super + shift + i
     dmenu_host
 
+super + shift + s
+    toggle_stalonetray
+
 # launch applications
 super + o ; {f,c,r,l,v,t,m,n,p} 
     {firefox, \
