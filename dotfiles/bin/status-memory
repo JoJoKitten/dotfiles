@@ -6,5 +6,5 @@ case $BLOCK_BUTTON in
     6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-free | sed -n '2{p;q}' | awk '{printf (" %d%\n", int($2 / $3) ) }'
+free | sed -n '2{p;q}' | awk '{printf (" %d%\n", int(100 * $3 / $2) ) }'
 
