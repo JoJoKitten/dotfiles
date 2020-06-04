@@ -6,9 +6,8 @@ case $BLOCK_BUTTON in
 esac
 
 case "$(cat /sys/class/net/w*/operstate 2>/dev/null)" in
-    down) wifiicon="XX" ;;
-    up) wifiicon="" ;;
+    up) printf "\n"; exit 0 ;;
 esac
 
-printf "%s%s\n" "$wifiicon" "$(sed "s/down/XX/;s/up//" /sys/class/net/e*/operstate 2>/dev/null)"
+printf "%s\n" "$(sed "s/down/XX/;s/up//" /sys/class/net/e*/operstate 2>/dev/null)"
 
