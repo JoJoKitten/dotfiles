@@ -133,7 +133,6 @@ let g:yankring_clipboard_monitor=0
 
 "-------------------- fugit --------------------------------
 nnoremap <leader>gs :Gstatus<cr>
-nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gl :Glog<cr>
 nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gp :Gpull<cr>
@@ -319,6 +318,11 @@ inoremap <silent><expr> <Tab>
 
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+nmap <C-m> <Plug>(coc-definition)
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
+nmap <leader>rr <Plug>(coc-rename)
 
 " coc-prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
