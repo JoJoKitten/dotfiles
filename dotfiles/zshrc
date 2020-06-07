@@ -77,9 +77,6 @@ preexec() { echo -ne '\e[5 q' ;}
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
-# commands starting with 'rm -' in red
-ZSH_HIGHLIGHT_PATTERNS=('rm -r*' 'fg=white,bold,bg=red')
-
 # color
 alias grep="grep --color=auto"
 alias diff="diff --color=auto"
@@ -144,6 +141,8 @@ bindkey '^[i' _tmux_copy
 bindkey -s '^[d' 'clear; task\n'
 
 # other aliases
+alias rm='rm -i'
+
 alias fk=fzf_kill
 alias ss='sudo systemctl'
 alias v='nvim'
