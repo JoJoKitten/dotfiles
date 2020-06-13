@@ -44,7 +44,7 @@ redshift &
 bspwm
 {%@@ elif wm == "dwm" @@%}
 
-dwmblocks &
+sleep 5 && dwmblocks &
 
 while true; do
     dwm > $HOME/.dwm.log 2>&1
