@@ -6,5 +6,5 @@ case $BLOCK_BUTTON in
     6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-echo " $(top -bn1 | sed -n 's/^.CPU.*: *\([^ ]*\).*/\1/p' | awk '{ total += $1; count++ } END { printf "%s%", int(total/count) }')"
+echo " $(top -bn1 | sed -n 's/^.Cpu.*: *\([^ ]*\).*/\1/p' | awk '{ total += $1; count++ } END { printf "%s%", int(total/count) }')"
 
