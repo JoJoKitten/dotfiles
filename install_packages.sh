@@ -38,6 +38,7 @@ pwgen
 python
 python-pip
 redshift
+scim
 scrot
 shellcheck
 stalonetray
