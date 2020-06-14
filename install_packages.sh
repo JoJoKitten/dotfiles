@@ -38,7 +38,6 @@ pwgen
 python
 python-pip
 redshift
-scim
 scrot
 shellcheck
 stalonetray
@@ -79,6 +78,7 @@ dropbox
 libxft-bgra
 linopen
 lf-bin
+sc-im
 tdrop-git
 xmouseless-git
 xnee"
