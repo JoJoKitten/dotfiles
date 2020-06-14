@@ -41,8 +41,10 @@ redshift
 scrot
 shellcheck
 stalonetray
+sxhkd
 sxiv
 system-config-printer
+task
 termite
 thunderbird
 tmux
