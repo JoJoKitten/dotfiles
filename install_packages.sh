@@ -8,6 +8,7 @@ clipmenu
 cmake
 cronie
 cups
+dnsutils
 dunst
 exa
 fd
