@@ -1,0 +1,12 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+for battery in /sys/class/power_supply/BAT?
+do
+	capacity=$(cat "$battery"/capacity) || break
+
+        printf "%s %s\n" "" "$capacity"
+done
