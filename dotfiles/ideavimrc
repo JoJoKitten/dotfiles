@@ -20,6 +20,7 @@ set ideajoin
 set easymotion
 set surround
 set commentary
+set exchange
 
 nmap s :w<CR>
 
