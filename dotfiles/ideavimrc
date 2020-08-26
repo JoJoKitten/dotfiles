@@ -28,6 +28,9 @@ nmap s :w<CR>
 "-------------------- Mappings -----------------------------
 imap jk <Esc>
 imap kj <Esc>
+
+imap jj <CR>
+
 map Y y$
 
 " allows incsearch highlighting for range commands
