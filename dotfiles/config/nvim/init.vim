@@ -88,6 +88,9 @@ set softtabstop=4
 set expandtab
 set autoindent
 
+" spell check
+set spell
+set spelllang=en,de
 
 "----------------- search and replace ----------------------
 " case insensitive search except when using capital letters
