@@ -26,6 +26,7 @@ Plug 'baskerville/vim-sxhkdrc'
 Plug 'MTDL9/vim-log-highlighting'
 
 Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
 Plug 'mhartington/oceanic-next'
 call plug#end()
 
@@ -68,11 +69,11 @@ set noshowmode
 
 " appearance
 set background=dark
-colorscheme slate
+colorscheme onedark
 hi StatusLine ctermbg=NONE cterm=NONE
 
 map <M-1> :set background=dark<cr>:set notermguicolors<cr>:colorscheme slate<cr>:hi StatusLine ctermbg=NONE cterm=NONE<cr>
-map <M-2> :set background=dark<cr>:set termguicolors<cr>:colorscheme OceanicNext<cr>
+map <M-2> :set background=dark<cr>:set termguicolors<cr>:colorscheme onedark<cr>
 map <M-3> :set background=dark<cr>:set termguicolors<cr>:colorscheme gruvbox<cr>
 map <M-4> :set background=light<cr>:set termguicolors<cr>:colorscheme gruvbox<cr>
 

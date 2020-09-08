@@ -43,7 +43,7 @@ super + o ; {f,c,r,l,v,t,m,n,p}
     chromium, \
     $TERMINAL -e ranger, \
     $TERMINAL -e tmux new-session lf \; set-option status on, \
-    $TERMINAL -e tmux new-session nvim -c ":colorscheme gruvbox", \
+    $TERMINAL -e tmux new-session nvim -c ":colorscheme onedark", \
     $TERMINAL -e tmux new-session -s GEN \; rename-window gen \; set status on, \
     thunderbird, \
     pcmanfm, \
