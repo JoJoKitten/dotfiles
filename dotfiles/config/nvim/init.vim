@@ -90,8 +90,9 @@ set expandtab
 set autoindent
 
 " spell check
-set spell
+set nospell
 set spelllang=en,de
+map <leader>ss :set spell!<cr>
 
 "----------------- search and replace ----------------------
 " case insensitive search except when using capital letters
