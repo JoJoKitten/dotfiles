@@ -1,4 +1,4 @@
-rofi.modi:                           window,run,drun,calc,combi
+rofi.modi:                           window,combi,calc
 rofi.width:                          50
 rofi.lines:                          20
 rofi.columns:                        2
