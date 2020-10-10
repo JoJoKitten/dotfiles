@@ -11,7 +11,7 @@ rofi.xoffset:                        0
 rofi.fixed-num-lines:                true
 rofi.show-icons:                     true
 rofi.terminal:                       rofi-sensible-terminal
-rofi.combi-modi:                     window,run,drun
+rofi.combi-modi:                     drun,run,window
 rofi.max-history-size:               25
 rofi.matching-negate-char:           -
 
