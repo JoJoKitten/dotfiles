@@ -14,9 +14,13 @@ super + d
 alt + space
     xmouseless
 
-# categorized menu
+# rofi desktop applications
 super + z
-    morc_menu
+    rofi -show drun
+
+# rofi window switcher
+alt + Tab
+    rofi -show window
 
 # sreen brightness
 XF86MonBrightness{Up,Down}

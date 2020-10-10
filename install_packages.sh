@@ -39,6 +39,8 @@ pwgen
 python
 python-pip
 redshift
+rofi
+rofi-calc
 scrot
 shellcheck
 stalonetray

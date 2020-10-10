@@ -101,6 +101,9 @@ dotfiles:
   f_bspwmrc:
     src: config/bspwm/bspwmrc
     dst: ~/.config/bspwm/bspwmrc
+  f_rofi_config:
+    src: config/rofi/config
+    dst: ~/.config/rofi/config
 profiles:
   general:
     variables:
@@ -111,6 +114,7 @@ profiles:
     - d_oni2
     - f_alacritty.yml
     - f_bashrc
+    - f_bspwmrc
     - f_coc-settings.json
     - f_picom.conf
     - f_dunstrc
@@ -127,6 +131,7 @@ profiles:
     - f_polybar_launch.sh
     - f_profile
     - f_redshift.conf
+    - f_rofi_config
     - f_sxhkdrc
     - f_taskrc
     - f_termite_config
@@ -136,12 +141,10 @@ profiles:
     - f_zathurarc
     - f_zprofile
     - f_zshrc
-    - f_bspwmrc
   desktop:
     include:
     - general
     variables:
-      # possible values for wm: bspwm, dwm
       wm: dwm
       term: st
       term_font_size: 11
