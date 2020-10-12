@@ -77,7 +77,6 @@ zsh-syntax-highlighting
 "
 
 aur_packages="
-dropbox
 libxft-bgra
 linopen
 lf-bin
