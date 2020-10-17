@@ -2,6 +2,7 @@
 
 case $BLOCK_BUTTON in
     1) "$TERMINAL" -e nmtui; pkill -RTMIN+4 dwmblocks ;;
+    3)  sudo systemctl restart NetworkManager ;;
     6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
