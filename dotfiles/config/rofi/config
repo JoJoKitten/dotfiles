@@ -6,7 +6,7 @@ rofi.font:                           mono 13
 rofi.bw:                             1
 rofi.location:                       0
 rofi.padding:                        10
-rofi.yoffset:                        -100
+rofi.yoffset:                        0
 rofi.xoffset:                        0
 rofi.fixed-num-lines:                true
 rofi.show-icons:                     true
