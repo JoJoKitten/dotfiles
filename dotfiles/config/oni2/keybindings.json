@@ -12,12 +12,16 @@
   { "key": "kj", "command": "vim.esc", "when": "insertMode" },
   { "key": "s", "command": "workbench.action.files.save" , "when": "editorTextFocus && normalMode && !listFocus && !terminalFocus && !sneakMode"},
   { "key": "<A-Q>", "command": "view.closeEditor"},
+
+  { "key": "<C-S-p>", "command": "workbench.action.zoomIn"},
+  { "key": "<C-S-m>", "command": "workbench.action.zoomOut"},
+  { "key": "<C-S-l>", "command": "workbench.action.zoomReset"},
   
   { "key": "<A-P>", "command": "editor.action.clipboardPasteAction", "when": "insertMode" },
 
   { "key": "<A-S-W>", "command": "workbench.actions.view.problems" },
 
-  { "key": "<A-1>", "command": "explorer.toggle" , "when": "editorTextFocus"},
+  { "key": "<A-1>", "command": "workbench.view.explorer" , "when": "editorTextFocus"},
   { "key": "<A-O>", "command": "sneak.start"},
 
   { "key": "<A-W><A-E>", "command": "view.splitVertical"},
