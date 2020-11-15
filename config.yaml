@@ -104,6 +104,9 @@ dotfiles:
   f_rofi_config:
     src: config/rofi/config
     dst: ~/.config/rofi/config
+  f_joplin_keymap:
+    src: config/joplin/keymap.json
+    dst: ~/.config/joplin/keymap.json
 profiles:
   general:
     variables:
@@ -123,6 +126,7 @@ profiles:
     - f_ideavimrc
     - f_init.vim
     - f_inputrc
+    - f_joplin_keymap
     - f_lfrc
     - f_linopenrc
     - f_morc_menu_v1.conf
