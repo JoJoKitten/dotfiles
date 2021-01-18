@@ -96,12 +96,12 @@ source /usr/share/fzf/key-bindings.zsh
 FZF_DEFAULT_COMMAND="fd ."
 
 # M-f to select a file in cwd
-fzf-file-widget-local() { FZF_CTRL_T_COMMAND="fd ." fzf-file-widget }
+fzf-file-widget-local() { FZF_CTRL_T_COMMAND="fd -L ." fzf-file-widget }
 zle -N fzf-file-widget-local
 bindkey '^[f' fzf-file-widget-local
 
 # M-S-f to select a file in cwd
-fzf-file-widget-home() { FZF_CTRL_T_COMMAND="fd . $HOME" fzf-file-widget }
+fzf-file-widget-home() { FZF_CTRL_T_COMMAND="fd -L . $HOME" fzf-file-widget }
 zle -N fzf-file-widget-home
 bindkey '^[F' fzf-file-widget-home
 
