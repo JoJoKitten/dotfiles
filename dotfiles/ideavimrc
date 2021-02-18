@@ -21,6 +21,7 @@ set easymotion
 set surround
 set commentary
 set exchange
+set NERDTree
 
 nmap s :w<CR>
 
