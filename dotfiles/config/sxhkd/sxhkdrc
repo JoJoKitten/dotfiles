@@ -33,9 +33,11 @@ XF86MonBrightness{Up,Down}
 # clipmenu
 super + {c,i}
     clipmenu -i -fn Terminus:size=12 -l 20 -i -b {_,&& xdotool type "$(xclip -o)"}
+super + shift + i
+    word="$(dmenu -i -l 20 < ~/.common_words)" && xdotool type "$word"
 
 # insert host name
-super + shift + i
+super + control + i
     dmenu_host
 
 super + shift + s
