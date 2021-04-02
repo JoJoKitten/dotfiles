@@ -11,7 +11,7 @@ tray_bg = #063020
 ; Use the following command to list available outputs:
 ; $ xrandr -q | grep " connected" | cut -d ' ' -f1
 
-{%@@ if monitor1 != "" @@%}
+{%@@ if monitor1 is defined @@%}
 monitor = {{@@ monitor1 @@}}
 {%@@ else @@%}
 monitor =
@@ -100,7 +100,7 @@ double-click-middle =
 double-click-right =
 
 [bar/top2]
-{%@@ if monitor2 != "" @@%}
+{%@@ if monitor2 is defined @@%}
 monitor = {{@@ monitor2 @@}}
 {%@@ else @@%}
 monitor =
