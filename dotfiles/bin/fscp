@@ -1,0 +1,60 @@
+#!/bin/sh
+
+usage() {
+    echo "Usage:"
+    echo "$0 root@localhost:/som/dir /local/dir"
+    echo "$0 /local/dir root@localhost:/som/dir "
+    exit 1
+}
+
+if [ -z "${1##*:*}" ]; then
+    from=true
+    remote="$1"
+    local_dir="$2"
+else
+    from=false
+    local_dir="$1"
+    remote="$2"
+fi
+
+shift 2
+
+remote_host="${remote%%:*}"
+remote_dir="${remote##*:}"
+
+echo "remote host: $remote_host"
+echo "remote dir: $remote_dir"
+echo "local: $local_dir"
+
+[ -z "$remote_dir" -o -z "$local_dir" ] && usage
+
+remote_files="$(ssh "$remote_host" "find '$remote_dir'")"
+
+while true; do
+    if [ "$from" = true ]; then
+        src_file="$(echo "$remote_files" | fzf -m --header='Choose src file/directory')"
+        [ -z "$src_file" ] && exit 1
+        src="$remote_host:\"$src_file\""
+        dest="$(find "$local_dir" | fzf -m --header='Choose dest file/directory')"
+        [ -z "$dest" ] && exit 1
+        if [ -f "$dest" -o -f "${dest}/${src_file##*/}" ]; then
+            echo
+            echo "WARNING: THE FILE ALREADY EXISTS"
+        fi
+    else
+        src="$(find "$local_dir" | fzf -m --header='Choose src file/directory')"
+        [ -z "$src" ] && exit 1
+        dest_file="$(echo "$remote_files" | fzf -m --header='Choose dest file/directory')"
+        [ -z "$dest_file" ] && exit 1
+        dest="$remote_host:\"$dest_file\""
+    fi
+    echo "scp -r $src $dest"
+    read -p "Execute? (y/n)" ok
+    if [ "$ok" = y ]; then
+        scp -r "$src" "$dest"
+    else
+        echo "Aborted"
+    fi
+    read
+done
+
