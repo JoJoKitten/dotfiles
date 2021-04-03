@@ -48,10 +48,10 @@ while true; do
         [ -z "$dest_file" ] && exit 1
         dest="$remote_host:\"$dest_file\""
     fi
-    echo "scp -r $src $dest"
+    echo "scp $@ -r $src $dest"
     read -p "Execute? (y/n)" ok
     if [ "$ok" = y ]; then
-        scp -r "$src" "$dest"
+        scp "$@" -r "$src" "$dest"
     else
         echo "Aborted"
     fi
