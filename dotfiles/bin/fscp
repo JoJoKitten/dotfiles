@@ -1,4 +1,6 @@
 #!/bin/sh
+# This script is a helper for copying files with scp.
+# One can select the source and dest files/directories with fzf.
 
 usage() {
     echo "Usage:"
