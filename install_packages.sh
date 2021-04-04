@@ -29,7 +29,6 @@ mpv
 networkmanager
 network-manager-applet
 openssh
-openvpn
 pamixer
 pcmanfm
 picom
@@ -81,7 +80,6 @@ libxft-bgra
 linopen
 lf-bin
 sc-im
-tdrop-git
 xmouseless-git
 xnee"
 
