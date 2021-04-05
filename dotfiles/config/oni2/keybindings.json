@@ -4,9 +4,11 @@
   { "key": "<A-K>", "command": "list.focusUp" , "when": "listFocus || textInputFocus"},
   
   { "key": "<A-E>", "command": "workbench.action.quickOpen", "when": "editorTextFocus" },
-  { "key": "<A-F>", "command": "workbench.action.openNextRecentlyUsedEditorInGroup" , "when": "editorTextFocus"},
-  { "key": "<A-F>", "command": "workbench.action.quickOpenNavigateNextInEditorPicker" , "when": "inEditorsPicker"},
-  { "key": "<A-S-F>", "command": "workbench.action.quickOpenNavigatePreviousInEditorPicker" , "when": "inEditorsPicker"},
+  { "key": "<C-F>", "command": "workbench.action.openNextRecentlyUsedEditorInGroup" , "when": "editorTextFocus"},
+  { "key": "<C-F>", "command": "workbench.action.quickOpenNavigateNextInEditorPicker" , "when": "inEditorsPicker"},
+  { "key": "<M-F>", "command": "workbench.action.openNextRecentlyUsedEditorInGroup" , "when": "editorTextFocus"},
+  { "key": "<M-F>", "command": "workbench.action.quickOpenNavigateNextInEditorPicker" , "when": "inEditorsPicker"},
+  { "key": "<C-S-F>", "command": "workbench.action.quickOpenNavigatePreviousInEditorPicker" , "when": "inEditorsPicker"},
   
   { "key": "jk", "command": "vim.esc", "when": "insertMode" },
   { "key": "kj", "command": "vim.esc", "when": "insertMode" },
@@ -21,7 +23,7 @@
 
   { "key": "<A-S-W>", "command": "workbench.actions.view.problems" },
 
-  { "key": "<A-1>", "command": "workbench.view.explorer" , "when": "editorTextFocus"},
+  { "key": "<A-1>", "command": "workbench.view.explorer"},
   { "key": "<A-O>", "command": "sneak.start"},
 
   { "key": "<A-W><A-E>", "command": "view.splitVertical"},
