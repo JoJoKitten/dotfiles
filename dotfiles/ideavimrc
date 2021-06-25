@@ -22,6 +22,7 @@ set surround
 set commentary
 set exchange
 set NERDTree
+set textobj-indent
 
 nmap s :w<CR>
 
