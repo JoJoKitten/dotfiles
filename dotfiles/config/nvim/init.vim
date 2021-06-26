@@ -17,14 +17,14 @@ Plug 'junegunn/vim-easy-align'
 Plug 'mildred/vim-bufmru'
 Plug 'scrooloose/nerdtree'
 Plug 'ap/vim-css-color'
-Plug 'junegunn/goyo.vimsirtaj/vim-openscad'
-Plug 'neoclide/coc.nvim'
+Plug 'junegunn/goyo.vim'
 
-Plug 'vimwiki/vimwiki'
+Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'baskerville/vim-sxhkdrc'
 Plug 'MTDL9/vim-log-highlighting'
 Plug 'sirtaj/vim-openscad'
+Plug 'codota/tabnine-vim'
 
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
@@ -53,6 +53,7 @@ set splitbelow splitright
 set ruler
 set number relativenumber
 set scrolloff=10
+set sidescrolloff=20
 " highlight cursor line ?
 set nocursorline
 
@@ -85,6 +86,7 @@ set confirm
 set timeout timeoutlen=500 ttimeout ttimeoutlen=200
 
 " tabs
+set smarttab
 set shiftwidth=4
 set softtabstop=4
 set expandtab
@@ -153,19 +155,8 @@ autocmd FileType python match Excess /\%121v.*/
 autocmd FileType python set textwidth=120
 autocmd FileType python set foldmethod=indent
 
-" some simple snipptes
-autocmd FileType python inoremap öw while<space>:<left>
-autocmd FileType python inoremap öi if<space>:<left>
-autocmd FileType python inoremap öd def<space>(self):<esc>F(i
-autocmd FileType python inoremap öp <esc>0f)i,<space>
-autocmd FileType python inoremap ör return<space>
-autocmd FileType python inoremap ös self.
-autocmd FileType python inoremap öt True
-autocmd FileType python inoremap öf False
-" getter and setter
-autocmd FileType python inoremap öag <esc>bywodef<space>get_<esc>pa(self):<cr>return<space>self.<esc>pkkdd
-autocmd FileType python inoremap öas <esc>bywodef<space>set_<esc>pa(self,<space><esc>pa):<cr>self.<esc>pa<space>=<space><esc>pkkdd
-
+"-------------------- golang -------------------------------
+autocmd FileType go setlocal noexpandtab
 
 "-------------------- Mappings -----------------------------
 " general bindings
@@ -286,19 +277,13 @@ let NERDTreeWinPos="right"
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
 "--------------------- Goyo --------------------------------
-nnoremap <M-0> :Goyo 120<cr>
+nnoremap <M-0> :Goyo<cr>
+let g:goyo_height="90%"
+let g:goyo_width="120"
 
 "--------------------- markdown ----------------------------
 " disable folding, otherwise it does not work in vimwiki
 let g:vim_markdown_folding_disabled = 1
-
-"--------------------- vimwiki -----------------------------
-let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md', 'custom_wiki2html': 'vimwiki_markdown'},
-                     \{'path': '~/vimwiki-work/', 'syntax': 'markdown', 'ext': '.md', 'custom_wiki2html': 'vimwiki_markdown'}]
-let g:vimwiki_folding='expr'
-
-autocmd FileType vimwiki set textwidth=80
-nnoremap <M-.> :VimwikiVSplitLink<cr>
 
 "--------------------- easymotion --------------------------
 let g:EasyMotion_smartcase = 1
@@ -308,30 +293,4 @@ nmap ö <Plug>(easymotion-bd-f)
 " move up/down
 map <M-j> <Plug>(easymotion-j)
 map <M-k> <Plug>(easymotion-k)
-
-
-"--------------------- coc.nvim ----------------------------
-" use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
-
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-nmap <C-m> <Plug>(coc-definition)
-nmap <leader>gd <Plug>(coc-definition)
-nmap <leader>gr <Plug>(coc-references)
-nmap <leader>rr <Plug>(coc-rename)
-
-" coc-prettier
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-nmap <M-S-l> :Prettier<cr>
-vmap <M-S-l> <Plug>(coc-format-selected)
 
