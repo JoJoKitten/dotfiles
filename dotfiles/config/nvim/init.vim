@@ -36,7 +36,6 @@ call plug#end()
 set nocompatible
 filetype off
 
-
 "----------------------------------------------------------
 let mapleader = " "
 
@@ -54,8 +53,11 @@ set ruler
 set number relativenumber
 set scrolloff=10
 set sidescrolloff=20
-" highlight cursor line ?
+" don't highlight cursor line
 set nocursorline
+
+" in C-A: don't assume a number starting with 0 to be octal
+set nrformats-=octal
 
 " 2 to always show status bar
 set laststatus=2
