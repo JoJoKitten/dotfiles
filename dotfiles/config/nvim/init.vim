@@ -120,21 +120,45 @@ nnoremap <leader>ra :%s//gc<left><left><left>
 
 
 "-------------------- folding ------------------------------
-set foldmethod=indent
-set foldnestmax=10
+set foldmethod=syntax
+set foldnestmax=3
 set nofoldenable
-set foldlevel=2
-set foldminlines=0
+set foldlevel=1
+set foldminlines=3
 highlight Folded ctermbg=none ctermfg=Grey
 highlight FoldColumn ctermbg=none ctermfg=Grey
 set fillchars=fold:\ ,
 
-function! NeatFoldText() "{{{2
-let lines_count = v:foldend - v:foldstart + 1
-return repeat(' ', v:foldlevel*4) . '+++ ' . lines_count
+set foldtext=FoldText()
+function! FoldText()
+  let l:lpadding = &fdc
+  redir => l:signs
+    execute 'silent sign place buffer='.bufnr('%')
+  redir End
+  let l:lpadding += l:signs =~ 'id=' ? 2 : 0
+
+  if exists("+relativenumber")
+    if (&number)
+      let l:lpadding += max([&numberwidth, strlen(line('$'))]) + 1
+    elseif (&relativenumber)
+      let l:lpadding += max([&numberwidth, strlen(v:foldstart - line('w0')), strlen(line('w$') - v:foldstart), strlen(v:foldstart)]) + 1
+    endif
+  else
+    if (&number)
+      let l:lpadding += max([&numberwidth, strlen(line('$'))]) + 1
+    endif
+  endif
+  let l:start = substitute(getline(v:foldstart), '\t', repeat(' ', &tabstop), 'g')
+  let l:info = ' (' . (v:foldend - v:foldstart) . ')'
+  let l:infolen = strlen(substitute(l:info, '.', 'x', 'g'))
+  let l:width = winwidth(0) - l:lpadding - l:infolen
+  let l:separator = ' … '
+  let l:separatorlen = strlen(substitute(l:separator, '.', 'x', 'g'))
+  let l:start = strpart(l:start , 0, l:width - l:separatorlen)
+  let l:text = l:start . ' … '
+  return l:text . repeat(' ', l:width - strlen(substitute(l:text, ".", "x", "g"))) . l:info
 endfunction
-set foldtext=NeatFoldText()
-" }}}2
+
 
 "-------------------- YankRing -----------------------------
 " fix for error message
