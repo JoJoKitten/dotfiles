@@ -1,4 +1,10 @@
 {
+  "coc.preferences.formatOnSaveFiletypes": ["markdown", "yaml",  "json", "python"],
+
+  // python config
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+
   "suggest.autoTrigger": "always",
   "suggest.triggerAfterInsertEnter": true,
   "suggest.timeout": 500

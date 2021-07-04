@@ -24,7 +24,8 @@ Plug 'plasticboy/vim-markdown'
 Plug 'baskerville/vim-sxhkdrc'
 Plug 'MTDL9/vim-log-highlighting'
 Plug 'sirtaj/vim-openscad'
-Plug 'codota/tabnine-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nvim-treesitter/nvim-treesitter'
 
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
@@ -73,6 +74,7 @@ set noshowmode
 
 " appearance
 set background=dark
+set termguicolors
 colorscheme onedark
 hi StatusLine ctermbg=NONE cterm=NONE
 
@@ -156,7 +158,7 @@ function! FoldText()
   let l:separatorlen = strlen(substitute(l:separator, '.', 'x', 'g'))
   let l:start = strpart(l:start , 0, l:width - l:separatorlen)
   let l:text = l:start . ' … '
-  return l:text . repeat(' ', l:width - strlen(substitute(l:text, ".", "x", "g"))) . l:info
+  return l:text . repeat(' ', 5) . l:info
 endfunction
 
 
@@ -170,6 +172,9 @@ nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gl :Glog<cr>
 nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gp :Gpull<cr>
+
+"-------------------- xml ----------------------------------
+autocmd FileType xml set foldmethod=indent
 
 "-------------------- python -------------------------------
 " code running
@@ -229,7 +234,10 @@ nnoremap <leader>nn :set nonumber norelativenumber<cr>
 " split
 nnoremap <leader>sv :vs<cr>
 nnoremap <leader>sh :sp<cr>
-nnoremap <M-w> <C-w>
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " too lazy to press Ctrl :)
 noremap <M-u> <C-u>
@@ -238,8 +246,8 @@ nnoremap <M-o> <C-o>
 nnoremap <M-i> <C-i>
 
 " goto next/previous change
-nnoremap <C-h> g;
-nnoremap <C-l> g,
+nnoremap H g;
+nnoremap L g,
 
 " tags
 map <C-b> <C-]>
@@ -290,7 +298,7 @@ nnoremap <leader>hk :Maps<cr>
 nnoremap <leader>hc :Commands<cr>
 nnoremap <leader>zc :Colors<cr>
 nnoremap <M-l> :Lines<cr>
-nnoremap <M-m> :Tags<cr>
+nnoremap <M-S-m> :Tags<cr>
 
 
 "--------------------- sxhkd syntax ------------------------
@@ -299,7 +307,8 @@ autocmd BufRead,BufNewFile ~/dotfiles/dotfiles/sxhkd/sxhkdrc set filetype=sxhkdr
 
 "--------------------- Nerd tree ---------------------------
 nnoremap <M-n> :NERDTreeToggle<cr>
-let NERDTreeWinPos="right"
+nnoremap <M-S-n> :NERDTreeFind<cr>
+let NERDTreeWinPos="left"
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
 "--------------------- Goyo --------------------------------
@@ -319,4 +328,68 @@ nmap ö <Plug>(easymotion-bd-f)
 " move up/down
 map <M-j> <Plug>(easymotion-j)
 map <M-k> <Plug>(easymotion-k)
+
+"--------------------- coc.nvim ----------------------------
+set updatetime=300
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+nmap <C-m> <Plug>(coc-definition)
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
+nmap <leader>gi <Plug>(coc-implementation)
+nmap <leader>rr <Plug>(coc-rename)
+nmap <leader>ga <Plug>(coc-codeaction)
+nmap <leader>gl <Plug>(coc-format)
+nmap <M-w> <Plug>(coc-diagnostic-next)
+nmap <M-S-w> <Plug>(coc-diagnostic-prev)
+nmap <M-Enter> :CocFix<cr>
+nnoremap <silent> <M-m> :<C-u>CocList outline<cr>
+
+" show documentation
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+"--------------------- treesitter --------------------------
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+  },
+}
+EOF
 
