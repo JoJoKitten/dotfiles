@@ -28,8 +28,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-treesitter/nvim-treesitter'
 
 Plug 'morhetz/gruvbox'
-Plug 'joshdick/onedark.vim'
-Plug 'mhartington/oceanic-next'
+Plug 'christianchiarulli/nvcode-color-schemes.vim'
 call plug#end()
 
 
@@ -75,12 +74,14 @@ set noshowmode
 " appearance
 set background=dark
 set termguicolors
-colorscheme onedark
+hi LineNr ctermbg=NONE guibg=NONE
+let g:nvcode_termcolors=256
+colorscheme nord
 hi StatusLine ctermbg=NONE cterm=NONE
 
 map <M-1> :set background=dark<cr>:set notermguicolors<cr>:colorscheme slate<cr>:hi StatusLine ctermbg=NONE cterm=NONE<cr>
-map <M-2> :set background=dark<cr>:set termguicolors<cr>:colorscheme onedark<cr>
-map <M-3> :set background=dark<cr>:set termguicolors<cr>:colorscheme gruvbox<cr>
+map <M-2> :set background=dark<cr>:set termguicolors<cr>:colorscheme nord<cr>
+map <M-3> :set background=dark<cr>:set termguicolors<cr>:colorscheme onedark<cr>
 map <M-4> :set background=light<cr>:set termguicolors<cr>:colorscheme gruvbox<cr>
 
 " unsaved changes: ask instead of fail
