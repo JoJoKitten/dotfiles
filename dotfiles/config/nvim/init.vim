@@ -177,6 +177,16 @@ nnoremap <leader>gp :Gpull<cr>
 "-------------------- xml ----------------------------------
 autocmd FileType xml set foldmethod=indent
 
+"-------------------- json ---------------------------------
+autocmd FileType xml set foldmethod=indent
+autocmd FileType xml set shiftwidth=2
+autocmd FileType xml set softtabstop=2
+
+"-------------------- yaml ---------------------------------
+autocmd FileType yaml set foldmethod=indent
+autocmd FileType yaml set shiftwidth=2
+autocmd FileType yaml set softtabstop=2
+
 "-------------------- python -------------------------------
 " code running
 let g:pymode_run=1
@@ -364,7 +374,7 @@ nmap <leader>rr <Plug>(coc-rename)
 nmap <leader>ga <Plug>(coc-codeaction)
 nmap <leader>gl <Plug>(coc-format)
 nmap <M-w> <Plug>(coc-diagnostic-next)
-nmap <M-S-w> <Plug>(coc-diagnostic-prev)
+nmap <M-S-w> <Plug>(coc-diagnostic-next-error)
 nmap <M-Enter> :CocFix<cr>
 nnoremap <silent> <M-m> :<C-u>CocList outline<cr>
 
