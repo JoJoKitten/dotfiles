@@ -88,7 +88,7 @@ map <M-4> :set background=light<cr>:set termguicolors<cr>:colorscheme gruvbox<cr
 set confirm
 
 " shortcut timeouts
-set timeout timeoutlen=500 ttimeout ttimeoutlen=200
+set timeout timeoutlen=200 ttimeout ttimeoutlen=200
 
 " tabs
 set smarttab
@@ -377,6 +377,8 @@ nmap <M-w> <Plug>(coc-diagnostic-next)
 nmap <M-S-w> <Plug>(coc-diagnostic-next-error)
 nmap <M-Enter> :CocFix<cr>
 nnoremap <silent> <M-m> :<C-u>CocList outline<cr>
+
+inoremap <leader>j <C-o>A;<cr>
 
 " show documentation
 nnoremap <silent> K :call <SID>show_documentation()<CR>
