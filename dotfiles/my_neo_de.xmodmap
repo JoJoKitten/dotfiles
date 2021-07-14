@@ -233,8 +233,8 @@ keycode 56 = 	b		B		grave		Greek_zeta	Undo		Redo		U2124		NoSymbol
 
 keycode 57 = 	n		N		plus		Greek_beta	colon		NoSymbol	U21D0		NoSymbol
 !						+		β		:				⇐
-keycode 58 = 	m		M		percent		Greek_mu	KP_1		KP_1		ifonlyif	NoSymbol
-!						%		μ						⇔
+keycode 58 = 	m		M		Return 		Greek_mu	KP_1		KP_1		ifonlyif	NoSymbol
+!						 		μ						⇔
 keycode 59 = comma		semicolon		quotedbl	U03F1		KP_2		KP_2		U21D2		NoSymbol
 !		,		–		"		ϱ Greek_rho					⇒ implies 
 keycode 60 = period	   colon	apostrophe	U03D1		KP_3		KP_3		U21A6		NoSymbol

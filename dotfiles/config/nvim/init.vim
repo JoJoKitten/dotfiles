@@ -378,8 +378,6 @@ nmap <M-S-w> <Plug>(coc-diagnostic-next-error)
 nmap <M-Enter> :CocFix<cr>
 nnoremap <silent> <M-m> :<C-u>CocList outline<cr>
 
-inoremap <leader>j <C-o>A;<cr>
-
 " show documentation
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -405,4 +403,5 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
+
 
